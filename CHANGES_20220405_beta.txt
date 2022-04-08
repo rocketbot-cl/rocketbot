@@ -35,16 +35,10 @@
 [fix] Export without internet
 [fix] remove collapse button
 [fix] remove collapse button
-[fix] Driverupdate: Se arregla pregtuntas para MacOs
+[fix] Driverupdate: Fixed questions for MacOs
 [fix] Edit selector in Connect app
-[new] translate commands
-[fix] Delete empty files and fix install mods
-[new] web: sistema anti cache. [fix] Web: Cambios de texto segun lenguaje en creacion de robot
+[new] View: anti cache system.
 [new] RPAWindows/Selector: arregla selector para objetos declarados en XML. 
-[fix] Web: Se arregla menu contextual vacio para link de ayuda
-[fix] Se arregla ver variables grandes en Textarea para no afectar performance
-[fix] Se arregla problema que ocacionaba que comando no se agregara si se seleccionaba un break
-[fix] Se arreglan problemas con captura de pantallas, permanecian activadas luego de desactivarlas.
 [fix] check windows compatibility
 [fix] imports in windows
 [fix] change libs path
