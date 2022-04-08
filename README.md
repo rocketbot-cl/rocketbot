@@ -28,5 +28,5 @@ New:
 [Version A 4 - 16-07-2020](https://rocketbot-bin.s3.amazonaws.com/Rocketbot_20201230_a4_win.zip)
 
 Fixs:
-* Se arregla problema de variables no declaradas en comandos que desaparecen.
-* Se mejora velocidad de Drag and drop.
+* Fixed problem of undeclared variables in commands that disappear.
+* Drag and drop speed improved.
