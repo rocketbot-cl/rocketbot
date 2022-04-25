@@ -2,7 +2,7 @@
 In this repository you will find information about the changes of each version of Rocketbot since 2020.30.12. You will also find the latest updates of the addons added.
 
 ## Rocketbot 20220405
-[Version beta - 2020-04-05](https://rocketbot-bin.s3.amazonaws.com/Rocketbot20220405_beta.zip)
+[Version beta - 2022-04-05](https://rocketbot-bin.s3.amazonaws.com/Rocketbot20220405_beta.zip)
 
 Fixs:
 * Fixed problems with the __break__ command
