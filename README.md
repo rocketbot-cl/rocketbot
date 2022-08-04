@@ -1,5 +1,12 @@
-# Rocketbot Suite
+# Rocketbot 
 In this repository you will find information about the changes of each version of Rocketbot since 2020.30.12. You will also find the latest updates of the addons added.
+
+## Orchestrator OnPremise
+[Version 2022.09.04](https://rocketbot-bin.s3.amazonaws.com/setup-orchestrator-onpremise.exe)
+
+New: 
+* Rocketbot Orchestrator onpremise to work with the orchestrator locally 
+
 
 ## Rocketbot 20220405
 [Version beta - 2022-04-05](https://rocketbot-bin.s3.amazonaws.com/Rocketbot20220405_beta.zip)
