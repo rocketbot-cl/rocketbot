@@ -8,7 +8,7 @@ New:
 * Rocketbot Orchestrator onpremise to work with the orchestrator locally 
 
 
-## Rocketbot 20220405
+## Rocketbot 20220405 (Windows)
 [Version beta - 2022-04-05](https://rocketbot-bin.s3.amazonaws.com/Rocketbot20220405_beta.zip)
 
 Fixs:
