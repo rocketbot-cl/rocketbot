@@ -7,7 +7,15 @@ In this repository you will find information about the changes of each version o
 New:
 * Expose variables in robot
 * New commands
-* Fix Drag and drop
+* New browser to control
+* Drawflow
+
+Fix:
+* Drag and drop
+* Some commands
+* Show more information in logs
+
+
 
 
 ## Orchestrator OnPremise
