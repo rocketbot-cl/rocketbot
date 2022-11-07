@@ -1,6 +1,15 @@
 # Rocketbot 
 In this repository you will find information about the changes of each version of Rocketbot since 2020.30.12. You will also find the latest updates of the addons added.
 
+## Rocket 20220909 (Windows)
+[Versión beta - 2022-09-09](https://rocketbot-bin.s3.amazonaws.com/Rocketbot2022.09.09beta.zip)
+
+New:
+* Expose variables in robot
+* New commands
+* Fix Drag and drop
+
+
 ## Orchestrator OnPremise
 [Version 2022.09.04](https://rocketbot-bin.s3.amazonaws.com/setup-orchestrator-onpremise.exe)
 
