@@ -9,6 +9,8 @@ New:
 * New commands
 * New browser to control
 * Drawflow
+* Categories in variables
+* Autocomplete python
 
 Fix:
 * Drag and drop
