@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <span ><i class="fa fa-database"></i> <small>DB:</small> {{bots[0].db}}</span>
+            </div>
+            <div class="col-12">
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"> <i class="fa fa-search"></i></span>
+                        </div>
+                        <input type="text" ng-model="search" ng-init="search=''" class="form-control" placeholder="{{language[language_default].search_ex}}"
+                               aria-describedby="helpId">
+                    </div>
+                    <small id="helpId" class="text-muted">{{language[language_default].search_ex}}</small>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th> {{language[language_default].name}}</th>
+                            <th> {{language[language_default].action}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="bot in bots[0].bots| toArray:true| filter:search">
+                            <td>{{$index + 1}}</td>
+                            <td>
+                                <b><i class="fa fa-robot"></i> {{bot.name}}</b><br>
+                                <div class="alert alert-info" ng-show="bot.description">
+                                    {{bot.description}}
+                                </div>
+                                <small><b>{{language[language_default].version}}:</b> {{bot.counts}} -
+                                    <b>{{language[language_default].last_update}}:</b>{{bot.created_at}}</small>
+
+
+                            </td>
+                            <td width="120">
+                                <div ng-show="bot.type == 'folder'" class="btn btn-sm btn-primary btn-block" ng-click="loadfolder(bot)">
+                                     {{language[language_default].load}}
+                                </div>
+
+                                <div ng-show="bot.type == 'robot'" class="btn btn-sm rounded btn-primary btn-block" ng-click="loadBotUrl(bot)">
+                                    <i class="fa fa-spin fa-spinner" ng-show="loading && $parent.loading_index==$index"></i>
+                                    <i class="fa fa-rocket"></i>
+                                    {{language[language_default].load}}
+                                </div>
+                                <button class="btn btn-sm btn-danger rounded btn-block" ng-click="removebot(bot)">
+                                    <i class="fa fa-trash-alt"></i> {{language[language_default].delete}}</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

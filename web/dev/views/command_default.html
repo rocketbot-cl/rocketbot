@@ -1,0 +1,20 @@
+<div class="titulo">
+    <img loading='lazy'  ng-src="{{command_parent.icon}}" class="float-left icon-list">
+    <small class="command_description"><b>{{command_parent.title}}:</b>
+        <div ng-class="{'d-none':!(command.option && command.option.length > 0)}" >
+            {{command_parent.title_options}} <b>{{command.option}}</b>
+            <br>
+        </div>
+        <span ng-show="((command.var && command.var.length>0) ||(command.command && command.command.length>0))">
+            {{command_parent.title_command}} <b ng-show="command_parent.group!='virtual'" class="command_text"><span
+                    ng-show="command.var && command.var.length > 0">{<i>{{command.var}}</i>}</span>
+
+                    <span ng-show="command_parent.father!='execRocketBotDB'">{{command.command}} </span>
+                    <a class="rocket-text" ng-show="command_parent.father=='execRocketBotDB'" href="#!/edit/{{command.command}}/db/{{path_encode}}" target="_blank">{{command.command}} </a>
+            </b>
+        </span>
+        <img loading='lazy' class="img-mini-preview" ng-if="command.extra_data && command_parent.group=='virtual' " ng-src="{{command.extra_data}}">
+
+        <span ng-show="command.getvar"><br>Dest: <i>{{command.getvar}}</i></small>
+    </small>
+</div>

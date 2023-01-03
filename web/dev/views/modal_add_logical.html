@@ -1,0 +1,41 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_add_logical">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}</h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-md-6" ng-show="command_father.father=='for'">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label>{{language[language_default].variables}}</label>
+                            <select class="form-control" ng-model="$parent.command_father_op_var" ng-options="v.name for v in vars">
+                                <option name="" value="">-- Seleccione --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div  ng-class="{'col-12':command_father.father!='for','col-6':command_father.father=='for'}">                        
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label>{{command_father.title_command}}</label>
+                            <input class="form-control accept_vars"  type="text" ng-model="$parent.command_content">
+                        </div>
+                    </div>
+                </div>
+                <small>ej:[ variable ] > 8  |  {variable} == 1</small>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="addIf()" class="btn btn-primary">{{language[language_default].add_command}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

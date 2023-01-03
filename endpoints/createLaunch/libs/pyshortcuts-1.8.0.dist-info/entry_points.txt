@@ -1,0 +1,3 @@
+[console_scripts]
+pyshortcut = pyshortcuts:shortcut_cli
+

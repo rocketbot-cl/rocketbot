@@ -1,0 +1,96 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_email_config">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}} - {{command_father.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3><img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}</h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>{{language[language_default].server}} SMTP:</label>
+                            <input autocomplete="off" class="form-control accept_vars" type="text" ng-model="$parent.command_content.smtp">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>{{language[language_default].port}} SMTP:</label>
+                            <input autocomplete="off" class="form-control accept_vars" type="text" ng-model="$parent.command_content.smtp_port">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <br>
+                            <p>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="checkbox" type="checkbox" ng-model="$parent.command_content.ssl"
+                                            id="email_ssl">
+                                        SMTP SSL
+                                    </label>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>{{language[language_default].server}} IMAP:</label>
+                            <input autocomplete="off" class="form-control accept_vars" type="text" ng-model="$parent.command_content.imap">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>{{language[language_default].port}} IMAP:</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.imap_port">
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <br>
+                        <p>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="checkbox" type="checkbox" ng-model="$parent.command_content.imap_ssl">
+                                        IMAP SSL
+                                    </label>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>{{language[language_default].user}}</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.user">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>{{language[language_default].password}}</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.pass">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>{{language[language_default].assign_result}}</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_father_op_getvar">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" ng-click="addGeneralCommand('modal_email_config')" class="btn btn-primary">{{language[language_default].add_command}}</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+                </div>
+            </div>
+        </div>
+    </div>

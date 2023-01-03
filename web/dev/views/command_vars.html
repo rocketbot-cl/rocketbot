@@ -1,0 +1,7 @@
+<div class="titulo">
+    <img loading='lazy' ng-src="{{command_parent.icon}}" class="icon-list">
+    <small>{{command_parent.title}}:
+        <b ng-show="command_parent.group!='virtual'" class="command_text">{{command.var}} </b> = <i>{{command.command}} </i>
+        <img loading='lazy' class="img-mini-preview" ng-if="command.extra_data && command_parent.group=='virtual' " ng-src="{{command.extra_data}}">
+    </small>
+</div>

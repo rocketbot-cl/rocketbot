@@ -1,0 +1,16 @@
+<div class="titulo">
+
+    <img loading='lazy' ng-src="{{command_parent.icon}}" class="icon-list float-left">
+    <small>{{command_parent[language_default].title||command_parent.title[language_default]||command_parent['en'].title||command_parent.title['en']}} <br>
+        <span ng-show="{{command.option && command.option.length > 0}}">{{command_parent.title_options}} <b>{{command.option}}</b>
+            <br></span>
+        <span ng-show="((command.var && command.var.length>0) ||(command.command && command.command.length>0))">
+            {{command_parent.title_command}} <b ng-show="command_parent.group!='virtual'" class="command_text"><span
+                    ng-show="command.var && command.var.length > 0">{<i>{{command.var}}</i>}</span> {{command.command}}
+            </b>
+        </span>
+        <img loading='lazy' class="img-mini-preview" ng-if="command.extra_data && command_parent.group=='virtual' " ng-src="{{command.extra_data}}">
+
+        <span ng-show="command.getvar"><br>Dest: <i>{{command.getvar}}</i></small>
+    </small>
+</div>

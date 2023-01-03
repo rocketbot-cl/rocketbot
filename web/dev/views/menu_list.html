@@ -1,0 +1,59 @@
+<div id="list_commands" class="scrollbar">
+<ul class="myTree" dnd-list dnd-effect-allowed="copyLink" >
+  <li ng-repeat="tr in tree| filter:$parent.filtro_comandos">
+    <div ng-click="tr.active = !tr.active; centerView('id_' + m_in + '_' + $index)" ng-show="tr.visible" ng-init="m_in = $index" class="main-command-menu" ng-class="{'active': tr.active}">
+      <img loading='lazy' class="tree-icon" src="{{'' + tr.icon}}"> 
+      <span>{{tr.title}}</span>
+      <i ng-show="tr.children.length > 0" class="fa children" ng-class="{'fa-chevron-right': !tr.active,'fa-chevron-down': tr.active}"></i>
+    </div>
+    <ul ng-show="tr.active && tr.children" id="id_{{m_in}}_{{$index}}" dnd-list dnd-effect-allowed="copyLink">
+      <li ng-repeat="ch in tr.children | filter:$parent.filtro_comandos" dnd-draggable="ch" dnd-disable-if="ch.children.length >0"
+        dnd-effect-allowed="copyLink" dnd-dragstart="initDrag()" ng-init="m_in2 = $index" ng-show="ch.visible">
+        <span ng-click="ch.active = !ch.active; setData(ch,null);centerView('id_s_'+m_in2+'_'+m_in)">
+          <img loading='lazy' class="tree-icon"  onerror="this.style.display='none'" ng-src="{{ch.icon}}">
+          <span data-toggle="tooltip" data-placement="bottom" ng-class="{'font-weight-bold':ch.children.length > 0}"
+            title="{{ch.description|limitTo:50}}...">{{ch.title}}</span>
+          <i ng-show="ch.children.length > 0" class="fa children" ng-class="{'fa-chevron-right': !ch.active,'fa-chevron-down': ch.active}"></i>
+          <i ng-show="!ch.children" class="fa fa-plus-circle"></i>
+        </span>
+        <ul ng-show="ch.active && ch.children " id="id_s_{{m_in2}}_{{m_in}}" dnd-list dnd-effect-allowed="copyLink">
+          <li ng-repeat="ch2 in ch.children| filter:$parent.filtro_comandos" ng-click="setData(ch2, null)"
+            dnd-draggable="ch2" dnd-dragstart="initDrag()" ng-show="ch2.visible">
+            <img loading='lazy' class="tree-icon"  onerror="this.style.display='none'" ng-src="{{ch2.icon}}"> <span data-toggle="tooltip" data-placement="bottom"
+              title="{{ch2.description|limitTo:50}}...">{{ch2.title}}</span>
+            <i class="fa fa-plus-circle"></i>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <!-- Modules -->
+  <li ng-repeat="tr in modules| filter:$parent.filtro_comandos">
+
+    <div ng-click="tr.active = !tr.active; "  class="main-command-menu" ng-class="{'active': tr.active}">
+      <img loading='lazy' class="tree-icon" src="{{'' + tr.icon}}"> 
+      <span>{{tr.title}}</span>
+      <i ng-show="tr.children.length > 0" class="fa children" ng-class="{'fa-chevron-right': !tr.active,'fa-chevron-down': tr.active}"></i>
+    </div>
+
+    
+    <ul ng-show="tr.active && tr.children" dnd-list dnd-effect-allowed="copyLink">
+      <li ng-repeat="ch in tr.children | filter:$parent.filtro_comandos"  dnd-draggable="ch" dnd-disable-if="ch.children.length >0"
+        dnd-effect-allowed="copyLink" dnd-dragstart="initDrag()" ng-init="m_in2 = $index">
+        <span ng-click="ch.active = !ch.active; setData(ch,null);">
+          <img loading='lazy' class="tree-icon" ng-src="{{ch.icon}}"> <span data-toggle="tooltip" data-placement="bottom" title="{{ch.description|limitTo:40}}...">{{ch.title[language_default]||ch.title['en']}}</span>
+          <i ng-show="ch.children.length > 0" class="fa children" ng-class="{'fa-chevron-right': !ch.active,'fa-chevron-down': ch.active}"></i>
+          <i ng-show="!ch.children" class="fa fa-plus-circle"></i>
+        </span>
+        <ul ng-show="ch.active && ch.children" dnd-list dnd-effect-allowed="copyLink">
+          <li ng-repeat="ch2 in ch.children| filter:$parent.filtro_comandos" ng-click="setData(ch2, null);update_scroll_commands()"  dnd-draggable="ch2" dnd-dragstart="initDrag()">
+            <img loading='lazy' class="tree-icon" ng-src="{{ch2.icon}}"> <span data-toggle="tooltip" data-placement="bottom" title="{{(ch2[language_default].description ||ch2['en'].description || ch2.description[language_default] || ch2.description['en'])|limitTo:40}}...">{{ch2[language_default].title ||ch2.title[language_default] || ch2['en'].title ||ch2.title['en'] }}</span>
+            <i class="fa fa-plus-circle"></i>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<br>
+</div>

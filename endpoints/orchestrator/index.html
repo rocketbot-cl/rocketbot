@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orchestrator</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- Fonts Awesome -->
+  <link rel="stylesheet" href="/bower_components/components-font-awesome/css/all.css" />
+  <link rel="stylesheet" href="../../styles/main.css?v=20200920">
+</head>
+
+<body>
+  
+  <div id="app">
+    <div class="p-2">
+      <h4 >
+        <em class="fas fa-cloud-upload-alt"></em> Orchestrator
+      </h4>
+      
+      <small >Update the robot database in Orchestrator and run a robot</small>
+    </div>
+    
+    <hr class="hr-rocket">
+    <div class="p-2 mb-4 pb-4 scroll-y">
+      <h5 @click="viewCondfig=!viewCondfig"><em class="fa fa-cogs"></em> Config Account <em class="fa" v-bind:class="{'fa-chevron-right': !viewCondfig, 'fa-chevron-down': viewCondfig}"></em></h5>
+      <div class="p-2" v-show="viewCondfig">
+        <div class="form-group">
+          <label class="m-0">Server URL</label>
+          <input class="form-control form-control-sm" v-model="server">
+        </div>
+        <div class="form-group">
+          <label class="m-0">Email</label>
+          <input class="form-control form-control-sm" v-model="email">
+        </div>
+        <div class="form-group">
+          <label class="m-0">Password</label>
+          <input type="password" class="form-control form-control-sm" v-model="password">
+        </div>
+        <div class="form-group">
+          <label class="m-0">Apikey</label>
+          <input class="form-control form-control-sm" v-model="apikey">
+          <small>Only if you do not use email/password</small>
+        </div>
+        <button @click="test" class="btn btn-warning"> <em v-show="loading" class="fa fa-spin fa-spinner"></em>Test</button>
+        <button @click="save" class="btn btn-success"><em class="fa fa-save"></em> Save</button>
+        <hr>
+      </div>
+
+      <div class="form-group">
+        <label>Project</label>      
+        <div class="input-group">  
+          <select class="form-control form-control-sm" @change="onChange($event)" v-model="project_id">
+              <option disabled>--Select project--</option>
+              <option v-for="option in projects" v-bind:value="option.id">
+                {{option.name}}
+              </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Process</label>      
+        <div class="input-group">  
+          <select class="form-control form-control-sm" @change="onChangeProcess($event)" v-model="process">
+              <option disabled>--Select Process--</option>
+              <option v-for="option in processes" v-bind:value="option">
+                {{option.name}}
+              </option>
+          </select>
+        </div>
+      </div>
+      
+      <button class="btn btn-danger btn-block mt-2" @click="export_db">
+        <em class="fa fa-upload"></em> Export<em v-show="loading" class="fa fa-spin fa-spinner"></em> 
+      </button>
+      <button class="btn btn-danger btn-block mt-2" @click="generate" :disabled="!project_id||!process_id" >
+        <em class="fa fa-upload"></em> Export and upload <em v-show="loading" class="fa fa-spin fa-spinner"></em> 
+      </button>
+    </div>
+  </div>
+  
+  <script src="../../orchestrator/lodash.min.js"></script>
+  <script src="../../orchestrator/vue.min.js"></script>
+  <script>
+    
+    var app = new Vue({
+      el: "#app",
+      data: {
+        viewCondfig:false,
+        robot_name:"{{robot_name}}",
+        db : "{{db}}",
+        loading: false,
+        server:"{{server}}",
+        email:"{{email}}",
+        password:"{{password}}",
+        apikey:"{{apikey}}",
+        projects:[],
+        project_id:null,
+        processes:[],
+        process:[],
+        process_id: null,
+        process_name : "",
+        robot_id:null
+      },
+      methods: {
+        onChangeProcess(event){
+          console.log(event)
+          this.process_id = this.process.token;
+          this.process_name = this.process.name;
+          this.robot_id = this.process.last_robot ? this.process.last_robot.id : null
+        },
+        onChange(event) {
+            this.process_id = null;
+
+            for(var i = 0; i < this.projects.length; i++){
+              if(this.projects[i].id == this.project_id){
+                this.processes = this.projects[i].process;
+                break;
+              }
+            }
+        },
+        searchFile(){
+          fetch('/getfile')
+          .then(response => response.text())
+          .then(data => {
+            this.db = data;
+          });
+        },
+        
+        get(){
+          if(this.server.length < 5){
+            this.viewCondfig = true;
+            return;
+          }
+          var data = new FormData();
+          data.append("email",this.email)
+          data.append("password",this.password);
+          data.append("server",this.server);
+          data.append("apikey", this.apikey)          
+          this.loading = true;
+          fetch("../get",
+          {
+            method: "POST",
+            body: data
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            this.projects = data;
+            this.loading = false;
+          });
+        },
+        test(){
+          var data = new FormData();
+          data.append("email",this.email)
+          data.append("password",this.password);
+          data.append("server",this.server);
+          data.append("apikey", this.apikey)          
+          this.loading = true;
+          fetch("../test",
+          {
+            method: "POST",
+            body: data
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            if(data.status){
+              alert("Test ok, now you can save the configuration.")
+            }else{
+              alert("Something is wrong, check the configuration and try again.")
+            }
+            
+            this.loading = false;
+          });
+        },
+        save(){
+          var data = new FormData();
+          data.append("email",this.email)
+          data.append("password",this.password);
+          data.append("server",this.server);
+          data.append("apikey", this.apikey)
+          
+          this.loading = true;
+          fetch("../save",
+          {
+            method: "POST",
+            body: data
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            if(data.status){
+              alert("Saved ok.")
+            }else{
+              alert("Error saving, try again.")
+            }
+            this.get();
+            this.loading = false;
+          });
+        },
+        export_db(){
+          var data = new FormData();
+          data.append("email",this.email)
+          data.append("password",this.password);
+          data.append("server",this.server);
+          data.append("apikey", this.apikey);
+          data.append("db", this.db);
+          data.append("name", this.robot_name);
+          data.append("project_id", this.project_id);
+          data.append("process_id", this.process_id);
+          data.append("process_name", this.process_name);
+          data.append("robot_id", this.robot_id);
+          data.append("only_export", true);
+          this.loading = true;
+          fetch("../generate",
+          {
+            method: "POST",
+            body: data
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            if(data.status){
+              alert("Generated and upload correctly.")
+            }else{
+              alert("Error on generated or upload, try again.")
+            }
+            
+            this.loading = false;
+          });
+        },
+        generate(){
+          var data = new FormData();
+          data.append("email",this.email)
+          data.append("password",this.password);
+          data.append("server",this.server);
+          data.append("apikey", this.apikey);
+          data.append("db", this.db);
+          data.append("name", this.robot_name);
+          data.append("project_id", this.project_id);
+          data.append("process_id", this.process_id);
+          data.append("process_name", this.process_name);
+          data.append("robot_id", this.robot_id);
+          this.loading = true;
+          fetch("../generate",
+          {
+            method: "POST",
+            body: data
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            if(data.status){
+              alert("Generated and upload correctly.")
+            }else{
+              alert("Error on generated or upload, try again.")
+            }
+            
+            this.loading = false;
+          });
+        }
+      },
+      mounted(){
+        this.get()
+      }
+    });
+  </script>
+</body>
+
+</html>

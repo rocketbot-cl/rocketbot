@@ -1,0 +1,147 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_navigator">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}
+                </h3>
+                <div class="link-help" ng-show="command_father.video" ng-click="viewHelp(command_father.video,$event.currentTarget)">
+                    <i class="fab fa-youtube"></i> {{language[language_default].help}}
+                </div>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-general-navigator"
+                            role="tab" aria-controls="nav-home" aria-selected="true"> {{language[language_default].general}}</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-extra-navigator"
+                            role="tab" aria-controls="nav-extra" aria-selected="false"> {{language[language_default].extra}}</a>
+                    </div>
+                </nav>
+                <br>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-general-navigator" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div ng-show="command_father.options" >
+                                    <label> {{language[language_default].select_navigator}}:</label>
+                                    <select class="form-control" id="command_list_op" ng-model="$parent.command_father_op"
+                                        ng-options="x for x in command_father.options">
+                                        <option name="" value="">-- Seleccione --</option>
+                                    </select>
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <label>{{language[language_default].server_config_title}}:</label>
+                                    <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.url"
+                                        placeholder="https://rocketbot.co">
+                                    <small>{{language[language_default].url_help}}</small>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label> {{language[language_default].mode}}:
+                                            <i class="fa fa-question-circle" ng-click="ayuda=true"></i>
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" value="0" ng-model="$parent.command_content.tipo">
+                                            <label class="form-check-label" for="gridRadios1">
+                                                    {{language[language_default].synchronous}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" value="1" ng-model="$parent.command_content.tipo">
+                                            <label class="form-check-label" for="gridRadios2">
+                                                    {{language[language_default].asynchronous}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <p>
+                                    <small>
+                                        <b>{{language[language_default].synchronous}}:</b> {{language[language_default].synchronous_help}}
+                                        <br>
+                                        <b>{{language[language_default].asynchronous}}:</b>  {{language[language_default].asynchronous_help}}
+                                    </small>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="nav-extra-navigator" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>{{language[language_default].identifier}}:</label>
+                                    <input type="text" class="form-control" ng-model="$parent.command_content.id_driver" placeholder="default">
+                                </div>
+                                <!--<div class="form-group">
+                                        <label>Carpeta de Descarga</label>
+                                        <input type="text" class="form-control" ng-model="$parent.command_content.folder_download" placeholder="">
+                                    </div>-->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>{{language[language_default].profile}}:</label>
+                                    <input type="text" class="form-control" ng-model="$parent.command_content.profile" placeholder="Profile">
+                                    <small class="text-mutted">{{language[language_default].profile_help}}</small>
+                                </div>
+                            </div>
+                            <!--<div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Configuración Selenium</label>
+                                        <textarea class="form-control" ng-model="$parent.command_content.selenium"></textarea>
+                                    </div>
+                                </div>-->
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="stop-bot-error row">
+                    
+                    <div class="col-6">
+                        <div class="form-group">
+                            <div class="form-check " style="margin-top: 0px; ">
+                                <input type="checkbox" class="form-check-input" ng-model="$parent.run_onerror" >
+                                <label class="form-check-label text-danger" >Error Handling: <span class="text-black">Run Robot</span></label>
+                            </div>
+          
+                            <div class="input-group" ng-show="$parent.run_onerror">
+                                <select2  s2-options="v.name as v.name for v in bots[0].bots" ng-model="$parent.run_onerror_robot">
+                                    </select2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check " style="margin-top: 0px; ">
+                            <input type="checkbox" class="form-check-input" ng-model="$parent.stop_onerror" >
+                            <label class="form-check-label text-danger" >Error Handling: Stop all</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" ng-click="addNavigator()" class="btn btn-primary">{{language[language_default].add_command}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

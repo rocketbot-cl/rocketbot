@@ -1,0 +1,43 @@
+{
+  "name": "angular-bootstrap-contextmenu",
+  "version": "1.2.1",
+  "main": [
+    "contextMenu.js"
+  ],
+  "homepage": "https://github.com/Templarian/ui.bootstrap.contextMenu",
+  "authors": [
+    {
+      "name": "Austin Andrews",
+      "homepage": "http://templarian.com"
+    },
+    {
+      "name": "Jose Taira",
+      "homepage": "https://github.com/josetaira"
+    }
+  ],
+  "license": [
+    "MIT"
+  ],
+  "ignore": [
+    "*.md",
+    "*.json",
+    "*.html"
+  ],
+  "keywords": [
+    "angular",
+    "angularjs",
+    "bootstrap",
+    "context",
+    "menu",
+    "contextmenu"
+  ],
+  "_release": "1.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.1",
+    "commit": "08b66bc3854ffe874b50fedd1597587059edc687"
+  },
+  "_source": "https://github.com/Templarian/ui.bootstrap.contextMenu.git",
+  "_target": "^1.2.0",
+  "_originalSource": "angular-bootstrap-contextmenu"
+}

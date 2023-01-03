@@ -1,0 +1,82 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_load_folder">
+  <div class="modal-dialog modal-dialog-centered modal-complete" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> {{language[language_default].folder}}: {{folder.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <i class="fas fa-question-circle"></i> {{language[language_default].folder_description}}
+        </p>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label for="">{{language[language_default].project_name}}:</label>
+              <input type="text" class="form-control" ng-model="folder.name" placeholder="{{language[language_default].project_name}}">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="">{{language[language_default].project_description}}:</label>
+              <textarea class="form-control" ng-model="folder.description" placeholder="{{language[language_default].project_description}}"
+                rows="3"></textarea>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">{{language[language_default].main_robot}}:</label>
+              <select class="form-control" ng-options="x.name as x.name for x in bots| filter:{type:'robot'}" ng-model="folder.main_robot">
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="">{{language[language_default].robot_children}}:</label>
+              <div class="row">
+                <div class="col-10">
+                  <select class="form-control" ng-options="x.name as x.name for x in bots| filter:{type:'robot'}"
+                    ng-model="children_b">
+                  </select>
+                </div>
+                <div class="col-2">
+                  <div class="btn btn-success" ng-click="addRobotChildren(children_b)"><i class="fa fa-plus"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="table-responsive">
+              <label for="">{{language[language_default].robot_children}}:</label>
+
+              <table class="table table-border table-sm">
+                <thead>
+
+                  <tr>
+                    <th>{{language[language_default].name}}</th>
+                    <th>{{language[language_default].action}}</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="r in robot_children">
+                    <td><a href="#!/{{r}}" target="_blank">{{r}}</a></td>
+                    <td>
+                      <button class="btn btn-sm btn-danger" ng-click=removeChildren($index)><i class="fa fa-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_select_application">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}</h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-12">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label>{{language[language_default].path}}</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" id="command_content_pathfile_"
+                                    ng-model="$parent.path">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" ng-click="searchFile('command_content_pathfile_')"><i
+                                            class="fa fa-spin fa-spinner" ng-show="loading"></i> {{language[language_default].search}}</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--<div class="col-6">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label>o seleccione una Variable</label>
+                            <select class="form-control" ng-model="$parent.command_father_op_var" ng-options="v.name for v in vars">
+                                <option name="" value="">-- Seleccione --</option>
+                            </select>
+                        </div>
+                    </div>-->
+                    <div class="col-6">
+
+                        <div class="form-group">
+                            <label>Asignar resultado a Variable</label>
+                            <div class="input-group">
+                                <select class="form-control" ng-model="$parent.command_father_op_getvar" ng-options="v.name for v in vars">
+                                    <option name="" value="">-- Seleccione --</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-info" type="button" ng-click="addVarModal('modal_select_application')"><i
+                                            class="fa fa-plus"></i> Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Modo de apertura:
+                                    <i class="fa fa-question-circle" ng-click="ayuda=true"></i>
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="0" ng-model="$parent.synchronous">
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Síncrona
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="1" ng-model="$parent.synchronous">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Asíncrona
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <p>
+                            <small>
+                                <b>Síncrona:</b> Se abrirá la aplicación y una vez termine
+                                su ejecución se continuará con las etapas del robot.
+                                <br>
+                                <b>Asíncrona:</b> Se abrirá la aplicación y no bloqueará
+                                las acciones del robot.
+                            </small>
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="addApplication()" class="btn btn-primary">Agregar comando</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

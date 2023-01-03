@@ -1,0 +1,10 @@
+<div class="titulo">
+    <img loading='lazy' ng-src="{{command_parent.icon}}" class="float-left icon-list">
+    <small class="command_description">{{command_parent.title}} <b>{{command.option | uppercase}}</b><br>
+        Url:<b class="command_text">{{command.data_.url}}</b> | 
+        {{language[language_default].mode}}:<b class="command_text">
+            <span ng-show="command.data_.tipo == 0">{{language[language_default].synchronous}}</span>
+            <span ng-show="command.data_.tipo == 1">{{language[language_default].asynchronous}}</span>
+        </b>
+    </small>
+</div>

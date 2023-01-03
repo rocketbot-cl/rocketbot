@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<style>
+    .calendar_minutes{        
+        width: 100%;        
+        font-size: .5rem;
+        position: relative;
+    }
+</style>
+</head>
+<body>
+<div class="container mt-4">
+    <table class="table table-bordered" id="calendar">
+        <thead>
+            <tr>
+                <td>Hora</td>
+                <td>Lunes</td>
+                <td>Martes</td>
+                <td>Miercoles</td>
+                <td>Jueves</td>
+                <td>Viernes</td>
+                <td>Sabado</td>
+                <td>Domingo</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+    <script>
+        let data = {"success":true,"data":[{"id":59,"name":"Process1","token":"V76YP5XTIVLMJLGZ","robot_id":null,"config":null,"client_id":1,"data":null,"status":0,"minutes":null,"sent_email":null,"email":null,"trigger":null,"created_at":"2021-09-09 09:28:15","updated_at":"2021-09-09 09:28:15","project_id":46,"form_id":null,"private":0,"instances":[{"id":36,"key":"6139fdf086860","name":"maquina1","disk":null,"cpu":null,"memory":null,"os":null,"type":0,"status":0,"last_ping":null,"client_id":1,"cron":null,"created_at":"2021-09-09 09:28:32","updated_at":"2021-09-09 09:28:32","actual_status":{"id":250,"instance_id":36,"robot_id":172,"status":0,"pid":null,"created_at":"2022-01-18 20:01:24","updated_at":"2022-01-18 20:01:24"},"last_execute":"Never","pivot":{"process_id":59,"instance_id":36,"backup":0,"minutes":0,"sent_email":null}}],"last_robot":{"id":172,"name":"Process1","user_id":1,"client_id":1,"cron":"{\"cron\":[{\"time\":\"21:06\",\"date\":\"2022-01-19\",\"repeat\":\"noRepeat\",\"timezone\":\"America\\\/Santiago\",\"enabled\":\"1\"}],\"diff\":3}","version":null,"version_rocketbot":null,"robot":"devnoc_clients\/1\/project\/46\/process\/59\/robot\/rocket.bot","md5":"160cdba32b64942e0390abe6b7bbee57","comment":null,"type":1,"status":0,"process_id":59,"start_bot":"test","created_at":"2022-01-18 17:01:24","updated_at":"2022-01-18 14:01:46"},"project_name":"project1","backup":null,"project_token":"5VJFVLNGNNLLL2J5","client":{"id":1,"name":"Rocketbot","owner":null,"parent":null,"type":0,"status":0,"created_at":"2021-06-10 15:13:38","updated_at":"2021-06-10 15:13:38"},"project":{"id":46,"name":"project1","token":"5VJFVLNGNNLLL2J5","client_id":1,"description":null,"documentation":0,"created_at":"2021-09-09 09:28:03","updated_at":"2021-09-09 09:28:03"},"users":[],"robots":[{"id":172,"name":"Process1","user_id":1,"client_id":1,"cron":"{\"cron\":[{\"time\":\"21:06\",\"date\":\"2022-01-19\",\"repeat\":\"noRepeat\",\"timezone\":\"America\\\/Santiago\",\"enabled\":\"1\"}],\"diff\":3}","version":null,"version_rocketbot":null,"robot":"devnoc_clients\/1\/project\/46\/process\/59\/robot\/rocket.bot","md5":"160cdba32b64942e0390abe6b7bbee57","comment":null,"type":1,"status":0,"process_id":59,"start_bot":"test","created_at":"2022-01-18 17:01:24","updated_at":"2022-01-18 14:01:46"}]},{"id":185,"name":"procesos2","token":"SXYPX9ESQEJL9KRS","robot_id":170,"config":null,"client_id":1,"data":null,"status":0,"minutes":null,"sent_email":null,"email":null,"trigger":null,"created_at":"2022-01-18 16:59:26","updated_at":"2022-01-18 13:59:26","project_id":46,"form_id":null,"private":0,"instances":[{"id":36,"key":"6139fdf086860","name":"maquina1","disk":null,"cpu":null,"memory":null,"os":null,"type":0,"status":0,"last_ping":null,"client_id":1,"cron":null,"created_at":"2021-09-09 09:28:32","updated_at":"2021-09-09 09:28:32","actual_status":{"id":250,"instance_id":36,"robot_id":172,"status":0,"pid":null,"created_at":"2022-01-18 20:01:24","updated_at":"2022-01-18 20:01:24"},"last_execute":"Never","pivot":{"process_id":185,"instance_id":36,"backup":0,"minutes":0,"sent_email":null}}],"last_robot":{"id":170,"name":"procesos2","user_id":1,"client_id":1,"cron":"{\"cron\":[{\"time\":\"16:00\",\"date\":\"2022-01-18\",\"repeat\":\"daily\",\"timezone\":\"America\\\/Santiago\",\"enabled\":\"1\"}],\"diff\":3}","version":null,"version_rocketbot":null,"robot":"devnoc_clients\/1\/project\/46\/process\/185\/robot\/rocket.bot","md5":"160cdba32b64942e0390abe6b7bbee57","comment":null,"type":1,"status":0,"process_id":185,"start_bot":"test","created_at":"2022-01-18 16:59:26","updated_at":"2022-01-18 14:00:07"},"project_name":"project1","backup":null,"project_token":"5VJFVLNGNNLLL2J5","client":{"id":1,"name":"Rocketbot","owner":null,"parent":null,"type":0,"status":0,"created_at":"2021-06-10 15:13:38","updated_at":"2021-06-10 15:13:38"},"project":{"id":46,"name":"project1","token":"5VJFVLNGNNLLL2J5","client_id":1,"description":null,"documentation":0,"created_at":"2021-09-09 09:28:03","updated_at":"2021-09-09 09:28:03"},"users":[],"robots":[{"id":170,"name":"procesos2","user_id":1,"client_id":1,"cron":"{\"cron\":[{\"time\":\"16:00\",\"date\":\"2022-01-18\",\"repeat\":\"daily\",\"timezone\":\"America\\\/Santiago\",\"enabled\":\"1\"}],\"diff\":3}","version":null,"version_rocketbot":null,"robot":"devnoc_clients\/1\/project\/46\/process\/185\/robot\/rocket.bot","md5":"160cdba32b64942e0390abe6b7bbee57","comment":null,"type":1,"status":0,"process_id":185,"start_bot":"test","created_at":"2022-01-18 16:59:26","updated_at":"2022-01-18 14:00:07"}]},{"id":186,"name":"proceso33","token":"9BIGZGAZNMGPLUCG","robot_id":171,"config":null,"client_id":1,"data":null,"status":0,"minutes":null,"sent_email":null,"email":null,"trigger":null,"created_at":"2022-01-18 17:00:52","updated_at":"2022-01-18 14:00:52","project_id":46,"form_id":null,"private":0,"instances":[],"last_robot":{"id":171,"name":"proceso33","user_id":1,"client_id":1,"cron":null,"version":null,"version_rocketbot":null,"robot":"devnoc_clients\/1\/project\/46\/process\/186\/robot\/rocket.bot","md5":"160cdba32b64942e0390abe6b7bbee57","comment":null,"type":1,"status":0,"process_id":186,"start_bot":"test","created_at":"2022-01-18 17:00:52","updated_at":"2022-01-18 17:00:52"},"project_name":"project1","backup":null,"project_token":"5VJFVLNGNNLLL2J5","client":{"id":1,"name":"Rocketbot","owner":null,"parent":null,"type":0,"status":0,"created_at":"2021-06-10 15:13:38","updated_at":"2021-06-10 15:13:38"},"project":{"id":46,"name":"project1","token":"5VJFVLNGNNLLL2J5","client_id":1,"description":null,"documentation":0,"created_at":"2021-09-09 09:28:03","updated_at":"2021-09-09 09:28:03"},"users":[],"robots":[{"id":171,"name":"proceso33","user_id":1,"client_id":1,"cron":null,"version":null,"version_rocketbot":null,"robot":"devnoc_clients\/1\/project\/46\/process\/186\/robot\/rocket.bot","md5":"160cdba32b64942e0390abe6b7bbee57","comment":null,"type":1,"status":0,"process_id":186,"start_bot":"test","created_at":"2022-01-18 17:00:52","updated_at":"2022-01-18 17:00:52"}]}]}
+        let calendar_body = document.getElementById('calendar').getElementsByTagName('tbody')[0];
+
+        
+        /* hours in a day */
+        let hours = 24;
+        /* minimal minutes in an hour */
+        let minutes = 60/5;
+        let days = 7;
+        for(var process_i = 0 ; process_i < data.data.length ; process_i++){
+
+            var process_data = data.data[process_i];
+            var sheet = document.createElement('style')
+            sheet.innerHTML = "."+process_data.name+" {background-color: "+getRandomColor()+"; outline: 1px solid #cacaca; border-radius: 3px;}";
+            document.body.appendChild(sheet);
+        }
+        for(var i = 0; i < hours; i++) {
+            var newRow = calendar_body.insertRow();
+            for(t = 0; t <= days; t++){
+                var newCell = newRow.insertCell();
+                if(t == 0){
+                    var mi = 0
+                    for(m = 0; m < minutes; m++){
+                        
+                        var div = document.createElement("div");
+                        div.className = "calendar_minutes";
+                        div.innerHTML = i+":"+ (mi < 10 ? "0"+mi : mi);
+                        div.id = i+"_"+m;
+                        newCell.appendChild(div);
+                        mi += 5;
+                    }
+                    
+                }
+                else{
+                    for(var process_i = 0 ; process_i < data.data.length ; process_i++){
+
+                        var process_data = data.data[process_i];
+                        let cron_data = JSON.parse(process_data.last_robot.cron);
+
+                        console.log(cron_data)
+                        if(cron_data){
+                            for(var cron_data_i = 0; cron_data_i < cron_data.cron.length; cron_data_i++){
+                                console.log(cron_data.cron[cron_data_i]);
+                                var date = new Date(cron_data.cron[cron_data_i].date + " " + cron_data.cron[cron_data_i].time);
+                                var date_day = date.getDay();
+                                var date_hour = date.getHours();
+                                var date_minutes = date.getMinutes();
+                                console.log(date_day, date_hour, date_minutes);
+                                if((date_day == t || cron_data.cron[cron_data_i].repeat == 'daily')&& date_hour == i ){
+                                    var div = document.createElement("div");
+                                    div.className = "calendar_minutes " + process_data.name;
+                                    div.innerHTML = process_data.name;
+                                    div.id = i+"_"+m;
+                                    newCell.appendChild(div);
+                                    console.log("---------")
+                                }                        
+                            }
+                        }
+                    }
+                }
+                
+                newCell.className = "hour";
+                newCell.id = "hour_" + i + "_" + t;        
+            }
+        }
+        
+
+        function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color+"40";
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Launch</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- Fonts Awesome -->
+  <link rel="stylesheet" href="/bower_components/components-font-awesome/css/all.css" />
+  <!-- <link rel="stylesheet" href="styles/main.css?v=20200920"> -->
+  <link rel="stylesheet" href="../../styles/main.css?v=20200920">
+</head>
+
+<body>
+  
+  <div id="app">
+    <h4 class="p-2">
+      <i class="fas fa-external-link-alt"></i> Robot Shortcut
+    </h4>
+    <small>Create a shortcut to launch the robot in attended mode</small>
+    <hr class="hr-rocket">
+    <div class="p-2 mb-4 pb-4 scroll-y">
+      <div class="form-group">
+        <label>Main robot</label>
+        <input class="form-control form-control-sm" v-model="robot_name">
+      </div>
+      <div class="form-group">
+        <label>Path to database</label>      
+        <div class="input-group">  
+          <input class="form-control form-control-sm" v-model="db">
+          <button @click="searchFile" class="btn btn-primary btn-sm"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Path to Rocketbot binary</label>      
+        <div class="input-group">  
+          <input class="form-control form-control-sm" v-model="bin">
+          <button @click="searchFileRocketbot" class="btn btn-primary btn-sm"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Icon</label>      
+        <div class="input-group">  
+          <input class="form-control form-control-sm" v-model="icon">
+          <button @click="searchFileIcon" class="btn btn-primary btn-sm"><i class="fa fa-search"></i></button>
+        </div>
+        <small>ICO to Windows or ICNS for MacOs</small>
+      </div>
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="checkbox" v-model="without_logs" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Without logs
+        </label>
+      </div>
+      <div class="btn btn-danger btn-block mt-2" @click="generate">Generate <i v-show="loading" class="fa fa-spin fa-spinner"></i> </div>
+    </div>
+  </div>
+  
+  <script src="../../createlauncher/lodash.min.js"></script>
+  <script src="../../createlauncher/vue.min.js"></script>
+  <script>
+    
+    var app = new Vue({
+      el: "#app",
+      data: {
+        robot_name:"{{robot_name}}",
+        db : "{{db}}",
+        bin:"{{binary}}",
+        without_logs: false,
+        loading: false,
+        icon: ""
+      },
+      methods: {
+        searchFile(){
+          fetch('/getfile')
+          .then(response => response.text())
+          .then(data => {
+            this.db = data;
+          });
+        },
+        searchFileRocketbot(){
+          fetch('/getfile')
+          .then(response => response.text())
+          .then(data => {
+            this.bin = data;
+          });
+        },
+        searchFileIcon(){
+          fetch('/getfile')
+          .then(response => response.text())
+          .then(data => {
+            this.icon = data;
+          });
+        },
+        generate(){
+          var data = new FormData();
+          data.append("db",this.db)
+          data.append("name",this.robot_name);
+          data.append("withoutlogs",this.without_logs);
+          data.append("binary", this.bin)
+          data.append("icon", this.icon)
+          this.loading = true;
+          fetch("../generate",
+          {
+            method: "POST",
+            body: data
+          })
+          .then(response => response.text())
+          .then(data => {
+            console.log(data)
+            alert("Robot Shortcut created on your Desktop folder")
+            this.loading = false;
+          });
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

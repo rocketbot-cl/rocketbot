@@ -1,0 +1,38 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_import_vars">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3>{{language[language_default].import_variable}}</h3>
+                <hr class="hr-rocket">
+                <h5>{{language[language_default].import_variable_help}}</h5>
+                <div class="mt-3 mb-3">
+                <div class="custom-control custom-checkbox " >
+                    <input type="checkbox" class="custom-control-input" id="alldataImp" checked>
+                    <label class="custom-control-label" for="alldataImp">
+                        {{language[language_default].include_data}}
+                    </label>
+                  </div>
+                  <div class="custom-control custom-checkbox " >
+                    <input type="checkbox" class="custom-control-input" id="replaceImp" checked>
+                    <label class="custom-control-label" for="replaceImp">
+                        {{language[language_default].replace_imp}}
+                    </label>
+                  </div>
+                  </div>
+
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="importVars()" class="btn btn-primary">{{language[language_default].import_variable}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

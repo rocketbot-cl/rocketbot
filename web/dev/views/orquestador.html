@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-header can-click" ng-click="setMainDefault()">
+        Configuración de orquestador
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-plug"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" placeholder="Url de orquestador" ng-model="url">
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" placeholder="Usuario" ng-model="user">
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-key"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" placeholder="Contraseña" ng-model="password">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-group">
+                    <button class="btn btn-info btn-block" ng-click="testOrchestator()">
+                        <i class="fa fa-plug" ng-show="!loading"></i><i class="fa fa-spin fa-spinner" ng-show="loading"></i> Probar</button>
+                </div>
+            </div>
+            <div class="col-12">
+                <div  class="alert" ng-show="orch!=0" role="alert" ng-class="{'alert-success': orch == 1, 'alert-info': orch == 0, 'alert-danger': orch == -1}">
+                    <!--<h4 class="alert-heading">
+                        <i class="far" ng-class="{'fa-smile': orch == 1, 'fa-meh': orch == 0, 'fa-frown': orch == -1}"></i>
+                    </h4>-->
+                    <small>{{messageTestOrchestator}}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" ng-click="orchestatorSave()"><i class="fa fa-spin fa-spinner" ng-show="loading"></i> <i class="fa fa-save"></i> Guardar Configuración</button>
+    </div>
+</div>

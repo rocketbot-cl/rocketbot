@@ -1,0 +1,351 @@
+<ng-include src="'views/header.html'"></ng-include>
+<div class="content">
+  <div class="m_row">
+    <div class="menu">
+      <div class="">
+        <div class="container-fluid">
+          
+          <div class="p-2">
+            <div class="form-group" >
+              <label ng-bind="language[language_default].robot_name + ':'"></label>
+              <input type="text" placeholder="{{language[language_default].robot_name}}" class="form-control"
+              ng-model="$parent.robot_name" pattern="^[-a-zA-Z0-9@\.+_]+$" required autocomplete="off" ng-class="{'is-invalid':name_no_valid}">
+              <small ng-show="name_no_valid" class="text-muted">a-zA-Z0-9 without spaces</small>
+            </div>
+            
+            <div class="ml-1 col-md-12">
+              <div class="form-group">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" ng-model="mode_live"
+                ng-change="onLive()">
+                <label data-toggle="tooltip" data-placement="bottom" title="{{language[language_default].live_mode_help}}"
+                class="form-check-label" for="exampleCheck1"><span
+                ng-bind="language[language_default].live_mode"></span>
+                <i class="fa fa-question-circle"></i>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control search-input"
+            placeholder="{{language[language_default].filter_command}}" ng-model="$parent.filtro_comandos"
+            id="search_command" name="search_command">
+          </div>
+        </div>
+        <ng-include src="'views/menu_list.html'"></ng-include>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="tabla">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="ml-1 nav-item nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" role="tab"
+          aria-controls="nav-home" aria-selected="true">
+          <img loading='lazy' src="images/header/events.svg"> {{language[language_default].events}}
+        </a>
+        <a class="nav-item nav-link" id="nav-profile-tab3" data-toggle="tab" data-target="#nav-profile" role="tab"
+        aria-controls="nav-profile" aria-selected="false">
+        <img loading='lazy' src="images/header/variables.svg"> {{language[language_default].variables}}
+      </a>
+      <!--<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-orquestator" role="tab" aria-controls="nav-profile"
+        aria-selected="false">
+        <i class="fa fa-plug"></i> Orquestador
+      </a>-->
+      <a class="nav-item nav-link" id="nav-profile-robot" data-toggle="tab" data-target="#nav-robot" role="tab"
+      aria-controls="nav-profile" aria-selected="false">
+      <img loading='lazy' src="images/header/robots.svg">
+      Robot
+    </a>
+    <a class="nav-item nav-link" id="nav-profile-tab4" data-toggle="tab" data-target="#nav-save" role="tab"
+    aria-controls="nav-profile" aria-selected="false">
+    <i class="fa fa-list"></i>
+    {{language[language_default].saved_robots}}
+  </a>
+  
+  
+</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div>
+      <div ng-click="apply_(); scale_command(0)" class="float-right pl-2 pr-2 can-click">
+        <i class="fa fa-sync-alt"></i>
+      </div>
+      <div ng-click="scale_command(1)" class="float-right pl-2 pr-2 can-click">
+        <i class="fa fa-search-minus"></i>
+      </div>
+      <div ng-click="scale_command(-1)" class="float-right pl-2 pr-2 can-click">
+        <i class="fa fa-search-plus"></i>
+      </div>
+      <div class="form-check float-right pl-2 pr-2 pt-0 pb-0 mt-0">
+        <input class="form-check-input" type="checkbox" value="" id="check_screenshot" ng-model="screenshot">
+        <label class="form-check-label" for="check_screenshot">
+          {{language[language_default].screenshot}}
+        </label>
+      </div>
+      
+    </div>
+    <div class="container-fluid command-container scrollbar p-3"  id="command-list" onmouseenter="update_scroll()">
+      
+      <ng-include src="'views/tabla_comandos.html?v='+ version + anti_cache_id"></ng-include>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    
+    <div class="container-fluid command-container p-3">
+      <ng-include src="'views/vars.html?v='+ version + anti_cache_id"></ng-include>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-orquestator" role="tabpanel" aria-labelledby="nav-profile-tab">
+    
+    <div class="container-fluid command-container">
+      <ng-include src="'views/orquestador.html?v='+ version + anti_cache_id"></ng-include>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-robot" role="tabpanel" aria-labelledby="nav-profile-tab">
+    
+    <div class="container-fluid command-container">
+      <ng-include src="'views/robot.html?v='+ version + anti_cache_id"></ng-include>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-save" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="container-fluid command-container">
+      <ng-include src="'views/savebot.html?v='+ version + anti_cache_id"></ng-include>
+    </div>
+  </div>
+  <div class="tab-pane fade " id="nav-about" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="container-fluid command-container">
+      <div class="card">
+        <div class="card-body">
+          <img loading='lazy' src="images/ISO_Rojo.svg" class="img-preview col-4 text-center offset-4 mb-5">
+          <div class="row">
+            
+            <div class="col-6">
+              {{language[language_default].expire}}: {{caduca}}<br>
+              {{language[language_default].ready_production}}: {{production}}
+              
+            </div>
+            <div class="col-4">
+              {{language[language_default].version}}: {{version}}
+            </div>
+            <div class="col-12">
+              <hr>
+              <code>
+                <small>
+                  Rocketbot Studio / Rocketbot Play / Rocketbot Orchestrator Center<br>
+                  Copyright 2021 Rocketbot.
+                </small>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="data">
+
+<div class="row">
+  
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab-extras-d" role="tablist">
+      <a class="ml-1 nav-item nav-link active" id="nav-home-tab-a" data-toggle="tab" data-target="#nav-helpers" role="tab" aria-controls="nav-home" aria-selected="true">
+        <img loading='lazy' class="tree-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjIuMywgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDQ4IDQ4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OCA0ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOm5vbmU7c3Ryb2tlOiMyNjMyMzg7c3Ryb2tlLXdpZHRoOjIuNzE1NDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7fQo8L3N0eWxlPgo8Zz4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00NC4zLDkuM2wtMTEuNSwzLjZjMi43LDAuOCw1LjIsMi4zLDcuMyw0LjNjMSwwLjksMS44LDEuOSwyLjQsM2wzLjItOS41YzAuMi0wLjYtMC4xLTEuMi0wLjctMS40CgkJQzQ0LjgsOS4yLDQ0LjUsOS4yLDQ0LjMsOS4zeiIvPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTMuNyw5LjNsMTEuNiwzLjVjLTIuNywwLjgtNS4yLDIuMy03LjMsNC4zQzcsMTgsNi4xLDE5LDUuNSwyMC4ybC0zLjEtOS41QzIuMiwxMC4xLDIuNSw5LjUsMyw5LjMKCQlDMy4yLDkuMiwzLjUsOS4yLDMuNyw5LjN6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjQsMjQuNWMwLTUuNC00LjMtOS44LTkuNy05LjhjMCwwLDAsMCwwLDBjLTIuNSwwLTQuOSwwLjktNi43LDIuNmMzLjUtMy42LDkuNS02LDE2LjQtNnMxMywyLjQsMTYuNCw2CgkJYy0xLjgtMS43LTQuMi0yLjctNi43LTIuNkMyOC40LDE0LjcsMjQsMTkuMSwyNCwyNC41QzI0LDI0LjUsMjQsMjQuNSwyNCwyNC41eiIvPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTI0LDI0LjVjMCwzLjctMi4xLDctNS4zLDguN2w1LjMsNi40bDUuMy02LjRDMjYuMSwzMS42LDI0LDI4LjIsMjQsMjQuNXoiLz4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNCwyNC41YzAsNS40LTQuNCw5LjgtOS44LDkuOHMtOS44LTQuNC05LjgtOS44czQuNC05LjgsOS44LTkuOEMxOS42LDE0LjgsMjQsMTkuMSwyNCwyNC41CgkJQzI0LDI0LjUsMjQsMjQuNSwyNCwyNC41eiIvPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTI0LDI0LjVjMCw1LjQsNC40LDkuOCw5LjgsOS44czkuOC00LjQsOS44LTkuOHMtNC40LTkuOC05LjgtOS44QzI4LjQsMTQuOCwyNCwxOS4xLDI0LDI0LjUKCQlDMjQsMjQuNSwyNCwyNC41LDI0LDI0LjV6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTYuNCwyNC41YzAsMS4yLTEsMi4yLTIuMiwyLjJzLTIuMi0xLTIuMi0yLjJjMC0xLjIsMS0yLjIsMi4yLTIuMmgwQzE1LjQsMjIuNCwxNi40LDIzLjMsMTYuNCwyNC41eiIvPgoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTM1LjksMjQuNWMwLDEuMi0xLDIuMi0yLjIsMi4yYy0xLjIsMC0yLjItMS0yLjItMi4yYzAtMS4yLDEtMi4yLDIuMi0yLjJjMCwwLDAsMCwwLDAKCQlDMzUsMjIuNCwzNS45LDIzLjMsMzUuOSwyNC41QzM1LjksMjQuNSwzNS45LDI0LjUsMzUuOSwyNC41eiIvPgo8L2c+Cjwvc3ZnPgo=">
+        {{language[language_default].inspector}}
+      </a>
+      <a class="nav-item nav-link" id="nav-profile-tab3-2" data-toggle="tab" data-target="#nav-viewers" role="tab" aria-controls="nav-profile" aria-selected="false">
+        <img loading='lazy' class="tree-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjIuMywgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDQ4IDQ4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OCA0ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOm5vbmU7c3Ryb2tlOiMyNjMyMzg7c3Ryb2tlLXdpZHRoOjIuNztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjQsMzcuMkMxMS44LDM3LjIsMiwyNCwyLDI0czkuOS0xMy4yLDIyLTEzLjJTNDYsMjQsNDYsMjRTMzYuMiwzNy4yLDI0LDM3LjJ6Ii8+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNCwyOS41YzMsMCw1LjUtMi41LDUuNS01LjVTMjcsMTguNSwyNCwxOC41UzE4LjUsMjEsMTguNSwyNGwwLDBDMTguNSwyNywyMSwyOS41LDI0LDI5LjV6Ii8+Cjwvc3ZnPgo=">
+        
+        {{language[language_default].visor}}
+      </a>
+    </div>
+  </nav>
+  
+  
+  <!--<label>{{language[language_default].event_view}}</label>
+    <small>{{index_pos == -1 ? 0: index_pos}}</small>-->
+    <div class="tab-content" id="myTabdsContent">
+      <div class="tab-pane fade show active " id="nav-helpers" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="container-fluid">      
+          <!--<div class="progress mt-2" style="height: 3px;">
+            <div class="progress-bar" role="progressbar" style="width: {{((100/commands.length)*index_pos)||1}}%;"
+            aria-valuenow="{{((100/commands.length)*index_pos)||0}}" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>-->
+          
+          <div class="mt-2 p-2">
+            <div class="form-group">
+              <label>{{language[language_default].search}}</label>
+              <div class="input-group mr-1">
+                <input class="form-control rounded mt-1 mb-1 " ng-model="search_command_list" ng-change="searchView(0)"
+                placeholder="{{language[language_default].search}}">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary rounded m-1" ng-click="searchView(1)" type="button"><i class="fas fa-chevron-down"></i></button>
+                  <button class="btn btn-outline-secondary rounded m-1" ng-click="searchView(-1)"type="button"><i class="fas fa-chevron-up"></i></button>
+                </div>
+              </div>
+              <small class="form-text text-muted">{{language[language_default].result}}{{search_results}} </small>
+            </div>
+            
+            
+            <!--<div class="card-body" ng-show="edit_vars">
+              <small><i class="fa fa-lightbulb"></i> {{language[language_default].for_edit}}</small>
+            </div>-->
+            
+            <ng-include src="'views/edit_command_default.html?v='"+ version + anti_cache_id></ng-include>
+            <div class="scroll-y mt-4 " style="height: calc(100vh - 334px);">
+              <label>Addons:</label>
+              <div ng-repeat="addon in addons" class="mb-2 text-left w-100" >
+                <div  ng-bind-html="addon.html" compile-template ng-click="viewViewer(addon)" >
+                  
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-pane" id="nav-viewers" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="container-fluid">      
+          <iframe class="w-100 mt-1 pb-1" style="height: calc(100vh - 140px);border: 1px dotted #cacaca;" name="visor1"></iframe>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <img loading='lazy' src="images/Powered.svg" class="powerby">
+  
+  
+  <div class="modal fade" id="newRobotModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa fa-magic"></i> New Robot</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="card-title">New blank robot</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Create a new robot on {{file_path||bots[0].db}}</h6>
+          <div class="row">
+            <div class="col-12">
+              <div class="card-text">
+                <div class="form-group">
+                  <label>Name:</label>
+                  <input class="form-control" ng-model="new_bot_name" ng-change="isValidBotName(this,new_bot_name)">
+                  <small class="text-danger" ng-show="!validBotName">
+                    This bot name is invalid.
+                </small>
+                </div>
+                <div class="form-group">
+                  <label>Description:</label>
+                  <textarea class="form-control" ng-model="new_bot_description"></textarea>
+                </div>
+              </div>
+            </div>                  
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ng-click="createBot()" ng-disabled="!new_bot_name || !validBotName" >Create</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="newRoboFiletModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fa fa-magic"></i> New Robot</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5 class="card-title">New blank robot</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Create a new robot or add one to an existing project</h6>
+          <div class="row">
+            <div class="col-6">
+              <div class="card-text">
+                <div class="form-group">
+                  <label>Name:</label>
+                  <input class="form-control" ng-model="new_bot_name">
+                </div>
+                <div class="form-group">
+                  <label>Description:</label>
+                  <textarea class="form-control" ng-model="new_bot_description"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>Project DB file<small>(default robot.db) or <a class="link"  href="" ng-click="getNewDBFile()" >Create new</a></small>:</label>
+                <div class="input-group mb-3">
+                  <input class="form-control"   ng-model="new_bot_file">
+                  <div class="input-group-append bg-primary">
+                    <button class=" btn btn-primary" ng-click="getDBFile()" >Select File</button>
+                  </div>
+                </div>
+              </div>
+              <p class="card-text">
+                <i class="fa fa-info-circle"></i> Select an existing project file or a new one will be created allowing multiple robots to be stored in the same project.
+                
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ng-click="createBot()" >Create</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-include src='"views/modal_select_1.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_add_var.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_select_var.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_select_file.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_add_logical.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_select_getvar.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_select_getvar_code.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_crop.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/email_send.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/email_configuracion.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_connect_app.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_url.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_vars_set.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modalnavigator.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_select_application.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_archivos.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_delete_bot.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_select_popup_info.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_download_image.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_connect_url.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_archivos_action.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_pdf.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_pdf_image.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_email_read.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_dashboard_login.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_dashboard_getdata.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_archivos_xlsx.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_config_db.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_db_query.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_set_excelcell.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_app_command.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_save_file.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_module.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_load_folder.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_waitobject_web.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_select_robot.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_export_vars.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_import_vars.html?v="+ version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_markdown.html?v=" + version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_generic.html?v=" + version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_export_bots.html?v=" + version + anti_cache_id'></ng-include>
+  <ng-include src='"views/modal_change_description.html?v="+ version + anti_cache_id'></ng-include>

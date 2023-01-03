@@ -1,0 +1,41 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_export_bots">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3>{{language[language_default].export_variable}}</h3>
+                <hr class="hr-rocket">
+                <h5>{{language[language_default].export_bot_help}}</h5>
+
+                <div class="custom-control custom-checkbox mt-3 mb-3">
+                    <input type="checkbox" class="custom-control-input" id="includeModules">
+                    <label class="custom-control-label" for="includeModules">
+                        {{language[language_default].include_modules}}
+                    </label>
+                </div>
+                <div class="custom-control custom-checkbox mt-3 mb-3">
+                    <input type="checkbox" class="custom-control-input" id="exportAsProduction">
+                    <label class="custom-control-label" for="exportAsProduction">
+                        {{language[language_default].export_production}}
+                    </label>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="exportBot()"
+                    class="btn btn-primary"
+                    ><i class=" fas"
+                    ng-class="{'fa-spin fa-spinner': loading }"></i> {{language[language_default].save + " / " + language[language_default].export_variable}}</button>
+                <button type="button" class="btn btn-secondary"
+                    data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

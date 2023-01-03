@@ -1,0 +1,33 @@
+<span>
+  <img loading='lazy' style="display: none" onload="this.style.display='block'" ng-src="{{command_parent.icon}}" class="icon-list">
+  <small>{{command_parent.title}} <br>
+    <div class="row">
+
+      <div class="col-3">
+        <small>{{language[language_default].image_search}}:</small><br>
+        <img loading='lazy' class="img-mini-preview img-thumbnail" ng-src="{{command.extra_data}}">
+      </div>
+      <div class="col-9">
+        <span>{{command_parent.title_options}}: <b>{{command.option}}</b>
+          <br>
+          {{language[language_default].mouse_button}}:
+          <b ng-show="command.data_['click']=='simple'">{{language[language_default].left}}</b>
+          <b ng-show="command.data_['click']=='doble'">{{language[language_default].double_left}}</b>
+          <b ng-show="command.data_['click']=='derecho'">{{language[language_default].right}}</b>
+          <b ng-show="command.data_['click']=='derecho_doble'">{{language[language_default].double_right}}</b>
+          <b ng-show="command.data_['click']=='medio'">{{language[language_default].middle}}</b>
+          <br>
+          {{language[language_default].accuracy}}: <b>{{command.data_['accuracy']}}</b><br>
+          {{language[language_default].seconds}}: <b>{{command.data_['minSearchTime']}}</b>
+          <br>
+
+        </span>
+
+
+</span>
+</div>
+</div>
+<div class="clear-fix"></div>
+<span ng-show="command.getvar"><br>Dest: <i>{{command.getvar}}</i></small>
+  </small>
+</span>

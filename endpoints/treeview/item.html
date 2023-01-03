@@ -1,0 +1,14 @@
+<div class="can-click position-relative mt-1" ng-class="{'text-muted line-through': item.disabled}" ng-init="item.viewHide=false" >
+    <div ng-init="ff = getFatherData(item)" ng-click="view_item(item)">
+        <img loading='lazy' src="{{ff.icon}}" style="width:18px"> {{ff.title['en']||ff.title||("Mod: "+ff.module_name+" "+ ff.es.title)}}  
+        <small class="bg-warning pl-2 pr-2 rounded" ng-show="item.father=='execRocketBotDB'" ng-click="viewBot(item.command)"> {{item.command}} <i class="fa fa-external-link-alt"></i></small>
+        <small class="description bg-success text-white" ng-show="viewData && item.command && item.father!='execRocketBotDB'">{{item.command}}</small>   
+        <small class="description" ng-show="viewDescription && item.description">{{item.description}} </small>
+        <small class="description time" ng-show="viewTime">{{item.time  | humanize}}</small>
+
+        <div class="btn  btn-sm btn-view-hide"  ng-click="item.viewHide = !item.viewHide; item_screenshot[item.id] = item.viewHide" ng-show=" viewScreenshot && item.viewHide"><i class="fa fa-eye"></i></div>
+        <div class="btn btn-outline-danger position-absolute float-right rounded btn-sm btn-view-hide" style="right:0; top:24px" ng-click="item.viewHide = !item.viewHide;  item_screenshot[item.id] = item.viewHide" ng-show="viewScreenshot && !item.viewHide"><i class="fa fa-eye-slash"></i></div>
+
+        <img class="img-fluid img-thumbnail mb-4" onerror='this.style.display = "none"' loading='lazy' src="../screenshot/{{robot_name}}/{{item.id}}.png" ng-show="viewScreenshot && !item.viewHide">   
+    </div>   
+</div>

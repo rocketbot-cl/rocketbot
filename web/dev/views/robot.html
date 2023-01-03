@@ -1,0 +1,132 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>{{language[language_default].name}}:</label>
+                    <input class="form-control" ng-model="$root.robot_name" pattern="^[-a-zA-Z0-9@\.+_]+$" ng-class="{'is-invalid':name_no_valid}">
+                    <small ng-show="name_no_valid" class="text-muted">a-zA-Z0-9 without spaces</small>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label>{{language[language_default].version}}:</label>
+                    <input class="form-control" ng-model="$root.robot_version" placeholder="0.0.1">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label>{{language[language_default].variable_type}}:</label>
+                    <select class="form-control" ng-model="$root.robot_type">
+                        <option value="process" default>Process</option>
+                        <option value="main">Main</option>
+                        <option value="function" >Function</option>
+                        <option value="flow">Flow</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>{{language[language_default].description}}:</label>
+            <textarea class="form-control" ng-model="$root.robot_description"></textarea>
+        </div>
+        <p>
+            {{language[language_default].path}}: <b>{{file_path||bots[0].db}}</b>
+        </p>
+        <h6 class="card-title">{{language[language_default].robots_in}} <b>"{{$root.robot_name}}"</b>:</h6>
+        <hr class="hr-rocket">
+        <div class="card-group">
+            <table class="table table-striped table-hover table-sm table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>
+                            {{language[language_default].name}}
+                        </th>
+                        <th>
+                            {{language[language_default].variable_type}}
+                        </th>
+                        <th>
+                            {{language[language_default].version}}
+                        </th>
+                        <th>
+                            {{language[language_default].last_update}}
+                        </th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in $root.bots_in_bot">
+                        <td>{{$index + 1}}</td>
+                        <td>
+                            <a class="rocket-text ml-2 font-weight-normal mb-1"  href="/#!/edit/{{item.name}}/{{bot_type}}/{{path_encode}}" target="_blank"> <span> <i class="fa fa-rocket"></i> {{item.name}}</span></a>
+                            <small class="text-capitalize text-muted" ng-if="item.data.description"><br>"{{item.data.description}}"</small>
+                        </td>
+                        <td class="text-capitalize">
+                            {{item.data.father}}
+                        </td>
+                        <td>
+                            {{item.data.version}}
+                        </td>
+                        <td>
+                            <small>{{item.data.created_at}}</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </div>
+        <hr>
+        <h6 class="card-title">{{language[language_default].modules_in_robot}} <b>"{{$root.robot_name}}"</b>:</h6>
+        <hr class="hr-rocket">
+        <div class="card-group">
+            <table id="modules_in_bot" class="table table-striped table-hover table-sm table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>
+                            {{language[language_default].name}}
+                        </th>
+                        <th>
+                            {{language[language_default].version}} ( {{language[language_default].installed}} )
+                        </th>
+                        <th>
+                            {{language[language_default].version}} 
+                        </th>
+                        <th>
+                            Status
+                        </th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="mod in modules_in_bot">
+                        <td>{{$index + 1}}</td>
+                        <td>
+                            <a class="rocket-text ml-2 font-weight-normal mb-1"  href="#" target="_blank"> <span> <img loading="lazy" class="tree-icon" ng-src="{{(modules[0].children | filter:{name:mod.name})[0].icon}}"> {{mod.name}}</span></a>
+                        </td>
+                        <td>
+                            {{mod.version}}
+                        </td>
+                        <td>
+                            {{mod.last_version}}
+                        </td>
+                        <td>
+                            <button class="btn btn-sm" ng-class="mod.status == 'Installed' ? 'btn-success' : 'btn-warning'" ng-click="installMod(mod)" ng-disabled="mod.status == 'Installed'">{{mod.status}}</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </div>
+        <hr>
+        <div class="">
+            <button class="btn btn-sm btn-success rounded ng-binding" data-toggle="modal" 
+            data-target="#modal_export_bots">
+                {{language[language_default].export_sub}}
+            </button>
+            <button class="btn btn-sm btn-info rounded" ng-click="saveCommands()">
+                <span ng-bind="language[language_default].export"></span>
+            </button>
+    
+        </div>
+    </div>
+
+</div>

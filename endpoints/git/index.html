@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Status</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- Fonts Awesome -->
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/all.css" />
+    <link rel="stylesheet" href="/styles/main.css">
+
+  </head>
+  <body>
+    
+    <div id="app">
+      <div class="form-group p-2">
+        <h4 for="">
+          <img loading='lazy' class='tree-icon' style="width:25px;" src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBkPSJNNDMzLjEsMTE3LjhjLTUuNi0xMy4xLTE0LjgtMjQuMy0yNi41LTMyLjJjLTUuOC0zLjktMTIuMy03LjEtMTkuMi05LjJjLTYuOS0yLjEtMTQuMi0zLjMtMjEuNy0zLjNjLTEwLDAtMTkuNywyLTI4LjUsNS44DQoJYy0xMy4xLDUuNi0yNC4zLDE0LjgtMzIuMiwyNi41Yy0zLjksNS44LTcuMSwxMi4zLTkuMiwxOS4yYy0yLjEsNi45LTMuMywxNC4yLTMuMywyMS43YzAsMTAsMiwxOS43LDUuOCwyOC41DQoJYzUuNiwxMy4xLDE0LjgsMjQuMywyNi41LDMyLjJjNS44LDMuOSwxMi4zLDcuMSwxOS4yLDkuMmMwLjgsMC4yLDEuNSwwLjQsMi4zLDAuN2MtMC4zLDEuOC0wLjYsMy41LTAuOSw1LjENCgljLTEuMiw1LjYtMi45LDEwLjQtNSwxNC42Yy0xLjksMy45LTQuMiw3LjQtNi44LDEwLjVjLTIuNCwyLjktNS4yLDUuNi04LjMsOC4xYy01LjgsNC42LTEyLjgsOC42LTIwLjksMTJjLTcuMSwzLTE1LDUuNS0yMy40LDcuOA0KCWMtMTQuNywzLjktMzEsNy00Ny40LDEwLjVjLTEyLjMsMi42LTI0LjYsNS41LTM2LjUsOS41Yy04LjksMy0xNy42LDYuNi0yNS44LDExLjNjLTIuMywxLjMtNC41LDIuNy02LjcsNC4yVjE0NC4xDQoJYzMuNS0wLjksNi45LTIuMSwxMC4yLTMuNWMxMy4xLTUuNiwyNC4zLTE0LjgsMzIuMi0yNi41YzMuOS01LjgsNy4xLTEyLjMsOS4yLTE5LjJjMi4xLTYuOSwzLjMtMTQuMiwzLjMtMjEuN2MwLTEwLTItMTkuNy01LjgtMjguNQ0KCWMtNS42LTEzLjEtMTQuOC0yNC4zLTI2LjUtMzIuMmMtNS44LTMuOS0xMi4zLTcuMS0xOS4yLTkuMkMxNjEuMSwxLjEsMTUzLjgsMCwxNDYuMywwbDAsMGwwLDBoMGwwLDBjLTEwLDAtMTkuNywyLTI4LjUsNS44DQoJYy0xMy4xLDUuNi0yNC4zLDE0LjgtMzIuMiwyNi41Yy0zLjksNS44LTcuMSwxMi4zLTkuMiwxOS4yYy0yLjEsNi45LTMuMywxNC4yLTMuMywyMS43YzAsMTAsMiwxOS43LDUuOCwyOC41DQoJYzUuNiwxMy4xLDE0LjgsMjQuMywyNi41LDMyLjJjNS44LDMuOSwxMi4zLDcuMSwxOS4yLDkuMmMxLjEsMC4zLDIuMywwLjYsMy40LDAuOXYyMjRjLTMuNSwwLjktNi45LDIuMS0xMC4yLDMuNQ0KCWMtMTMuMSw1LjYtMjQuMywxNC44LTMyLjIsMjYuNWMtMy45LDUuOC03LjEsMTIuMy05LjIsMTkuMmMtMi4xLDYuOS0zLjMsMTQuMi0zLjMsMjEuN2MwLDEwLDIsMTkuNyw1LjgsMjguNQ0KCWM1LjYsMTMuMSwxNC44LDI0LjMsMjYuNSwzMi4yYzUuOCwzLjksMTIuMyw3LjEsMTkuMiw5LjJjNi45LDIuMSwxNC4yLDMuMywyMS43LDMuM2MxMCwwLDE5LjctMiwyOC41LTUuOA0KCWMxMy4xLTUuNiwyNC4zLTE0LjgsMzIuMi0yNi41YzMuOS01LjgsNy4xLTEyLjMsOS4yLTE5LjJjMi4xLTYuOSwzLjMtMTQuMiwzLjMtMjEuN2MwLTEwLTItMTkuNy01LjgtMjguNQ0KCWMtNS42LTEzLjEtMTQuOC0yNC4zLTI2LjUtMzIuMmMtNS44LTMuOS0xMi4zLTcuMS0xOS4yLTkuMmMtMC42LTAuMi0xLjMtMC40LTEuOS0wLjZjMC4xLTAuNSwwLjItMSwwLjMtMS40DQoJYzEuMS00LjUsMi43LTguMiw0LjUtMTEuNWMxLjgtMy4xLDMuOC01LjgsNi4zLTguM2MyLjMtMi40LDUtNC42LDgtNi42YzUuNy0zLjksMTIuOS03LjIsMjEuMi0xMC4xYzcuMi0yLjUsMTUuMy00LjcsMjMuOS02LjgNCgljMTUtMy42LDMxLjYtNi41LDQ4LjItMTAuNGMxMi41LTIuOSwyNS02LjQsMzcuMS0xMS4yYzkuMS0zLjYsMTcuOS04LDI2LjEtMTMuNmM2LjItNC4yLDEyLTkuMSwxNy4yLTE0LjgNCgljNy44LTguNiwxNC4yLTE5LjEsMTguNS0zMS4yYzIuNy03LjcsNC42LTE2LDUuNS0yNS4xYzMuOS0wLjksNy42LTIuMiwxMS4zLTMuN2MxMy4xLTUuNiwyNC4zLTE0LjgsMzIuMi0yNi41DQoJYzMuOS01LjgsNy4xLTEyLjMsOS4yLTE5LjJjMi4xLTYuOSwzLjMtMTQuMiwzLjMtMjEuN0M0MzguOSwxMzYuMyw0MzYuOSwxMjYuNiw0MzMuMSwxMTcuOHogTTExNS44LDkzLjZjLTItMi45LTMuNS02LjEtNC42LTkuNg0KCWMtMS4xLTMuNC0xLjYtNy4xLTEuNi0xMC45YzAtNS4xLDEtOS45LDIuOS0xNC4yYzIuOC02LjUsNy40LTEyLjIsMTMuMy0xNi4xYzIuOS0yLDYuMS0zLjUsOS42LTQuNmMzLjQtMS4xLDcuMS0xLjYsMTAuOS0xLjYNCgljNS4xLDAsOS45LDEsMTQuMiwyLjljNi41LDIuOCwxMi4yLDcuNCwxNi4xLDEzLjNjMiwyLjksMy41LDYuMSw0LjYsOS42YzEuMSwzLjQsMS42LDcuMSwxLjYsMTAuOWMwLDUuMS0xLDkuOS0yLjksMTQuMg0KCWMtMi44LDYuNS03LjQsMTIuMi0xMy4zLDE2LjFjLTIuOSwyLTYuMSwzLjUtOS42LDQuNmMtMywxLTYuMywxLjUtOS42LDEuNmMtMC40LDAtMC43LTAuMS0xLjEtMC4xYy0wLjUsMC0wLjksMC0xLjQsMC4xDQoJYy00LjctMC4xLTktMS4xLTEzLTIuOUMxMjUuNCwxMDQuMSwxMTkuNyw5OS41LDExNS44LDkzLjZ6IE0xNzYuNiw0MTguNWMyLDIuOSwzLjUsNi4xLDQuNiw5LjZjMS4xLDMuNCwxLjYsNy4xLDEuNiwxMC45DQoJYzAsNS4xLTEsOS45LTIuOSwxNC4yYy0yLjgsNi41LTcuNCwxMi4yLTEzLjMsMTYuMWMtMi45LDItNi4xLDMuNS05LjYsNC42Yy0zLjQsMS4xLTcuMSwxLjYtMTAuOSwxLjZjLTUuMSwwLTkuOS0xLTE0LjItMi45DQoJYy02LjUtMi44LTEyLjItNy40LTE2LjEtMTMuM2MtMi0yLjktMy41LTYuMS00LjYtOS42Yy0xLjEtMy40LTEuNi03LjEtMS42LTEwLjljMC01LjEsMS05LjksMi45LTE0LjJjMi44LTYuNSw3LjQtMTIuMiwxMy4zLTE2LjENCgljMi45LTIsNi4xLTMuNSw5LjYtNC42YzMtMSw2LjMtMS41LDkuNy0xLjZjMC40LDAsMC44LDAuMSwxLjEsMC4xYzAuNSwwLDAuOSwwLDEuNC0wLjFjNC42LDAuMiw5LDEuMSwxMi45LDIuOQ0KCUMxNjcsNDA4LDE3Mi43LDQxMi42LDE3Ni42LDQxOC41eiBNMzk5LjMsMTYwLjZjLTIuOCw2LjUtNy40LDEyLjItMTMuMywxNi4xYy0yLjksMi02LjEsMy41LTkuNiw0LjZjLTMuNCwxLjEtNy4xLDEuNi0xMC45LDEuNg0KCWMwLDAsMCwwLDAsMHMwLDAsMCwwYy01LjEsMC05LjktMS0xNC4yLTIuOWMtNi41LTIuOC0xMi4yLTcuNC0xNi4xLTEzLjNjLTItMi45LTMuNS02LjEtNC42LTkuNmMtMS4xLTMuNC0xLjYtNy4xLTEuNi0xMC45DQoJYzAtNS4xLDEtOS45LDIuOS0xNC4yYzIuOC02LjUsNy40LTEyLjIsMTMuMy0xNi4xYzIuOS0yLDYuMS0zLjUsOS42LTQuNmMzLjQtMS4xLDcuMS0xLjYsMTAuOS0xLjZjNS4xLDAsOS45LDEsMTQuMiwyLjkNCgljNi41LDIuOCwxMi4yLDcuNCwxNi4xLDEzLjNjMiwyLjksMy41LDYuMSw0LjYsOS42YzEuMSwzLjQsMS42LDcuMSwxLjYsMTAuOUM0MDIuMiwxNTEuNSw0MDEuMiwxNTYuMywzOTkuMywxNjAuNnoiLz4NCjwvc3ZnPg0K'>
+          Source control
+        </h4>
+        <hr class="hr-rocket">
+        <span>Branch:<b>{{data['current_branch']}}</b></span>
+
+        <textarea type="text" v-model="commit" placeholder="Commit message" class="form-control mb-2"></textarea>
+        {{data['message']}}<br>
+        <button class="btn btn-info btn-sm" v-on:click="git_commit()" ><i class="fa fa-check"></i> Commit</button>
+        <button class="btn btn-success btn-sm"  v-on:click="git_push()"><i class="fa fa-upload"></i> Push</button>
+        <button class="btn btn-dark btn-sm"  v-on:click="git_pull()"><i class="fa fa-download"></i> Pull</button>
+
+      
+      <label class="pt-2 pb-0">Changes</label>
+      <hr class="p-0 m-0">
+      <ul>
+      <li v-for="(file_, index) in data['git_status']">
+      {{file_}}
+      </li>
+      </ul>
+      </div>
+    </div>
+    
+    <script src="/git/lodash.min.js"></script>
+    <script src="/git/vue.min.js"></script>
+    <script>
+      var gitdata = {{data}};
+      
+      var url__ = "{{path}}";
+      var app = new Vue({
+        el: "#app",
+        data: {
+            data: gitdata,
+            commit:'',
+            ret_data:'---'
+        },
+        methods:{
+         
+          git_commit:function(){
+            let formData = new FormData();
+            formData.append('commit', this.commit)
+            formData.append( 'path', url__)
+            var commit_f = fetch('/git/commit',
+            { method: 'POST',
+           
+            body: formData
+             
+            })
+            .then(response => response.json())
+            .then(data=> {
+              this.data = data
+              alert( data.message );
+              document.location.reload()
+              
+            });
+
+          },
+          git_push:function(){
+            let formData = new FormData();
+            formData.append( 'path', url__)
+            var commit_f = fetch('/git/push',
+              { method: 'POST',body: formData}
+              )
+              .then(response => response.json())
+              .then(data=> {
+                this.data = data
+                alert( data.message );
+                document.location.reload()
+                
+              });
+
+          }, 
+          git_pull:function(){
+            let formData = new FormData();
+            formData.append( 'path', url__)
+            var commit_f = fetch('/git/pull',
+              { method: 'POST',body: formData}
+              )
+              .then(response => response.json())
+            .then(data=> {
+              this.data = data
+              alert( data.message );
+              document.location.reload()
+              
+            });
+
+          }
+        },
+        computed:{}
+      });
+    </script>
+  </body>
+</html>

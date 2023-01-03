@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    
+    <title>DesktopRecorder</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="description" content="">
+    <meta charset="latin-1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/ISO_Rojo.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="/bower_components/ng-cropper/dist/ngCropper.all.css" />
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/all.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/perfect-scrollbar.css">
+    <style>
+        .main-table {
+            overflow-y: scroll;
+            height: calc(100vh - 115px);
+            padding: 0 0 0 0px !important;
+            border: solid 3px #6F6F6E;
+            border-radius: 0.25rem;
+            background-color: #FBFBFB;
+        }
+
+        .main-table th {
+            position: sticky;
+            top: 0;
+            background: #dedede;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;300;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-loaded p-3 my-2 scroll-y"
+    onload="window.open('/desktoprecorder?action={{action}}&id={{id_}}&params={{params}}','_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no,width=550,height=280')">
+    <h4>DesktopRecorder</h4>
+    <p>The functionality of the Desktop Recorder is to capture the actions of a user on the screen and generate the necessary commands to replicate it with Rocketbot.</p>
+    <p>To record, you must use one of the following modes:</p>
+    <ul>
+        <li>Rec: Record multiple actions on the screen</li>
+        <li>Click: Click on an element</li>
+        <li>Get Text: Get text in a UI element</li>
+        <li>Select Item: Select an item in a combobox</li>
+        <li>Set Text: Modify text in an editable field</li>
+        <li>Send Keys: Simulates keyboard events.</li>
+    </ul>
+    <p>After pressing one of the modes, the recorder will start listening to the clicks. 
+        Use the <b>ALT + TAB</b> combination to move between applications. </p>
+
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+
+</html>

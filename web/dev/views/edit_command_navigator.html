@@ -1,0 +1,30 @@
+<div class="form-group">
+        <small class="al">
+            <i class="fas fa-question-circle"></i> {{command_father.description}}
+        </small>
+    </div>
+    <div ng-show="command_father.options" class="form-group">
+        <label>{{command_father.title_options}}</label>
+        <select class="form-control" id="command_list_op" ng-model="command_father_op" ng-options="x for x in command_father.options"></select>
+    </div>
+    <div  class="form-group">
+        <label>URL:</label>
+        <input class="form-control" ng-model="navigator_conf_url">
+    </div>
+    <div  class="form-group">
+        <label>Tipo</label>
+        <div class="form-check">
+                <input class="form-check-input" type="radio" value="0"  ng-model="navigator_conf_tipo">
+                <label class="form-check-label" for="gridRadios1">
+                    Síncrona
+                </label>
+            </div>
+            <div class="form-check">
+                    <input class="form-check-input" type="radio" value="1"  ng-model="navigator_conf_tipo">
+                    <label class="form-check-label" for="gridRadios1">
+                        Asíncrona
+                    </label>
+                </div>
+        
+    </div>
+    <button ng-click="updateData({url:navigator_conf_url, tipo: navigator_conf_tipo})" class="btn btn-primary" ng-disabled="robot_name.length == 0">Actualizar</button>

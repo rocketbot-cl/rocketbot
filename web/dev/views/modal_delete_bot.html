@@ -1,0 +1,22 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_delete_bot">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content modal-danger">
+            <div class="modal-header">
+                <h5 class="modal-title"> {{language[language_default].delete}} Robot: {{bot_to_delete.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3>
+                        {{language[language_default].sure_delete}} "{{bot_to_delete.name}}"?
+                </h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="removebotok()" class="btn btn-danger">{{language[language_default].delete}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

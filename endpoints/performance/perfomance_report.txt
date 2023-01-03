@@ -1,0 +1,34 @@
+START TIME: 2022-12-13 18:43:17.188997
+START MEM: 78.7
+START CPU: 8.1
+START MEM_PROCESS: 44.93 MB
+**
+MEM: 79.2
+CPU: 21.4
+MEM_PROCESS: 46.33 MB
+CMD: 2022-12-13 18:35:12.401671 - rocketbot - INFO - request: testterminal : line 1 - rpasystem : wait  id: b0009d18-9239-44ad-927f-2f9ee88cd819 -  - 2
+**
+MEM: 79.3
+CPU: 14.4
+MEM_PROCESS: 47.16 MB
+CMD: 2022-12-13 18:43:20.863911 - rocketbot - INFO - request: testterminal : line 1 - rpasystem : wait  id: b0009d18-9239-44ad-927f-2f9ee88cd819 -  - 2
+**
+MEM: 80.8
+CPU: 29.1
+MEM_PROCESS: 241.21 MB
+CMD: 2022-12-13 18:43:22.874210 - rocketbot - INFO - request: testterminal : line 2 - rpavirtual : existimage  id: c0bc5461-c048-4572-b8c6-a06c7d8ccd05 -  - {"ref":{"x":189.55390131430508,"y":357.8430307987365,"width":99.73840816787005,"height":56.1028545944269,"rotate":0,"scaleX":1,"scaleY":1},"point":{"x":189.55390131430508,"y":357.8430307987365,"width":99.73840816787005,"height":56.1028545944269,"rotate":0,"scaleX":1,"scaleY":1},"accuracy":"0.7","seconds":"2","clicks":"simple","click":"simple","gray_scale":"1","background":"2c3a8a7f11184e2d8317c72cc5bf012d.png"}
+**
+MEM: 78.1
+CPU: 21.9
+MEM_PROCESS: 236.89 MB
+CMD: 2022-12-13 18:43:25.210120 - rocketbot - INFO - request: testterminal : line 4 - rpadesktop : alert  id: 1f341f20-e144-408d-a8a4-a0b4877eba64 -  - Fin
+**
+MEM: 78.6
+CPU: 16.9
+MEM_PROCESS: 229.83 MB
+CMD: 2022-12-13 18:43:27.548744 - rocketbot - INFO - request: testterminal : line 5 - rpavirtual : clickimage  id: 8e631421-7241-790d-5772-77a53567ae1d - Center - {"ref":{"x":0,"y":0,"width":121,"height":98},"point":{"x":0,"y":0,"width":121,"height":98},"accuracy":"0.7","clicks":"simple","click":"simple","gray_scale":"1","seconds":"0","background":"04b418d4df6449de923ca4ae6099d2ed.png"}
+**
+STOP TIME: 2022-12-13 18:43:33.991754
+STOP MEM: 78.6
+STOP CPU: 0.0
+STOP MEM_PROCESS: 229.83 MB

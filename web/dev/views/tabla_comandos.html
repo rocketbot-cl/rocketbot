@@ -1,0 +1,22 @@
+<div class="card" context-menu="menuOptionsOnly" id="commands_bots_list">
+    <div class="card-header can-click pb-4" ng-click="setMainDefault()">
+        <span class="mt-2">
+            <hr class="hr-rocket hr-rocket-title">
+            <b>{{language[language_default].sequence_command}} - </b>{{robot_name}}
+        </span>
+        
+    </div>
+    <div class="" id="commands_bots_list_view">
+        <div ng-show="commands.length < 1" class="text-center">
+            <ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
+        </div>
+        <ul dnd-list dnd-drop="dropCallback(index, item, external, type, commands); callback({targetList: commands, targetIndex: index})" context-menu="menuOptions">
+            <li ng-repeat='command in commands track by command.id'        class="col-md-12 container-command"        dnd-draggable="null"       dnd-callback="onDrop(commands, $index, targetList, targetIndex)"       dnd-external-sources="true" context-menu="menuOptions">
+                <ng-include ng-if="(command.group !='logic' && command.father != 'trycatch' )|| command.father=='break'" src="'views/command.html'"></ng-include>
+                <ng-include ng-if="(command.group =='logic' && command.father!='break')|| command.father == 'trycatch'" src="'views/command_logic.html'"></ng-include>
+                
+                
+            </li>
+        </ul>
+    </div>
+</div>

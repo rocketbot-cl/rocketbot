@@ -1,0 +1,250 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_module">
+  <div class="modal-dialog modal-dialog-centered"  style="{{command_father.form.style}}" ng-class="command_father.form.css" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Robot: {{robot_name}} {{command_father.title[language_default]||command_father.title['en']}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-module-tab" data-toggle="tab" data-target="#nav-module-data"
+              role="tab" aria-controls="nav-home" aria-selected="true">
+              <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal">
+              {{command_father[language_default].title||command_father.title[language_default]||command_father['en'].title||command_father.title['en']||command_father.title}}
+            </a>
+            <a class="nav-item nav-link" id="nav-error" data-toggle="tab" data-target="#nav-module-error"
+              role="tab" aria-controls="nav-error" aria-selected="fase">
+              <img loading='lazy' src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDUxLjc0IDQ1MS43NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDUxLjc0IDQ1MS43NDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0UyNEM0QjsiIGQ9Ik00NDYuMzI0LDM2Ny4zODFMMjYyLjg1Nyw0MS42OTJjLTE1LjY0NC0yOC40NDQtNTguMzExLTI4LjQ0NC03My45NTYsMEw1LjQzNSwzNjcuMzgxDQoJYy0xNS42NDQsMjguNDQ0LDQuMjY3LDY0LDM2Ljk3OCw2NGgzNjUuNTExQzQ0Mi4wNTcsNDI5Ljk1OSw0NjEuOTY4LDM5NS44MjUsNDQ2LjMyNCwzNjcuMzgxeiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGQ9Ik0yMjUuODc5LDYzLjAyNWwxODMuNDY3LDMyNS42ODlINDIuNDEzTDIyNS44NzksNjMuMDI1TDIyNS44NzksNjMuMDI1eiIvPg0KPGc+DQoJPHBhdGggc3R5bGU9ImZpbGw6IzNGNDQ0ODsiIGQ9Ik0xOTYuMDEzLDIxMi4zNTlsMTEuMzc4LDc1LjM3OGMxLjQyMiw4LjUzMyw4LjUzMywxNS42NDQsMTguNDg5LDE1LjY0NGwwLDANCgkJYzguNTMzLDAsMTcuMDY3LTcuMTExLDE4LjQ4OS0xNS42NDRsMTEuMzc4LTc1LjM3OGMyLjg0NC0xOC40ODktMTEuMzc4LTM0LjEzMy0yOS44NjctMzQuMTMzbDAsMA0KCQlDMjA3LjM5LDE3OC4yMjUsMTk0LjU5LDE5My44NywxOTYuMDEzLDIxMi4zNTl6Ii8+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojM0Y0NDQ4OyIgY3g9IjIyNS44NzkiIGN5PSIzMzYuMDkyIiByPSIxNy4wNjciLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" class="icon-modal">
+              Error Handling
+            </a>
+            <a ng-show="$parent.module_father.name" class="nav-item nav-link" id="nav-father-tab" data-toggle="tab" data-target="#nav-module-father"
+              role="tab" aria-controls="nav-profile" aria-selected="false">
+              <img loading='lazy' ng-src="{{module_father.icon}}" class="icon-modal"> {{module_father.title[language_default] ||module_father.title['en'] || module_father.name}}
+            </a>
+          </div>
+          <div class="os-list">
+            <i class="fab fa-linux"
+              ng-class="{'no-available': !command_father.linux, 'text-success':command_father.linux }"></i>
+            <i class="fab fa-apple"
+              ng-class="{'no-available': !command_father.mac, 'text-success':command_father.mac }"></i>
+            <i class="fab fa-windows"
+              ng-class="{'no-available': !command_father.windows, 'text-success':command_father.windows }"></i>
+            <i class="fab fa-docker"
+              ng-class="{'no-available': !command_father.linux, 'text-success':command_father.docker}"></i>
+          </div>
+        </nav>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="nav-module-data" role="tabpanel">
+            <br>
+            <div class="alert alert-info">
+              <i class="fas fa-question-circle"></i>
+              {{command_father[language_default].description||command_father.description[language_default]||command_father['en'].description||command_father.description['en']||command_father.description}}
+              <div class="link-help-module" ng-show="command_father.video_youtube" ng-click="viewHelp(command_father.video_youtube,$event.currentTarget)">
+                <i class="fab fa-youtube"></i> <span>{{language[language_default].help}}</span>
+            </div>
+            </div>
+            
+            <div class="row">
+              <div ng-repeat="input in command_father.form.inputs" class="{{input.css}}">
+                <div class="form-group" ng-if="input.type=='input'">
+                  <label>{{input.title[language_default]||input.title['en']||input.title}}</label>
+                  <input style="{{input.style}}" class="form-control accept_vars" type="text"
+                    placeholder="{{input.placeholder[language_default] || input.placeholder['en'] ||  input.placeholder}}" ng-model="$parent.command_content[input.id]">
+                  <small class="text-helper" ng-bind-html="input.help[language_default] ||input.help['en'] || input.help"></small>
+                </div>
+
+                
+                <div class="form-group" ng-if="input.type=='file_new'">
+                  <label>{{input.title[language_default]||input.title['en']||input.title}}</label>
+                  <div class="input-group">
+                    <input class="form-control accept_vars" type="text" id="{{input.id}}"
+                      placeholder="{{input.placeholder[language_default]||input.placeholder['en']||input.placeholder}}"
+                      ng-model="$parent.command_content[input.id]">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" ng-click="searchFileSave(input.id, input.extensions, input.default_extension)"><i
+                          class="fa fa-spin fa-spinner" ng-show="loading"></i>
+                        {{language[language_default].search}}</button>
+                    </div>
+                  </div>
+                  <small class="text-helper" ng-bind-html="input.help[language_default] ||input.help['en'] || input.help"></small>
+
+                </div>
+                <div class="form-group" ng-if="input.type=='file_select'">
+                  <label>{{input.title[language_default]||input.title['en']||input.title}}</label>
+                  <div class="input-group">
+                    <input class="form-control accept_vars" type="text" id="{{input.id}}"
+                      placeholder="{{input.placeholder[language_default]||input.placeholder['en']||input.placeholder}}"
+                      ng-model="$parent.command_content[input.id]">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" ng-click="searchFile(input.id, input.extensions)"><i
+                          class="fa fa-spin fa-spinner" ng-show="loading"></i>
+                        {{language[language_default].search}}</button>
+                    </div>
+                  </div>
+                  <small class="text-helper" ng-bind-html="input.help[language_default] ||input.help['en'] || input.help"></small>
+
+                </div>
+                <div class="form-group" ng-if="input.type=='folder_select'">
+                  <label>{{input.title[language_default]||input.title['en']||input.title}}</label>
+                  <div class="input-group">
+                    <input class="form-control accept_vars" type="text" id="{{input.id}}"
+                      placeholder="{{input.placeholder[language_default]||input.placeholder['en']||input.placeholder}}"
+                      ng-model="$parent.command_content[input.id]">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" ng-click="searchFolder(input.id)"><i
+                          class="fa fa-spin fa-spinner" ng-show="loading"></i>
+                        {{language[language_default].search}}</button>
+                    </div>
+                  </div>
+                  <small class="text-helper" ng-bind-html="input.help[language_default] ||input.help['en'] || input.help"></small>
+
+                </div>
+                <div class="form-group" ng-if="input.type=='select'">
+                  <label>{{input.title[language_default]||input.title['en']||input.title}}</label>
+                  <select style="{{input.style}}" class="form-control" ng-model="$parent.command_content[input.id]">
+                    <option ng-repeat="item in input.options" value="{{item.value}}">{{item.title}}</option>
+                  </select>
+                  <small class="text-helper" ng-bind-html="input.help[language_default] ||input.help['en'] || input.help"></small>
+                </div>
+                <div class="form-group form-check" ng-if="input.type=='checkbox'">
+                  <input style="{{input.style}}" type="checkbox" class="form-check-input" id="{{input.id}}"
+                    ng-model="$parent.command_content[input.id]">
+                  <label class="form-check-label" for="{{input.id}}">{{input.title[language_default]||input.title['en']||input.title}}</label>
+                  <small class="text-helper" ng-bind-html="input.help[language_default] ||input.help['en'] || input.help"></small>
+                </div>
+                <div class="form-group" ng-if="input.type=='textarea'">
+                  <label  for="{{input.id}}">{{input.title[language_default]||input.title['en']||input.title}}</label>
+                  <textarea style="{{input.style}}"  class="form-control" id="{{input.id}}" 
+                  placeholder="{{input.placeholder[language_default]||input.placeholder['en']||input.placeholder}}" ng-click="parse_textarea_json()"  formater="{{input.formatter}}"
+                    ng-model="$parent.command_content[input.id]"></textarea style="{{input.style}}">
+                    <small class="text-helper" ng-bind-html="input.help[language_default] ||input.help['en'] || input.help"></small>
+                  </div>
+                <div class="form-group" ng-if="input.type=='label'">
+                  <label  style="{{input.style}}" class="form-check-label" for="{{input.id}}">{{input.title[language_default]||input.title['en']||input.title}}</label>
+                </div>
+                <!-- <div class="form-group" ng-if="input.type=='button'">
+                  <a style="{{input.style}}" class="btn btn-sm" loader='True' target='visor1' href="{{input.url}}">{{input.text}}</a>
+                </div> -->
+                <div class="form-group" ng-if="input.type=='html'">
+                  <label  for="{{input.id}}">{{input.title[language_default]||input.title['en']||input.title}}</label><br>
+                <iframe style="{{input.style}}" class="iframe" id="modal_iframe" data-iframe="{{url_server}}module/{{module_father.name}}/html/{{input.src}}" >
+                </iframe>
+                </div>
+              </div>
+              <div class="col-12" ng-show="$parent.command_father.options[language_default]">
+                <div class="form-group">
+                  <label>{{command_father[language_default].title_options}}:</label>
+                  <select class="form-control" id="option" ng-model="$parent.command_content.option"
+                    ng-options="x for x in $parent.command_father.options[language_default]">
+                    <option name="" value="">-- Sel --</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="nav-module-error" role="tabpanel">
+            <div class="container">
+              <br>
+              <div class="row">
+                    
+                  <div class="col-6">
+                      <div class="form-group">
+                          <div class="form-check " style="margin-top: 0px; ">
+                              <input type="checkbox" class="form-check-input" ng-model="$parent.run_onerror" >
+                              <label class="form-check-label text-danger" >Error Handling: <span class="text-black">Run Robot</span></label>
+                          </div>
+        
+                          <div class="input-group" >
+                              <select2  s2-options="v.name as v.name for v in bots[0].bots" ng-model="$parent.run_onerror_robot">
+                                  </select2>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-6">
+                      <div class="form-check " style="margin-top: 0px; ">
+                          <input type="checkbox" class="form-check-input" ng-model="$parent.stop_onerror" >
+                          <label class="form-check-label text-danger" >Error Handling: Stop all</label>
+                      </div>
+                  </div>
+              
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="nav-module-father" role="tabpanel">
+            <div class="container">
+              <br>
+              <div class="row">
+                <div class="col-3">
+
+                  <img loading='lazy' src="{{module_father.icon}}" class="img-fluid">
+                </div>
+                <div class="col-9">
+                  <h1>{{module_father.title[language_default]}}</h1>
+                  <b>Description:</b> {{module_father.description}}<br>
+                  <b>Version:</b> {{module_father.version}} - <b>License:</b> {{module_father.license}}<br>
+                  <b>Homepage:</b> <a target="_blank"
+                    href="{{module_father.homepage}}">{{module_father.homepage}}</a><br>
+                  <b>Author:</b> {{module_father.author}}<br>
+                  <div class="accordion" id="dep_">
+                    <button class="btn btn-block btn-sm btn-primary" type="button" data-toggle="collapse"
+                      data-target="#dep" aria-expanded="true" aria-controls="collapseOne">
+                      Dependencies
+                    </button>
+
+                    <div id="dep" class="collapse" aria-labelledby="headingOne" data-parent="#dep_">
+                      <div class="card-body">
+                        <table class="table table-bordered table-sm table-striped">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th>Package</th>
+                              <th>Version</th>
+                              <th>Web</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr ng-repeat="(item, ver)  in module_father.dependencies">
+                              <td>{{item}}</td>
+                              <td>{{ver}}</td>
+                              <td><a target="_blank" href="https://pypi.org/search/?q={{item}}">Search on Pypi</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="accordion" id="accordionExample">
+                    <button class="btn  btn-block btn-sm btn-primary" type="button" data-toggle="collapse"
+                      data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Disclaimer
+                    </button>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        {{module_father.disclaimer}}
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" ng-click="addGeneralCommand('modal_module')"
+          class="btn btn-primary">{{language[language_default].add_command}}</button>
+        <button type="button" class="btn btn-secondary"
+          data-dismiss="modal">{{language[language_default].cancel}}</button>
+      </div>
+    </div>
+  </div>
+</div>

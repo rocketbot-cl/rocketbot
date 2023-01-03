@@ -1,0 +1,39 @@
+<div class="modal" id="export_docx" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Export to DOCX</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Select template.</p>
+          <div class="row">
+              <div class="col-md-4">
+                <div class="btn btn-primary rounded" style="cursor: pointer;" ng-click="exportToDocx('complete')">
+                    <img src="../analysis_complete.png" class="img-fluid">
+                    Complete
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="btn btn-success rounded" style="cursor: pointer;" ng-click="exportToDocx('simple')">
+                    <img src="../analysis_simple.png" class="img-fluid">
+                    Simple
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="btn btn-secondary rounded" style="cursor: pointer;" ng-click="exportToDocx('select')">
+                    <img src="../analysis_other.png" class=" img-fluid">
+                    Select another
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <h4 ng-show="loading_docx">Creating docx <i class="fa fa-spin fa-spinner"></i></h4>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

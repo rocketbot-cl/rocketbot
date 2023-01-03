@@ -1,0 +1,23 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_markdown">
+  <div class="modal-dialog modal-lg modal-dialog-centered"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> {{markdown.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <img loading='lazy' ng-if="markdown.id" style="width: 99.9%" src="https://market-api.rocketbot.co/api/banner/{{markdown.id}}">
+
+      <div class="modal-body">
+        <div class="markdown" btf-markdown="markdown.data">
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary"
+          data-dismiss="modal">{{language[language_default].add_command}}</button>
+      </div>
+    </div>
+  </div>
+</div>

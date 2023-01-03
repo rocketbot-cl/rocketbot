@@ -1,0 +1,33 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_change_description">
+    <div class="modal-dialog  modal-dialog-centered modal-big" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <h3><img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}</h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1" ng-bind="language[language_default].description "></label>
+                            <textarea class="form-control" ng-model="editing_command.description"></textarea>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        
+                        <button type="button" ng-click="changeDescription(editing_command_original, editing_command.description)" class="btn btn-primary">{{language[language_default].change_description}}</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>

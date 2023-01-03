@@ -1,0 +1,193 @@
+<style>
+  .tree_list{
+    border-left: 3px solid #cacaca;
+    margin-left: 8px;
+  }
+  body{
+    background-color: white;
+  }
+  @media print {
+    body, html, #lista, .scroll-y {
+      height: 100%;
+    }
+  }
+  td {
+    font-size: 14px;
+  }
+  
+  .btn_radius{
+    
+    border-radius: 9px;
+    margin: 20px;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .select_radius{
+    border-radius: 9px;
+  }
+  
+  .a_color{
+    color: #007bff;
+  }
+  
+  .programa li {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+  }
+  .hora {
+    
+    width: 100%;
+    text-align: right;
+    font-family: Poppins, sans-serif;
+    font-size: .8rem;
+    font-weight: 400;
+    
+  }
+  .ago{
+    font-size: .6rem;
+  }
+  .titulo {
+    
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    width: 61px;
+    text-align: right;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .titulo::before {
+    position: absolute;
+    content: ' ';
+    width: 2px;
+    height: 55px;
+    background-color: #e9e9e9;
+    left: 53px;
+    z-index: -1;
+  }
+  .titulo_last{
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    width: 61px;
+    text-align: right;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .titulo_last::before {
+    position: absolute;
+    content: ' ';
+    width: 2px;
+    height: 52px;
+    background: linear-gradient(
+180deg
+, rgba(241,241,241,1) 40%, rgba(232,26,68,1) 100%);
+    left: 53px;
+    z-index: -1;
+    bottom: 86px;
+  }
+  .clickable{
+    cursor: pointer;
+  }
+  .clickable:hover{
+    background-color: #971010;
+    color: white;
+  }
+  
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<div class="loader-wrap">
+  <div class="request-loader">
+    <img loading='lazy' class="img-fluid" src="/images/ISO_Rojo.png">
+  </div>
+</div>
+<div class="content" id="lista">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 mt-3">
+        <div class="row">
+          <div class="col-md-8">
+            <h4>Robot Name: {{nameBot}}
+              <div class="float-right d-sm-none">
+                <small>
+                  <i class="  fa fa-sync-alt" onclick="location.reload()"></i>
+                </small>
+              </div>
+            </h4>
+            <table>
+              <tr ng-repeat-start="version in versions|limitTo:1">
+                <td class="a_color"><a>v{{versions.length - $index}} -</a></td>
+                <td>{{version.created_at}}</td>
+              </tr>
+              <tr ng-repeat-end>
+                <td colspan="3">
+                  <hr/>
+                </td>
+              </tr>
+              
+            </table>
+          </div>
+        </div>
+        <hr class="hr-rocket">
+        <div class="row">
+          <div class="col-12 scroll-y mb-4">
+            <div class="row">
+              <div class="col-md-6" >
+                <h5>Versions:</h5>
+                <div class="pb-4 mt-4 mb-4">
+                  <section class="programa">
+                    
+                    
+                    <div ng-repeat="option in versions" ng-if="$index > 0" class="mb-2 pb-1 clickable" ng-click="setVersion(option,versions.length - $index)">
+                      
+                      <div class="row">
+                        <div  ng-class="{'titulo':  $index < versions.length - 1, 'titulo_last': $index == versions.length -1}">v{{versions.length - $index}} 
+                          <i class="fas " ng-class="{'fa-circle':  $index < versions.length - 1, 'fa-robot': $index == versions.length -1}"></i>
+                        </div>
+                        <div class="">
+                          <span class="hora">{{option.created_at}}hs </span>
+                        
+                          <div class="ago">{{option.ago}}</div>
+                          
+                        </div>
+                      </div>
+                      
+                     
+                      
+                      
+                    </div>
+                  </div>
+                  <!--
+                    <form name="myForm">
+                      <select class= "select_radius" name="repeatSelect" id="repeatSelect" ng-model="data.model" ng-change="changed($index)">
+                        <option ng-repeat="option in versions" ng-if="$index > 0" value="{{option.data}} || {{option.id}} || {{versions.length - $index}}">
+                          v{{versions.length - $index}} - {{option.created_at}}
+                        </option>
+                      </select>
+                      <div class="row">
+                        <div class="col-md-12 center"  >
+                          <button class="btn btn-sm btn-danger btn_radius" ng-click="showAlert($event)" >Confirm
+                            <i class="fas fa-check"></i>
+                          </button>
+                        </div>
+                        
+                      </div>
+                      
+                    </form>
+                    <hr>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img loading='lazy' src="/images/Powered.svg" class="powerby d-none d-md-block">
+    </div>

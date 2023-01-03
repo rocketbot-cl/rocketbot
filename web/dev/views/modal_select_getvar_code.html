@@ -1,0 +1,93 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_select_getvar_code">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}
+                </h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>{{command_father.title_command}}:</label>
+                            <textarea class="form-control accept_vars" type="text" id="code_edit"
+                                ng-model="$parent.command_content"></textarea>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Usar variables</label>
+                            <select class="form-control" ng-model="$parent.command_father_op_var" ng-options="v.name for v in vars">
+                                <option name="" value="">-- Seleccione --</option>
+                            </select>
+                        </div>
+                    </div>
+                -->
+                    <div class="col-md-12">
+                        <div ng-show="command_father.options" class="form-group">
+                            <label>{{command_father.title_options}}:</label>
+                            <select class="form-control" id="command_list_op" ng-model="$parent.command_father_op"
+                                ng-options="x for x in command_father.options">
+                                <option name="" value="">-- Seleccione --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-8" ng-show="command_father.getResult">
+                        <div class="form-group">
+                            <label>{{language[language_default].assign_result}}:</label>
+                            <select class="form-control" ng-model="$parent.command_father_op_getvar"
+                                ng-options="v.name for v in vars">
+                                <option name="" value="">-- Seleccione --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" ng-show="command_father.options">
+                        <div class="form-group">
+                            <label class="ng-binding">{{command_father.title_options}}</label>
+                            <input class="form-control accept_vars" type="text" placeholder="latin-1" ng-model="$parent.command_father_op">
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="stop-bot-error row">
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <div class="form-check " style="margin-top: 0px; ">
+                                <input type="checkbox" class="form-check-input" ng-model="$parent.run_onerror">
+                                <label class="form-check-label text-danger">Error Handling: <span class="text-black">Run
+                                        Robot</span></label>
+                            </div>
+
+                            <div class="input-group" ng-show="$parent.run_onerror">
+                                <select2 s2-options="v.name as v.name for v in bots[0].bots"
+                                    ng-model="$parent.run_onerror_robot">
+                                </select2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check " style="margin-top: 0px; ">
+                            <input type="checkbox" class="form-check-input" ng-model="$parent.stop_onerror">
+                            <label class="form-check-label text-danger">Error Handling: Stop all</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" ng-click="addCommand()"
+                    class="btn btn-primary">{{language[language_default].add_command}}</button>
+                <button type="button" class="btn btn-secondary"
+                    data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,443 @@
+<div class="init">
+    <div class="bg-robot">
+        <div class="header-logo" id="logo">
+            <div class="row">
+                <div class="col-12">
+                    <img loading='lazy' class="" alt="Rocketbot" src="images/Logo-R-Studio.svg">
+                    <small class="version_header">v{{version}}</small>
+                </div>
+            </div>
+        </div>
+        <div class="" id="btn-container">
+            
+            <div class="row">
+                
+                <div class="offset-md-6 col-md-6">
+                    <div class="row">
+                        
+                        <div class="btn btn-sm btn-success rounded btn-command-init"  data-toggle="modal" data-target="#newRobotModal" ><i class="fa fa-magic"></i> <span  ng-bind="language[language_default].new_bot"></span> </div>
+                        <div class="btn btn-sm btn-primary rounded btn-command-init" ng-click="getDB()"><i class="fa fa-project-diagram"></i> <span  ng-bind="language[language_default].load_robot_db"></span></div>
+                        <!--<div class="btn btn-sm btn-info rounded btn-command-init" ng-click="getBotFile()"><i class="fa fa-file-code"></i> <span  ng-bind="language[language_default].load_json"></span></div>-->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="content" >
+        <div class="m_row">
+            <div class=" menu ">
+                <div class="container">
+                    <li class="btn-link rocket-text card-list btn-block mt-5" ng-class="{'text-dark': view_now!=0}" ng-click="view_now=0"><i class="fa fa-home"></i> <span  ng-bind="language[language_default].start"></span></li>
+                    <li class="btn-link rocket-text card-list btn-block mt-5" ng-class="{'text-dark': view_now!=1}" ng-click="view_now=1"><i class="fas fa-puzzle-piece"></i> <span  ng-bind="language[language_default].tools"></span></li>
+                    <li class="btn-link rocket-text card-list btn-block mt-5" ng-class="{'text-dark': view_now!=2}" ng-click="view_now=2"><i class="fa fa-cogs"></i> <span  ng-bind="language[language_default].config"></span></li>
+                    <li class="btn-link rocket-text card-list btn-block mt-5" ng-class="{'text-dark': view_now!=4}" ng-click="view_now=4"><i class="fa fa-life-ring"></i> <span  ng-bind="language[language_default].help_docs"></span></li>
+                    <li class="btn-link rocket-text card-list btn-block mt-5" ng-class="{'text-dark': view_now!=3 && licensed,'text-danger':!licensed}" ng-click="view_now=3" ><i class="far fa-file-alt"></i> <span  ng-bind="language[language_default].license"></span> <i class="icon-ripple fa fa-exclamation-triangle" ng-show="!licensed"></i></li>
+                </div>
+                <img loading='lazy' src="images/Powered.svg" class="powerby">
+            </div>
+            <div class="col">
+                <div ng-show="!view_now || view_now==0" class="mt-5 ">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card rounded p-3 shadow ml-2 ">
+                                <hr class="hr-rocket" style="width:40px">
+                                <h5 ng-bind="language[language_default].last_bots_open"></h5>
+                                <input type="text" class="form-control" ng-model="search" placeholder="{{language[language_default].search}}">
+                                <div class="card shadow"  ng-show="file_count <= 0">
+                                    <div class="card-body">
+                                        <h4><i class="fa fa-quote-left"></i> <span  ng-bind="language[language_default].not_opened_files"></span></h4>
+                                        <h5 ng-bind-html="language[language_default].start_creating"></h5>
+                                        
+                                    </div>
+                                </div>
+                                <div class="command-container2 scrollbar rounded" ng-show="file_count > 0">
+                                    <div  class="card  card-list mb-2 border border-dark" ng-repeat="file in files| filter:search"   ng-show="file.type=='db' || file.type=='file' ">
+                                        <div class="p-2" >
+                                            <div class="row">
+                                                
+                                                <div class="col-11" ng-click="loadBot(file)">
+                                                    <h5 class="font-weight-bolder mb-0 text-capitalize">  
+                                                        <i class="fa fa-0x" ng-class="{'fa-robot':file.type=='db', 'fa-file-code':file.type=='file'}"></i>
+                                                        {{file.name}}</h5>
+                                                        <small class="text-muted"><b>Project DB:</b> {{file.path}}</small><br>
+                                                        <small class="text-muted"><b>Last modification:</b> {{file.created_at}}</small>
+                                                    </div>
+                                                    <div class="col-1">
+                                                        <button type="button" class="close" ng-click="removeFile(file)" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 d-none d-lg-block ">
+                                <div class="card rounded p-3  mr-1 shadow">
+                                    
+                                    <hr class="hr-rocket" style="width:40px">
+                                    <h5 ng-bind="language[language_default].last_db_open"></h5>
+                                    <input type="text" class="form-control" ng-model="search_db" placeholder="{{language[language_default].search}}">
+                                    <div class="command-container2 scrollbar rounded">
+                                        
+                                        <div class="card   border border-dark m-1" ng-repeat="file in files | filter:search_db"  ng-show="file.type=='filedb'  ">
+                                            <div class="p-2" >
+                                                <div class="row">
+                                                    
+                                                    <div class="col-11" ng-click="loadBot(file)">
+                                                        <h5 class="font-weight-bolder text-capitalize mb-0">
+                                                            <i class="fa  fa-database" ></i>
+                                                            {{file.name}}</h5>
+                                                            <small class="text-muted"><b>Project DB:</b> {{file.path}}</small><br>
+                                                            <small class="text-muted"><b>Last modification:</b> {{file.created_at}}</small>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <button type="button" class="close" ng-click="removeFile(file)" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show=" view_now==1" class=" scroll-y">
+                            <h3 class="mt-4 mb-4"><i class="fa fa-tools"></i> <span  ng-bind="language[language_default].tools"></span></h3>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Desktop Recorder</h4>
+                                            <img loading='lazy' src="images/recorder.svg" class="img-fluid w-50"> 
+                                            <hr class="hr-rocket">
+                                            <div class="tool-description">
+                                                <small>With Desktop Recorder you can record the clicks to automate desktop applications.</small>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <a href="https://market.rocketbot.co/#/modules/?q=desktoprecorder" target="blank_" class="btn btn-primary">
+                                                Download
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Plugin Firefox</h4>
+                                            <img loading='lazy' src="images/firefox.svg" class="img-fluid  w-50">
+                                            <hr class="hr-rocket">
+                                            <div class="tool-description">
+                                                <small>
+                                                    Install the Firefox add-on and start creating a web scraping robot in the easiest way.    
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <a href="https://addons.mozilla.org/es/firefox/addon/rocketbot-recorder/" target="blank_" class="btn btn-primary">
+                                                Download
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Plugin Chrome</h4>
+                                            <img loading='lazy' src="images/chrome.svg" class="img-fluid  w-50"> 
+                                            <hr class="hr-rocket">
+                                            <div class="tool-description">
+                                                <small>
+                                                    Install the Chrome add-on and start creating a web scraping robot in the easiest way.                               
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <a href="https://chrome.google.com/webstore/detail/rocketbot-recorder/hemcaaiikdfedbkdfaaokmepbehegigi" target="blank_" class="btn btn-primary">
+                                                Download
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Mods Market</h4>
+                                            <img loading='lazy' src="images/addon.svg" class="img-fluid  w-50"> 
+                                            <hr class="hr-rocket">
+                                            <div class="tool-description">
+                                                <small>
+                                                    Install new Rocketbot commands and power your robots.
+                                                    Connect with new Databases, Docs or Api
+                                                </small>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <a href="https://market.rocketbot.co" target="_blank" class="btn btn-primary">
+                                                Go to Market
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show=" view_now==2" style="width: calc(100vw - 270px);" class="mt-5">
+                            
+                            <div class="row">
+                                <div class="col-11">
+                                    <div class="card rounded p-3 shadow ml-2 ">
+                                        <div class="card-body">
+                                            <hr class="hr-rocket" style="width:40px">
+                                            <h5 class="mt-1 mb-5 font-weight-bold"> 
+                                                <span  ng-bind="language[language_default].config"></span>
+                                                <i class="fa fa-cogs"></i>
+                                            </h5>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label><span  ng-bind="language[language_default].theme"></span></label>
+                                                    <div class="form-group" >
+                                                        <div class="btn btn-dark rounded"  ng-click="mode('dark')">
+                                                            <i class="fa fa-cloud-moon"></i>
+                                                            <span  ng-bind="language[language_default].dark_mode"></span>
+                                                            <i class="fa fa-circle circle-gray" ng-class="{' text-success':config.editor.theme=='dark'}"></i> 
+                                                        </div>
+                                                        <div class="btn btn-light border border-dark rounded"  ng-click="mode('light')">
+                                                            <i class="fa fa-sun"></i>
+                                                            <span  ng-bind="language[language_default].light_mode"></span>
+                                                            <i class="fa fa-circle circle-gray " ng-class="{' text-success':config.editor.theme!='dark'}"></i> 
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="col">
+                                                    <label><span  ng-bind="language[language_default].port_develop"></span></label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" ng-model="config.server.port" >
+                                                        <small class="text-muted" ng-bind-html="language[language_default].need_restart"></small>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col">
+                                                    <label><span  ng-bind="language[language_default].language"></span> <b>{{lang|uppercase}}</b></label>
+                                                    <div class="form-group">
+                                                        <select class="form-control" ng-options="item  for item in languages" ng-model="config.editor.lang" ng-change="ch(lang)"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label >Logs</label>
+                                                        <div class="input-group">
+
+                                                        <input class="form-control accept_vars" placeholder="/logs" id="modal_archivos_file_name" type="text" ng-model="config.server.logs">
+                                                        <div class="input-group-append" >
+                                                            <button class="btn btn-outline-secondary" type="button" ng-click="getFolder()"><i
+                                                                    class="fa fa-spin fa-spinner" ng-show="loading"></i> {{language[language_default].search}}</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" text-right">
+                                            <button class="btn btn-info rounded" ng-click="saveConfig()"><i class="fa fa-save"></i> <span  ng-bind="language[language_default].save"></span></button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="view_now==3" style="width: calc(100vw - 270px)" class=" scroll-y">
+                            <h3 class="mt-4 mb-4"><i class="fa fa-file-alt"></i> <span  ng-bind="language[language_default].license"></span></h3>
+                            <div class="row">
+                                <div class="col-10 offset-1" ng-show="licensed">
+                                    <div class="">
+                                        <div class="card-body">
+                                            <h2>{{language[language_default].have_license}}: <b>{{language[language_default][licensed.toString()]}}</b></h2>
+                                            <hr class="hr-rocket">
+                                            <h4 class="text-muted font-weight-bolder">{{language[language_default].expire_license}}:  <b>{{caduca|uppercase}}</b></h4>
+                                            <h4 class="text-muted font-weight-bolder">{{language[language_default].production_license}}:  <b>{{language[language_default][production.toString()]}}</b></h4>
+                                            <h4 class="text-muted font-weight-bolder">{{language[language_default].online_license}}: <b>{{language[language_default][licenseIsOnline.toString()]}}</b></h4>
+                                            <h5 class="rocket-text">Token:</h5>
+                                            <div class="alert alert-danger" style="word-wrap: break-word;">
+                                                {{serial}}
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button class="btn btn-primary" ng-click="viewLic()"><i class="fa fa-id-badge"></i> {{language[language_default].change_license}}</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-10 offset-1"  ng-show="!licensed">
+                                    <div class="">
+                                        <div class="">
+                                            
+                                            <h2 ng-bind="language[language_default].no_license"></h2>
+                                            <h4 class="text-muted">
+                                                <span ng-bind-html="language[language_default].copy_token"></span> <a class="rocket-text" href="https://license.rocketbot.co/" target="_blank">{{language[language_default].here}}</a>.
+                                            </h4>
+                                            
+                                            <div class="form-group">
+                                                <label class="rocket-text" ng-bind-html="language[language_default].token_installed"> </label>
+                                                <div class="input-group">
+                                                    
+                                                    <input class="form-control text-muted font-weight-bolder" id="token" value="{{serial}}" data-toggle="popover" data-content="Token copiado">
+                                                    <div class="input-group-append">
+                                                        <button data-clipboard-target="#token" class="btn btn-danger btn-copy" type="button" id="copy-token">
+                                                            <i class="fas fa-copy" id="copy-icon"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="hr-rocket mt-5 mb-5">
+                                            <div class="form-group">
+                                                <h4 class="text-muted"><span ng-bind-html="language[language_default].paste_license"></span> <small>({{language[language_default].if_not_email}} <a class="rocket-text" href="https://license.rocketbot.co/" target="_blank">{{language[language_default].here}}</a>)</small></h4>
+                                                <textarea class="form-control" id="licencia" placeholder="{{language[language_default].license_code}}"></textarea>
+                                            </div>
+                                            <button id="checkLicence" class="btn btn-danger" ng-bind="language[language_default].validate" ></button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show=" view_now==4" style="width: calc(100vw - 270px)" class=" scroll-y">
+                            <h3 class="mt-4 mb-4"><i class="fa fa-life-ring"></i> <span  ng-bind="language[language_default].help_docs"></span></h3>
+                            <div class="row">
+                                <div class="offset-2 col-8">
+                                    <div class="card shadow">
+                                        <div class="card-body">
+                                            <h5 ng-bind="language[language_default].documentation"></h5>
+                                            
+                                            <div class="row">
+                                                <div class="col-2 text-center">
+                                                    <i class="fa fa-life-ring fa-5x"></i> 
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="tool-description">
+                                                        <h5>
+                                                            {{language[language_default].find_documentation}} <a href="https://docs.rocketbot.co/" target="_blank">{{language[language_default].here}}</a>
+                                                        </h5>
+                                                        
+                                                    </div>                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                                          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="newRobotModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><i class="fa fa-magic"></i> <span  ng-bind="language[language_default].new_bot"></span></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="card-title" ng-bind="language[language_default].new_blank_robot"></h5>
+                        <h6 class="card-subtitle mb-2 text-muted" ng-bind="language[language_default].new_blank_robot_help"></h6>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="card-text">
+                                    <div class="form-group">
+                                        <label  ng-bind="language[language_default].name"></label>
+                                        <input class="form-control" ng-model="new_bot_name" ng-change="isValidBotName(this,new_bot_name)">
+                                        <small class="text-danger" ng-show="!validBotName">
+                                            This bot name is invalid.
+                                        </small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  ng-bind="language[language_default].description"></label>
+                                        <textarea class="form-control" ng-model="new_bot_description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Project DB file<small>(default robot.db) or <a class="link"  href="" ng-click="getNewDBFile()" >Create new</a></small>:</label>
+                                    <div class="input-group mb-3">
+                                        <input class="form-control"   ng-model="new_bot_file">
+                                        <div class="input-group-append bg-primary">
+                                            <button class=" btn btn-primary" ng-click="getDBFile()"  ng-bind="language[language_default].path"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text">
+                                    <i class="fa fa-info-circle"></i> <span ng-bind="language[language_default].new_project_help"></span>
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" ng-click="createBot()" ng-disabled="!new_bot_name || !validBotName"  ng-bind="language[language_default].save"></button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"  ng-bind="language[language_default].cancel"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="alertMessage" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <h5 class="card-title">Atention!!!</h5>
+                    <h2>{{message}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal_list_bots" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Bots in  <b>{{viewing.name}}</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="command-container2 scrollbar" >
+                            
+                            <div  class="card  border border-dark shadow card-list m-1" ng-repeat="file in file_bots.bots" >
+                                <div class="card-body" >
+                                    <div class="row">
+                                        
+                                        <div class="col-11" ng-click="loadBot_(file)">
+                                            <h5 class="font-weight-bolder text-capitalize mb-0">
+                                                <i class="fa fa-box" ></i> {{file.name}}
+                                            </h5>
+                                            <h6 class="text-info" ng-if="file.description"> <i class="fa fa-quote-right"></i> {{file.description}}</h6>
+                                            <small><b>{{language[language_default].version}}:</b> {{file.counts}} -
+                                                <b>{{language[language_default].last_update}}:</b>{{file.created_at}}</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Captura de Pantalla</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/fontawesome-all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div>
+        <div class="no-gutters">
+            <div class="row">
+            <div class="col-5">
+                <button id="btn-screenshot" class="btn btn-command btn-secondary">
+                <i class="fa fa-camera"></i><br>
+                <small>Tomar</small>
+                <small>captura</small>
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    var data = { 
+        "project": { 
+            "profile": { "name": "screenshot" }, 
+            "commands": [
+                { 
+                "father": "getscreenshot", "command": "", "option": "", "var": "", "index": 0, "group": "virtual", "execute": false, "if": "", "children": [], "id": "aaaabbcc", "mode_live": true, "getvar": "resultado_screenshot_internal"
+            }
+            ], "vars": [{ "name": "resultado_screenshot_internal"}], "ifs": []
+        }
+    };
+    var back = function(){        
+        var goBack = window.open('', 'parent');
+        goBack.focus();
+        goBack.close()
+        window.close()
+    }
+    $(document).ready(function(){
+        let server_url = window.localStorage.getItem("server_url");
+        $("#btn-screenshot").on('click', function(event){
+            $.post(server_url + 'execute', { info: JSON.stringify(data) }, function (res) {
+                window.opener.postMessage('data:image/png;base64,'+ res.vars[0].data, "*");
+                back()
+            });    
+        })
+    });
+</script>
+</html>

@@ -1,0 +1,103 @@
+<style>
+    .tree_list{
+        border-left: 3px solid #cacaca;
+        margin-left: 8px;
+    }
+    body{
+        background-color: white;
+    }
+    @media print {
+      body, html, #lista, .scroll-y {
+          height: 100%;
+      }
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<div class="loader-wrap">    
+    <div class="request-loader">
+        <img loading='lazy' class="img-fluid" src="/images/ISO_Rojo.png">        
+    </div>
+    <div class="info-rocket">
+        <h3 class="text-dark">Vars in Bot</h3>
+    </div>
+</div>
+<div class="content" id="lista">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>Vars in Bot
+                            <a id="download" href=""></a>
+                            <div class="float-right d-sm-none"> 
+                                <small>
+                                    <i class="  fa fa-sync-alt" onclick="location.reload()"></i> 
+                                    <i class=" d-sm-none  fa fa-expand-arrows-alt" ng-click="openNewWindow()"></i>
+                                    
+                                </small>
+                            </div>
+                        </h3>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        
+                        <div ng-click="exportToPdf()" class="btn btn-danger btn-sm"> <i class="far fa-file-pdf"></i> PDF </div>
+                        
+                    </div>
+                </div>
+                <hr class="hr-rocket"> 
+                <div class="row">
+                    <div class="col-12 scroll-y mb-4" ng-if="!tree">
+                        <div class="row">
+                            <div class="col-md-6" >
+                                <div class="form-group">
+                                    <label>Select bot</label>
+                                    <input class="form-input" ng-model="search" placeholder="Filter">
+                                </div>
+                                
+                                <div class=""  ng-repeat="item in commands.bots|filter: search">
+                                    
+                                    <ng-include  src="'/varsbot/item.html'"></ng-include>                              
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="col-12 scroll-y mb-4" ng-if="tree">
+                        <i class="fa fa-arrow-left" ng-click="setNull()"></i>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-sm table-ellipsis">
+                                <thead >
+                                <tr>
+                                    <th width="20px">#</th>
+                                    <th width="30%" > Name</th>
+                                    
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="var in tree.project.vars">
+                                   
+                                    
+                                    <td >
+                                        {{$index + 1}}
+                                    </td>
+                                    <td class="can-click" >
+                
+                
+                                        {{var.name}}
+                                    </td>
+                                    
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img loading='lazy' src="/images/Powered.svg" class="powerby d-none d-md-block">
+</div>

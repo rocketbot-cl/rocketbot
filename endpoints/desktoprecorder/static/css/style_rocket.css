@@ -1,0 +1,231 @@
+body {
+    height: 100vh;
+    max-height: 100vh;
+
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+}
+
+#main {
+    overflow-y: scroll;
+    height: calc(100vh - 128px);
+    padding: 0 0 0 1px !important;
+    border: solid 3px #6F6F6E;
+    border-right: 0;
+    border-radius: 0.25rem;
+    background-color: #FBFBFB;
+}
+
+tr {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+
+.d-flex {
+    padding: 0 !important;
+
+}
+
+select, input, label {
+    font-size: 15px !important;
+}
+
+select, input {
+    border: solid 2px #6F6F6E !important;
+}
+
+.form-group {
+    margin: 10px 1px;
+    font-size: 16px;
+}
+
+.form-group label {
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+}
+
+#robot-name {
+    border: solid 3px #BC0017 !important;
+    height: auto;
+    margin: 0;
+}
+
+#robot-name:hover {
+    background-image: url("../img/edit.png");
+    background-repeat: no-repeat;
+    background-position: 180px;
+
+}
+
+#webPro a:visited {
+    color: initial;
+}
+
+#webPro a:hover {
+    text-decoration-line: initial !important;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 100px;
+    height: 75px;
+}
+
+td {
+    word-wrap: break-word;
+    max-width: 360px;
+}
+
+/*FedeGilles Mods*/
+.container-fluid {
+    padding: 15px 15px 0 15px;
+}
+
+#side {
+    padding: 0 25px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.form-control {
+    width: 80%;
+    margin: auto;
+    border-radius: 0.6rem;
+}
+
+#side h3 {
+    margin-left: 15px;
+    font-family: 'Muli', sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+#footer a {
+    margin-right: 30px;
+}
+
+#footer a img {
+    width: 300px;
+}
+
+#webPro i {
+    color: #000000;
+    margin: 0 5px;
+}
+
+.input-group-text {
+    font-weight: 700;
+    color: #fff;
+    background-color: #BC0017;
+    border-radius: 0;
+}
+
+.btn-light {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn {
+    border: 0;
+    border-radius: 0;
+}
+
+.row {
+    padding-bottom: 1rem;
+}
+
+
+#preview {
+    max-height: 100px;
+}
+
+.img-container {
+    border: 1px solid #cacaca;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    height: 110px;
+}
+
+.btn-event {
+    margin-top: 10px;
+    height: 45px;
+    width: 100%;
+    min-width: 45px;
+    margin-right: 3px !important;
+}
+
+.capture {
+    max-height: 45px;
+}
+
+.img-icon {
+    height: 24px;
+}
+
+.text-button {
+    font-size: 0.8rem;
+    top: -3px;
+    position: relative;
+}
+
+#clicks {
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    padding: 5px;
+}
+
+#content {
+    margin-top: 10px;
+    padding: 20px 0px
+}
+
+h1 {
+    color: white;
+}
+
+#nav {
+    background-color: #BC0017;
+    padding: 10px 10px;
+}
+
+.img-col {
+    padding: 40px 0px;
+}
+
+.logo {
+    width: 150px;
+    float: left;
+    padding-top: 7px;
+    margin-left: -5px;
+}
+
+.header-logo {
+    width: 100%;
+    height: 40px;
+    padding-left: 14px;
+    padding-top: 5px;
+    background-color: #BC0017;
+    color: white;
+}
+
+.invisible-input {
+    border: none !important;
+    border-bottom: dotted #000 !important;
+    background-color: transparent;
+    margin: 0;
+}
+
+.invisible-input:focus-visible {
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}

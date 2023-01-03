@@ -1,0 +1,50 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_select_popup_info">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}</h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-12">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label>{{language[language_default].server_config_title}}:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" id="modal_select_popup_info_path" type="text" ng-model="$parent.command_content.pathfile">
+                                <!--<div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" ng-click="searchFile('modal_select_popup_info_path')"><i
+                                            class="fa fa-spin fa-spinner" ng-show="loading"></i> {{language[language_default].search}}</button>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>{{language[language_default].height}}:</label>
+                            <input class="form-control" ng-model="$parent.command_content.height">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>{{language[language_default].width}}:</label>
+                            <input class="form-control" ng-model="$parent.command_content.width">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="addCommand_getimage()" class="btn btn-primary">{{language[language_default].add_command}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

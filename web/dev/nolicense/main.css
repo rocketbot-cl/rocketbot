@@ -1,0 +1,414 @@
+#files {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -1000px;
+    display: none;
+}
+.select2-selection {
+    height: calc(2.25rem + 2px) !important;
+}
+.select2-selection__rendered{
+    line-height: 35px !important;
+}
+.bg-robot{
+    background-color: #ffffff;
+    color: #ffffff;
+    background-image: url(../bck.png);
+    background-repeat: no-repeat;
+    background-size: 225px;
+    border-bottom: 1px solid #cacaca;
+}
+.logo{
+    width: 150px;
+    float: left;
+    padding-top: 7px;
+    margin-left: -5px;
+}
+img.tree-icon{
+    width: 18px;
+    height: 18px;
+}
+span.fancytree-title{
+    line-height: 24px;
+}
+.padding-top-8{
+    padding-top: 8px;
+}
+ul.myTree {
+    font-family: tahoma,arial,helvetica;
+    font-size: 10pt;
+    white-space: nowrap;
+    padding: 3px;
+    margin: 0;
+    background-color: #fff;
+    min-height: 0;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 230px);
+    overflow: scroll;
+    border-top: 1px solid #cacaca;
+    
+}
+.myTree ul{
+    padding-left: 25px;
+}
+
+
+ul.myTree li{
+    background-attachment: scroll;
+    background-color: transparent;
+    background-position: 0 0;
+    background-repeat: repeat-y;
+    background-image: none;
+    margin: 2px;
+    cursor: pointer;
+    list-style: none;
+}
+.icon-modal{
+    height: 28px;
+    margin-bottom: 4px;
+}
+.icon-list{
+    height: 24px;
+}
+.command_text{
+    max-width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: table-cell;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.can-click{
+    cursor: pointer;
+}
+
+.m_row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content {
+    width: 100%;
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    margin-right: auto;
+    margin-left: auto;
+}
+.menu{
+    width: 225px;
+    min-height: calc(100vh + -50px);
+    border-right: 1px solid #dee2e6;
+    box-shadow: 0px 3px 10px #888888;
+    z-index: 100;
+}
+.main{
+    width: calc(100vw - 245px);
+    display: flex;
+}
+.tabla{
+    width: calc(100vw - 500px);
+}
+.main .data{
+    width: 275px;
+    border-left: 1px solid #dee2e6;
+}
+.command-container{
+    height: calc(100vh - 150px);
+    background-color: #fbfbfb;
+    border-top: 2px solid #cacaca;
+    overflow-x: scroll;
+    padding-bottom: 40px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.title{
+        float: left;
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: -13px;
+}
+.childrens{
+    min-height: 30px;
+    border: 1px solid #cacaca;
+    margin-top: -1px;
+    margin-left: -5px;
+    margin-bottom: 4px;
+}
+.bg-logic{
+    background-color: #ffe005;
+}
+.table-info{
+    background-color: #bee5eb !important;
+}
+.commands-table{
+    border: 1px solid;
+}
+div[dropzone] {
+    border: 2px dashed #bbb;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    font: 20pt bold;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+.img-preview{
+    /*min-height: 200px;*/
+    width: 100%;
+    border: 1px solid;
+    padding: 4px;
+    max-height: 300px;
+}
+.header{
+    height: 50px;
+    padding-top: 10px;
+}
+.modal-complete{
+    width: 90vw;
+    max-width: 90vw;
+}
+.cropper-point {
+    width: 14px !important;
+    height: 14px !important;
+    background-color: #387aff75;
+    border: 1px solid #3968e7;
+    filter: alpha(opacity=75);
+    opacity: 1;
+    border-radius: 50%;
+}
+.cropper-point.point-w {
+    left: -7px !important;
+    margin-top: -7px !important;
+}
+.cropper-point.point-e {
+    right: -7px !important;
+    margin-top: -7px !important;
+}
+.img-container{
+    margin-top: 10px;
+}
+.pos-cursor{
+    position: absolute;
+    z-index: 10000;
+    width: 32px;
+    background-color: #05ff2270;
+    border-radius: 50%;
+}
+.pos-cursor.center{
+    left: calc(50% - 16px);
+    top: calc(50% - 16px);
+}
+.pos-cursor.top{
+    left: 0;
+    top: 0;
+}
+.pos-cursor.centertop{
+    left: calc(50% - 16px);
+    top: 0px;
+}
+.pos-cursor.right{
+    right: 0;
+    top: 0;
+}
+.pos-cursor.centerright{
+    right: 0;
+    top: calc(50% - 16px);
+}
+.pos-cursor.bottom{
+    left: 0;
+    top: 100%;
+}
+.pos-cursor.centerbottom{
+    left: calc(50% - 16px);
+    top: 100%;
+}
+.pos-cursor.left{
+    left: 0;
+}
+.pos-cursor.centerleft{
+    left: 0;
+    top: calc(50% - 16px);
+}
+.img-mini-preview{
+    width: 32px;
+    float: left;
+    top: 0px;
+    position: relative;
+    right: 0;
+}
+.nav-tabs{
+    padding-left: 10px;
+}
+.bg-rocketbot{
+    background-color: #C92034;
+    color: #ffffff;
+}
+
+.btn-command{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.btn-command i{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.btn-command small{
+    display: block;
+    line-height: .8rem;
+    font-weight: 100;
+}
+.dropzone{
+    border: 2px dotted #cacaca;
+    padding: 30px;
+}
+
+/*Drag and drop*/
+ul[dnd-list],
+ul[dnd-list] > li {
+  position: relative;
+}
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+ul[dnd-list] {
+  min-height: 100px;
+  padding-left: 0px;
+}
+
+/**
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ */
+ul[dnd-list] .dndDraggingSource {
+  display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be
+ * added to the dnd-list while the user is dragging
+ * over it.
+ */
+ul[dnd-list] .dndPlaceholder {
+  display: block;
+  background-color: #ddd;
+  padding: 10px 15px;
+  min-height: 42px;
+}
+
+/**
+ * The dnd-lists's child elements currently MUST have
+ * position: relative. Otherwise we can not determine
+ * whether the mouse pointer is in the upper or lower
+ * half of the element we are dragging over. In other
+ * browsers we can use event.offsetY for this.
+ */
+.command {
+    /*
+    background-color: #fff;
+    
+    border: 1px solid #009688;
+    */
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    
+    padding-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #cacaca;
+}
+.titulo{
+    min-height: 32px;
+}
+.command-btn{
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}
+ul[dnd-list] li{
+    display: block;
+      /* Disable text selection if item is not draggable */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+ul[dnd-list] li dnd-nodrag {
+  display: block;
+  padding: 10px 15px;
+}
+
+/**
+ * Gender-specifc background
+ */
+ul[dnd-list] li.background-man {
+  background-color: #CAE0FC;
+}
+
+ul[dnd-list] li.background-woman {
+  background-color: #FFE2F5;
+}
+
+ul[dnd-list] input.background-man {
+  background-color: #D8E9FF;
+  color: #2F4D99;
+}
+
+ul[dnd-list] input.background-woman {
+  background-color: #FFF0FA;
+  color: #D84FA7;
+}
+
+/**
+ * Handle positioning
+ */
+.handle {
+    cursor: move;
+    border-bottom: 1px dotted #cacaca;
+    margin-bottom: 10px;
+}
+
+.name {
+  margin-left: 20px;
+}
+.card_ {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-bottom: 4px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card_:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+h3{
+    font-weight: 200;
+}
+.container-licencia{
+    min-height: 500px;
+    background-image: url(../img/asset.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%
+}
+.rocketbot_logo{
+    height: 50px;
+}
+.vh-100{
+    height: 100vh !important;
+}
+.container{
+    position: relative;
+    top: calc(50% - 200px);
+    width: 50%;
+}

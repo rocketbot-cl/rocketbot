@@ -1,0 +1,151 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_pdf_image">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}
+                </h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{command_father.title_command}}:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" id="fileimage" type="text" ng-model="$parent.command_content.image"
+                                    placeholder="{{language[language_default].path}} JPG">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" ng-click="searchFile('fileimage', extensions.image)"><i
+                                            class="fa fa-spin fa-spinner" ng-show="loading"></i> {{language[language_default].search}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" ng-if="command_father.title == 'Convert image to PDF'">
+                        <div class="form-group">
+                            <label>{{command_father.title_command_1}}:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" id="fileimage_pdf" type="text" ng-model="$parent.command_content.file"
+                                    placeholder="{{language[language_default].path}} PDF">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" ng-click="searchFileSave('fileimage_pdf', extensions.pdf, '.pdf')"><i
+                                            class="fa fa-spin fa-spinner" ng-show="loading"></i> {{language[language_default].search}}</button>
+                                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" ng-if="command_father.title == 'Add image to PDF'">
+                        <div class="form-group">
+                            <label>{{command_father.title_command_1}}:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" id="fileimage_pdf" type="text" ng-model="$parent.command_content.file"
+                                    placeholder="{{language[language_default].path}} PDF">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" ng-click="searchFile('fileimage_pdf', extensions.pdf)"><i
+                                            class="fa fa-spin fa-spinner" ng-show="loading"></i> {{language[language_default].search}}</button>
+                                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p><strong>{{language[language_default].image}}:</strong></p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>X {{language[language_default].in}} PDF:</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.x"
+                                placeholder="X en PDF">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Y {{language[language_default].in}} PDF:</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.y"
+                                placeholder="Y {{language[language_default].in}} PDF">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>{{language[language_default].width}}:</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.width"
+                                placeholder="{{language[language_default].width}}">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>{{language[language_default].height}}:</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.height"
+                                placeholder="{{language[language_default].height}}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>{{language[language_default].page_size}}:</label>
+                            <select class="form-control"  ng-model="$parent.command_content.pagesize" ng-options="size for size in pagesizes">
+                                </select>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-check">
+                            <br>
+                                <input type="checkbox" class="form-check-input" id="preserveAspectRatio" ng-model="$parent.command_content.preserveAspectRatio">
+                                <label class="form-check-label" for="preserveAspectRatio" >{{language[language_default].aspect_ratio}}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <p>
+                            * {{language[language_default].if_no_width}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{language[language_default].assign_result}}</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_father_op_getvar"
+                                placeholder="{variable}">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="stop-bot-error row">
+                    
+                    <div class="col-6">
+                        <div class="form-group">
+                            <div class="form-check " style="margin-top: 0px; ">
+                                <input type="checkbox" class="form-check-input" ng-model="$parent.run_onerror" >
+                                <label class="form-check-label text-danger" >Error Handling: <span class="text-black">Run Robot</span></label>
+                            </div>
+
+                            <div class="input-group" ng-show="$parent.run_onerror">
+                                <select2  s2-options="v.name as v.name for v in bots[0].bots" ng-model="$parent.run_onerror_robot">
+                                    </select2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check " style="margin-top: 0px; ">
+                            <input type="checkbox" class="form-check-input" ng-model="$parent.stop_onerror" >
+                            <label class="form-check-label text-danger" >Error Handling: Stop all</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" ng-click="addCommandFile()" class="btn btn-primary">{{language[language_default].add_command}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

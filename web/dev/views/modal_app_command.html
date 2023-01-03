@@ -1,0 +1,154 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_app_command">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}</h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-4">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].title">Title:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.title">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].title_re">Title re:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.title_re">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].class_name">Class Name:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.class_name">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].class_name_re">Class Name re:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.class_name_re">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].control_id">Control Id:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.control_id">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].control_type">Control Type:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.control_type">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].handle">Handle:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.handle">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].auto_id">Automation Id:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.auto_id">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                            <div ng-show="command_father.command_available" class="form-group">
+                                <label ng-bind="language[language_default].best_match">Best Match:</label>
+                                <div class="input-group">
+                                    <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.best_match">
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div ng-show="command_father.command_available" class="form-group">
+                                <label ng-bind="language[language_default].ctrl_index">Control index:</label>
+                                <div class="input-group">
+                                    <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.ctrl_index">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                                <div ng-show="command_father.command_available" class="form-group">
+                                    <label ng-bind="language[language_default].text">Texto:</label>
+                                    <div class="input-group">
+                                        <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.text">
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                <div class="row">
+                        <div class="col-12">
+                                <div ng-show="command_father.command_available" class="form-group">
+                                    <label ng-bind="language[language_default].result">Result:</label>
+                                    <div class="input-group">
+                                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_father_op_getvar">
+                                        </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="stop-bot-error row">
+                    
+                    <div class="col-6">
+                        <div class="form-group">
+                            <div class="form-check " style="margin-top: 0px; ">
+                                <input type="checkbox" class="form-check-input" ng-model="$parent.run_onerror" >
+                                <label class="form-check-label text-danger" >Error Handling: <span class="text-black">Run Robot</span></label>
+                            </div>
+
+                            <div class="input-group" ng-show="$parent.run_onerror">
+                                <select2  s2-options="v.name as v.name for v in bots[0].bots" ng-model="$parent.run_onerror_robot">
+                                    </select2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check " style="margin-top: 0px; ">
+                            <input type="checkbox" class="form-check-input" ng-model="$parent.stop_onerror" >
+                            <label class="form-check-label text-danger" >Error Handling: Stop all</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" ng-click="addGeneralCommand('modal_app_command')" class="btn btn-primary">{{language[language_default].add_command}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

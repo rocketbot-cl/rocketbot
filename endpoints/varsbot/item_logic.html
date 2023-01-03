@@ -1,0 +1,33 @@
+<div class=""  ng-init="commands = item;ff = getFatherData(item); n = n +'-'">
+    <div class="can-click" ng-click="item.view = !item.view; view(item.id);view_item(item)">
+
+        <img loading='lazy' src="{{ff.icon}}" class="tree-icon"><b>{{ff.title}} <i class="fa " ng-class="{'fa-chevron-right': !item.view,'fa-chevron-down': item.view} "></i></b>
+    </div>
+    <div class="tree_list">
+        <div class="ml-2 pb-1">
+            <div id="{{item.id}}" style="display: none;">
+                <div ng-repeat="item in this.commands.children">
+                    
+                    <ng-include ng-if="(item.group =='logic' && item.father!='break') || item.father == 'trycatch'" src="'/treeview/item_logic.html'"></ng-include>
+                    <ng-include ng-if="(item.group !='logic' && item.father != 'trycatch' ) || item.father=='break' " src="'/treeview/item.html'"></ng-include>        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="can-click" ng-show="item.father == 'evaluateIf'"  ng-click="item.view_else = !item.view_else; view(item.id + '_else') ;view_item(item)" ng-class="{'text-muted': !this.commands.else || this.commands.else.length ==0}">
+        <img loading='lazy' src="{{ff.icon}}" class="tree-icon"><b> ELSE <i class="fa " ng-class="{'fa-chevron-right': !item.view_else,'fa-chevron-down': item.view_else} "></i></b>
+    </div>
+    <div class="tree_list" ng-show="item.father == 'evaluateIf'">
+        <div class="ml-2 pb-1">
+            <div id="{{item.id}}_else" style="display: none;">
+                <div class="" ng-repeat="item in this.commands.else">
+                    <div ng-init="ff = getFatherData(item)">
+                        <ng-include  ng-if="(item.group =='logic' && item.father!='break') || item.father == 'trycatch'" src="'/treeview/item_logic.html'"></ng-include>
+                        <ng-include ng-if="(item.group !='logic' && item.father != 'trycatch' ) || item.father=='break' " src="'/treeview/item.html'"></ng-include>        
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

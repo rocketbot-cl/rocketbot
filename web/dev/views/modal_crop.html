@@ -1,0 +1,160 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_crop">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-complete" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}} - {{command_father.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="file" onchange="angular.element(this).scope().onFile(this.files[0])" id="crop_file" class="d-none">
+                        <div class="col-md-12 justify-content-md-center btn-group" role="group" aria-label="Basic example">
+                            <!--<button class="btn btn-info" ng-click="openFileCrop()">
+                                <i class="fa fa-file-image"></i> Abrir archivo</button>-->
+                            <button class="btn btn-secondary" ng-click="getScreenShot()">
+                                <i class="fa fa-camera"></i> {{language[language_default].screenshot}}</button>
+                            <button class="btn btn-primary" ng-click="preview(0)">
+                                <i class="fa fa-hand-pointer"></i> {{language[language_default].select_reference}}</button>
+                            <button class="btn btn-warning" ng-disabled="!ref_data" ng-click="preview(1)">
+                                <i class="fa fa-mouse-pointer"></i> {{language[language_default].select_focus}}</button>
+                            <!--<button class="btn btn-danger" ng-click="clear()">
+                                <i class="fa fa-trash-alt"></i> {{language[language_default].clean}}</button>-->
+                        </div>
+
+                        <div ng-if="dataUrl" class="img-container img-thumbnail">
+                            <img loading='lazy' ng-if="dataUrl" id="image_cropper" ng-src="{{dataUrl}}" ng-cropper ng-cropper-proxy="cropperProxy" ng-cropper-show="showEvent" ng-cropper-hide="hideEvent"
+                                ng-cropper-options="options" class="img-fluid">
+                        </div>
+                        <small><i class="fas fa-question-circle"></i> {{command_father.description}}</small>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <label class="col-md-8">{{language[language_default].image_search}}:</label>
+                            <label class="col-md-4">{{language[language_default].click_point}}:</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img loading='lazy' src="/images/icons/mouse_click_cursor.png" ng-show="!$parent.command_img_point" class="pos-cursor {{$parent.command_father_op| lowercase | nospace}}">
+                                        <img loading='lazy' ng-src="{{$parent.command_img}}" class="img-fluid img-thumbnail img-preview">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img loading='lazy' ng-src="{{$parent.command_img_point}}" class="img-fluid img-thumbnail img-preview">
+                                        <img loading='lazy' src="/images/icons/mouse_click_cursor.png" ng-show="$parent.command_img_point" class="pos-cursor {{$parent.command_father_op| lowercase | nospace}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hr-rocket">
+                        <div class="row">
+                            <div class="col-md-6" ng-show="$parent.command_father.options">
+                                <div class="form-group">
+                                    <label>{{command_father.title_options}}:</label>
+                                    <select class="form-control" id="command_list_op" ng-model="$parent.command_father_op" ng-options="x for x in command_father.options" ng-init="$parent.command_father_op = command_father.options[1]">
+                                        <option name="" value="">-- Seleccione --</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>{{language[language_default].accuracy}}:</label>
+                                    <select type="number" class="form-control" ng-model="$parent.command_content.accuracy" ng-init="$parent.command_content.accuracy='0.8'">
+                                        <option value="1.0">1.0</option>
+                                        <option value="0.9">0.9</option>
+                                        <option value="0.8">0.8</option>
+                                        <option value="0.7">0.7</option>
+                                        <option value="0.6">0.6</option>
+                                        <option value="0.5">0.5</option>
+                                        <option value="0.4">0.4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6" ng-show="command_father.father == 'clickimage'">
+                                <div class="form-group">
+                                    <label>{{language[language_default].mouse_button}}:</label>
+                                    <select type="number" class="form-control" ng-model="$parent.command_content.clicks" ng-init="$parent.command_content.clicks='simple'">
+                                        <option value="simple">{{language[language_default].left}}</option>
+                                        <option value="doble">{{language[language_default].double_left}}</option>
+                                        <option value="derecho">{{language[language_default].right}}</option>
+                                        <option value="derecho_doble">{{language[language_default].double_right}}</option>
+                                        <option value="medio">{{language[language_default].middle}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>{{language[language_default].gray_scale}}:</label>
+                                    <select type="number" class="form-control" ng-model="$parent.command_content.gray_scale" ng-init="$parent.command_content.gray_scale='1'">
+                                        <option value="1">{{language[language_default].yes}}</option>
+                                        <option value="0">{{language[language_default].no}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>{{language[language_default].minSearchTime}}</label>
+                                    <input class="form-control" ng-model="$parent.command_content.seconds" placeholder="{{language[language_default].seconds}}">
+                                </div>
+                            </div>
+                            <!--<div class="col-md-12" ng-show="command_father.command_available">
+                                <div class="form-group">
+                                    <label>{{language[language_default].seconds}}</label>
+                                    <input class="form-control" ng-model="$parent.command_content.seconds">
+                                </div>
+                            </div>-->
+                            <div class="col-md-12" ng-show="command_father.getResult">
+                                <div class="form-group">
+                                    <label>{{language[language_default].assign_result}}:</label>
+                                    <select class="form-control" ng-model="$parent.command_father_op_getvar" ng-options="v.name for v in vars">
+                                        <option name="" value="">-- Seleccione --</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>{{language[language_default].text}}:</label>
+                                    <input type="text" class="form-control" ng-model="$parent.command_content.get_word">
+                                    <small>{{language[language_default].optional}}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="stop-bot-error row">
+                    
+                    <div class="col-6">
+                        <div class="form-group">
+                            <div class="form-check " style="margin-top: 0px; ">
+                                <input type="checkbox" class="form-check-input" ng-model="$parent.run_onerror" >
+                                <label class="form-check-label text-danger" >Error Handling: <span class="text-black">Run Robot</span></label>
+                            </div>
+          
+                            <div class="input-group" ng-show="$parent.run_onerror">
+                                <select2  s2-options="v.name as v.name for v in bots[0].bots" ng-model="$parent.run_onerror_robot">
+                                    </select2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check " style="margin-top: 0px; ">
+                            <input type="checkbox" class="form-check-input" ng-model="$parent.stop_onerror" >
+                            <label class="form-check-label text-danger" >Error Handling: Stop all</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" ng-click="addVirtual()" class="btn btn-primary">{{language[language_default].add_command}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

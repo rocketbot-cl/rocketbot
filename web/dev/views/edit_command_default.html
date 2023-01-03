@@ -1,0 +1,30 @@
+<!--
+<div class="form-group">
+
+  <h5 ng-if="command_father.father!='module'">
+    <img loading='lazy' class="tree-icon" ng-src="{{command_father.icon}}"> {{command_father.title}}
+  </h5>
+  
+  <h5 ng-if="command_father.father=='module'">
+    <img loading='lazy' class="tree-icon" ng-src="{{command_father.icon}}"> {{command_father.title[language_default]}}
+  </h5>
+  <small class="al">
+    <i class="fas fa-question-circle"></i> {{command_father.description[language_default]||command_father.description}}
+  </small>
+
+</div>
+-->
+<!--<small><i class="fa fa-lightbulb"></i> {{language[language_default].for_edit}}</small>-->
+
+
+
+<!--
+<small>{{language[language_default].description}}:</small>
+<div class="alert alert-primary" role="alert">
+  <small>{{item_to_update.description}}</small>
+</div>
+-->
+<label>{{language[language_default].return_message}}:<small ng-show="item_to_update.disabled">{{language[language_default].command_disabled}}</small>
+</label>
+<textarea class="form-control font-weight-light textarea-message">{{item_to_update.message}}</textarea>
+

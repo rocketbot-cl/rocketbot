@@ -1,0 +1,52 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_dashboard_login">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}
+                </h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>{{language[language_default].server_config_title}}:</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.url">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{language[language_default].user}}:</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.user">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{language[language_default].password}}:</label>
+                            <input class="form-control" type="password" ng-model="$parent.command_content.password">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>{{language[language_default].assign_result}}</label>
+                            <input class="form-control accept_vars" type="text" ng-model="$parent.command_father_op_getvar" placeholder="{variable}">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="addCommandFile()" class="btn btn-primary">{{language[language_default].add_command}}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{language[language_default].cancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

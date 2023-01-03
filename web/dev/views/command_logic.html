@@ -1,0 +1,140 @@
+<div id="{{command.id}}" ng-init="command_parent = getFatherData(command)"
+  ng-class="{'bg-disabled': command.disabled, 'command-error': command.execute=='3','select-command': item_to_update.id == command.id}" class="command  bg-logic">
+  
+
+  <div class="handle" ng-class="{'success': command.execute=='1','play': command.execute=='0','pause': command.execute=='2','danger': command.execute=='3','select': item_to_update.id == command.id}">
+    <div class="row">
+        <div class="col-md-9">
+            <span class="float-left line-number">{{$index + 1}}</span>
+            <div class="icon-res">
+                <i class=" fas"
+                ng-class="{'fa-check': command.execute=='1' ,'fa-spin fa-spinner': command.execute=='0' ,'fa-pause': command.execute=='2' ,'fa-exclamation-triangle': command.execute=='3' }"></i>
+            </div>
+            <div class="titulo">
+                <div class="command-disabled">
+                        <input data-toggle="tooltip" data-placement="top"
+                            title="{{language[language_default].disable_help}}" type="checkbox"
+                            ng-checked="command.disabled" ng-model="command.disabled"
+                            aria-label="{{language[language_default].disable_help}}">
+                         <i class="far fa-eye-slash"></i>
+                            {{language[language_default].disable}} 
+                    
+                </div>
+                <small ng-show="edit_description!=command.id"> <b>{{language[language_default].description}}:</b>
+                    {{command.description}} <i class="fa fa-pencil-alt"
+                        ng-click="edit_description=command.id"></i></small>
+                <div class="description-edit input-group" ng-show="edit_description==command.id">
+                    <input class="form-control form-control-sm"
+                        placeholder="{{language[language_default].description}}" ng-model="command.description">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary btn-sm rounded"
+                            ng-click="edit_description=0">{{language[language_default].save}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="command-btn">
+            <!-- Botones de acción -->
+            <div class="btn-group" role="group">
+                <button class="btn btn-success btn-sm inline-block" ng-click="play(command)">
+                    <i class="fas fa-play-circle"></i>
+                </button>
+                <button class="btn btn-primary  btn-sm inline-block "
+                    ng-click="copyCommand(commands, command)">
+                    <i class="fas fa-clone icon"></i>
+                    {{language[language_default].clone}}
+                </button>
+                <!--<div class="btn btn-outline-success btn-sm inline-block" ng-click="addTimeSleep($index, command.id)">
+                    <i class="far fa-clock"></i>
+                </div>-->
+                <div class="btn btn-danger btn-sm form-inline" ng-click="removeCommand(commands, command.id)">
+                    <i class="fas fa-trash"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="col-sm-12 can-click" ng-dblclick="edit_command_modal(command, command_parent)"
+        ng-click="viewDataItem(command, command_parent)">
+        <span>
+          <img loading='lazy' ng-src="{{command_parent.icon}}" class="float-left icon-list">
+          <div class="btn-minimize minimize-logic-btn" ng-click=" command.minimize = !command.minimize">
+            <i class="far" ng-class="{'fa-minus-square': !command.minimize,'fa-plus-square': command.minimize}"></i>
+          </div>
+          <small>{{command_parent.title}} :
+            <span  ng-show="command.father != 'trycatch'">
+            {{command_parent.title_options}} <b> {{command.option}}</b> {{command_parent.title_command}}
+
+            <b class="command_text">{{command.var}} {{command.command}} </b> <br>
+            Res: <i>{{command.extra.res}}</i>
+            </span>
+            <img loading='lazy' class="img-mini-preview" ng-if="command.extra_data && command_parent.group=='virtual' "
+              ng-src="{{command.extra_data}}">
+
+          </small>
+         
+        </span>
+
+
+
+        <div ng-show="command.execute==3" class="alert alert-danger bg-white">
+          <small>{{command.message}}</small>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="childrens row" ng-init="commands_ = command.children">-->
+<ul ng-if="command_parent.logic || command_parent.father == 'trycatch'" class="childrens row "
+  ng-class="{'bg-disabled': command.disabled, 'minimize-logic': command.minimize}"
+  ng-init="$watch('commands = command.children');"
+  dnd-list
+  
+  dnd-drop="dropCallback(index, item, external, type, commands); callback({targetList: commands, targetIndex: index})"
+  context-menu="menuOptions">
+  <li ng-repeat='command in commands track by command.id' class="col-md-12"
+    dnd-draggable="null" dnd-callback="onDrop(commands, $index, targetList, targetIndex)"
+    
+    context-menu="menuOptions">
+
+    <ng-include ng-if="(command.group !='logic' && command.father != 'trycatch' ) || command.father=='break' " src="'views/command.html'"></ng-include>
+    <ng-include ng-if="(command.group =='logic' && command.father!='break') || command.father == 'trycatch'" src="'views/command_logic.html'">
+    </ng-include>
+
+  </li>
+  <div class="text-muted w-100 text-center pt-4" ng-show="commands.length < 1">Drag and drop a command here</div>
+</ul>
+<div class="if_else" ng-if="command.father == 'evaluateIf'  || command.father == 'trycatch'">
+  <div class="else">
+
+
+    <span ng-show="command.father == 'evaluateIf'">Else</span>
+    <span ng-show="command.father == 'trycatch'">Catch</span>
+
+   
+    <div class="btn-minimize minimize-logic-btn" ng-click=" command.minimize_else = !command.minimize_else" style="bottom: -3px;">
+      <i class="far" ng-class="{'fa-minus-square': !command.minimize_else,'fa-plus-square': command.minimize_else}"></i>
+    </div>
+
+  </div>
+  <ul ng-if="command_parent.logic || command.father == 'trycatch'" class="childrens row "
+    ng-class="{'bg-disabled': command.disabled, 'minimize-logic': command.minimize_else}"
+    ng-init="$watch('els = command.else');"
+    dnd-list
+    dnd-drop="dropCallback(index, item, external, type, els); callback({targetList: this.els, targetIndex: index})"
+    context-menu="menuOptions">
+    <li ng-repeat='command in this.els track by command.id' class="col-md-12"
+      dnd-draggable="null" dnd-callback="onDrop(els, $index, targetList, targetIndex)"
+      context-menu="menuOptions">
+
+      <ng-include ng-if="(command.group !='logic' && command.father != 'trycatch' ) || command.father=='break' " src="'views/command.html'"></ng-include>
+      <ng-include ng-if="(command.group =='logic' && command.father!='break') || command.father == 'trycatch'" src="'views/command_logic.html'">
+      </ng-include>
+
+    </li>
+    <div class="text-muted w-100 text-center pt-4" ng-show="this.els.length < 1">Drag and drop a command here</div>
+  </ul>
+</div>

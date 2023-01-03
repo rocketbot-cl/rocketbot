@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="tabulator.css" rel="stylesheet">
+
+    <script src="tabulator.js"></script>    
+</head>
+<body >
+    
+    <h3>Hola mundo</h3>
+    <input id="input" type="text" placeholder="texto">
+    <br>
+    <div>
+        <button id="add-row">Add Blank Row to bottom</button>
+        <button id="clear">Empty the table</button>
+    </div>
+    <div id="example-table"></div>
+
+    <script>
+        var tabledata = [];
+        var table = new Tabulator("#example-table", {
+            data:tabledata,           //load row data from array
+            layout:"fitColumns",      //fit columns to width of table
+            responsiveLayout:"hide",  //hide columns that dont fit on the table
+            tooltips:true,            //show tool tips on cells
+            addRowPos:"top",          //when adding a new row, add it to the top of the table
+            history:true,             //allow undo and redo actions on the table
+            pagination:"local",       //paginate the data
+            paginationSize:7,         //allow 7 rows per page of data
+            movableColumns:true,      //allow column order to be changed
+            resizableRows:true,       //allow row order to be changed
+            initialSort:[             //set the initial sort order of the data
+                {column:"name", dir:"asc"},
+            ],
+            dataChanged:function(data){
+                console.log(data)
+                message.commands["table"] = data;
+                SendMessage();
+            },
+            columns:[                 //define the table columns
+                {title:"Name", field:"name", editor:"input"},
+                {title:"Type", field:"type", width:95, editor:"select", editorParams:{values:["int", "string","date"]}},
+                {title:"Get", field:"get", width:90,  hozAlign:"center", formatter:"tickCross", sorter:"boolean", editor:true},
+            ],
+        });
+
+        var message = {
+            type: 'iframe',
+            commands: {}
+        }
+        var SendMessage = function(){
+            parent.postMessage(message,"*");
+        }
+        $('#input').on('change',function(e){
+            message.commands['input'] = $(this).val();
+            SendMessage();
+        })
+        
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+        
+        // Listen to message from child window
+        eventer(messageEvent,function(e) {
+            console.log('parent received message!:  ',e.data);
+            if(e.data){
+                if( e.data.input){
+                    $("#input").val(e.data.input);
+                }
+                if(e.data.table){
+                    tabledata = e.data.table
+                    table.setData(tabledata)
+                }
+            }else{
+                    tabledata = [{"name":""}];
+                    table.setData(tabledata)
+                }
+
+        });
+        document.getElementById("add-row").addEventListener("click", function(){
+            table.addRow({});
+        });
+        document.getElementById("clear").addEventListener("click", function(){
+            table.clearData()
+        });
+    </script>    
+</body>
+</html>

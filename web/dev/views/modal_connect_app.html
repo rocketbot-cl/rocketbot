@@ -1,0 +1,62 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_connect_app">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>
+                    <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}</h3>
+                <p>
+                    <i class="fas fa-question-circle"></i> {{command_father.description}}
+                </p>
+                <div class="row">
+                    <div class="col-6">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].title">Title:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.title">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].handle">Handle:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.handle">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].process">Process:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.process">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div ng-show="command_father.command_available" class="form-group">
+                            <label ng-bind="language[language_default].path">Path:</label>
+                            <div class="input-group">
+                                <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.path">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="addGeneralCommand('modal_connect_app')" class="btn btn-primary">Agregar
+                    comando</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

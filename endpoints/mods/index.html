@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscar Mods</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Fonts Awesome -->
+  <link rel="stylesheet" href="/bower_components/components-font-awesome/css/all.css" />
+  <!-- <link rel="stylesheet" href="styles/main.css?v=20200920"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Muli:wght@200;300;500;700;900&display=swap">
+  <style>
+    body {
+      font-family: 'Muli', sans-serif !important;
+    }
+
+    h3 {
+      font-weight: 700;
+    }
+
+    h2 {
+      font-weight: 900;
+    }
+
+    .search-group label {
+      font-style: bold;
+      font-weight: 600;
+    }
+
+    #filters {
+      font-size: small;
+      padding: 5px;
+      margin: 5px auto;
+    }
+
+    .type-filter {
+      margin: 5px -1px -5px 2px !important;
+     
+    }
+    #filters{
+      padding: 5px 15px;
+    }
+    #filters span{
+      font-weight: 300;
+      font-size: 11px !important;
+    }
+    button{
+      border-radius: 5px !important;
+    }
+
+    .button-group button{
+      font-size: 11px !important;
+      font-family: 'Muli', sans-serif !important;
+      padding: 5px 10px !important;
+      min-width: 100px;
+      font-weight: 800;
+      border: none;
+    }
+    .card-title{
+      padding: 10px 0px; 
+    }
+    
+  </style>
+
+
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="form-group p-2 search-group">
+      <label for=""> <i class="fas fa-search"></i> Search Addons</label>
+      <input type="text" id="search" v-model="search" placeholder="Search modules" class="form-control" />
+    </div>
+    <div id="filters">
+      <input type="radio" class="type-filter" v-model="selectedCategory" value="Module" checked="checked"><span>Module</span>
+      <input type="radio" class="type-filter" v-model="selectedCategory" value="Tool"><span>Tool</span>
+      <input type="radio" class="type-filter" v-model="selectedCategory" value="Addon"><span>Addon</span>
+      <input type="radio" class="type-filter" v-model="selectedCategory" value="Template"><span>Template</span>
+    </div>
+    <div v-if="filteredModules.length > 0" style="margin: auto 15px;border: 1px  #C3C3C3 solid !important;border-radius: 10px;">
+      <div v-for="(mod, index) in filteredModules">
+        <div class="card" style="border: 0px;margin:10px;border-bottom: 1px #C3C3C3 solid;border-radius:0px;color:#919090;padding: 0px 0px 8px 0px;"
+          v-bind:id="'mod_' + mod.id">
+          <div class="p-1">
+            <h6 class="card-title"><img loading='lazy' style="max-width: 28px; "
+                :src="'https://market-api.rocketbot.co/api/icon/' + mod.id" alt="">
+              <span v-on:click="view_help(mod)" style="padding-bottom: 2px;cursor: pointer;color:dimgrey">{{
+                mod.name.substring(0,17) }}</span> <small>{{mod.version}}</small>
+            </h6>
+            <p>
+            <div style="font-size: .7rem;">{{mod.description}}</div>
+            </p>
+            <p class="">
+              <span style="font-size: .7rem;"> <strong>By: {{ mod.author }}</strong> </span> <br>
+              <span style="font-size: .7rem;cursor: pointer;" v-on:click="view_help(mod)"> View docs</span>
+            </p>
+
+            <div class="button-group float-left">
+              <div v-if="mod.is_install == 'Installed'">
+                <button class="btn btn-success btn-sm  " style="background-color:#23CE6B;" disabled> INSTALLED</button>
+              </div>
+              <div v-if="mod.is_install == 'Install'">
+                <button v-on:click="installModule(index)" class="btn btn-primary btn-sm " style="border:#23CE6B 1px solid;background-color:#fff; color:#23CE6B">
+                  <span v-if="mod.id != installing">INSTALL</span>
+                  <span v-if="mod.id == installing"><i class="fa fa-spin fa-spinner"></i> INSTALLING</span>
+              </div>
+              <div v-if="mod.is_install == 'Update'">
+                <button v-on:click="installModule(index)" class="btn btn-primary btn-sm " style="background-color:#2660A4;color:white;">
+                  <span v-if="mod.id != installing">UPDATE TO {{mod.version}}</span>
+                  <span v-if="mod.id == installing"><i class="fa fa-spin fa-spinner" ></i> UPDATING</span>
+                </button>
+              </div>
+            </div>
+            <div class="download-group float-right">
+              <img loading='lazy' width="15px" src="mods/download.svg" alt="download-icon">
+              <span class=" font-weight-light" style="font-size:.7rem">{{
+                mod.downloads }}</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-else style="margin: auto 15px;">
+      <img loading='lazy' width="200px" src="mods/coming.jpg" alt="">
+    </div>
+  </div>
+
+  <script src="mods/lodash.min.js"></script>
+  <script src="mods/vue.min.js"></script>
+  <script>
+    var modules = {{data}};
+    const request = async () => {
+      const response = await fetch('/getmodules');
+      const json = await response.json();
+      this.installed_modules = json[0].children
+    }
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        installed_modules: request(),
+        selectedCategory: 'Module',
+        search: '',
+        mods: modules,
+        modsOrdered: modules,
+        installing: 0
+      },
+      methods: {
+        installModule: function (index) {
+          //moduleToInstall = this.modsOrdered[index].name 
+          this.installing = this.modsOrdered[index].id;
+          moduleToInstall = new FormData();
+          moduleToInstall.append('name', this.modsOrdered[index].name);
+          moduleToInstall.append('type', this.modsOrdered[index].type,);
+          moduleToInstall.append('link_repo', this.modsOrdered[index].link_repo);
+          moduleToInstall.append('origin', this.modsOrdered[index].origin);
+          let installModuleRequest = fetch("/mods/install/", {
+            method: "POST",
+            body: moduleToInstall
+          });
+          installModuleRequest.then(data => {
+            try {
+              window.opener.postMessage({ 'type': 'reloadModules' })
+            } catch (e) {
+              try {
+                parent.postMessage({ 'type': 'reloadModules' })
+              } catch (e) {
+              }
+            }
+            location.reload();
+          });
+
+        },
+        view_help: function (mod) {
+          try {
+            window.opener.postMessage({ 'type': 'viewMarkdown', data: { title: mod.name, data: mod.readme, id: mod.id } })
+          } catch (e) {
+            try {
+              parent.postMessage({ 'type': 'viewMarkdown', data: { title: mod.name, data: mod.readme, id: mod.id } })
+            } catch (e) {
+            }
+          }
+        }
+      },
+      computed: {
+        orderModules: function () {
+          return _.orderBy(this.mods, 'downloads', 'desc').slice(1, 5)
+        },
+        filteredModules: function () {
+          var self = this;
+          var category = self.selectedCategory;
+          this.modsOrdered = _.orderBy(
+            this.mods, 'is_install', 'desc'
+          ).filter(
+            filtro => {
+              return filtro.name.toLowerCase().includes(this.search.toLowerCase())
+            }
+          )
+          this.modsOrdered = this.modsOrdered.filter(function (modulo) {
+            return modulo.type == category;
+          })
+          return this.modsOrdered;
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

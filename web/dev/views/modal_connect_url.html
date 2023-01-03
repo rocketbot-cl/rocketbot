@@ -1,0 +1,229 @@
+<div class="modal" tabindex="-1" role="dialog" id="modal_connect_url">
+  <div class="modal-dialog modal-dialog-centered modal-big" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Robot: {{robot_name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <h3>
+          <img loading='lazy' ng-src="{{command_father.icon}}" class="icon-modal"> {{command_father.title}}
+        </h3>
+        <p>
+          <i class="fas fa-question-circle"></i> {{command_father.description}}
+        </p>
+        <hr>
+        <div class="row">
+          <div class="col-6">
+
+
+            <div class="form-group">
+              <label>{{language[language_default].server_config_title}}:</label>
+              <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.url"
+                placeholder="https://rocketbot.cl">
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="col-12">
+              <label>{{language[language_default].request_method}}:</label>
+            </div>
+            <div class="col-12">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="get" ng-model="$parent.command_content.method">
+                <label class="form-check-label" for="gridRadios1">
+                  <small>GET</small>
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="post" ng-model="$parent.command_content.method">
+                <label class="form-check-label" for="gridRadios2">
+                  <small>POST</small>
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="put" ng-model="$parent.command_content.method">
+                <label class="form-check-label" for="gridRadios3">
+                  <small>PUT</small>
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="delete" ng-model="$parent.command_content.method">
+                <label class="form-check-label" for="gridRadios4">
+                  <small>DELETE</small>
+                </label>
+              </div>
+            </div>
+
+          </div>
+          <br>
+
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" data-toggle="tab" data-target="#nav-headers" role="tab"
+                  aria-controls="nav-home" aria-selected="true">
+                  <span
+                    ng-class="{'font-weight-bold':$parent.command_content.header.length > 0 }">{{language[language_default].headers}}</span>
+                </a>
+                <a class="nav-item nav-link" data-toggle="tab" data-target="#nav-forms" role="tab"
+                  aria-controls="nav-home" aria-selected="true">
+                  <span
+                    ng-class="{'font-weight-bold':$parent.command_content.form.length > 0 }">{{language[language_default].content_forms}}</span>
+                </a>
+                <a class="nav-item nav-link" data-toggle="tab" data-target="#nav-params" role="tab"
+                  aria-controls="nav-home" aria-selected="true">
+                  <span
+                    ng-class="{'font-weight-bold':$parent.command_content.content_params.length > 0 }">{{language[language_default].content_params}}</span>
+                </a>
+                <a class="nav-item nav-link" data-toggle="tab" data-target="#nav-json" role="tab" aria-controls="nav-home"
+                  aria-selected="true">
+                  <span
+                    ng-class="{'font-weight-bold':$parent.command_content.json.length > 0 }">{{language[language_default].content_json}}</span>
+                </a>
+                <a class="nav-item nav-link" data-toggle="tab" data-target="#nav-raw" role="tab" aria-controls="nav-home"
+                  aria-selected="true">
+                  <span
+                    ng-class="{'font-weight-bold':$parent.command_content.raw.length > 0 }">{{language[language_default].raw}}</span>
+                </a>
+                <a class="nav-item nav-link" data-toggle="tab" data-target="#nav-proxy" role="tab"
+                  aria-controls="nav-home" aria-selected="true">
+                  <span
+                    ng-class="{'font-weight-bold':$parent.command_content.proxy.length > 0 }">{{language[language_default].proxy}}</span>
+                </a>
+              </div>
+            </nav>
+            <div class="tab-content">
+              <br>
+              <div class="tab-pane fade show active" id="nav-headers" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="form-group">
+                  <label>{{language[language_default].headers}}:</label>
+                  <textarea class="form-control accept_vars" type="text" ng-model="$parent.command_content.header"
+                    placeholder='{ "header1":"dato de header_1", "header": "dato de header_2" }'></textarea>
+                </div>
+              </div>
+  
+              <div class="tab-pane fade" id="nav-forms" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="form-group">
+                  <label>{{language[language_default].content_forms}}:</label>
+                  <textarea class="form-control accept_vars" type="text" ng-model="$parent.command_content.form"
+                    placeholder='{ "input1":"dato de input", "input2": "datos input2" }'></textarea>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-params" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="form-group">
+                  <label>{{language[language_default].content_params}}:</label>
+                  <textarea class="form-control accept_vars" type="text" ng-model="$parent.command_content.params"
+                    placeholder='{ "param1":"dato de param", "param2": "dato de param" }'></textarea>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-json" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="form-group">
+                  <label>{{language[language_default].content_json}}:</label>
+                  <textarea class="form-control accept_vars" type="text" ng-model="$parent.command_content.json"
+                    placeholder='{ "aaa":"bbb", "ccc": "ddd" }'></textarea>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-raw" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="form-group">
+                  <label>{{language[language_default].raw}}:</label>
+                  <textarea class="form-control accept_vars" type="text" ng-model="$parent.command_content.raw"
+                    placeholder='<?xml version="1.0" encoding="UTF-8"?>
+          <SOAP-ENV:Header/>
+          <ns1:Body><ns0:GetWeatherInformation/></ns1:Body>
+        </SOAP-ENV:Envelope>'></textarea>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-proxy" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="form-group">
+                  <label>{{language[language_default].proxy}}:</label>
+                  <input class="form-control accept_vars" type="text" ng-model="$parent.command_content.proxy"
+                    placeholder='{"http":"1.1.1.1:1234","https":"2.2.2.2:1234"}'>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        <div class="row"><div class="col-md-12">
+          <div class="form-group">
+            <label>{{language[language_default].path}}:</label>
+            <div class="input-group">
+              <input class="form-control accept_vars" id="modal_archivos_file_name_connect_url" type="text"
+                ng-model="$parent.command_content.file" placeholder='Path del archivo'>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button"
+                  ng-click="searchFile('modal_archivos_file_name_connect_url')"><i class="fa fa-spin fa-spinner"
+                    ng-show="loading"></i>
+                  {{language[language_default].search}}</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>{{language[language_default].assign_result}}</label>
+              <input class="form-control accept_vars" type="text" ng-model="$parent.command_father_op_getvar"
+                placeholder="{variable}">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <br>
+              <p>
+              <div class="checkbox">
+                <label>
+                  <input class="checkbox" type="checkbox" ng-model="$parent.command_content.ssl" id="ignore_ssl">
+                  Ignore SSL certificate
+                </label>
+              </div>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <div class="stop-bot-error row">
+
+          <div class="col-6">
+            <div class="form-group">
+              <div class="form-check " style="margin-top: 0px; ">
+                <input type="checkbox" class="form-check-input" ng-model="$parent.run_onerror">
+                <label class="form-check-label text-danger">Error Handling: <span class="text-black">Run
+                    Robot</span></label>
+              </div>
+
+              <div class="input-group" ng-show="$parent.run_onerror">
+                <select2 s2-options="v.name as v.name for v in bots[0].bots" ng-model="$parent.run_onerror_robot">
+                </select2>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-check " style="margin-top: 0px; ">
+              <input type="checkbox" class="form-check-input" ng-model="$parent.stop_onerror">
+              <label class="form-check-label text-danger">Error Handling: Stop all</label>
+            </div>
+          </div>
+        </div>
+        <button type="button" ng-click="addConnectRequest()"
+          class="btn btn-primary">{{language[language_default].add_command}}</button>
+        <button type="button" class="btn btn-secondary"
+          data-dismiss="modal">{{language[language_default].cancel}}</button>
+      </div>
+    </div>
+  </div>
+</div>

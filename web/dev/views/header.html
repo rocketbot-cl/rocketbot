@@ -1,0 +1,92 @@
+<div class="bg-robot">
+  <div class="header-logo" id="logo">
+    <div class="row">
+        <div class="col-12">
+            <img loading='lazy' class="" alt="Rocketbot" src="images/Logo-R-Studio.svg">
+            <small class="version_header">v{{version}}</small>
+        </div>
+    </div>
+</div>
+  <div class=" header container-fluid row">
+
+  
+    <div class="text-center" id="header-buttons-main" >
+      <input class="btn btn-file" type="file" id="files" />
+      <!--<div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <button type="button" class="btn btn-default btn-sm" ng-click="back()">
+          <i class="fas fa-undo"></i>
+        </button>
+      </div>-->
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <button type="button" class="btn btn-outline-danger btn-sm" ng-click="newbot()">
+          <img loading='lazy' src="images/header/inicio.svg" class="icon-red"> <span ng-bind="language[language_default].home"></span>
+        </button>
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#newRobotModal">
+          <img loading='lazy' src="images/header/new.svg" class="icon-white"> <span ng-bind="language[language_default].new"></span>
+        </button>
+        <!--<button type="button" class="btn btn-primary btn-sm" ng-click="getbotFile()">
+          <i class="fas fa-upload"></i> <span ng-bind="language[language_default].import"></span>
+        </button>-->
+        <!--<button type="button" class="btn btn-secondary btn-sm" ng-disabled="robot_name.length<=0 || commands.length < 1"
+          ng-click="saveCommands()">
+          <i class="fas fa-download"></i> <span ng-bind="language[language_default].export"></span>
+        </button>-->
+          <!--<div class="dropdown">
+              <button class="btn btn-outline-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-folder-open" ng-class="{'fa-spine fa-spinner': savingbot }"></i> <span
+                      ng-bind-html="language[language_default].load"></span>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="dropdown-item" ng-click="getbotFile('')"><span
+                          ng-bind-html="language[language_default].load_file"></span></div>
+                  <div class="dropdown-item" ng-click="getbotDB()"><span
+                          ng-bind-html="language[language_default].load_db"></span></div>
+              </div>
+           
+          </div>-->
+      </div>
+          <div class="dropdown">
+              <button class="btn btn-info  btn-sm" ng-click="save_bot()" style="border-radius: 0px;" type="button" ng-disabled="!robot_name">
+                <img loading='lazy' src="images/header/save.svg" class="icon-white">  
+                <i class="fa " ng-class="{'fa-spine fa-spinner': savingbot }"></i>
+                 <span ng-bind-html="language[language_default].save"></span>
+              </button>
+              
+          </div>
+     
+      
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+        <button ng-disabled="commands.length < 1" type="button" class="btn btn-success btn-sm"
+          ng-click="execCommandsInit()">
+          <img loading='lazy' src="images/header/run.svg" class="icon-white"> <span ng-bind="language[language_default].run"></span>
+        </button>
+        <button ng-disabled="start_script == false" type="button" class="btn btn-danger btn-sm"
+          ng-click="stop_script()">
+          <img loading='lazy' src="images/header/stop.svg" class="icon-white"> <span ng-bind="language[language_default].stop"></span>
+        </button>
+
+      </div>
+      </div>
+    </div>
+
+    <div class="text-right" id="header-buttons-link" >
+      <div class="btn-group ">
+        <a href="https://docs.rocketbot.co" target="_blank" class="btn btn-outline-primary btn-sm">
+           Docs
+        </a>
+        <a href="https://market.rocketbot.co" target="blank_"
+          class="btn btn-outline-info btn-sm">
+           Mods
+        </a>
+        <a href="https://www.youtube.com/c/RocketbotRPA" target="blank_"
+          class="btn btn-outline-danger btn-sm">
+           Videos
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>

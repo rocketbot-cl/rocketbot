@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Rocketbot Studio</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/ISO_Rojo.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/dropzone/dist/min/dropzone.min.css" />
+    <link rel="stylesheet" href="bower_components/select2/select2.css" />
+    <link rel="stylesheet" href="bower_components/ng-cropper/dist/ngCropper.all.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/all.css" />
+    <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="bower_components/codemirror/addon/hint/show-hint.css" />
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/jquery-confirm2/css/jquery-confirm.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="nolicense/jquery.toast.min.css">
+
+    <!-- build:css(.tmp) styles/main.css -->
+
+    <link rel="stylesheet" href="styles/main.css?v={url_version}">
+    <link rel="stylesheet" href="styles/perfect-scrollbar.css">
+
+    <!-- endbuild -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link id="dark_mode" rel="stylesheet" href="styles/dark.css?v={url_version}">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;300;500;700;900&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128084112-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-128084112-1');
+
+    </script>
+
+</head>
+
+<body ng-app="rocketstudiowebApp" class="page-loaded theme-dark">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div class="loader-wrap_" ng-hide="true">
+    <div class="loader-img">
+        <img loading='lazy' id="intro" class="video" src="images/Loading-intro.gif" alt="introlooprocket">
+        <img loading='lazy' id="loop_" class="video" src="images/Loading-Loop.gif" alt="looprocket">
+        <!--<img loading='lazy' class="img-fluid" src="images/ISO_Rojo.png">-->
+        <h4 ng-bind-html="'v' + version"></h4>
+        <h5 ng-bind-html="'Lic.:' + caduca"></h5>
+    </div>
+    <div class="loader2">
+        <div class="loader-inner"></div>
+    </div>
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+
+</div>
+<div class="loader-wrap">
+
+        <img loading='lazy' id="loop" class="video" src="images/loading-loop-still.gif" alt="looprocket">
+    <div class="info-rocket rocket-text">
+        <h5 ng-bind-html="'v' + version"></h5>
+        <h5 ng-bind-html="'Lic.:' + caduca"></h5>
+    </div>
+</div>
+
+</div>
+
+<div id="nolicense" class="nolicense" style="display: none">
+
+    <div style="height: 100vh !important;position: absolute;z-index: 100000;width: 100vw;background-color: #212529d9 !important;">
+        <div class="container" style="position: relative;top: calc(50% - 200px);width: 50%;">
+            <div class="row">
+                
+                <div class="col text-center text-white">
+                    
+                        <img loading='lazy' src="images/nolicense/icono warning.svg" style="width:200px">        
+                        <h1>Not licensed</h1>
+                        <br>
+                        <h5>You don't have an active license,<br>you need it to create a robot</h5>
+                        <img loading='lazy' src="images/nolicense/illustracion.svg" style="position: absolute;width: 250px;top: 20px;right: 0px; z-index:0">
+
+                        <div ng-click="click_no_lic()" class="btn btn-light" style="width: 150px; color: #333; ">Close</div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+<div ng-view=""></div>
+
+<script>
+    const anti_cache_id = '{url_version}';
+</script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="bower_components/clipboard/dist/clipboard.min.js"></script>
+<script src="bower_components/dropzone/dist/min/dropzone.min.js"></script>
+<script src="bower_components/ng-dropzone/dist/ng-dropzone.min.js"></script>
+<script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
+<script src="bower_components/select2/select2.min.js"></script>
+<script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+<script src="bower_components/ng-cropper/dist/ngCropper.all.min.js"></script>
+<script src="bower_components/codemirror/lib/codemirror.js"></script>
+<script src="bower_components/jquery-textcomplete/dist/jquery.textcomplete.min.js"></script>
+<script src="bower_components/angular-bootstrap-contextmenu/contextMenu.js"></script>
+<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="bower_components/angular-indexedDB/angular-indexed-db.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="bower_components/angular-select2/dist/angular-select2.min.js"></script>
+<script src="bower_components/jquery-confirm2/js/jquery-confirm.js"></script>
+<script src="bower_components/showdown/src/showdown.js"></script>
+<script src="bower_components/angular-markdown-directive/markdown.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<!--<script src="scripts/bootstrap.min.js"></script>-->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js?v={url_version}"></script>
+<script src="scripts/controllers/main.js?v={url_version}"></script>
+<script src="scripts/controllers/init.js?v={url_version}"></script>
+<script src="scripts/filters/nospace.js"></script>
+<script src="scripts/filters/toarray.js"></script>
+<script src="scripts/filters/filters.js"></script>
+<script src="scripts/directives/directives.js"></script>
+<script src="scripts/services/command.js?v={url_version}"></script>
+<script src="scripts/services/modules.js?v={url_version}"></script>
+<script src="scripts/services/orchestator.js"></script>
+<script src="scripts/services/debug.js"></script>
+<script src="scripts/services/bots.js"></script>
+<script src="scripts/services/files.js"></script>
+<script src="scripts/services/config.js?v={url_version}"></script>
+<script src="scripts/services/languages.js"></script>
+<script src="scripts/services/validator.js"></script>
+<script src="scripts/BigPicture.min.js"></script>
+<script src="scripts/md5.min.js"></script>
+<script src="scripts/perfect-scrollbar.js"></script>
+
+<!-- endbuild -->
+<script src="scripts/addons/javascript.js"></script>
+
+<script src="bower_components/codemirror/addon/hint/show-hint.js"></script>
+<script src="bower_components/codemirror/keymap/sublime.js"></script>
+
+<script src="scripts/addons/python.js"></script>
+<script src="nolicense/jquery.toast.min.js"></script>
+
+</body>
+
+</html>

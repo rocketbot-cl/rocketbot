@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='recorder'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desktop App Recorder</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="desktoprecorder/js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="desktoprecorder/css/bootstrap.min.css">
+    <script src="desktoprecorder/js/bootstrap.min.js"></script>
+    <script src="desktoprecorder/js/underscore-min.js"></script>
+    <script src="desktoprecorder/js/angular.min.js"></script>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="desktoprecorder/css/style_rocket.css">
+    <script src="desktoprecorder/js/app.js"></script>
+
+</head>
+
+<body ng-controller="RecorderController as recorderController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="btn-group w-100" role="group" aria-label="Basic example">
+                    <div ng-repeat="record in records" class="btn btn-sm" ng-click="startRecord(record.name)">
+                        <img class="img-icon" ng-src="{{record.icon}}">
+                        <br>
+                        <small class="text-button">{{record.title}}</small>
+                    </div>
+                    <div class="btn btn-sm" ng-click="save()">
+                        <img class="img-icon"
+                            src="data:image/png;base64,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">
+                        <br>
+                        <small class=" text-button">Save</small>
+                    </div>
+                    <div class="btn btn-sm " ng-click="trash()">
+                        <img class="img-icon"
+                            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNCOEJEQzE7IiBkPSJNNDQxLjM3OSwxNzYuNTUySDcwLjYyMWMtOS43NTQsMC0xNy42NTUtNy45MDEtMTcuNjU1LTE3LjY1NXYtMzUuMzENCgkJYzAtOS43NTQsNy45MDEtMTcuNjU1LDE3LjY1NS0xNy42NTVoMzcwLjc1OWM5Ljc1NCwwLDE3LjY1NSw3LjkwMSwxNy42NTUsMTcuNjU1djM1LjMxDQoJCUM0NTkuMDM0LDE2OC42NTEsNDUxLjEzNCwxNzYuNTUyLDQ0MS4zNzksMTc2LjU1MiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNFNkU3RTg7IiBkPSJNNzYuNTA2LDE3Ni41NTJsMzguMzEyLDMxOS4yNThjMC43NjgsOS4xNTQsOC40MTMsMTYuMTksMTcuNTkzLDE2LjE5aDI0Ny4xNzINCgkJYzkuMTgxLDAsMTYuODM0LTcuMDM2LDE3LjU5My0xNi4xOWwzOC4zMjEtMzE5LjI1OEg3Ni41MDZ6Ii8+DQoJPGc+DQoJCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiNDQzRCNEM7IiBwb2ludHM9IjIzOC4xMjEsMTA1LjkzMSAyMjguNzgxLDUyLjk2NiA3OS41NDIsODEuNjgyIDgzLjgyMywxMDUuOTMxIAkJIi8+DQoJCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiNDQzRCNEM7IiBwb2ludHM9IjQxNi4zMzgsMTA1LjkzMSA0MjMuNzI3LDY0LjA0NCAzMDguOTY4LDQ1LjY0NyAyOTguMzQsMTA1LjkzMSAJCSIvPg0KCTwvZz4NCgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRjBDRTQ5OyIgcG9pbnRzPSIzNDQuMjc2LDAgMTY3LjIzLDE1LjA2OSAxNzIuNDIsNjMuODE1IDIyOC43ODUsNTIuOTY2IDIzOC4xMjQsMTA1LjkzMSAyOTguMzM3LDEwNS45MzEgDQoJCTMwOC45NjYsNDUuNjQ3IDM0OS43NzUsNTIuMTg5IAkiLz4NCgk8Zz4NCgkJPHBhdGggc3R5bGU9ImZpbGw6I0I4QkRDMTsiIGQ9Ik0xMzIuNDE0LDUxMmgyNDcuMTcyYzkuMTgxLDAsMTYuODM0LTcuMDM2LDE3LjU5My0xNi4xOWw0Ljc4NS01NC40MzFIMTEwLjAzNmw0Ljc4NSw1NC40MzENCgkJCUMxMTUuNTgsNTA0Ljk2NCwxMjMuMjMzLDUxMiwxMzIuNDE0LDUxMiIvPg0KCQk8cGF0aCBzdHlsZT0iZmlsbDojQjhCREMxOyIgZD0iTTI1NiwzOTcuMjQxYy00Ljg3MywwLTguODI4LTMuOTQ2LTguODI4LTguODI4VjIyOS41MTdjMC00Ljg4MiwzLjk1NS04LjgyOCw4LjgyOC04LjgyOA0KCQkJczguODI4LDMuOTQ2LDguODI4LDguODI4djE1OC44OTdDMjY0LjgyOCwzOTMuMjk1LDI2MC44NzMsMzk3LjI0MSwyNTYsMzk3LjI0MSIvPg0KCQk8cGF0aCBzdHlsZT0iZmlsbDojQjhCREMxOyIgZD0iTTE3NC42MzgsMzk2LjkzOWMtNC41MjksMC04LjM4Ni0zLjQ2OS04Ljc4My04LjA2bC0xMy44NDItMTU4LjI5Ng0KCQkJYy0wLjQzMy00Ljg1NSwzLjE2LTkuMTM3LDguMDI0LTkuNTZjNC44NjQtMC40NSw5LjEzNywzLjE3OCw5LjU2LDguMDI0bDEzLjg0MiwxNTguMjk2YzAuNDI0LDQuODU1LTMuMTY5LDkuMTM3LTguMDI0LDkuNTYNCgkJCUMxNzUuMTU5LDM5Ni45MzEsMTc0Ljg5NCwzOTYuOTM5LDE3NC42MzgsMzk2LjkzOSIvPg0KCQk8cGF0aCBzdHlsZT0iZmlsbDojQjhCREMxOyIgZD0iTTMzNy4zNjIsMzk2LjkzOWMtMC4yNTYsMC0wLjUyMS0wLjAwOS0wLjc3Ny0wLjAzNWMtNC44NTUtMC40MjQtOC40NDgtNC43MDUtOC4wMjQtOS41Ng0KCQkJbDEzLjg0Mi0xNTguMjk2YzAuNDI0LTQuODQ2LDQuNzE0LTguNDc0LDkuNTYtOC4wMjRjNC44NjQsMC40MjQsOC40NTcsNC43MDUsOC4wMjQsOS41NkwzNDYuMTQ2LDM4OC44OA0KCQkJQzM0NS43NDgsMzkzLjQ3LDM0MS44OTEsMzk2LjkzOSwzMzcuMzYyLDM5Ni45MzkiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==">
+                        <br>
+                        <small class=" text-button">Trash</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" id="side">
+                <label class="font-weight-bold">Mouse</label> : <span class="fb">x: {{data.position[0]}} -
+                    y: {{data.position[1]}} </span>
+                <div class="row">
+                    <div class="col-12">
+                        <label class="font-weight-bold">App:</label>
+                        <span id="app_name">{{data.cursor_control[0].app}}</span>
+                    </div>
+                    <div class="col-12">
+                        <div class="img-container">
+                            <img src="data:image/jpeg;base64,{{data.img}}" id="preview" class="img-fluid text-center">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-8 d-none d-sm-block" id="main">
+                <table class="table table-hover" style="border-bottom: 3px solid #6F6F6E;">
+                    <thead>
+                        <tr>
+                            <th width="80%" scope="col">Event</th>
+                            <th scope="col">Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="control in controls">
+                            <td>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+
+                                                <b>{{$index +1 }} <select class="invisible-input"
+                                                        style="border-bottom: 0px !important;" ng-model="control.type"
+                                                        ng-options="item.name as item.title for item in records"></select></b>
+                                                <small>
+                                                    <b>App: </b>{{control.selector[0].app}} - <b>Title:
+                                                    </b>{{control.selector[0].title}}
+                                                </small>
+
+                                                <table class="table table-sm table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Act.</th>
+                                                            <th>Index</th>
+                                                            <th>Automation Id</th>
+                                                            <th>Class Name</th>
+                                                            <th>Title</th>
+                                                            <th>Control Type</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="command in control.selector.slice(1)"
+                                                            id='command.uuid'>
+                                                            <td>
+                                                                <input ng-checked="command.status" type='checkbox'
+                                                                    ng-model="command.status">
+                                                            </td>
+                                                            <td><input type="text" class="form-control invisible-input"
+                                                                    ng-model="command.ctrl_index"></td>
+
+                                                            <td><input type="text" class="form-control invisible-input"
+                                                                    ng-model="command.auto_id"></td>
+                                                            <td><input type="text" class="form-control invisible-input"
+                                                                    ng-model="command.class_name"></td>
+                                                            <td><input type="text" class="form-control invisible-input"
+                                                                    ng-model="command.title"></td>
+                                                            <td><input type="text" class="form-control invisible-input"
+                                                                    ng-model="command.control_type"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12" id="test">
+                                                <div class="btn btn-danger btn-sm text-white"
+                                                    ng-click="removeEvent(control.uuid)">
+                                                    <i class="ion-trash-a"></i> Trash event
+                                                </div>
+                                                <div class="btn btn-light btn-sm" ng-click="markObject(control)">
+                                                    <i class="ion-android-expand"></i> Mark object
+                                                </div>
+                                                <div class="btn btn-sm btn-warning"
+                                                    ng-click="checkObject(control, $event)">
+                                                    <i class="ion-alert"></i> Check object
+
+                                                </div>
+                                                <div class="btn btn-sm">
+                                                    <input class='form-control' type='text' ng-model="control.session" />
+                                                </div>
+                                                <div class="btn btn-sm">
+                                                    <input
+                                                    ng-if="['set_text','send_keys','select_item'].includes(control.type)"
+                                                    class='form-control SetValue-input' type='text'
+                                                    placeholder="add text to send" ng-model=control.option.text />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td>
+                                <img src="data:image/jpeg;base64,{{control.capture}}"
+                                    class="img-fluid text-center img-thumbnail capture">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--<div class="col-md-8">
+                <div class="row">
+                    <div class="col-12">
+                        
+                        <h5 class="card-title">Events:</h5>
+                        <div id="clicks">
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="alert1">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Evento Click</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Haga click en un objecto. Oprima ESC para cancelar</p>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

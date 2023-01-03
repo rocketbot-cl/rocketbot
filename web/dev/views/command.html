@@ -1,0 +1,79 @@
+<div class="btn-stop-debug" ng-click="setStopDebug(command.id)" ng-class="{'active': $parent.stop_debug==command.id}"  title="Stop debug"></div>
+{{$rootScope.stop_debug}}
+
+<div id="{{command.id}}" class="command card_ card-list"
+    ng-class="{ 'bg-disabled': command.disabled, 'command-error': command.execute=='3','select-command': item_to_update.id == command.id}">
+    <div class="handle" ng-class="{'success': command.execute=='1','play': command.execute=='0','pause': command.execute=='2','danger': command.execute=='3'}">
+        <div class="row">
+            <div class="col-md-9">
+                <span class="float-left line-number">{{$index + 1}}</span>
+                <div class="icon-res" ng-class="{'select': item_to_update.id == command.id}">
+                    <i class=" fas"
+                    ng-class="{'fa-check': command.execute=='1' ,'fa-spin fa-spinner': command.execute=='0' ,'fa-pause': command.execute=='2' ,'fa-exclamation-triangle': command.execute=='3' }"></i>
+                </div>
+                <div class="titulo">
+                    <div class="command-disabled">
+                            <input data-toggle="tooltip" data-placement="top"
+                                title="{{language[language_default].disable_help}}" type="checkbox"
+                                ng-checked="command.disabled" ng-model="command.disabled"
+                                aria-label="{{language[language_default].disable_help}}">
+                             <i class="far fa-eye-slash"></i>
+                                {{language[language_default].disable}} 
+                        
+                    </div>
+                    <small ng-show="edit_description!=command.id"> <b>{{language[language_default].description}}:</b>
+                        {{command.description}} <i class="fa fa-pencil-alt"
+                            ng-click="edit_description=command.id"></i></small>
+                    <div class="description-edit input-group" ng-show="edit_description==command.id">
+                        <input class="form-control form-control-sm"
+                            placeholder="{{language[language_default].description}}" ng-model="command.description">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary btn-sm rounded" 
+                                ng-click="edit_description=0">{{language[language_default].save}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="command-btn">
+                <!-- Botones de acción -->
+                <div class="btn-group" role="group">
+                    <button class="btn btn-success btn-sm inline-block" ng-click="play(command)">
+                        <i class="fas fa-play-circle"></i>
+                    </button>
+                    <button class="btn btn-primary btn-sm inline-block "
+                        ng-click="copyCommand(commands, command)">
+                        <i class="fas fa-clone icon"></i>
+                        {{language[language_default].clone}}
+                    </button>
+                    <!--<div class="btn btn-outline-success btn-sm inline-block" ng-click="addTimeSleep($index, command.id)">
+                        <i class="far fa-clock"></i>
+                    </div>-->
+                    <button class="btn btn-danger btn-sm form-inline" ng-click="removeCommand(commands, command.id)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="row">
+
+            <div class="col-sm-12 can-click" ng-dblclick="edit_command_modal(command, command_parent)"
+                ng-click="viewDataItem(command, command_parent)">
+
+                <ng-include src="getCommandView(command)"></ng-include>
+
+                <div ng-show="command.execute==3" class="alert alert-danger bg-white mt-1">
+                    <small>{{command.message}}</small>
+                </div>
+
+            </div>
+            <div class="col-12 mt-2">
+                <small class="message-mini" ng-show="command.run_onerror" ><i class="fa fa-check"></i> Run robot <b>"{{command.run_onerror_robot}}"</b> when there is error </small>
+                <small class="message-mini" ng-show="command.stop_onerror" ><i class="fa fa-check"></i> Stop everything when there is error</small>
+                <small style="font-size: .6rem;float: right;">{{(command.time| limitTo:4) || '0.00'}} {{language[language_default].seconds}}</small>
+            </div>
+        </div>
+    </div>
+
+</div>
