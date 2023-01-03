@@ -1,0 +1,123 @@
+[fix] View/read email: align 'cancel' and 'add' button
+[fix] rpaemail/read email: get body email with attachements
+[fix] debugger: fix error with relative path
+[fix] config: create new db without description and store log path
+[new] rpaweb: new selectors to click, select, extract and change iframe
+[new] View/export: export bots with description, version and father
+[fix] View/add command: Fix add command in selected command
+[new] rpaweb/upload file: Add upload file command
+[new] rpaweb/run js: Add decode result option
+[fix] rpadatatransform/filter: fix filters with text
+[fix] View/pdf: Add save button and select file correctly
+[fix] Suite/export bots: Save and export robot
+[new] create db/ dialog: add .db extension if it's not write
+[fix] rpaexcel/save: raise error if path field is empty
+[fix] rpaexcel/open book: raise error when path is empty or not exist and return False
+[fix] close modal after to export
+[fix] View/http get: remove invalid select
+[new] View/read_email: Add select folder button
+[new] View/export bots: export modules and production bot disable by default
+[fix] rpaemail/config: Allow use curly variables
+[fix] language/get sheets xlsx: show title correctly
+[fix] View/Conver_image_to_pdf: show image and pdf extension in dialog window
+[fix] Now select file and save file allow default extensions
+[fix] rpaexcel/save: Raise error if path is empty and return False
+[fix] core/last_status: Return response with python objects
+[fix] rpaweb/window control: Add description in windows control commands
+[fix] add_array: add element in correct order
+[fix] RpaExcel/count cells: Return max row correctly
+[fix] DataTransform/Add element to array: Ahora agrega los elementos al array en el orden correcto cuando se pasa m├ís de un dato
+[fix] View: New message when there is not robots created
+[fix] Se eliminan comandos con malas practicas. 
+[new] web: Se agrega menu contextual.
+[new] Web: se agrega link de ayuda para comandos.
+[new] Web: Se agrega comando para editar descripcion.
+[fix] Export without internet
+[fix] remove collapse button
+[fix] remove collapse button
+[fix] Driverupdate: Fixed questions for MacOs
+[fix] Edit selector in Connect app
+[new] View: anti cache system.
+[new] RPAWindows/Selector: arregla selector para objetos declarados en XML. 
+[fix] check windows compatibility
+[fix] imports in windows
+[fix] change libs path
+[new] add ini to save config data
+[fix] select item
+[fix] remove select var in commands
+[new] Draw outline and move window
+[new] Ask if stop alerts
+[fix] get max rows
+[fix] Se mejora toma de datos e identificacion para windows 11
+[new] add robot and modifyInput from onmessage
+[new] add select button in windows commands
+[new] Create robot
+[new] button type input
+[new] send data to rocketbot and styles
+[new] add style to button in label
+[fix] remove evaluate command in return info and fix sendkey commands
+[fix] Count rows: get the max row in excel
+[fix] Se mejora toma de datos e identificacion para windows 11
+[fix] fix_date_timezone calculate diference in timezone
+[new] Desktop Recorder as addon
+[fix] print license message and download modules
+[fix] decode path in select file prompt
+[new] Refactor command windows and json formatter in textarea
+[fix] delete command print
+[new] export robots with modules
+[new] export robots with modules
+[new] export robots with modules
+[fix] show uninstalled modules notification correctly
+[fix] style in error handle
+[new] return conection result in email config
+[fix] kill process when excel is closed
+[fix] keep compatibility in file commands
+[fix] timeout in install mods question - production
+[fix] keep compatibility in file commands
+[new] install modules in production execution
+[new] modules review in json bot
+[new] get versions of modules and status of the module in rocketbot
+[new] get versions of modules and status of the module in rocketbot
+[fix] Capitalize language
+[new] enpoint to get and update modules
+[new] marketplace class to work with market API
+[new] Rpavirtualization/ click in image: find text in screen and click it
+[new] Logs: print bot name in log
+[fix] Rpadesktop/sendkey: compatibility in send key command
+[fix] Rpafile/export pdf: prevent error in export to pdf command
+[fix] View/ create robot: don't allow create robot with special characters
+[fix] View/ add variable: Disable button when var name is invalid
+[new] Rpaemail/connect: add ssl verify  and fix view
+[fix] RpaLogic/ trycatch: fix try/catch 
+[new] Allow extensions and default extensions in file_select type
+[fix] rpaexcel/execute macro: Macro para Excel en Mac ahora se ejecutan
+[new] addons: Connect to orchestrator and upload robot
+[fix] Core/logs: Se mejora logs para ver de que tipo de comando proceden
+[fix] dev/export: open db folder when export bots and extension type in save windows
+[fix] rpafile/trashfile: return True when a file is deleted with trash/delete command
+[new] View/new: show message with invalid bot name and prevent open multiple tabs when create new bot
+[fix] View/files: select folder in file commands
+[fix] View/variables: variable character counter fixed in negative numbers
+[new] View/robot: Robot type and version configuration is added.
+[new] Core: add '-token' on command line to get license token quickly
+[new] View: robot list inside a robot is improved
+[fix] Core: Problems with cofification are fixed
+[new] View/new robot: confirm change in robot name
+[fix] Rpalogic/break: Now the break command does not break other blocks of logic
+[new] Rpadatatransform: Object command in Data format
+[new] View/languages: Portuguese language is added
+[fix] Rpaweb/firefox: Se mejora sistema de perfiles.
+[new] Addons/Treeview: The treeview system generates PDF, docx simple/complete and customized documentation.
+[new] Core: A base doc can now be generated with debugger capture data.
+[new] Rpaweb: Added screenshot system for web commands.
+[new] Core: Added option to take screenshots by command execution. 
+[new] Config: Log path can now be selected
+[new] View: Zoom and reload view added to the view
+[fix] Terminal: Terminal message improved, color added to errors
+[fix] Adons/treeview: Treeview addon is improved by adding commands to view description and data.
+[new] Terminal: Added "-nodebug" command for not displaying events in terminal
+[new] Rpasystem/start file: "Start File" command is added to open files with your default application.
+[new] Terminal: Id identifier added to logs for better tracking. 
+[new] Core: Internal variable system is added. 
+[new] Rpasystem/setvar: Auto-completion of internal variables is added.
+[new] Rpascripts/error handler: A robot can be executed if an error occurs
