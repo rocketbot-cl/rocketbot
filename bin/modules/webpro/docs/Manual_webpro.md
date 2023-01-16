@@ -12,6 +12,10 @@ __Download__ and __install__ the content in 'modules' folder in Rocketbot path
 
 ## How to use this module
 This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
+In order to use Edge in Internet Explorer mode, the following settings must be made:
+1. Configure the browser based on the following documentation: https://docs.rocketbot.com/?p=169
+2. Download the Internet Explorer driver from the link below: https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.3.0/IEDriverServer_Win32_4.3.0.zip and place it in Rocketbot/drivers/win/ie/x86/
+3. To be able to access the developer tools, IEChooser.exe must be opened. To do so, press the Windows key + R and type the following: %systemroot%\system32\f12\IEChooser.exe and then press accept. Select the window of your browser, and you will be able to explore the elements of the page.
 
 
 ## Description of the commands
@@ -197,6 +201,8 @@ Open the new Edge based on Chromium
 |Parameters|Description|example|
 | --- | --- | --- |
 |Server URL|Url of the page to open in Edge|http://www.rocketbot.co|
+|Start in Internet Explorer mode|Starts the browser in Internet Explorer mode|True|
+|Select Edge executable|Select the Edge executable to open in IE mode|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
 ### Click Pro
   

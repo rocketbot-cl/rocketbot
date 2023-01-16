@@ -142,6 +142,7 @@ Vue.component('modal-edit', {
             }
             console.log("commandFather",this.commandFather)
             this.copyCommand = JSON.parse(JSON.stringify(vv));
+			app.$data.command_editing = this.copyCommand;
             this.options = app.bots.map(function(b){
                 return {
                     id: b.name,
@@ -161,11 +162,13 @@ Vue.component('modal-edit', {
                 this.copyCommand.command = editableCodeMirror.getValue()
             }
             let c = JSON.parse(JSON.stringify(this.copyCommand))
+			// if not is string
             if(
-                this.commandsToJson.includes(this.commandFather.father) || 
+                (this.commandsToJson.includes(this.commandFather.father) || 
                 this.groupToJson.includes(this.commandFather.group) || 
-                this.commandFather.form
+                this.commandFather.form) && typeof c.command == 'object'
                 ){
+
                     c.command = JSON.stringify(c.command);                      
             }
             if(this.commandFather.group == 'virtual'){

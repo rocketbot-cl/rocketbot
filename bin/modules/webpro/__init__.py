@@ -1,4 +1,5 @@
 # coding: utf-8
+# pylint: disable=undefined-variable,trailing-whitespace,wrong-import-position,invalid-name
 """
 Base para desarrollo de modulos externos.
 Para obtener el modulo/Funcion que se esta llamando:
@@ -19,12 +20,12 @@ Para obtener la Opcion seleccionada:
 
 
 Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
-    
+
    sudo pip install <package> -t .
 
 """
 
-__version__ = '11.1.1'
+__version__ = '11.6.0'
 __author__ = 'Rocketbot <contacto@rocketbot.com>'
 
 import base64
@@ -36,8 +37,12 @@ from io import BytesIO
 
 import time
 from bs4 import BeautifulSoup
+from selenium import webdriver as ws
 from selenium.webdriver import ActionChains
 from selenium.webdriver import Chrome
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'webpro' + os.sep + 'libs' + os.sep
 sys.path.append(cur_path)
@@ -50,7 +55,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import TimeoutException
-from PIL import Image
+from selenium.common import exceptions as selenium_exceptions
+from PIL import Image, UnidentifiedImageError
+
+from pathlib import Path
+import logging
+from selenium.webdriver.remote.remote_connection import LOGGER
+
+downloads_path = str(Path.home() / "Downloads")
 
 module = GetParams("module")
 
@@ -94,7 +106,10 @@ types = {
         "id": By.ID,
         "class name": By.CLASS_NAME,
         "xpath": By.XPATH,
-        "tag name": By.TAG_NAME
+        "tag name": By.TAG_NAME,
+        "link text": By.LINK_TEXT,
+        "partial link text": By.PARTIAL_LINK_TEXT,
+        "css selector": By.CSS_SELECTOR
     }
 
 special_keys = {
@@ -164,6 +179,13 @@ special_keys = {
     "UP":u'\ue013'
 }
 
+SCROLLHEIGHT_JS = "return document.body.scrollHeight"
+SCROLL_INIT_JS = "window.scrollTo(0, 0);"
+SCROLL_TO = "window.scrollTo(0, {});"
+CHROME_DRIVER_WINDOW_PATH = os.path.join(
+    base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+CHROME_DRIVER_MAC_PATH = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+
 webdriver = GetGlobals("web")
 if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id]
@@ -223,6 +245,11 @@ if module == "CleanInputs":
     except:
         simulationKey = False
 
+    try:
+        sleep_ = eval(GetParams('sleep_'))
+    except:
+        sleep_ = False
+
     print(search_type)
     search_type = {"tag": "tag name", "class": "class name"}.get(search_type, search_type)
     
@@ -230,6 +257,8 @@ if module == "CleanInputs":
 
     if element is not None and texto is not None:
         element.clear()
+        if sleep_:
+            time.sleep(1)
         if simulationKey:
             element.send_keys(Keys.SHIFT, Keys.ARROW_UP)
             element.send_keys(Keys.DELETE)
@@ -238,14 +267,22 @@ if module == "CleanInputs":
 if module == "LoadCookies":
     import pickle
 
-    
-    
     file_ = GetParams('file_')
-    with open(file_, 'rb') as cookiesfile:
-        cookies = pickle.load(cookiesfile)
-        print(cookies)
-        for cookie in cookies:
-            driver.add_cookie(cookie)
+    var_ = GetParams('var_')
+
+
+    try:
+        with open(file_, 'rb') as cookiesfile:
+            cookies = pickle.load(cookiesfile)
+            print(cookies)
+            for cookie in cookies:
+                driver.add_cookie(cookie)
+        SetVar(var_, "True")
+    except (FileNotFoundError, EOFError) as e:
+        PrintException()
+        SetVar(var_, "False")
+        raise e
+
 
 if module == "SaveCookies":
     import pickle
@@ -263,14 +300,14 @@ if module == "SaveCookies":
             pickle.dump(cookies, filehandler)
 
         if result:
-            SetVar(result, str(cookies))
-    except Exception as e:
+            SetVar(result, str(cookies))  
+            
+    except (FileNotFoundError, EOFError, pickle.PickleError, ValueError, IOError, TypeError ) as e:
         PrintException()
         raise e
 
 if module == "reloadPage":
-    
-    
+
     driver.refresh()
 
 if module == "back":
@@ -297,10 +334,10 @@ if module == "Scroll":
     position = GetParams("position")
 
     if position == "end":
-        last_height = driver.execute_script("return document.body.scrollHeight")
-        driver.execute_script("window.scrollTo(0, {})".format(last_height))
+        last_height = driver.execute_script(SCROLLHEIGHT_JS)
+        driver.execute_script(SCROLL_TO.format(last_height))
     else:
-        driver.execute_script("window.scrollTo(0, {})".format(position))
+        driver.execute_script(SCROLL_TO.format(position))
 
 if module == "length_":
 
@@ -308,19 +345,22 @@ if module == "length_":
     
     search = GetParams('search_data')
     var_ = GetParams("var_")
-
     try:
         element = driver.execute_script(" return document.getElementsByClassName('"+search+"').length")
         print(element)
-    except:
-        PrintException()
+        SetVar(var_, element)
+    except (
+        selenium_exceptions.WebDriverException,
+        selenium_exceptions.NoSuchElementException,
+        selenium_exception.JavascriptException 
+        ) as e:
 
-    SetVar(var_, element)
+        PrintException()
+        raise e
 
 if module == "selectElement":
 
-    
-    
+
     option_ = GetParams('option_')
     search = GetParams('search_data')
     index_ = GetParams("index_")
@@ -340,18 +380,19 @@ if module == "selectElement":
             elements = driver.find_elements_by_xpath(f'//*[contains(@class,"{search}")]')[index_]
             webdriver._object_selected = elements
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.NoSuchElementException,
+        IndexError
+        ) as e:
         PrintException()
         raise e
 
 if module == "clickElement":
 
-    
-    
     option_ = GetParams('option_')
     search = GetParams('search_data')
     index_ = GetParams("index_")
-    print(option_,index_)
     element = None
     index_ = eval(index_)
     res = False
@@ -378,33 +419,93 @@ if module == "clickElement":
             elements.click()
             webdriver._object_selected = elements
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.NoSuchElementException,
+        IndexError,
+        selenium_exceptions.ElementNotInteractableException
+    ) as e:
         PrintException()
         raise e
 
 if module == "html2pdf":
-
-    
-    
-    name_ = GetParams("name_")
+    path_ = GetParams("path_")
+    if path_:
+        path_ = path_.replace("/", os.sep)
     var_ = GetParams("var_")
-
-    lk1 = cur_path+'html2canvas.js'
-    lk2 = cur_path+'jspdf.debug.js'
+    del_header = GetParams("del_header")
 
     try:
-        read_ = open(lk1, "r").read()
-        read2_ = open(lk2, "r").read()
-        driver.execute_script(read_)
-        driver.execute_script(read2_)
 
-        element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body,function() {"
-                                       "doc.save('"+name_+".pdf');});")
 
+        tmp_path = "tmp/webpro/screenshot.png"
+        makeTmpDir("webpro")
+        images = []
+        
+        
+        total_height = driver.execute_script(SCROLLHEIGHT_JS)
+        actual_height = 0
+        image_count = 1
+        driver.execute_script(SCROLL_INIT_JS)
+        
+        
+        while int(actual_height) < int(total_height):
+            driver.get_screenshot_as_file(tmp_path)
+            
+
+            if image_count == 1:
+                
+                image = Image.open(tmp_path)
+                width, height = image.size
+                im_1 = image.convert('RGB')
+                
+                image.close()
+                if del_header == "True":
+                    driver.execute_script("""var header = document.querySelector('header');
+                                             header.style.visibility = 'hidden'
+                                          """)
+            else:
+                image_ = Image.open(tmp_path)
+                im_ = image_.convert('RGB')
+                
+                if total_height - actual_height <= height:
+                    last_height = total_height - actual_height
+                    y = height - last_height
+                    
+                    im_ = im_.crop((0, y, width, height))
+                    
+                images.append(im_)
+                image_.close()
+            
+            
+            # Scrolleo hasta la proxima screen
+            driver.execute_script(SCROLL_TO.format((height * image_count)))
+            time.sleep(1)
+            actual_height += height
+            image_count += 1
+
+        im_1.save(path_, save_all=True, append_images=images)
+            
+        if del_header == "True":
+            driver.execute_script("""var header = document.querySelector('header');
+                                    header.style.visibility = 'inherit'
+                                  """)
         res = True
+        
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.NoSuchElementException,
+        selenium_exceptions.JavascriptException,
+        FileNotFoundError,
+        IOError,
+        TypeError,
+        UnidentifiedImageError,
+        Image.DecompressionBombError
+
+    ) as e:
         PrintException()
+        res = False
         raise e
 
     SetVar(var_,res)
@@ -421,24 +522,31 @@ if module == "chromeHeadless":
         platform_ = platform.system()
 
         if platform_.endswith('dows'):
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+            chrome_driver = CHROME_DRIVER_WINDOW_PATH
         else:
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+            chrome_driver = CHROME_DRIVER_MAC_PATH
 
         chrome_options = Options()
 
         chrome_options.add_argument('headless')
-        web.driver_list[web.driver_actual_id] = Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
+        web.driver_list[web.driver_actual_id] = Chrome(options=chrome_options, executable_path=chrome_driver)
         if url:
             web.driver_list[web.driver_actual_id].get(url)
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        FileNotFoundError 
+    ) as e:
         PrintException()
         raise e
 
 if module == "Edge_":
 
     url = GetParams("url")
+    ie_mode = GetParams("ie_mode")
+    edge_exe = GetParams("edge_exe")
+    if edge_exe != None or edge_exe != "":
+        edge_exe = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
     platform_ = platform.system()
 
     try:
@@ -446,18 +554,50 @@ if module == "Edge_":
 
         web = GetGlobals("web")
 
-        if platform_.lower() == "windows":
-            edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+        if ie_mode == "True":
+            if not edge_exe:
+                raise Exception("Debe seleccionar el ejecutable de Edge")
+            else:
+                caps = DesiredCapabilities.INTERNETEXPLORER
+                caps['ignoreProtectedModeSettings'] = True
+                caps['ENABLE_PERSISTENT_HOVERING'] = False
+                caps['REQUIRE_WINDOW_FOCUS'] = False
+                caps['UNEXPECTED_ALERT_BEHAVIOR'] = True
+                caps['ACCEPT_SSL_CERTS'] = True
+                caps['INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS'] = True
+                
+                # Se debe tener instalado el driver de Edge en la version de Edge que se esta usando y el driver de IE de https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.3.0/IEDriverServer_Win32_4.3.0.zip
+                ieOptions = ws.IeOptions()
+                ieOptions.add_additional_option("ie.edgechromium", True)
+                ieOptions.add_additional_option("ie.edgepath", edge_exe)
+
+                driver = ws.Ie(executable_path=f'{base_path}/drivers/win/ie/x86/IEDriverServer.exe', options=ieOptions, capabilities=caps)
+            
+                driver.maximize_window()
+                web.driver_list[web.driver_actual_id] = driver
+
+                driver.get(url)
+
         else:
-            edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
+            if platform_.lower() == "windows":
+                edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+            else:
+                edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
 
-        driver = webdriver.Edge(edge_driver, {})
+            driver = ws.Edge(edge_driver, {})
+            
+            web.driver_list[web.driver_actual_id] = driver
+            if url:
+                web.driver_list[web.driver_actual_id].get(url)
+        
 
-        web.driver_list[web.driver_actual_id] = driver
-        if url:
-            web.driver_list[web.driver_actual_id].get(url)
 
-    except Exception as e:
+    except (
+        FileNotFoundError,
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.TimeoutException,
+        Exception
+    ) as e:
         PrintException()
         raise e
 
@@ -503,7 +643,17 @@ if module == "screenshot":
         im = im.convert("RGB")
         im.save(path)
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.NoSuchElementException,
+        selenium_exceptions.JavascriptException,
+        FileNotFoundError,
+        IOError,
+        TypeError,
+        UnidentifiedImageError,
+        Image.DecompressionBombError
+
+    ) as e:
         PrintException()
         raise e
 
@@ -569,9 +719,9 @@ if module == "chromeMode":
     platform_ = platform.system()
     try:
         if platform_.endswith('dows'):
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+            chrome_driver = CHROME_DRIVER_WINDOW_PATH
         else:
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+            chrome_driver = CHROME_DRIVER_MAC_PATH
 
         if mode == "unsafe":
             chrome_options = Options()
@@ -617,32 +767,82 @@ if module == "debugger":
 if module == "fullScreenshot":
     name = GetParams("name")
     web = GetGlobals('web')
+    path_ = GetParams("path_")
+    if path_:
+        path_ = path_.replace("/", os.sep)
 
     try:
-        time.sleep(2)
-        name += ".png"
-        driver = web.driver_list[web.driver_actual_id]
+        
+        tmp_path = "tmp/webpro/screenshot.png"
+        images = []
+        makeTmpDir("webpro")
+        
+        total_height = driver.execute_script(SCROLLHEIGHT_JS)
+        actual_height = 0
+        image_count = 1
+        driver.execute_script(SCROLL_INIT_JS)
+        
+        while int(actual_height) < int(total_height):
+            driver.get_screenshot_as_file(tmp_path)
+            
 
-        lk1 = cur_path + 'html2canvas.js'
-
-        read_ = open(lk1, "r", encoding="utf-8").read()
-        print(len(read_))
-        driver.execute_script(read_)
-
-        driver.execute_script("""
-        html2canvas(document.body, { allowTaint : false, useCORS: true,
-            onrendered: function(canvas) {
-                img = canvas.toDataURL(); 
-                a = document.createElement("a")
-                a.href = img
-                a.download = "%s"
-                a.click()
-                console.log(img)
-            }
-        })"""  % name)
-
-        time.sleep(6)
-
+            if image_count == 1:
+                
+                image = Image.open(tmp_path)
+                width, height = image.size
+                im_1 = image.convert('RGB')
+                images.append(image)
+                
+                try:
+                    driver.execute_script("""var header = document.querySelector('header');
+                                            if (header != null) {header.style.visibility = 'hidden'};
+                                        """)
+                except:
+                    pass
+                
+            else:
+                image_ = Image.open(tmp_path)
+                im_ = image_.convert('RGB')
+                
+                if total_height - actual_height <= height:
+                    last_height = total_height - actual_height
+                    y = height - last_height
+                    
+                    im_ = im_.crop((0, y, width, height))
+                    
+                images.append(im_)
+                
+            
+            
+            # Scrolleo hasta la proxima screen
+            driver.execute_script(SCROLL_TO.format((height * image_count)))
+            time.sleep(1)
+            # actual_height = driver.execute_script("return window.pageYOffset")
+            actual_height += height
+            image_count += 1
+        
+        try:
+            driver.execute_script("""var header = document.querySelector('header');
+                                    if (header != null) {header.style.visibility = 'inherit'};
+                                """)
+        except:
+            pass
+        
+        img = Image.new('RGB', (width, total_height))
+        
+        
+        height_ = 0
+        
+        for image in images:
+            img.paste(image, (0, height_))
+            
+            height_ += height
+        
+        if path_:
+            img.save(f'{path_}/{name}.png')
+        else:
+            img.save(f'{downloads_path}/{name}.png')
+        
     except Exception as e:
         PrintException()
         raise e
@@ -660,8 +860,6 @@ if module == "Hover":
 
 if module == "clickPro":
     
-    
-
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
@@ -676,10 +874,10 @@ if module == "clickPro":
             webdriver._object_selected = elementLocator
             actionChains.click(elementLocator).perform()
         except TimeoutException:
+            PrintException()
             raise Exception("The item is not available to be clicked")
 
     except Exception as e:
-        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
         PrintException()
         raise e
 
@@ -701,7 +899,7 @@ if module == "getText":
             raise Exception("The item is not available to be selected")
 
     except Exception as e:
-        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        
         PrintException()
         raise e
 
@@ -723,7 +921,7 @@ if module == "selectPro":
             raise Exception("The item is not available to be selected")
 
     except Exception as e:
-        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        
         PrintException()
         raise e
 
@@ -747,7 +945,7 @@ if module == "changeIframePro":
             raise Exception("The item is not available to be clicked")
 
     except Exception as e:
-        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        
         PrintException()
         raise e
 
@@ -768,7 +966,7 @@ if module == "sendkeys":
             actions.send_keys(text)
         actions.perform()
     except Exception as e:
-        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        
         PrintException()
         raise e
 
@@ -790,7 +988,7 @@ if module == "printPDF":
     chrome_options.add_experimental_option('prefs', prefs)
     chrome_options.add_argument('--kiosk-printing')
 
-    driver.execute_script('window.print();')
+    driver.execute_script('return window.print();')
 
 
 if module == "forceDownload":
@@ -825,21 +1023,109 @@ if module == "new_tab":
 
 if module == "open_browser":
     
+    browser_ = GetParams("browser")
     timeout = GetParams("timeout")
     url_ = GetParams("url_")
     newId = GetParams("newId")
+    download_path = GetParams("download_path")
+    if download_path:
+        download_path = download_path.replace("/", os.sep)
+    force_downloads = GetParams("force_downloads")
+    profile_path = GetParams("profile_path")
+    
+    if profile_path == None or profile_path == "":
+        profile_path = ""
+    
+    if not browser_:
+        browser_ = "chrome"
+    
+
+    custom_options = GetParams("custom_options")
     try:
-        platform_ = platform.system()
-        if platform_.endswith('dows'):
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
-        else:
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
-        browser_driver = Chrome(executable_path=chrome_driver)
+        custom_options = eval(custom_options)
+    except:
+        pass
+
+    try:
+        if browser_ == "chrome":
+            platform_ = platform.system()
+            if platform_.endswith('dows'):
+                chrome_driver = CHROME_DRIVER_WINDOW_PATH
+            else:
+                chrome_driver = CHROME_DRIVER_MAC_PATH
+            
+            caps = selenium.webdriver.ChromeOptions()
+            caps.add_argument("--safebrowsing-disable-download-protection")
+            prefs = {"download.default_directory": download_path}
+
+            if force_downloads == "True":
+                force_download_params = {
+                'download.prompt_for_download': 'false',
+                'safebrowsing.enabled': 'false'
+                }
+                prefs.update(force_download_params)
+            if custom_options:
+                prefs.update(custom_options)
+
+            caps.add_experimental_option("prefs", prefs)
+            
+            if profile_path == "":
+                pass
+            else:
+                caps.add_argument("--user-data-dir=" + profile_path)
+            
+            browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
+
+        elif browser_ == "firefox":
+            platform_ = platform.system()
+            if platform_.endswith('dows'):
+                firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\firefox\x64"), "geckodriver.exe")
+            else:
+                firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "geckodriver")
+                
+            
+            firefox_options = FirefoxOptions()
+            
+            if profile_path != "":
+                profile = FirefoxProfile(profile_path)
+            else:
+                profile = FirefoxProfile()
+            
+            if download_path:
+                firefox_options.set_preference("browser.download.folderList", 2)
+                firefox_options.set_preference("browser.download.dir", download_path)
+                
+            if force_downloads == "True":
+                firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk", "*")
+            
+            if custom_options:
+                for key, value in custom_options.items():
+                    firefox_options.set_preference(key, value)
+            
+            
+            browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        if not timeout:
+            timeout = 100
 
         if not (newId):
             newId = "default"
         webdriver.driver_actual_id = newId
-
         webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
         
         webdriver.driver_list[webdriver.driver_actual_id].set_page_load_timeout(int(timeout))
@@ -862,30 +1148,41 @@ try:
         data_ = GetParams("data")
         data_type = GetParams("data_type")
         files = GetParams("files")
+        single_file = GetParams("single_file")
+        
+        if single_file == "":
+            single_file = None
+        
         element = driver.find_element(data_type, data_)
-        if files.startswith("["):
-            files = eval(files)
-            files = " \n ".join(files)
-        element.send_keys(files)
-
-    if module == "sendKeyCombination":
-        first_special_key = GetParams("first_special_key")    
-        text = GetParams("text")
-        second_special_key = GetParams("second_special_key")    
-        try:
-            web_driver = GetGlobals("web")
-            driver = web_driver.driver_list[web_driver.driver_actual_id]
-            from selenium.webdriver import ActionChains
-            actions = ActionChains(driver)
-            if not text:
-                actions.key_down(special_keys[first_special_key]).send_keys(special_keys[second_special_key]).key_up(special_keys[first_special_key]).perform()
-            if text:
-                actions.key_down(special_keys[first_special_key]).send_keys(text).key_up(special_keys[first_special_key]).perform()
-        except Exception as e:
-            print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
-            PrintException()
-            raise e
+        print('path:', single_file)
+        if single_file != None:
+            element.send_keys(single_file)
+        else:
+            files = files.replace("\\", "/")
+            
+            if files.startswith("["):
+                files = eval(files)
+                files = " \n ".join(files)
+                element.send_keys(files)
 
 except Exception as e:
     PrintException()
     raise e
+
+if module == "sendKeyCombination":
+    first_special_key = GetParams("first_special_key")    
+    text = GetParams("text")
+    second_special_key = GetParams("second_special_key")    
+    try:
+        web_driver = GetGlobals("web")
+        driver = web_driver.driver_list[web_driver.driver_actual_id]
+        from selenium.webdriver import ActionChains
+        actions = ActionChains(driver)
+        if not text:
+            actions.key_down(special_keys[first_special_key]).send_keys(special_keys[second_special_key]).key_up(special_keys[first_special_key]).perform()
+        if text:
+            actions.key_down(special_keys[first_special_key]).send_keys(text).key_up(special_keys[first_special_key]).perform()
+    except Exception as e:
+        
+        PrintException()
+        raise e

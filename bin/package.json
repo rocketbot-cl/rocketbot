@@ -8,78 +8,78 @@
             "path": "web/dev",
             "version": "1.1.0",
             "hash": "",
-            "md5": "fd60d319e07926cb14567bfc324367ce"
+            "md5": "cdf7764848c2acdb1c1bfdd9a432eb6d"
         },
         {
             "path": "languages",
             "version": "1.0.0",
             "hash": "",
-            "md5": "dcc28d496d4a755df94a7be4d169a815"
+            "md5": "27ed2585498343a74bad7a24e5703a39"
         },
         {
             "path": "debugger",
             "version": "1.0.0",
-            "md5": "c5297f7574ea2fff7f3c7e565368e04c"
+            "md5": "a4b1bc0713a838a68a38ccd1b4301a5b"
         },
         {
             "path": "endpoints/botBD",
             "version": "1.0.0",
-            "md5": "04e560158619b4c467a1f57a2fbcb09c"
+            "md5": "bf405568c37a309d7ade8b6036593df3"
         },
         {
             "path": "endpoints/createLaunch",
             "version": "1.0.0",
-            "md5": "1c6cfc62c9a9818bb16f1f1f19c40793"
+            "md5": "4fe9ba45364c58798f8d6b770415a535"
         },
         {
             "path": "endpoints/desktoprecorder",
             "version": "1.0.0",
-            "md5": "e0285e2fe9b69b52101ecd4332a2f6d8"
+            "md5": "037ba4d763f7c01bb68b58e9656c6b3f"
         },
         {
             "path": "endpoints/driverupdater",
             "version": "1.0.0",
-            "md5": "77ee5d099a797edba2809180a5c37b99"
+            "md5": "60194a3343c351b72503a0bcb67a2765"
         },
         {
             "path": "endpoints/git",
             "version": "1.0.0",
-            "md5": "c0d4d8957dce17b008d7215f5701b64d"
+            "md5": "5b87f54ad7489a887d83ac065375b028"
         },
         {
             "path": "endpoints/installMods",
             "version": "1.0.0",
-            "md5": "86603b2fcdb53ab93d2b026531db012d"
+            "md5": "bdabc994a7c803c196524f3b052c8c44"
         },
         {
             "path": "endpoints/log_viewer",
             "version": "1.0.0",
-            "md5": "88ecc8e8c05515ff3e7c7bbe8032671d"
+            "md5": "0c1b8652a5c30138fe9e0923fe56aa38"
         },
         {
             "path": "endpoints/mods",
             "version": "1.0.0",
-            "md5": "fa81ce97d45804bb629d5c444e651006"
+            "md5": "1abcea5f10496657520d11079d14fa5a"
         },
         {
             "path": "endpoints/orchestrator",
             "version": "1.0.0",
-            "md5": "3c32e71b1968fdd4a2db102d503c8c47"
+            "md5": "d7d4b4e620c0609c4e61ac5ea85d72ad"
         },
         {
             "path": "endpoints/treeview",
             "version": "1.0.0",
-            "md5": "bb8173ba4b982173977855b968471fa3"
+            "md5": "026c8063896f9f107502b6bdd3100372"
         },
         {
             "path": "endpoints/varsbot",
             "version": "1.0.0",
-            "md5": "ed2e896fbba56f6b3245c4ab9592cc34"
+            "md5": "096e5faef9e7547282410dfc5d0d2033"
         },
         {
             "path": "endpoints/workflow",
             "version": "1.0.0",
-            "md5": "2060a9d0d3140a8a30b226626c1824fd"
+            "md5": "36c4a7805003fb574f3346b263ff6b0b"
         },
         {
             "path": "endpoints/a_botBD.roc",
@@ -109,7 +109,7 @@
             "path": "endpoints/a_installMods.roc",
             "version": "1.0.0",
             "hash": "",
-            "md5": null
+            "md5": "d41d8cd98f00b204e9800998ecf8427e"
         },
         {
             "path": "endpoints/a_log_viewer.roc",

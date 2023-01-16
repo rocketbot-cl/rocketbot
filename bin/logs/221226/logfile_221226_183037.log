@@ -1,7 +1,0 @@
-2022-12-26 18:34:03.598753 - rocketbot - INFO - request: dev : line 0 - rpasystem : wait  id: c2322e3e-c12d-a2a9-5f8a-45d62761749e -  - 5
-2022-12-26 18:34:08.642053 - rocketbot - INFO - request: dev : line 1 - rpasystem : setVar  id: 38f0dd45-ca22-ddeb-06f1-63ac5a07e673 -  - print( %rocketbot_last_status%)
-2022-12-26 18:34:09.047143 - rocketbot - INFO - request: dev : line 2 - rpadesktop : alert  id: 54fe4a47-eb01-5ece-2f25-76361ec084c1 -  - alto
-2022-12-26 18:39:29.197969 - rocketbot - INFO - request: dev : line 0 - rpasystem : wait  id: c2322e3e-c12d-a2a9-5f8a-45d62761749e -  - 5
-2022-12-26 18:39:34.542548 - rocketbot - INFO - request: dev : line 1 - rpasystem : setVar  id: 38f0dd45-ca22-ddeb-06f1-63ac5a07e673 -  - print( %rocketbot_last_status%)
-2022-12-26 18:39:34.798616 - rocketbot - INFO - request: dev : line 2 - rpadesktop : alert  id: 54fe4a47-eb01-5ece-2f25-76361ec084c1 -  - alto
-2022-12-26 18:39:36.611002 - rocketbot - INFO - request: dev : line 3 - rpasystem : wait  id: 564ec1a8-6159-74ec-de29-1011dc147944 -  - 5

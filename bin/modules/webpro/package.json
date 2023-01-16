@@ -2,7 +2,7 @@
   "author": "David Cuello - José González - Marcela Vergara - Danilo Toro",
   "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "11.6.2",
+  "version": "11.8.0",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "name": "webpro",
@@ -266,7 +266,32 @@
             },
             "id": "simulationKey",
             "css": "col-md-6"
-        }
+        },
+        {
+          "type": "checkbox",
+          "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+          },
+          "description": {
+              "es": "Asigna una espera de 1 segundo entre el borrar y el enviar elemento",
+              "en": "Assigns a 1 second wait between the erase and the send element",
+              "pr": "Atribui uma espera de 1 segundo entre o apagar e o enviar elemento"
+          },
+          "title": {
+              "es": "Espera de 1 segundo",
+              "en": "Wait 1 second",
+              "pr": "Espera de 1 segundo"
+          },
+          "help": {
+              "es": "Usar en caso de que no se escriba el contenido.",
+              "en": "Use it when do not write the content.",
+              "pr": "Usar em caso de que não escreva o conteúdo."
+          },
+          "id": "sleep_",
+          "css": "col-md-6"
+      }
         ]
       },
       "linux": true,
@@ -1810,6 +1835,51 @@
               "pr": "Url da páxina a abrir no Edge"
             },
             "id": "url",
+            "css": "col-md-6"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+            },
+            "title": {
+              "es": "Iniciar en modo Internet Explorer",
+              "en": "Start in Internet Explorer mode",
+              "pr": "Comezar no modo Internet Explorer"
+            },
+            "description": {
+              "es": "Inicia el navegador en modo Internet Explorer",
+              "en": "Starts the browser in Internet Explorer mode",
+              "pr": "Comeza o navegador no modo Internet Explorer"
+            },
+            "id": "ie_mode",
+            "css": "col-md-6"
+          },
+          {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+              "en": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+              "pr": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+            },
+            "title": {
+              "es": "Seleccionar ejecutable de Edge",
+              "en": "Select Edge executable",
+              "pr": "Seleccionar executábel de Edge"
+            },
+            "description": {
+              "es": "Selecciona el ejecutable de Edge para abrir en modo IE",
+              "en": "Select the Edge executable to open in IE mode",
+              "pr": "Selecciona o executábel de Edge para abrir no modo IE"
+            },
+            "help": {
+              "es": "Seleccionar únicamente si se desea abrir en modo IE",
+              "en": "Select only if you want to open in IE mode",
+              "pr": "Seleccionar só se quere abrir no modo IE"
+            },
+            "id": "edge_exe",
             "css": "col-md-12"
           }
         ]
@@ -2767,6 +2837,36 @@
           "css": "modal-lg",
           "inputs": [
             {
+              "type": "select",
+              "placeholder": {
+                "es": "Google Chrome",
+                "en": "Google Chrome",
+                "pr": "Google Chrome"
+              },
+              "title": {
+                "es": "Navegador: ",
+                "en": "Browser: ",
+                "pr": "Navegador: "
+              },
+              "options": [
+                {
+                  "title": "Google Chrome",
+                  "value": "chrome"
+                },
+                {
+                  "title": "Mozilla Firefox",
+                  "value": "firefox"
+                }
+              ],
+              "description": {
+                "es": "Navegador a abrir",
+                "en": "Browser to open",
+                "pr": "Navegador para abrir"
+              },
+              "id": "browser",
+              "css": "col-md-6"
+            },
+            {
               "type": "input",
               "placeholder": {
                 "es": "http://www.google.com",
@@ -2784,7 +2884,7 @@
                 "pr": "URL para abrir"
               },
               "id": "url_",
-              "css": "col-md-12"
+              "css": "col-md-6"
             },
             {
               "type": "input",
@@ -2894,14 +2994,19 @@
                 "pr": "{'download.default_directory': download_path}"
               },
               "title": {
-                "es": "Opciones para Chrome:",
-                "en": "Options for Chrome:",
-                "pr": "Opções para o Chrome"
+                "es": "Opciones personalizadas para el navegador:",
+                "en": "Custom options for the browser:",
+                "pr": "Opções personalizadas para o navegador:"
               },
               "description": {
-                "es": "Opciones para el navegador",
-                "en": "Options for the browser",
-                "pr": "Opções do navegador"
+                "es": "Opciones personalizadas en formato dict",
+                "en": "Custom options in dict format",
+                "pr": "Opções personalizadas no formato dict"
+              },
+              "help": {
+                "es": "Posibles valores de Firefox: http://kb.mozillazine.org/About:config_entries - Posibles valores de Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc",
+                "en": "Possible values of Firefox: http://kb.mozillazine.org/About:config_entries - Possible values of Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc",
+                "pr": "Valores possíveis do Firefox: http://kb.mozillazine.org/About:config_entries - Valores possíveis do Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc"
               },
               "id": "custom_options",
               "css": "col-md-12"

@@ -235,10 +235,10 @@ let app = new Vue({
       })
       .then(res=> res.json())
       .then((data)=>{
-        console.log(data)
+        //console.log(data)
         document.title = name + " - Rocketbot Drawflow";
         this.bot = JSON.parse(data[0].data);
-        console.log("dd", JSON.parse(data[0].data))
+        //console.log("dd", JSON.parse(data[0].data))
         this.project_description = this.bot.project.profile.description;
         this.vars = this.bot.project.vars;
         this.robot_version = this.bot.project.profile?.version;
@@ -581,6 +581,50 @@ let app = new Vue({
   
   },
   mounted(){
+	//get events from eventlistener, multiple events can be added, compatible with IE11
+	var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+	var eventer = window[eventMethod];
+	var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+	 // Listen to message from child window
+	eventer(messageEvent,function(e) {
+		try {
+			var data = e.data
+			if (data.type && data.type == 'iframe') {
+				try{
+					//if this.command_editing.command is a string change to object
+					if(typeof app.$data.command_editing.command == 'string'){
+						app.$data.command_editing.command = JSON.parse(app.$data.command_editing.command)
+					}
+				}catch(e){
+					console.log(e)
+				}
+				app.$data.command_editing.command['iframe'] = data.commands;
+			}
+			if (data.type && data.type == 'scrollTo') {
+				var k;
+				let _data = editor.export().drawflow.Home.data;
+				for(var t = 0; t < Object.keys(_data).length; t++){
+					k =  Object.keys(_data)[t];
+					console.log(k, _data[k])
+					if(_data[k].data.id == data.id){
+						console.log("app.$data.bot.flow.drawflow.Home.data[k]",_data[k])
+						editor.translate_to(
+							(- _data[k].pos_x) + (editor.precanvas.clientWidth / 2), 
+							(- _data[k].pos_y) + (editor.precanvas.clientHeight / 2)
+							);
+						break;
+					}
+
+				}
+				console.log(data)
+				//document.getElementById('command_' + data.id).scrollIntoView({ block: 'center', behavior: 'smooth' });
+			}
+		} catch (e) {
+			console.log(e)
+		}	
+	},false);
+	
+
     let params = new URLSearchParams(window.location.search);
     if(params.has("r")){
       this.robot_name = params.get("r");  
@@ -593,7 +637,7 @@ let app = new Vue({
       //console.log("getCommands")
       if(app.$data.robot_name && app.$data.robot_name.length > 1 && app.$data.path_encode.length > 1){
         editor.loadingFromDb = true;
-        console.log("loadingFromDb")
+        //console.log("loadingFromDb")
         app.getBot(app.$data.path_encode,app.$data.robot_name)
       }else{
         app.$data.bot = {

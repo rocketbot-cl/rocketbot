@@ -1,2 +1,0 @@
-2022-12-29 10:13:53.501954 - rocketbot - INFO - request: dev - rpawindows : connect_app  id: 1ebf5827-5027-462a-b1a2-7acadc698be6 -  - {"selector": "{\"class_name\": \"ApplicationFrameWindow\", \"title\": \"Calculator\", \"auto_id\": \"\", \"handle\": 3934242, \"control_type\": \"Window\", \"app\": \"ApplicationFrameHost.exe\", \"ctrl_index\": 4, \"status\": true}", "set_focus": true, "timeout": "10", "session": "DEFAULT", "result": "app_connected"}
-2022-12-29 10:14:03.976258 - Rocketbot - ERROR - EXCEPTION IN (<string> Rocketbot, L_485 ""): TimeoutError: 

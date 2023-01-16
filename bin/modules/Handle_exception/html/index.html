@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+</head>
+<body >
+    
+    <h3>Hola mundo</h3>
+    <input id="input" type="text" placeholder="texto">
+    <!--Currency Converter widget by FreeCurrencyRates.com -->
+
+<div id='gcw_mainFDBudJc3H' class='gcw_mainFDBudJc3H'></div>
+<a id='gcw_siteFDBudJc3H' href='https://freecurrencyrates.com/es/'>FreeCurrencyRates.com</a>
+<script>function reloadFDBudJc3H(){ var sc = document.getElementById('scFDBudJc3H');if (sc) sc.parentNode.removeChild(sc);sc = document.createElement('script');sc.type = 'text/javascript';sc.charset = 'UTF-8';sc.async = true;sc.id='scFDBudJc3H';sc.src = 'https://freecurrencyrates.com/es/widget-vertical?iso=USD-EUR-GBP-JPY-CNY-XUL&df=2&p=FDBudJc3H&v=fits&source=fcr&width=245&width_title=0&firstrowvalue=1&thm=A6C9E2,FCFDFD,4297D7,5C9CCC,FFFFFF,C5DBEC,FCFDFD,2E6E9E,000000&title=Conversor%20de%20divisas&tzo=360';var div = document.getElementById('gcw_mainFDBudJc3H');div.parentNode.insertBefore(sc, div);} reloadFDBudJc3H(); </script>
+<!-- put custom styles here: .gcw_mainFDBudJc3H{}, .gcw_headerFDBudJc3H{}, .gcw_ratesFDBudJc3H{}, .gcw_sourceFDBudJc3H{} -->
+<!--End of Currency Converter widget by FreeCurrencyRates.com -->
+    <script>
+        var message = {
+            type: 'iframe',
+            commands: {}
+        }
+        var SendMessage = function(){
+            parent.postMessage(message,"*");
+        }
+        $('#input').on('change',function(e){
+            message.commands['input'] = $(this).val();
+            SendMessage();
+        })
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+        
+        // Listen to message from child window
+        eventer(messageEvent,function(e) {
+            console.log('parent received message!:  ',e.data);
+            if(e.data.input){
+                $("#input").val(e.data.input);
+            }
+        });
+    </script>    
+</body>
+</html>

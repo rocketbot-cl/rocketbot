@@ -221,7 +221,7 @@ editor.on("connectionCreated", function(info) {
     /**
     * Remove duplicated outputs
     */
-   console.log(info)
+   
     const nodeInfo = editor.getNodeFromId(info.output_id);
     if(nodeInfo.outputs[info.output_class].connections.length > 1) {
         let removeConnectionInfo = nodeInfo.outputs[info.output_class].connections[0];
@@ -268,6 +268,16 @@ editor.on('nodeRemoved', function(id) {
         deleteCommandById(app.$data.bot.project.commands ,actual_node.data.id )
     }catch(e){}
 })
+editor.translate_to = function(x,y){
+	this.canvas_x = x;
+	this.canvas_y = y;
+	let storedZoom = this.zoom;
+	this.zoom = 1;
+	this.precanvas.style.transform = "translate("+this.canvas_x+"px, "+this.canvas_y+"px) scale("+this.zoom+")";
+	this.zoom = storedZoom;
+	this.zoom_last_value = 1;
+	this.zoom_refresh();
+}
 function showConextMenu(x,y, target) {
     //var pos_x = editor.pos_x * ( editor.precanvas.clientWidth / (editor.precanvas.clientWidth * editor.zoom)) - (editor.precanvas.getBoundingClientRect().x * ( editor.precanvas.clientWidth / (editor.precanvas.clientWidth * editor.zoom)));
     //var pos_y = editor.pos_y * ( editor.precanvas.clientHeight / (editor.precanvas.clientHeight * editor.zoom)) - (editor.precanvas.getBoundingClientRect().y * ( editor.precanvas.clientHeight / (editor.precanvas.clientHeight * editor.zoom)));
@@ -498,7 +508,7 @@ function addNodeToDrawFlow(name, group, pos_x, pos_y, command, id, command_compl
     var extra_style = "#BC0116";
     var isMod = false;
     let class_edited = (command==null||command=="null")?"no-edited": "d-none"
-    console.log("command", command, typeof(command), command==null, command=="null")
+    //console.log("command", command, typeof(command), command==null, command=="null")
     switch (name) {
         case 'start':
         class_ = "start";
@@ -663,7 +673,7 @@ function addNodeToDrawFlow(name, group, pos_x, pos_y, command, id, command_compl
         
         break;
         case 'module':
-        console.log(father_data)
+        //console.log(father_data)
         class_ = copyObject(group)
         template = `<div class="${name} popover_" id="command_${id}" ondblclick="editCommand('${id}')" data-content="${command_complete?.description||''}" rel="popover" data-placement="top">
         <div class='running' id='running_${id}'><div></div></div>
@@ -852,7 +862,7 @@ function loadBotView(data){
         app.$data.robot_type = '';
         app.$data.bot['flow'] = []
         app.$data.bot['commandsList'] =[]
-        console.log("No command list")
+       //console.log("No command list")
         loadBotView_(command,300,150,'output_1',mynode)
     }
     first_node = editor.getNodeFromId(editor.getNodesFromName("start")[0])
@@ -878,7 +888,7 @@ function loadFlowView(){
                 }
                 html = addNodeToDrawFlow(command['father'],command['group'], app.$data.bot.flow.drawflow.Home.data[i].pos_x, app.$data.bot.flow.drawflow.Home.data[i].pos_y, command["command"], command['id'], command, true) 
             }else{
-                console.log('command not found')
+                //console.log('command not found')
                 html =  addNodeToDrawFlow('start',"start", 140, 150, [], 0, [], true);
             }
 
@@ -887,7 +897,7 @@ function loadFlowView(){
         
     }
     editor.on('import', function(data) {
-        console.log(data)
+        //console.log(data)
         for(var i in mods){
                        
             setColorMods(mods[i].id, mods[i].fd);
@@ -948,7 +958,7 @@ function loadBotView_(data,x,y, output_, input_){
 }
 
 function getNextCommand (my_id, nodo, output_conection){
-    console.log(my_id, nodo, output_conection)
+    //console.log(my_id, nodo, output_conection)
     try{
         if(my_id.outputs[`output_${output_conection}`].connections[nodo]){
             var id = my_id.outputs[`output_${output_conection}`].connections[nodo].node

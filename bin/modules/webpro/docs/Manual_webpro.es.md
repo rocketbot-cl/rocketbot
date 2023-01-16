@@ -12,6 +12,10 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Ro
 
 ## Como usar este modulo
 Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
+Para poder utilizar Edge en modo Internet Explorer, deben realizarse las siguientes configuraciones:
+1. Configurar el navegador en base a la siguiente documentación: https://docs.rocketbot.com/?p=169
+2. Descargar el driver de Internet Explorer del siguiente link: https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.3.0/IEDriverServer_Win32_4.3.0.zip y ubicarlo en Rocketbot/drivers/win/ie/x86/
+3. Para poder acceder a las herramientas de desarrollador, se debe abrir IEChooser.exe. Para realizarlo presionar la tecla Windows + R y colocar lo siguiente: %systemroot%\system32\f12\IEChooser.exe  luego apretar aceptar. Seleccione la ventana de su navegador, y podrá explorar los elementos de la página
 
 
 ## Descripción de los comandos
@@ -197,6 +201,8 @@ Abre el nuevo Edge basado en Chromium
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Url de Servidor|Url de la pagina a abrir en Edge|http://www.rocketbot.co|
+|Iniciar en modo Internet Explorer|Inicia el navegador en modo Internet Explorer|True|
+|Seleccionar ejecutable de Edge|Selecciona el ejecutable de Edge para abrir en modo IE|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
 ### Click Pro
   
