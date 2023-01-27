@@ -18,19 +18,19 @@
         },
         {
             "path": "languages/command_list_tree_en.json",
-            "version": "0.0.",
+            "version": "1.0.0",
             "hash": "",
             "md5": "eb1efe486287fcae0173bf3c65670a12"
         },
         {
             "path": "languages/command_list_tree_es.json",
-            "version": "0.0.",
+            "version": "1.0.0",
             "hash": "",
             "md5": "89636071d986ed41e9ee540df9dcd8f6"
         },
         {
             "path": "languages/command_list_tree_pr.json",
-            "version": "0.0.",
+            "version": "1.0.0",
             "hash": "",
             "md5": "c1a2ac874bda57cfec3b47b203c45f03"
         },
