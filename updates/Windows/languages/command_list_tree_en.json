@@ -108,7 +108,7 @@
       "sequence_command": "Sequence of commands",
       "load": "Load",
       "name": "Name",
-      "version": "Changes",
+      "version": "History",
       "action": "Action",
       "url_help": "You can use the {} variable, which must start with http or https",
       "asynchronous_help": "The browser will open and we will not have control over it. It will not block the actions of the robot.",
@@ -275,6 +275,12 @@
       "go_to_market": "Go to Market",
       "accept": "Accept",
       "module_version": "Version",
+      "error_exporting_variables": "There was an error exporting the variables",
+      "error_importing_variables": "There was an error importing the variables",
+      "days_ago"  : "days ago",
+      "version_differences": "Differences between versions",
+      "error_creating_command": "There was an error creating the command",
+      "error_editing_command": "There was an error editing the command",
       "robot_version_tooltip": "Not to confuse with internal robot versioning, which enumerates changes made on a robot after saving. This versioning is left to the user criteria and does not affect robot functioning at all."
    },
    "commands": [
@@ -1254,12 +1260,12 @@
                "modal_size": "md"
             },
             {
-               "title": "Criar Error",
+               "title": "Create Error",
                "icon": "data:image/png;base64,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",
                "visible": true,
                "name": "Raise Exception",
                "description": "Create a new exception with a message",
-               "title_options": "Tipo de Exceção",
+               "title_options": "Type of exception",
                "title_command": "Message",
                "father": "raise_exception",
                "options": [ "SystemError", "RocketbotError", "BusinessError", "ValidationError"],

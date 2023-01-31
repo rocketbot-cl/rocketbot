@@ -109,7 +109,7 @@
     "load": "Cargar",
     "visible": true,
     "name": "Nombre",
-    "version": "Cambios",
+    "version": "Historial",
     "action": "Acción",
     "url_help": "Puede usar la variable {}, que debe comenzar con http o https",
     "asynchronous_help": "Se abrirá el navegador y no tendremos el control sobre el. No bloqueará las acciones del robot.",
@@ -273,6 +273,12 @@
     "go_to_market": "Ir al Market",
     "accept": "Aceptar",
     "module_version": "Versión",
+    "error_exporting_variables": "Hubo un error exportando las variables",
+    "error_importing_variables": "Hubo un error importando las variables",
+    "error_editing_command": "Hubo un error editando el comando",
+    "days_ago": "días atrás",
+    "error_creating_command": "Hubo un error creando el comando",
+    "version_differences": "Diferencias entre versiones",
     "robot_version_tooltip": "No confundir con el versionado interno del robot, que enumera los cambios hechos en un robot luego del guardado. Este versionado queda al criterio del usuario y no afecta en nada al funcionamiento del robot."
   },
   "commands": [

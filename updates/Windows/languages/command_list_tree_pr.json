@@ -109,7 +109,7 @@
         "load": "Carregar",
         "visible": true,
         "name": "Nome",
-        "version": "Alterações",
+        "version": "Historial",
         "action": "Ação",
         "url_help": "Pode usar a variável {}, deve começar com http ou https",
         "asynchronous_help": "O navegador será aberto e não teremos controle sobre ele. Não bloqueará as ações do robô.",
@@ -272,6 +272,12 @@
         "author": "Autor",
         "accept": "Aceitar",
         "module_version": "Versão",
+        "error_exporting_variables": "Erro ao exportar variáveis",
+        "error_importing_variables": "Erro ao importar variáveis",
+        "error_editing_command": "Erro ao editar comando",
+        "days_ago": "dias atrás",
+        "error_creating_command": "Erro ao criar comando",
+        "version_differences": "Diferenças entre as versões",
         "robot_version_tooltip": "Não confundir com a versão de robô interno, que lista as alterações feitas a um robô depois de guardado. Esta versão está ao critério do utilizador e não afecta de forma alguma o funcionamento do robô."
     },
     "commands": [
