@@ -8,96 +8,96 @@
             "path": "rocketbot.exe",
             "version": "2022.12.30",
             "hash": "",
-            "md5": "76cdb2bad9582d23c1f6f4d868218d6c"
+            "md5": "23936f10d7eb6ad10dbc1bc6e226fafe"
         },
         {
             "path": "web/dev",
             "version": "1.1.0",
             "hash": "",
-            "md5": "269b6a73e9dd7a6a49909bff988f1319"
+            "md5": "05c1123d96081f117ccab9e3c33e9409"
         },
         {
             "path": "languages/command_list_tree_en.json",
-            "version": "0.0.",
+            "version": "0.0.0",
             "hash": "",
-            "md5": "787cbcfa93dfd3aed2a3fd988eb9c3a8"
+            "md5": "623590b13d428ca44a99bd1236cef3a5"
         },
         {
             "path": "languages/command_list_tree_es.json",
-            "version": "0.0.",
+            "version": "0.0.0",
             "hash": "",
-            "md5": "d28c09aced28b993b0c2b5d8bcd33bb8"
+            "md5": "4255ca104b92ecab2d74de4e2ce50dff"
         },
         {
             "path": "languages/command_list_tree_pr.json",
             "version": "0.0.",
             "hash": "",
-            "md5": "703e89f94fba07ddbdfd93e8ed3cc88e"
+            "md5": "f44cb92de98660afd977fce15c557d83"
         },
         {
             "path": "debugger",
             "version": "1.0.0",
-            "md5": "c5297f7574ea2fff7f3c7e565368e04c"
+            "md5": "8729473ef88b3786b5adc7f36fa6e316"
         },
         {
             "path": "endpoints/botBD",
             "version": "1.0.0",
-            "md5": "04e560158619b4c467a1f57a2fbcb09c"
+            "md5": "5186dc73c96bfc2edebfd10baa604d64"
         },
         {
             "path": "endpoints/createLaunch",
             "version": "1.0.0",
-            "md5": "1c6cfc62c9a9818bb16f1f1f19c40793"
+            "md5": "ed415659a5b1ea61670c0618bf3654d0"
         },
         {
             "path": "endpoints/desktoprecorder",
             "version": "1.0.0",
-            "md5": "e0285e2fe9b69b52101ecd4332a2f6d8"
+            "md5": "0ad5a9f6086e0af78ff70b2e4678b63b"
         },
         {
             "path": "endpoints/driverupdater",
             "version": "1.0.0",
-            "md5": "77ee5d099a797edba2809180a5c37b99"
+            "md5": "f67863a216edbd1957f49effc0ee442c"
         },
         {
             "path": "endpoints/git",
             "version": "1.0.0",
-            "md5": "7e6d8a448bdd6547a8155995d90fa644"
+            "md5": "c8f462915d37ef8e8ac31a40f941b571"
         },
         {
             "path": "endpoints/installMods",
             "version": "1.0.0",
-            "md5": "86603b2fcdb53ab93d2b026531db012d"
+            "md5": "71704e74521425f5d16d77b39bd38cee"
         },
         {
             "path": "endpoints/log_viewer",
             "version": "1.0.0",
-            "md5": "88ecc8e8c05515ff3e7c7bbe8032671d"
+            "md5": "4df2a08db3c1252d1a8f850604745688"
         },
         {
             "path": "endpoints/mods",
             "version": "1.0.0",
-            "md5": "fa81ce97d45804bb629d5c444e651006"
+            "md5": "280d091ba32365fe79c78bfbd877268c"
         },
         {
             "path": "endpoints/orchestrator",
             "version": "1.0.0",
-            "md5": "3c32e71b1968fdd4a2db102d503c8c47"
+            "md5": "4d5c3d7d8a92a6d64f7ead1e462118bd"
         },
         {
             "path": "endpoints/treeview",
             "version": "1.0.0",
-            "md5": "bb8173ba4b982173977855b968471fa3"
+            "md5": "aa6e447e75f3b6ddb94afa81a48e2dda"
         },
         {
             "path": "endpoints/varsbot",
             "version": "1.0.0",
-            "md5": "ed2e896fbba56f6b3245c4ab9592cc34"
+            "md5": "1122d84f75e698582ff94473c14756f6"
         },
         {
             "path": "endpoints/workflow",
             "version": "1.0.0",
-            "md5": "2060a9d0d3140a8a30b226626c1824fd"
+            "md5": "c5847e40d5ffc003dd670d9db0a3d415"
         },
         {
             "path": "endpoints/a_botBD.roc",
