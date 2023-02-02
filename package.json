@@ -11,7 +11,7 @@
             "md5": "3e5dec5e40be1ea3943d42890257f235"
         },
         {
-            "path": "web/dev",
+            "path": "web/dev/",
             "version": "1.1.0",
             "hash": "",
             "md5": "269b6a73e9dd7a6a49909bff988f1319"
@@ -35,7 +35,7 @@
             "md5": "f44cb92de98660afd977fce15c557d83"
         },
         {
-            "path": "debugger",
+            "path": "debugger/",
             "version": "1.0.0",
             "md5": "c5297f7574ea2fff7f3c7e565368e04c"
         },
