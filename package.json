@@ -1,7 +1,7 @@
 {
     "name": "rocketbot-studio",
     "version": "2022.12.30_a1",
-    "build": "beta",
+    "build": "production",
     "author": "Rocketbot",
     "sha": "746e392d73226bdd92892ead049772ea30f96db1",
     "components": [
