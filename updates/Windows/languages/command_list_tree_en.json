@@ -111,8 +111,8 @@
       "version": "History",
       "action": "Action",
       "url_help": "You can use the {} variable, which must start with http or https",
-      "asynchronous_help": "The browser will open and we will not have control over it. It will not block the actions of the robot.",
-      "synchronous_help": "The browser will open and we will have control over it. Once finished loading the browser will continue with the robot stages.",
+      "asynchronous_help": "The application will open and we wont have control over it. It wont block the actions of the robot.",
+      "synchronous_help": "The application will open and we will have control over it. Once finished loading the application will continue with the robot stages.",
       "select_navigator": "Select navigator",
       "general": "General",
       "extra": "Extra",
@@ -281,6 +281,18 @@
       "version_differences": "Differences between versions",
       "error_creating_command": "There was an error creating the command",
       "error_editing_command": "There was an error editing the command",
+      "error_json_uploading": "There was an error uploading the JSON file",
+      "error_loading_version": "There was an error loading this version",
+      "restore_version": "Restore to older version",   
+      "restore_version_confirmation": "Are sure you want to restore to this version?",
+      "references": "References",
+      "disabled_command": "Disabed command",
+      "deleted_command": "Deleted command",
+      "added_command": "Added command",
+      "no_changes": "No changes",
+      "current_version": "Current version",
+      "older_version": "Older version",
+      "today": "Today",
       "robot_version_tooltip": "Not to confuse with internal robot versioning, which enumerates changes made on a robot after saving. This versioning is left to the user criteria and does not affect robot functioning at all."
    },
    "commands": [
@@ -289,6 +301,28 @@
          "title": "Web",
          "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHRpdGxlPldlYl9OZWdybzwvdGl0bGU+PHBhdGggZD0iTTE2LDMuNjVhMTIuMzUsMTIuMzUsMCwxLDAsNC43Mi45NEExMi4zNiwxMi4zNiwwLDAsMCwxNiwzLjY1Wm04LjU0LDcuNDFIMjAuOWExOS4zMiwxOS4zMiwwLDAsMC0xLjctNC4zOUE5Ljg2LDkuODYsMCwwLDEsMjQuNTQsMTEuMDZaTTE2LDYuMTZhMTYuODEsMTYuODEsMCwwLDEsMi4zNiw0LjlIMTMuNjRBMTYuODEsMTYuODEsMCwwLDEsMTYsNi4xNlpNNi40NCwxOC40N2E5LjY2LDkuNjYsMCwwLDEsMC00Ljk0aDQuMTdBMjAuMzksMjAuMzksMCwwLDAsMTAuNDQsMTZhMjAuMzksMjAuMzksMCwwLDAsLjE3LDIuNDdabTEsMi40N2gzLjZhMjEuMjgsMjEuMjgsMCwwLDAsMS43Myw0LjM5QTkuODksOS44OSwwLDAsMSw3LjQ2LDIwLjk0Wm0zLjYtOS44OEg3LjQ2YTkuNzgsOS43OCwwLDAsMSw1LjMzLTQuMzlBMjEuMjgsMjEuMjgsMCwwLDAsMTEuMDYsMTEuMDZaTTE2LDI1LjgzYTE2Ljc0LDE2Ljc0LDAsMCwxLTIuMzYtNC44OWg0LjcyQTE2Ljc0LDE2Ljc0LDAsMCwxLDE2LDI1LjgzWm0yLjg5LTcuMzZIMTMuMTFhMTUuNTMsMTUuNTMsMCwwLDEsMC00Ljk0aDUuNzhhMTgsMTgsMCwwLDEsLjIsMi40N0ExOC4xNiwxOC4xNiwwLDAsMSwxOC44OSwxOC40N1ptLjMxLDYuODZhMTkuMzIsMTkuMzIsMCwwLDAsMS43LTQuMzloMy42NEE5LjkxLDkuOTEsMCwwLDEsMTkuMiwyNS4zM1ptMi4xOS02Ljg2QTIwLjM5LDIwLjM5LDAsMCwwLDIxLjU2LDE2YTIwLjM5LDIwLjM5LDAsMCwwLS4xNy0yLjQ3aDQuMTdhOS42Niw5LjY2LDAsMCwxLDAsNC45NFoiLz48L3N2Zz4=",
          "children": [
+            {
+               "visible": false,
+               "title": "Open Browser",
+               "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbC0xNi04djE4bDE2LDhaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQuNjQsNDMuM2wxNi04di0xOGwtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04LjY0LDE3LjNsMTYtOC00LTYtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMy42NCwxMy44bC0xMSw1LjUsMiw2LTE2LTgsMTYtOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbDE2LTgtMi02LTE2LDhaIi8+PC9zdmc+",
+               "name": "Use WebBrowser",
+               "description": "Select browser and open url",
+               "iconTooltip": "Select browser to use",
+               "tooltip": "Select browser to use",
+               "title_options": "Select browser",
+               "title_command": "",
+               "father": "use",
+               "video": "aMV6cXPMMSo",
+               "options": [
+                  "chrome",
+                  "firefox",
+                  "ie",
+                  "safari"
+               ],
+               "command_available": false,
+               "group": "web",
+               "modal_size": "lg"
+            },
             {
                "visible": true,
                "title": "Open Browser",
@@ -299,7 +333,7 @@
                "tooltip": "Select browser to use",
                "title_options": "Select browser",
                "title_command": "",
-               "father": "use",
+               "father": "openbrowser",
                "video": "aMV6cXPMMSo",
                "options": [
                   "chrome",
@@ -1228,7 +1262,8 @@
                "options": "",
                "command_available": true,
                "group": "system",
-               "modal_size": "md"
+               "modal_size": "md",
+               "help": "Variable name without {}"
             }
             ,
             {
