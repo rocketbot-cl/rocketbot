@@ -4,6 +4,7 @@
     "build": "production",
     "author": "Rocketbot",
     "id": "92225902",
+    "sha": "20fe2a480ae52f849c67537d7c48acce4e4ce7ec"
     "components": [
         {
             "name": "rocketbot.exe",
