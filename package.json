@@ -345,6 +345,12 @@
             "path": "services/updater.roc",
             "version": "1.0.0",
             "md5": "e62ebdf02919d9ff848b63824a3084a0"
+        },
+        {
+            "name": "setuptools",
+            "path": "setuptools.zip",
+            "version": "58.1.0",
+            "md5": "346a74d12ccb14a318fc04dde29686f2"
         }
     ]
 }
