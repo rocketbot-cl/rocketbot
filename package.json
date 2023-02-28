@@ -7,35 +7,35 @@
         {
             "name": "rocketbot.exe",
             "path": "rocketbot.exe.zip",
-            "version": "2023.02.10",
+            "version": "2023.02.30",
             "hash": "",
             "md5": "cfd2afd0c1166ecc2b1c58a6577189f3"
         },
         {
             "name": "web/dev",
             "path": "web/dev.zip",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "hash": "",
             "md5": "6be6528cbcb7bb50a6d67f6817369328"
         },
         {
             "name": "languages/command_list_tree_en.json",
             "path": "languages/command_list_tree_en.json",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "hash": "",
             "md5": "971fe21751527bec9af2068e0dafae8f"
         },
         {
             "name": "languages/command_list_tree_es.json",
             "path": "languages/command_list_tree_es.json",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "hash": "",
             "md5": "8b5ccc8fbd8885309fc0bff6cd98b2ad"
         },
         {
             "name": "languages/command_list_tree_pr.json",
             "path": "languages/command_list_tree_pr.json",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "hash": "",
             "md5": "c4f0d9a163cb6020f5c14af0cadb4b9c"
         },
@@ -72,7 +72,7 @@
         {
             "name": "endpoints/git",
             "path": "endpoints/git.zip",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "md5": "7e6d8a448bdd6547a8155995d90fa644"
         },
         {
@@ -96,7 +96,7 @@
         {
             "name": "endpoints/orchestrator",
             "path": "endpoints/orchestrator.zip",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "md5": "a99dad8481aa831cad570d5860e34836"
         },
         {
@@ -190,7 +190,7 @@
         {
             "name": "endpoints/z_dev.roc",
             "path": "endpoints/z_dev.roc",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "md5": "cbe9ebb0a8499cfee459e453b64c03ed"
         },
         {
@@ -214,13 +214,13 @@
         {
             "name": "services/a_rocketbot__.roc",
             "path": "services/a_rocketbot__.roc",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "69e14879e0c945f35990338b0e149063"
         },
         {
             "name": "services/auth.roc",
             "path": "services/auth.roc",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "md5": "61066c06ccc2cf3d3632d1bef42d3def"
         },
         {
@@ -305,7 +305,7 @@
         {
             "name": "services/rpasystem.roc",
             "path": "services/rpasystem.roc",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "e4a976fd08b558a23b04ef0c736a8a37"
         },
         {
@@ -317,7 +317,7 @@
         {
             "name": "services/rpaweb.roc",
             "path": "services/rpaweb.roc",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "383bec4e224c368306226ad34dc01b82"
         },
         {
@@ -341,14 +341,14 @@
         {
             "name": "services/updater.roc",
             "path": "services/updater.roc",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "md5": "a48bb8c9069dd9fd236991160dcafb61"
         },
         {
             "name": "setuptools",
             "path": "setuptools.zip",
             "md5": "74b49de9ddd3be2bc5f4f87042d99d46",
-            "version": "0.0.0"
+            "version": "1.0.0"
         }
     ]
 }
