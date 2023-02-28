@@ -1,45 +1,43 @@
 {
     "name": "rocketbot-studio",
-    "version": "2023.02.10",
+    "version": "2023.02.30",
     "build": "production",
     "author": "Rocketbot",
-    "id": "92225902",
-    "sha": "20fe2a480ae52f849c67537d7c48acce4e4ce7ec",
     "components": [
         {
             "name": "rocketbot.exe",
             "path": "rocketbot.exe.zip",
             "version": "2023.02.10",
             "hash": "",
-            "md5": "4b9b66f88e18a46d76aee428e02bc5c9"
+            "md5": "cfd2afd0c1166ecc2b1c58a6577189f3"
         },
         {
             "name": "web/dev",
             "path": "web/dev.zip",
             "version": "1.2.0",
             "hash": "",
-            "md5": "6e17011c6628c203ca61bfb12cbf25fd"
+            "md5": "6be6528cbcb7bb50a6d67f6817369328"
         },
         {
             "name": "languages/command_list_tree_en.json",
             "path": "languages/command_list_tree_en.json",
-            "version": "1.1.1",
+            "version": "1.1.0",
             "hash": "",
-            "md5": "6469abcff7dc616cac575c0f0cccb59d"
+            "md5": "971fe21751527bec9af2068e0dafae8f"
         },
         {
             "name": "languages/command_list_tree_es.json",
             "path": "languages/command_list_tree_es.json",
-            "version": "1.1.1",
+            "version": "1.1.0",
             "hash": "",
-            "md5": "5589cf33719766a064213d412339e082"
+            "md5": "8b5ccc8fbd8885309fc0bff6cd98b2ad"
         },
         {
             "name": "languages/command_list_tree_pr.json",
             "path": "languages/command_list_tree_pr.json",
-            "version": "1.1.1",
+            "version": "1.1.0",
             "hash": "",
-            "md5": "146d7a2147ed093a432fb1cf4f8f5763"
+            "md5": "c4f0d9a163cb6020f5c14af0cadb4b9c"
         },
         {
             "name": "debugger",
@@ -99,7 +97,7 @@
             "name": "endpoints/orchestrator",
             "path": "endpoints/orchestrator.zip",
             "version": "1.0.0",
-            "md5": "b05414f9801b87601fabc48dfb59a083"
+            "md5": "a99dad8481aa831cad570d5860e34836"
         },
         {
             "name": "endpoints/treeview",
@@ -124,76 +122,76 @@
             "path": "endpoints/a_botBD.roc",
             "version": "1.1.0",
             "hash": "",
-            "md5": "a236a24bc3911dc685b4d694beaf9ca8"
+            "md5": "8e58de24c58918275c18b1fec3cb14c1"
         },
         {
             "name": "endpoints/a_create_launch.roc",
             "path": "endpoints/a_create_launch.roc",
             "version": "1.0.0",
             "hash": "",
-            "md5": "e7791106be27eb4e72763356cddca6ab"
+            "md5": "206b29bc90ffefb6ebe3831e3456db59"
         },
         {
             "name": "endpoints/a_desktoprecorder.roc",
             "path": "endpoints/a_desktoprecorder.roc",
             "version": "1.0.0",
             "hash": "",
-            "md5": "df22527dee40ee35e52bdf2355f2de7a"
+            "md5": "bcd2610033013e385a46db90d1c78dff"
         },
         {
             "name": "endpoints/a_git.roc",
             "path": "endpoints/a_git.roc",
             "version": "1.1.0",
             "hash": "",
-            "md5": "f5721a24259774228e3d3a147aa43e98"
+            "md5": "d5438ecb9b0125fc9fda26ee59c47c05"
         },
         {
             "name": "endpoints/a_botBD.roc",
             "path": "endpoints/a_botBD.roc",
             "version": "1.1.0",
             "hash": "",
-            "md5": "a236a24bc3911dc685b4d694beaf9ca8"
+            "md5": "8e58de24c58918275c18b1fec3cb14c1"
         },
         {
             "name": "endpoints/a_log_viewer.roc",
             "path": "endpoints/a_log_viewer.roc",
             "version": "1.0.0",
             "hash": "",
-            "md5": "957eaa811b44705aaf23d3e8b45d9ce8"
+            "md5": "6da2a5ffb1af482fcd4c8e61c67228ec"
         },
         {
             "name": "endpoints/a_mods.roc",
             "path": "endpoints/a_mods.roc",
             "version": "1.1.0",
             "hash": "",
-            "md5": "1ee20b0e98f14c4289b0f68d3612ea97"
+            "md5": "28200c2ba8e246dafaa93319e6c5014d"
         },
         {
             "name": "endpoints/a_orchestrator.roc",
             "path": "endpoints/a_orchestrator.roc",
             "version": "1.1.0",
             "hash": "",
-            "md5": "3516700fa44490cd735d03f72b4c8403"
+            "md5": "99ea55575e32d14724188b05f4a12666"
         },
         {
             "name": "endpoints/a_treeview.roc",
             "path": "endpoints/a_treeview.roc",
             "version": "1.0.0",
             "hash": "",
-            "md5": "047777e44482bb1d1f8b036979424f33"
+            "md5": "f2aa3d1118a77f62881919349f316584"
         },
         {
             "name": "endpoints/a_varsbot.roc",
             "path": "endpoints/a_varsbot.roc",
             "version": "1.0.0",
             "hash": "",
-            "md5": "b5ed61b688c16b8d1e52d9cd712eb5c1"
+            "md5": "9f02bbc85384ecda4cfb4ad4a38b7254"
         },
         {
             "name": "endpoints/z_dev.roc",
             "path": "endpoints/z_dev.roc",
             "version": "1.1.0",
-            "md5": "461500f0dae39d4d7b7424628ca692c5"
+            "md5": "cbe9ebb0a8499cfee459e453b64c03ed"
         },
         {
             "name": "endpoints/z_market.roc",
@@ -205,152 +203,152 @@
             "name": "services/a_args.roc",
             "path": "services/a_args.roc",
             "version": "1.0.0",
-            "md5": "a75ee5f090a3547efb2c2d670b3c6ef1"
+            "md5": "b65f837a622d1a311505d74db502ab5d"
         },
         {
             "name": "services/a_license.roc",
             "path": "services/a_license.roc",
             "version": "1.0.0",
-            "md5": "e5635d6d2166dd230f5a057a272170e3"
+            "md5": "db9ebcb789ca9ab7086f59caebd5b309"
         },
         {
             "name": "services/a_rocketbot__.roc",
             "path": "services/a_rocketbot__.roc",
             "version": "1.0.0",
-            "md5": "1d43fd2df50ef407e221d56df365f908"
+            "md5": "69e14879e0c945f35990338b0e149063"
         },
         {
             "name": "services/auth.roc",
             "path": "services/auth.roc",
             "version": "2.0.0",
-            "md5": "ecd23d6641e10fa63a93930c1f678366"
+            "md5": "61066c06ccc2cf3d3632d1bef42d3def"
         },
         {
             "name": "services/dashboard.roc",
             "path": "services/dashboard.roc",
             "version": "1.0.0",
-            "md5": "d960a4b244c292ae927e0c67cdedfad8"
+            "md5": "21040704096be11e39006ac4611438cf"
         },
         {
             "name": "services/driverupdater.roc",
             "path": "services/driverupdater.roc",
             "version": "1.0.0",
             "hash": "",
-            "md5": "eed22fb48c0cf593f995415a32610439"
+            "md5": "b13293aebbec8e2911a1dc5c00635c35"
         },
         {
             "name": "services/orchestrator.roc",
             "path": "services/orchestrator.roc",
             "version": "1.0.0",
-            "md5": "d065473249f3c64f844c64733310fc09"
+            "md5": "a935a32644469fc81fdc23b8eaa326de"
         },
         {
             "name": "services/rpaconnect.roc",
             "path": "services/rpaconnect.roc",
             "version": "1.0.0",
-            "md5": "9331d46323159ecb662c3b7325b229ad"
+            "md5": "307257fcf659e52245f054102ce38e3a"
         },
         {
             "name": "services/rpadatatransform.roc",
             "path": "services/rpadatatransform.roc",
             "version": "1.0.0",
-            "md5": "4696dfc3a6e3866507bdd0149a85a2cb"
+            "md5": "b25f8ea5b63c4640d0b31c75c245fb24"
         },
         {
             "name": "services/rpadb.roc",
             "path": "services/rpadb.roc",
             "version": "1.0.0",
-            "md5": "b2e89c8001dce920bd7e3ec721460b78"
+            "md5": "4a5512d176f0b1099bc881ca16c1cbf7"
         },
         {
             "name": "services/rpadesktop.roc",
             "path": "services/rpadesktop.roc",
             "version": "1.0.0",
-            "md5": "4e8703a12d957cb9d24ae3de83c85943"
+            "md5": "588e5ce03d9ffb41b35d98340f75600b"
         },
         {
             "name": "services/rpaemail.roc",
             "path": "services/rpaemail.roc",
             "version": "1.0.0",
-            "md5": "bf959fcaf400b8fb1d799dca1c813b5a"
+            "md5": "a9ded2e875cea6beb4e8f5b9c5544e2c"
         },
         {
             "name": "services/rpaexcel.roc",
             "path": "services/rpaexcel.roc",
             "version": "1.0.0",
-            "md5": "0930a6debb7683ad828a502151256dc0"
+            "md5": "e01b618688684eaf6c6e6a902ea4d7ba"
         },
         {
             "name": "services/rpafile.roc",
             "path": "services/rpafile.roc",
             "version": "1.0.0",
-            "md5": "2c9d94669f2db195784abc6db83a60fb"
+            "md5": "fa53571698fcc7d7cf3f56b941d690b3"
         },
         {
             "name": "services/rpalogic.roc",
             "path": "services/rpalogic.roc",
             "version": "1.0.0",
-            "md5": "4f9f66b96c9061a299860cb88979df7b"
+            "md5": "a87139d1d358e98b4731717ab49132ec"
         },
         {
             "name": "services/rpapdf.roc",
             "path": "services/rpapdf.roc",
             "version": "1.0.0",
-            "md5": "32f2a54507cc22ab3b312fcde9d84601"
+            "md5": "c217f6fb4aa0774b7a1c09db33fd15aa"
         },
         {
             "name": "services/rpascripts.roc",
             "path": "services/rpascripts.roc",
             "version": "1.0.0",
-            "md5": "6a1242651071771d0944fffa48c56fd6"
+            "md5": "cbcbb3b9f279f4ba952599be3229f42b"
         },
         {
             "name": "services/rpasystem.roc",
             "path": "services/rpasystem.roc",
             "version": "1.0.0",
-            "md5": "74d9906859fa69ae9ebc92d4d886a9da"
+            "md5": "e4a976fd08b558a23b04ef0c736a8a37"
         },
         {
             "name": "services/rpavirtual.roc",
             "path": "services/rpavirtual.roc",
             "version": "1.0.0",
-            "md5": "d101c2d2166e33fb629a8b8011ea0a38"
+            "md5": "3ba18cec25a1b03cf1c8313688688f1b"
         },
         {
             "name": "services/rpaweb.roc",
             "path": "services/rpaweb.roc",
             "version": "1.0.0",
-            "md5": "663102ffc2427701920797cac29b2e2c"
+            "md5": "383bec4e224c368306226ad34dc01b82"
         },
         {
             "name": "services/rpawindows.roc",
             "path": "services/rpawindows.roc",
             "version": "1.0.0",
-            "md5": "25c9ded0a931dc025baf2a2e956f8da5"
+            "md5": "7553f900ccb7c028e070dde1fe3151d2"
         },
         {
             "name": "services/rpaxls.roc",
             "path": "services/rpaxls.roc",
             "version": "1.0.0",
-            "md5": "1ba194f75aeee1635d809ed06b3370b3"
+            "md5": "3a7dc0b8ac7493e9a62d7d10529cd2bb"
         },
         {
             "name": "services/setting.roc",
             "path": "services/setting.roc",
             "version": "1.0.0",
-            "md5": "b585e7cd22695300d225b65c2b2dcf5c"
+            "md5": "5ad8122a67b0f3e2b6b7ac50e20913b7"
         },
         {
             "name": "services/updater.roc",
             "path": "services/updater.roc",
             "version": "1.0.0",
-            "md5": "e62ebdf02919d9ff848b63824a3084a0"
+            "md5": "a48bb8c9069dd9fd236991160dcafb61"
         },
         {
             "name": "setuptools",
             "path": "setuptools.zip",
-            "version": "58.1.0",
-            "md5": "346a74d12ccb14a318fc04dde29686f2"
+            "md5": "74b49de9ddd3be2bc5f4f87042d99d46",
+            "version": "0.0.0"
         }
     ]
 }
