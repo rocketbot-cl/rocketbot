@@ -14,7 +14,7 @@
             "md5": "cfd2afd0c1166ecc2b1c58a6577189f3"
         },
         {
-            "name": "web/dev",
+            "name": "web/dev/",
             "path": "web/dev.zip",
             "version": "1.3.0",
             "hash": "",
@@ -42,49 +42,49 @@
             "md5": "c4f0d9a163cb6020f5c14af0cadb4b9c"
         },
         {
-            "name": "debugger",
+            "name": "debugger/",
             "path": "debugger.zip",
             "version": "1.1.0",
             "md5": "c5297f7574ea2fff7f3c7e565368e04c"
         },
         {
-            "name": "endpoints/botBD",
+            "name": "endpoints/botBD/",
             "path": "endpoints/botBD.zip",
             "version": "1.1.0",
             "md5": "04e560158619b4c467a1f57a2fbcb09c"
         },
         {
-            "name": "endpoints/createLaunch",
+            "name": "endpoints/createLaunch/",
             "path": "endpoints/createLaunch.zip",
             "version": "1.0.0",
             "md5": "1c6cfc62c9a9818bb16f1f1f19c40793"
         },
         {
-            "name": "endpoints/desktoprecorder",
+            "name": "endpoints/desktoprecorder/",
             "path": "endpoints/desktoprecorder.zip",
             "version": "1.0.0",
             "md5": "e0285e2fe9b69b52101ecd4332a2f6d8"
         },
         {
-            "name": "endpoints/driverupdater",
+            "name": "endpoints/driverupdater/",
             "path": "endpoints/driverupdater.zip",
             "version": "1.1.0",
             "md5": "77ee5d099a797edba2809180a5c37b99"
         },
         {
-            "name": "endpoints/git",
+            "name": "endpoints/git/",
             "path": "endpoints/git.zip",
             "version": "1.1.1",
             "md5": "7e6d8a448bdd6547a8155995d90fa644"
         },
         {
-            "name": "endpoints/installMods",
+            "name": "endpoints/installMods/",
             "path": "endpoints/installMods.zip",
             "version": "1.0.0",
             "md5": "86603b2fcdb53ab93d2b026531db012d"
         },
         {
-            "name": "endpoints/log_viewer",
+            "name": "endpoints/log_viewer/",
             "path": "endpoints/log_viewer.zip",
             "version": "1.0.0",
             "md5": "88ecc8e8c05515ff3e7c7bbe8032671d"
@@ -347,7 +347,7 @@
             "md5": "a48bb8c9069dd9fd236991160dcafb61"
         },
         {
-            "name": "setuptools",
+            "name": "setuptools/",
             "path": "setuptools.zip",
             "md5": "74b49de9ddd3be2bc5f4f87042d99d46",
             "version": "1.0.0"
