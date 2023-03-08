@@ -410,7 +410,7 @@
         {
             "name": "Updater",
             "path": "Updater.zip",
-            "destination": "/",
+            "destination": "/Updater/",
             "md5": "1124fb891dbcabb6938bd3be6fd57994",
             "version": "1.0.0"
         }
