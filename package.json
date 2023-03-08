@@ -103,35 +103,35 @@
             "md5": "88ecc8e8c05515ff3e7c7bbe8032671d"
         },
         {
-            "name": "endpoints/mods",
+            "name": "endpoints/mods/",
             "path": "endpoints/mods.zip",
             "destination": "/endpoints/",
             "version": "1.1.0",
             "md5": "fa81ce97d45804bb629d5c444e651006"
         },
         {
-            "name": "endpoints/orchestrator",
+            "name": "endpoints/orchestrator/",
             "path": "endpoints/orchestrator.zip",
             "destination": "/endpoints/",
             "version": "1.0.1",
             "md5": "a99dad8481aa831cad570d5860e34836"
         },
         {
-            "name": "endpoints/treeview",
+            "name": "endpoints/treeview/",
             "path": "endpoints/treeview.zip",
             "destination": "/endpoints/",
             "version": "1.0.0",
             "md5": "d784e287581270ac90a25da11b44346f"
         },
         {
-            "name": "endpoints/varsbot",
+            "name": "endpoints/varsbot/",
             "path": "endpoints/varsbot.zip",
             "destination": "/endpoints/",
             "version": "1.0.0",
             "md5": "ed2e896fbba56f6b3245c4ab9592cc34"
         },
         {
-            "name": "endpoints/workflow",
+            "name": "endpoints/workflow/",
             "path": "endpoints/workflow.zip",
             "destination": "/endpoints/",
             "version": "1.0.0",
