@@ -26,7 +26,7 @@
             "name": "languages/command_list_tree_en.json",
             "path": "languages/command_list_tree_en.json",
             "destination": "/languages/",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "hash": "",
             "md5": "1e934ed0d838c223cc01e07ddfe8359d"
         },
@@ -34,7 +34,7 @@
             "name": "languages/command_list_tree_es.json",
             "path": "languages/command_list_tree_es.json",
             "destination": "/languages/",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "hash": "",
             "md5": "b130a0df73d0c85d209d9f47e084af64"
         },
@@ -42,7 +42,7 @@
             "name": "languages/command_list_tree_pr.json",
             "path": "languages/command_list_tree_pr.json",
             "destination": "/languages/",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "hash": "",
             "md5": "7912fa83ffa333e8ca2849f25a7505b3"
         },
@@ -221,7 +221,7 @@
             "name": "endpoints/z_dev.roc",
             "path": "endpoints/z_dev.roc",
             "destination": "/endpoints/",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "md5": "44ff7f3a2dab0d6ce6f48013b64c6d2d"
         },
         {
@@ -235,7 +235,7 @@
             "name": "services/a_args.roc",
             "path": "services/a_args.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "b89cdfd5a3af3c3052736424572b2a91"
         },
         {
@@ -285,70 +285,70 @@
             "name": "services/rpaconnect.roc",
             "path": "services/rpaconnect.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "8dd079e335b8e0b7d7233cc29fce38ca"
         },
         {
             "name": "services/rpadatatransform.roc",
             "path": "services/rpadatatransform.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "6b797bf2a495b34cb9feb78fe273a731"
         },
         {
             "name": "services/rpadb.roc",
             "path": "services/rpadb.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "0205b4e683bd3bb8335708665cc16d87"
         },
         {
             "name": "services/rpadesktop.roc",
             "path": "services/rpadesktop.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "d08ac5a7742f6cf67ede71caaf0f3907"
         },
         {
             "name": "services/rpaemail.roc",
             "path": "services/rpaemail.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "06979ce9dc4bed84a43f70ae1e74ea39"
         },
         {
             "name": "services/rpaexcel.roc",
             "path": "services/rpaexcel.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "fbaa5ed4f8ed683d2a9d4740049c59b1"
         },
         {
             "name": "services/rpafile.roc",
             "path": "services/rpafile.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "8db38409461d2831e1a23bcda13d2a87"
         },
         {
             "name": "services/rpalogic.roc",
             "path": "services/rpalogic.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "bc4c84207733107bbb5474b227e36373"
         },
         {
             "name": "services/rpapdf.roc",
             "path": "services/rpapdf.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "29bd14b32cb96665ca9252d75270f052"
         },
         {
             "name": "services/rpascripts.roc",
             "path": "services/rpascripts.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "374fe3f572417bbb20513d3e8075aac9"
         },
         {
@@ -362,7 +362,7 @@
             "name": "services/rpavirtual.roc",
             "path": "services/rpavirtual.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "4395c94748df93a0bd34312bd804a8e7"
         },
         {
@@ -376,14 +376,14 @@
             "name": "services/rpawindows.roc",
             "path": "services/rpawindows.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "c10c1eaa05c72aedd3bc33b743c94f0d"
         },
         {
             "name": "services/rpaxls.roc",
             "path": "services/rpaxls.roc",
             "destination": "/services/",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "md5": "c904bebca48e3af3f345614d986c10ef"
         },
         {
