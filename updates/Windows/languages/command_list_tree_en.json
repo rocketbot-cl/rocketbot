@@ -6,6 +6,7 @@
       "app_synchro_help": "<b>Synchronous:</b> The application will be opened and once its execution is finished it will continue with the robot stages.<br><b>Asynchronous:</b> The application will be opened and it will not block the robot actions.",
       "delete_from_list": "Remove from list",
       "open_drawflow":"Open with DrawFlow",
+      "open_cascade": "Open with Cascade",
       "new_project_help": "Select an existing project file or a new one will be created allowing multiple robots to be stored in the same project.",
       "new_blank_robot_help": "Create a new robot or add one to an existing project",
       "new_blank_robot": "New blank robot",
@@ -21,6 +22,7 @@
       "start_creating":"Start by creating a robot from the <b>New Robot</b> button.",
       "find_videos": "Find Rocketbot videos and webinars on our website",
       "documentation": "Documentation",
+      "command_line": "Command Line",
       "find_documentation": "Find the documentation for all Rocketbot Studio commands",
       "inspector": "Inspector",
       "include_data": "Include Data",
@@ -293,7 +295,12 @@
       "current_version": "Current version",
       "older_version": "Older version",
       "today": "Today",
-      "robot_version_tooltip": "Not to confuse with internal robot versioning, which enumerates changes made on a robot after saving. This versioning is left to the user criteria and does not affect robot functioning at all."
+      "robot_version_tooltip": "Not to confuse with internal robot versioning, which enumerates changes made on a robot after saving. This versioning is left to the user criteria and does not affect robot functioning at all.",
+      "option": "Option",
+      "example": "Example",
+      "new_project": "New project",
+      "create_new_project": "Create new project",
+      "create_new_project_info": "Create a new project to start working with Rocketbot"
    },
    "commands": [
       {
@@ -474,7 +481,10 @@
                   "id",
                   "class",
                   "xpath",
-                  "tag"
+                  "tag",
+                  "link text",
+                  "partial link text",
+                  "css selector"
                ],
                "command_available": true,
                "group": "web",
@@ -494,7 +504,10 @@
                   "id",
                   "class",
                   "xpath",
-                  "tag"
+                  "tag",
+                  "link text",
+                  "partial link text",
+                  "css selector"
                ],
                "command_available": true,
                "setVar": false,
@@ -516,7 +529,10 @@
                   "id",
                   "class",
                   "xpath",
-                  "tag"
+                  "tag",
+                  "link text",
+                  "partial link text",
+                  "css selector"
                ],
                "command_available": true,
                "setVar": false,
@@ -632,7 +648,10 @@
                   "id",
                   "class",
                   "xpath",
-                  "tag"
+                  "tag",
+                  "link text",
+                  "partial link text",
+                  "css selector"
                ],
                "command_available": true,
                "setVar": false,
@@ -655,7 +674,10 @@
                   "id",
                   "class",
                   "xpath",
-                  "tag"
+                  "tag",
+                  "link text",
+                  "partial link text",
+                  "css selector"
                ],
                "command_available": true,
                "setVar": false,
@@ -758,7 +780,10 @@
                   "id",
                   "class",
                   "xpath",
-                  "tag"
+                  "tag",
+                  "link text",
+                  "partial link text",
+                  "css selector"
                ],
                "command_available": true,
                "group": "web",
@@ -823,6 +848,18 @@
                        {
                          "title": "tag",
                          "value": "tag name"
+                       },
+                       {
+                           "title": "css selector",
+                           "value": "css selector"
+                       },
+                       {
+                           "title": "link text",
+                           "value": "link text"
+                       },
+                       {
+                           "title": "partial link text",
+                           "value": "partial link text"
                        }
                      ],
                      "description": {
@@ -4901,6 +4938,48 @@
                ]
             }
          ]
+      }
+   ],
+   "command_lines": [
+      {
+         "option": "-start",
+         "description": "Name of the robot to execute",
+         "example": "-start=robot"
+      },
+      {
+         "option": "-db",
+         "description": "Path of the database where your robot is stored",
+         "example": "-start=robot -db=C:/Robots/robot.db"
+      },
+      {
+         "option": "--token",
+         "description": "Show the license token",
+         "example": "--token"
+      },
+      {
+         "option": "--port",
+         "description": "Change the default port of the Rocketbot Studio",
+         "example": "--port=5001"
+      },
+      {
+         "option": "--update-drivers",
+         "description": "Check and update the webdrivers every time the robot is executed",
+         "example": "-start=robot  --update-drivers"
+      },
+      {
+         "option": "--install-modules",
+         "description": "Install missing modules that are required by the robot after the execution",
+         "example": "-start=robot --install-modules"
+      },
+      {
+         "option": "--no-debug",
+         "description": "Disable the debug mode. This will disable the console logs",
+         "example": "-start=robot --no-debug"
+      },
+      {
+         "option": "-h [--help]",
+         "description": "Show the help with all the options",
+         "example": "-h"
       }
    ]
 }

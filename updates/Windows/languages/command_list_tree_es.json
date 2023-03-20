@@ -6,6 +6,7 @@
     "app_synchro_help": "<b>Síncrona:</b> Se abrirá la aplicación y una vez termine su ejecución se continuará con las etapas del robot.<br><b>Asíncrona:</b> Se abrirá la aplicación y no bloqueará las acciones del robot.",
     "delete_from_list": "Borrar de la lista",
     "open_drawflow": "Abrir en DrawFlow",
+    "open_cascade": "Abrir en Cascada",
     "new_project_help": "Seleccione una base de datos de proyecto existente o cree una nueva donde se guardarán todos los robots.",
     "new_blank_robot_help": "Crear un nuevo robot o añadir uno a un proyecto existente",
     "new_blank_robot": "Nuevo robot en blanco",
@@ -21,6 +22,7 @@
     "start_creating": "Comienze a desarrollar su primer robot haciendo click en el botón <b>Robot Nuevo</b>.",
     "find_videos": "Encuentra los videos y webinars de Rocketbot nuestro",
     "documentation": "Documentación",
+    "command_line": "Línea de comandos",
     "find_documentation": "Encuentra la documentación de todos los comandos de Rocketbot Studio",
     "inspector": "Inspector",
     "include_data": "Incluir Datos",
@@ -291,7 +293,12 @@
     "current_version": "Versión actual",
     "older_version": "Versión antigua",
     "today": "Hoy",
-    "robot_version_tooltip": "No confundir con el versionado interno del robot, que enumera los cambios hechos en un robot luego del guardado. Este versionado queda al criterio del usuario y no afecta en nada al funcionamiento del robot."
+    "robot_version_tooltip": "No confundir con el versionado interno del robot, que enumera los cambios hechos en un robot luego del guardado. Este versionado queda al criterio del usuario y no afecta en nada al funcionamiento del robot.",
+    "option": "Opción",
+    "example": "Ejemplo",
+    "new_project": "Nuevo proyecto",
+    "create_new_project": "Crear nuevo proyecto",
+    "create_new_project_info": "Crea un nuevo proyecto para organizar tus robots."
   },
   "commands": [
     {
@@ -438,7 +445,10 @@
             "id",
             "class",
             "xpath",
-            "tag"
+            "tag",
+            "link text",
+            "partial link text",
+            "css selector"
           ],
           "command_available": true,
           "group": "web",
@@ -472,7 +482,10 @@
             "id",
             "class",
             "xpath",
-            "tag"
+            "tag",
+            "link text",
+            "partial link text",
+            "css selector"
           ],
           "command_available": true,
           "group": "web",
@@ -492,7 +505,10 @@
             "id",
             "class",
             "xpath",
-            "tag"
+            "tag",
+            "link text",
+            "partial link text",
+            "css selector"
           ],
           "command_available": true,
           "setVar": false,
@@ -622,7 +638,10 @@
             "id",
             "class",
             "xpath",
-            "tag"
+            "tag",
+            "link text",
+            "partial link text",
+            "css selector"
           ],
           "command_available": true,
           "setVar": false,
@@ -645,7 +664,10 @@
             "id",
             "class",
             "xpath",
-            "tag"
+            "tag",
+            "link text",
+            "partial link text",
+            "css selector"
           ],
           "command_available": true,
           "setVar": false,
@@ -748,7 +770,10 @@
             "id",
             "class",
             "xpath",
-            "tag"
+            "tag",
+            "link text",
+            "partial link text",
+            "css selector"
           ],
           "command_available": true,
           "group": "web",
@@ -4904,5 +4929,47 @@
         }
       ]
     }
-  ]
+  ],
+  "command_lines": [
+    {
+       "option": "-start",
+       "description": "Nombre del robot a ejecutar",
+       "example": "-start=robot"
+    },
+    {
+       "option": "-db",
+       "description": "Ruta de la base de datos del robot",
+       "example": "-start=robot -db=C:/Robots/robot.db"
+    },
+    {
+       "option": "--token",
+       "description": "Muestra el token de la licencia de Rocketbot",
+       "example": "--token"
+    },
+    {
+       "option": "--port",
+       "description": "Cambia el puerto por defecto de Rocketbot",
+       "example": "--port=5001"
+    },
+    {
+       "option": "--update-drivers",
+       "description": "Revisa y actualiza los drivers de los navegadores cuando se ejecuta un robot",
+       "example": "-start=robot  --update-drivers"
+    },
+    {
+       "option": "--install-modules",
+       "description": "Instala los módulos faltantes requeridos por el robot antes de ejecutarlo",
+       "example": "-start=robot --install-modules"
+    },
+    {
+       "option": "--no-debug",
+       "description": "Deshabilita el modo debug. Esto deshabilita los logs de la consola",
+       "example": "-start=robot --no-debug"
+    },
+    {
+       "option": "-h [--help]",
+       "description": "Muestra la ayuda de los comandos",
+       "example": "-h"
+    }
+ ]
 }

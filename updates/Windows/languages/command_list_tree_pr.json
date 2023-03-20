@@ -5,7 +5,8 @@
         "edit_command": "Editar comando",
         "app_synchro_help": "<b>Síncrona:</b> Se abrirá la aplicación y una vez termine su ejecución se continuará con las etapas del robot.<br><b>Asíncrona:</b> Se abrirá la aplicación y no bloqueará las acciones del robot.",
         "delete_from_list": "Remove da lista",
-        "open_drawflow": "Aberto em DrawFlow",
+        "open_drawflow": "Abrir em DrawFlow",
+        "open_cascade": "Abrir em Cascade",
         "new_project_help": "Selecione um arquivo de projeto existente ou um novo arquivo será criado permitindo que vários robôs sejam armazenados no mesmo projeto",
         "new_blank_robot_help": "Criar um novo robô ou adicionar um a um projeto existente",
         "new_blank_robot": "novo robô em branco",
@@ -21,6 +22,7 @@
         "start_creating": "Comece a desenvolver seu primeiro robô clicando no botão <b>Novo Robô</b>.",
         "find_videos": "Encontre vídeos e webinars do Rocketbot Studio",
         "documentation": "Documentação",
+        "command_line": "Linha de comando",
         "find_documentation": "Encontrar a documentação de todos os comandos Rocketbot Studio",
         "inspector": "Inspetor",
         "include_data": "Incluir Dados",
@@ -290,7 +292,12 @@
         "current_version": "Versão actual",
         "older_version": "Versão mais antiga",
         "today": "Hoje",
-        "robot_version_tooltip": "Não confundir com a versão de robô interno, que lista as alterações feitas a um robô depois de guardado. Esta versão está ao critério do utilizador e não afecta de forma alguma o funcionamento do robô."
+        "robot_version_tooltip": "Não confundir com a versão de robô interno, que lista as alterações feitas a um robô depois de guardado. Esta versão está ao critério do utilizador e não afecta de forma alguma o funcionamento do robô.",
+        "option": "Opção",
+        "example": "Exemplo",
+        "new_project": "Novo projecto",
+        "create_new_project": "Criar um novo projecto",
+        "create_new_project_info": "Crie um novo projecto para organizar os seus robots e variáveis."
     },
     "commands": [
         {
@@ -435,7 +442,10 @@
                         "id",
                         "class",
                         "xpath",
-                        "tag"
+                        "tag",
+                        "link text",
+                        "partial link text",
+                        "css selector"
                     ],
                     "command_available": true,
                     "group": "web",
@@ -469,7 +479,10 @@
                         "id",
                         "class",
                         "xpath",
-                        "tag"
+                        "tag",
+                        "link text",
+                        "partial link text",
+                        "css selector"
                     ],
                     "command_available": true,
                     "group": "web",
@@ -489,7 +502,10 @@
                         "id",
                         "class",
                         "xpath",
-                        "tag"
+                        "tag",
+                        "link text",
+                        "partial link text",
+                        "css selector"
                     ],
                     "command_available": true,
                     "setVar": false,
@@ -618,7 +634,10 @@
                         "id",
                         "class",
                         "xpath",
-                        "tag"
+                        "tag",
+                        "link text",
+                        "partial link text",
+                        "css selector"
                     ],
                     "command_available": true,
                     "setVar": false,
@@ -641,7 +660,10 @@
                         "id",
                         "class",
                         "xpath",
-                        "tag"
+                        "tag",
+                        "link text",
+                        "partial link text",
+                        "css selector"
                     ],
                     "command_available": true,
                     "setVar": false,
@@ -744,7 +766,10 @@
                         "id",
                         "class",
                         "xpath",
-                        "tag"
+                        "tag",
+                        "link text",
+                        "partial link text",
+                        "css selector"
                     ],
                     "command_available": true,
                     "group": "web",
@@ -1242,7 +1267,7 @@
                     "command_available": true,
                     "group": "system",
                     "modal_size": "md",
-                    "help":"Nome da variável sem {}"
+                    "help": "Nome da variável sem {}"
                 },
                 {
                     "title": "Detener Proceso",
@@ -4937,5 +4962,47 @@
                 }
             ]
         }
-    ]
+    ],
+    "command_lines": [
+        {
+           "option": "-start",
+           "description": "Nome do robô para executar",
+           "example": "-start=robot"
+        },
+        {
+           "option": "-db",
+           "description": "Caminho do banco de dados do robô",
+           "example": "-start=robot -db=C:/Robots/robot.db"
+        },
+        {
+           "option": "--token",
+           "description": "Exibe o token da licença do Rocketbot",
+           "example": "--token"
+        },
+        {
+           "option": "--port",
+           "description": "Muda a porta padrão do Rocketbot Studio",
+           "example": "--port=5001"
+        },
+        {
+           "option": "--update-drivers",
+           "description": "Verifica e atualiza os webdrivers do Rocketbot cada vez que o robô é iniciado",
+           "example": "-start=robot  --update-drivers"
+        },
+        {
+           "option": "--install-modules",
+           "description": "Instala os módulos necessários para o robô antes de iniciar",
+           "example": "-start=robot --install-modules"
+        },
+        {
+           "option": "--no-debug",
+           "description": "Desativa o modo de depuração do robô. Isto desativa os logs da console",
+           "example": "-start=robot --no-debug"
+        },
+        {
+           "option": "-h [--help]",
+           "description": "Exibe a ajuda do Rocketbot",
+           "example": "-h"
+        }
+     ]
 }
