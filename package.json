@@ -56,35 +56,35 @@
         {
             "name": "endpoints/botBD/",
             "path": "endpoints/botBD.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/botBD/",
             "version": "1.1.0",
             "md5": "04e560158619b4c467a1f57a2fbcb09c"
         },
         {
             "name": "endpoints/createLaunch/",
             "path": "endpoints/createLaunch.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/createLaunch/",
             "version": "1.0.0",
             "md5": "1c6cfc62c9a9818bb16f1f1f19c40793"
         },
         {
             "name": "endpoints/desktoprecorder/",
             "path": "endpoints/desktoprecorder.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/desktoprecorder/",
             "version": "1.0.0",
             "md5": "e0285e2fe9b69b52101ecd4332a2f6d8"
         },
         {
             "name": "endpoints/driverupdater/",
             "path": "endpoints/driverupdater.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/driverupdater/",
             "version": "1.1.0",
             "md5": "77ee5d099a797edba2809180a5c37b99"
         },
         {
             "name": "endpoints/git/",
             "path": "endpoints/git.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/git/",
             "version": "1.1.1",
             "md5": "7e6d8a448bdd6547a8155995d90fa644"
         },
@@ -98,42 +98,42 @@
         {
             "name": "endpoints/log_viewer/",
             "path": "endpoints/log_viewer.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/log_viewer/",
             "version": "1.0.0",
             "md5": "88ecc8e8c05515ff3e7c7bbe8032671d"
         },
         {
             "name": "endpoints/mods",
             "path": "endpoints/mods.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/mods/",
             "version": "1.1.0",
             "md5": "fa81ce97d45804bb629d5c444e651006"
         },
         {
             "name": "endpoints/orchestrator",
             "path": "endpoints/orchestrator.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/orchestrator/",
             "version": "1.0.1",
             "md5": "2369e13b07a1270ea8a378d6da729932"
         },
         {
             "name": "endpoints/treeview",
             "path": "endpoints/treeview.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/treeview/",
             "version": "1.0.0",
             "md5": "d784e287581270ac90a25da11b44346f"
         },
         {
             "name": "endpoints/varsbot",
             "path": "endpoints/varsbot.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/varsbot/",
             "version": "1.0.0",
             "md5": "ed2e896fbba56f6b3245c4ab9592cc34"
         },
         {
             "name": "endpoints/workflow",
             "path": "endpoints/workflow.zip",
-            "destination": "/endpoints/",
+            "destination": "/endpoints/workflow/",
             "version": "1.0.0",
             "md5": "2060a9d0d3140a8a30b226626c1824fd"
         },
