@@ -98,8 +98,8 @@
     "project_name": "Nombre del proyecto",
     "folder_description": "Puede crear un proyecto con su carpeta contenedora de el robot principal, robots hijos y archivos extras para pasarlos luego a producción o exportar el proyecto.",
     "seconds": "Segundos",
-    "folder": "Proyecto",
-    "add_folder": "Agregar proyecto",
+    "folder": "Carpeta",
+    "add_folder": "Agregar Carpeta",
     "search_ex": "Buscar por nombre, fecha, versión, etc...",
     "new": "Nuevo",
     "raw": "Contenido Plano",
@@ -237,6 +237,7 @@
     "windows_selector_help": "Propiedad de texto utilizada para encontrar un elemento de IU particular cuando se ejecuta la actividad. En realidad, es un fragmento XML o JSON que especifica los atributos del elemento de GUI que está buscando y de algunos de sus padres.",
     "max_search_time": "Tiempo máximo de búsqueda.",
     "stop_everything": "Detener todo cuando haya un error",
+    "stop_robot_message": "Detener este robot cuando haya un error",
     "there_is_error": "cuando haya un error",
     "run_mode": "Modo de apertura",
     "drag_drop_here": "Arrastra y suelta un comando aquí",
@@ -293,12 +294,26 @@
     "current_version": "Versión actual",
     "older_version": "Versión antigua",
     "today": "Hoy",
+    "delete_all": "Borrar todos los comandos",
+    "cut": "Cortar",
+    "paste_inside_if": "Pegar dentro del ",
+    "properties": "Propiedades",
+    "paste_inside_else": "Pegar dentro del ",
     "robot_version_tooltip": "No confundir con el versionado interno del robot, que enumera los cambios hechos en un robot luego del guardado. Este versionado queda al criterio del usuario y no afecta en nada al funcionamiento del robot.",
     "option": "Opción",
     "example": "Ejemplo",
     "new_project": "Nuevo proyecto",
     "create_new_project": "Crear nuevo proyecto",
-    "create_new_project_info": "Crea un nuevo proyecto para organizar tus robots."
+    "create_new_project_info": "Crea un nuevo proyecto para organizar tus robots.",
+    "create_new_project_help": "Selecciona una carpeta donde quieras crear tu proyecto. Esta carpeta contendrá una carpeta con el nombre del proyecto y contendrá todos los archivos necesarios para ejecutar su proyecto.",
+    "for_params_empty": "Comando for sin parámetros",
+    "empty_if": "Empty if command",
+    "if_params_empty": "Comando if sin parámetros",
+    "while_params_empty": "Comando while sin parámetros",
+    "alert_commands": "Comandos de Alerta",
+    "stop_robot": "Detener robot",
+    "run_when": "Ejecutar cuando",
+    "warnings_and_errors": "Advertencias y errores"
   },
   "commands": [
     {
@@ -309,7 +324,7 @@
         {
           "title": "Abrir navegador",
           "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbC0xNi04djE4bDE2LDhaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQuNjQsNDMuM2wxNi04di0xOGwtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04LjY0LDE3LjNsMTYtOC00LTYtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMy42NCwxMy44bC0xMSw1LjUsMiw2LTE2LTgsMTYtOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbDE2LTgtMi02LTE2LDhaIi8+PC9zdmc+",
-          "visible": true,
+          "visible": false,
           "name": "Use WebBrowser",
           "description": "Selecciona el navegador a usar",
           "iconTooltip": "Selecciona el navegador a usar",
@@ -331,7 +346,7 @@
         {
           "title": "Abrir navegador",
           "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbC0xNi04djE4bDE2LDhaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQuNjQsNDMuM2wxNi04di0xOGwtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04LjY0LDE3LjNsMTYtOC00LTYtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMy42NCwxMy44bC0xMSw1LjUsMiw2LTE2LTgsMTYtOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbDE2LTgtMi02LTE2LDhaIi8+PC9zdmc+",
-          "visible": false,
+          "visible": true,
           "name": "Use WebBrowser",
           "description": "Selecciona el navegador a usar",
           "iconTooltip": "Selecciona el navegador a usar",
@@ -482,10 +497,7 @@
             "id",
             "class",
             "xpath",
-            "tag",
-            "link text",
-            "partial link text",
-            "css selector"
+            "tag"
           ],
           "command_available": true,
           "group": "web",
@@ -638,10 +650,7 @@
             "id",
             "class",
             "xpath",
-            "tag",
-            "link text",
-            "partial link text",
-            "css selector"
+            "tag"
           ],
           "command_available": true,
           "setVar": false,
@@ -770,10 +779,7 @@
             "id",
             "class",
             "xpath",
-            "tag",
-            "link text",
-            "partial link text",
-            "css selector"
+            "tag"
           ],
           "command_available": true,
           "group": "web",
@@ -2575,7 +2581,8 @@
           "options": "",
           "command_available": true,
           "group": "scripts",
-          "modal_size": "md"
+          "modal_size": "md",
+          "launch_debugger": true
         },
         {
           "visible": true,
@@ -2583,13 +2590,14 @@
           "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojYmMwMDE3O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOC44OSw2LjE5YTEuNzYsMS43NiwwLDAsMC0yLTEuMzNoLS4xNWwtLjEyLDBjLTYuODIsMi0xMy4zNyw3LjI0LTE3LjU2LDE0YTEzLjI5LDEzLjI5LDAsMCwwLTcsMy4xOCwxMSwxMSwwLDAsMC0zLjY2LDcuMTksMSwxLDAsMCwwLC40Ni45NSwxLDEsMCwwLDAsMS4wNywwLDExLDExLDAsMCwxLDUuMjQtMmMtLjEzLjU3LS4yNCwxLjExLS4zMiwxLjYxYTEuNzksMS43OSwwLDAsMCwuOTIsMkwyNi4zLDM4YS41NC41NCwwLDAsMCwuMjIuMDVoMGExLjcsMS43LDAsMCwwLDEuNzItLjQyLDEzLjI1LDEzLjI1LDAsMCwwLDEuMTMtMSwxMSwxMSwwLDAsMSwuODUsNS40OSwxLDEsMCwwLDAsLjQ4Ljk0LDEsMSwwLDAsMCwuNDguMTNoLjA5YS45MS45MSwwLDAsMCwuNDUtLjIzLDExLjcxLDExLjcxLDAsMCwwLDMuNjYtMTQuNUMzOS4yOCwyMS40OCw0MC41OCwxMy4xOSwzOC44OSw2LjE5Wk0xNi42OCwzMC4xM2ExNi44MiwxNi44MiwwLDAsMSwuNjQtMi43LDEuMTcsMS4xNywwLDAsMCwwLS4yNiwxLDEsMCwwLDAtMS4wNS0xaDBhMTMsMTMsMCwwLDAtNS41OCwxLjI2LDEwLjQzLDEwLjQzLDAsMCwxLDkuMDUtNi42NS45Mi45MiwwLDAsMCwuNzUtLjQ3QzI0LjM2LDEzLjgxLDMwLjUzLDguNzgsMzcsNi44NGMxLjU2LDYuNjUuMjMsMTQuNTMtMy41OCwyMS4xMWExLDEsMCwwLDAsMCwuODljMS45NCw0LDEuNDUsOC4yNC0xLjIyLDExLjE2YTEzLDEzLDAsMCwwLTEuNzgtNS41OC45NC45NCwwLDAsMC0uNzktLjQ5aDBhMSwxLDAsMCwwLS43Ny4zN0ExMCwxMCwwLDAsMSwyNywzNi4xWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4LDI3LjQzYTQuNTgsNC41OCwwLDAsMCwxLjExLS4xNkE1LjE2LDUuMTYsMCwwLDAsMjcsMTcuMjEsNS4xNiw1LjE2LDAsMCwwLDI4LDI3LjQ0Wk0zMC42NCwyNGEzLjE4LDMuMTgsMCwwLDEtNC40Mi44NCwzLjIsMy4yLDAsMCwxLS44Ni00LjQ0LDMuMTMsMy4xMywwLDAsMSwyLTEuMywyLjg2LDIuODYsMCwwLDEsLjU4LS4wNmgwYS4zLjMsMCwwLDAsLjE2LS4wNSwzLjMsMy4zLDAsMCwxLDEuNi41NUEzLjIzLDMuMjMsMCwwLDEsMzAuNjQsMjRaIi8+PC9zdmc+",
           "name": "Ejecutar Robot",
           "description": "Ejecuta un robot guardado en una base de datos de Rocketbot",
-          "title_options": "",
+          "title_options": "Asignar resultado a variable:",
           "title_command": "Nombre del robot en la base de datos",
           "father": "execRocketBotDBExpose",
           "options": "",
           "command_available": true,
           "group": "scripts",
-          "modal_size": "md"
+          "modal_size": "md",
+          "launch_debugger": true
         },
         {
           "title": "Retornar informacion",
@@ -2904,7 +2912,7 @@
           "title": "Enviar Tecla",
           "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOCwzMy4zMkgxMGExLjU2LDEuNTYsMCwwLDEtMS41NS0xLjU1VjE2LjIzQTEuNTYsMS41NiwwLDAsMSwxMCwxNC42OEgzOGExLjU2LDEuNTYsMCwwLDEsMS41NSwxLjU1VjMxLjc3QTEuNTYsMS41NiwwLDAsMSwzOCwzMy4zMloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwyOC42NkgyOS40NCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI4LjY2aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNC44OCwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDQsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LDE5LjM0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40NCwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQsMjRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4LjU2LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMy4xMSwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMjguNjZoMCIvPjwvc3ZnPg==",
           "name": "Send keys System",
-          "description": "Write a text on focus input",
+          "description": "Escribe un texto o envia una tecla especial",
           "title_options": "",
           "title_command": "Text",
           "form": {
@@ -4642,7 +4650,7 @@
               "icon": "/images/icons/Excel.svg",
               "visible": true,
               "name": "Nuevo Excel",
-              "description": "Abre un libro de Excel nuevo y proporciona un ámbito para las actividades de Excel. Cuando finaliza la ejecución de esta actividad puede cierrar el libro especificado y la aplicación Excel. Esta actividad solo se puede utilizar si la aplicación Microsoft Excel está instalada en su máquina.",
+              "description": "Abre un nuevo libro de Excel y proporciona un ámbito para las actividades de Excel. Cuando finaliza la ejecución de esta actividad puede cierrar el libro especificado y la aplicación Excel. Esta actividad solo se puede utilizar si la aplicación Microsoft Excel está instalada en su máquina.",
               "title_options": "",
               "title_command": "Identificador (vacio = default)",
               "father": "newxlsx",

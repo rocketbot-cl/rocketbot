@@ -34,7 +34,7 @@
       "visor": "Visor",
       "need_restart": "If you change the port you will need to restart <b  class='rocket-text'>Rocketbot Studio</b>",
       "paste_license": "Paste the license code <b>here</b>",
-      "if_not_email": "If the email didn´t reach you, you can request it",
+      "if_not_email": "If the email didn't reach you, you can request it",
       "token_installed": "<b>Token</b> of the instance where the robot is installed",
       "installed": "Installed",
       "no_license": "You do not have an active license.",
@@ -98,8 +98,8 @@
       "project_name": "Project name",
       "folder_description": "You can create a project with its container folder of the main robot, children robots and extra files to later go to production or export the project.",
       "seconds": "Seconds",
-      "folder": "Project",
-      "add_folder": "Add Project",
+      "folder": "Folder",
+      "add_folder": "Add Folder",
       "search_ex": "Search by name, version, date, ...",
       "new": "New",
       "raw": "Plain Content",
@@ -213,7 +213,7 @@
       "alert_uninstalled_modules": "This robot uses not installed modules. Click to go to Robot view",
       "include_modules": "Include modules",
       "export_bot_help": "Export all bots in this bot to new db, you can include the modules.",
-      "robot_name_tooltip": "It won´t change the current robot name, instead it will create a clone with the new name.",
+      "robot_name_tooltip": "It won't change the current robot name, instead it will create a clone with the new name.",
       "invalid_name": "a-zA-Z0-9 without spaces",
       "error_handling": "Error handling",
       "stop_all": "Stop all",
@@ -224,7 +224,7 @@
       "execute": "Execute",
       "robot": "Robot",
       "edit": "Edit",
-      "repeated_variable": "Can´t repeat a variable name",
+      "repeated_variable": "Can't repeat a variable name",
       "disclaimer": "Disclaimer",
       "search_in": "Search in",
       "package": "Package",
@@ -235,6 +235,7 @@
       "windows_selector_help": "Text property used to find a particular UI element when the activity is executed. Actually, it is an XML or JSON fragment that specifies the attributes of the GUI element you are looking for and some of its parents.",
       "max_search_time": "Maximun search time.",
       "stop_everything": "Stop everything when there is an error",
+      "stop_robot_message": "Stop this robot when there is an error",
       "there_is_error": "when there is an error",
       "run_mode": "Run mode",
       "drag_drop_here": "Drag and drop a command here",
@@ -296,11 +297,25 @@
       "older_version": "Older version",
       "today": "Today",
       "robot_version_tooltip": "Not to confuse with internal robot versioning, which enumerates changes made on a robot after saving. This versioning is left to the user criteria and does not affect robot functioning at all.",
+      "delete_all": "Delete all commands",
+      "paste_inside_if": "Paste inside ",
+      "paste_inside_else": "Paste inside ",
+      "cut": "Cut",
       "option": "Option",
+      "properties": "Properties",
       "example": "Example",
       "new_project": "New project",
       "create_new_project": "Create new project",
-      "create_new_project_info": "Create a new project to start working with Rocketbot"
+      "create_new_project_info": "Create a new project to start working with Rocketbot",
+      "create_new_project_help": "Select a folder where you want to create your project. This folder will contain a folder with the project name and contain all the files needed to run your project.",
+      "for_params_empty": "For command without params",
+      "empty_if": "Empty if command",
+      "if_params_empty": "If command without params",
+      "while_params_empty": "While command without params",
+      "alert_commands": "Alert commands",
+      "stop_robot": "Stop robot",
+      "run_when": "Run when",
+      "warnings_and_errors": "Warnings and errors"
    },
    "commands": [
       {
@@ -309,7 +324,7 @@
          "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHRpdGxlPldlYl9OZWdybzwvdGl0bGU+PHBhdGggZD0iTTE2LDMuNjVhMTIuMzUsMTIuMzUsMCwxLDAsNC43Mi45NEExMi4zNiwxMi4zNiwwLDAsMCwxNiwzLjY1Wm04LjU0LDcuNDFIMjAuOWExOS4zMiwxOS4zMiwwLDAsMC0xLjctNC4zOUE5Ljg2LDkuODYsMCwwLDEsMjQuNTQsMTEuMDZaTTE2LDYuMTZhMTYuODEsMTYuODEsMCwwLDEsMi4zNiw0LjlIMTMuNjRBMTYuODEsMTYuODEsMCwwLDEsMTYsNi4xNlpNNi40NCwxOC40N2E5LjY2LDkuNjYsMCwwLDEsMC00Ljk0aDQuMTdBMjAuMzksMjAuMzksMCwwLDAsMTAuNDQsMTZhMjAuMzksMjAuMzksMCwwLDAsLjE3LDIuNDdabTEsMi40N2gzLjZhMjEuMjgsMjEuMjgsMCwwLDAsMS43Myw0LjM5QTkuODksOS44OSwwLDAsMSw3LjQ2LDIwLjk0Wm0zLjYtOS44OEg3LjQ2YTkuNzgsOS43OCwwLDAsMSw1LjMzLTQuMzlBMjEuMjgsMjEuMjgsMCwwLDAsMTEuMDYsMTEuMDZaTTE2LDI1LjgzYTE2Ljc0LDE2Ljc0LDAsMCwxLTIuMzYtNC44OWg0LjcyQTE2Ljc0LDE2Ljc0LDAsMCwxLDE2LDI1LjgzWm0yLjg5LTcuMzZIMTMuMTFhMTUuNTMsMTUuNTMsMCwwLDEsMC00Ljk0aDUuNzhhMTgsMTgsMCwwLDEsLjIsMi40N0ExOC4xNiwxOC4xNiwwLDAsMSwxOC44OSwxOC40N1ptLjMxLDYuODZhMTkuMzIsMTkuMzIsMCwwLDAsMS43LTQuMzloMy42NEE5LjkxLDkuOTEsMCwwLDEsMTkuMiwyNS4zM1ptMi4xOS02Ljg2QTIwLjM5LDIwLjM5LDAsMCwwLDIxLjU2LDE2YTIwLjM5LDIwLjM5LDAsMCwwLS4xNy0yLjQ3aDQuMTdhOS42Niw5LjY2LDAsMCwxLDAsNC45NFoiLz48L3N2Zz4=",
          "children": [
             {
-               "visible": true,
+               "visible": false,
                "title": "Open Browser",
                "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbC0xNi04djE4bDE2LDhaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQuNjQsNDMuM2wxNi04di0xOGwtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04LjY0LDE3LjNsMTYtOC00LTYtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMy42NCwxMy44bC0xMSw1LjUsMiw2LTE2LTgsMTYtOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbDE2LTgtMi02LTE2LDhaIi8+PC9zdmc+",
                "name": "Use WebBrowser",
@@ -331,7 +346,7 @@
                "modal_size": "lg"
             },
             {
-               "visible": false,
+               "visible": true,
                "title": "Open Browser",
                "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbC0xNi04djE4bDE2LDhaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQuNjQsNDMuM2wxNi04di0xOGwtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04LjY0LDE3LjNsMTYtOC00LTYtMTYsOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMy42NCwxMy44bC0xMSw1LjUsMiw2LTE2LTgsMTYtOFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNC42NCwyNS4zbDE2LTgtMi02LTE2LDhaIi8+PC9zdmc+",
                "name": "Use WebBrowser",
@@ -2595,7 +2610,8 @@
                "options": "",
                "command_available": true,
                "group": "scripts",
-               "modal_size": "md"
+               "modal_size": "md",
+               "launch_debugger": true
             },
             {
                "visible": true,
@@ -2603,13 +2619,14 @@
                "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojYmMwMDE3O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOC44OSw2LjE5YTEuNzYsMS43NiwwLDAsMC0yLTEuMzNoLS4xNWwtLjEyLDBjLTYuODIsMi0xMy4zNyw3LjI0LTE3LjU2LDE0YTEzLjI5LDEzLjI5LDAsMCwwLTcsMy4xOCwxMSwxMSwwLDAsMC0zLjY2LDcuMTksMSwxLDAsMCwwLC40Ni45NSwxLDEsMCwwLDAsMS4wNywwLDExLDExLDAsMCwxLDUuMjQtMmMtLjEzLjU3LS4yNCwxLjExLS4zMiwxLjYxYTEuNzksMS43OSwwLDAsMCwuOTIsMkwyNi4zLDM4YS41NC41NCwwLDAsMCwuMjIuMDVoMGExLjcsMS43LDAsMCwwLDEuNzItLjQyLDEzLjI1LDEzLjI1LDAsMCwwLDEuMTMtMSwxMSwxMSwwLDAsMSwuODUsNS40OSwxLDEsMCwwLDAsLjQ4Ljk0LDEsMSwwLDAsMCwuNDguMTNoLjA5YS45MS45MSwwLDAsMCwuNDUtLjIzLDExLjcxLDExLjcxLDAsMCwwLDMuNjYtMTQuNUMzOS4yOCwyMS40OCw0MC41OCwxMy4xOSwzOC44OSw2LjE5Wk0xNi42OCwzMC4xM2ExNi44MiwxNi44MiwwLDAsMSwuNjQtMi43LDEuMTcsMS4xNywwLDAsMCwwLS4yNiwxLDEsMCwwLDAtMS4wNS0xaDBhMTMsMTMsMCwwLDAtNS41OCwxLjI2LDEwLjQzLDEwLjQzLDAsMCwxLDkuMDUtNi42NS45Mi45MiwwLDAsMCwuNzUtLjQ3QzI0LjM2LDEzLjgxLDMwLjUzLDguNzgsMzcsNi44NGMxLjU2LDYuNjUuMjMsMTQuNTMtMy41OCwyMS4xMWExLDEsMCwwLDAsMCwuODljMS45NCw0LDEuNDUsOC4yNC0xLjIyLDExLjE2YTEzLDEzLDAsMCwwLTEuNzgtNS41OC45NC45NCwwLDAsMC0uNzktLjQ5aDBhMSwxLDAsMCwwLS43Ny4zN0ExMCwxMCwwLDAsMSwyNywzNi4xWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4LDI3LjQzYTQuNTgsNC41OCwwLDAsMCwxLjExLS4xNkE1LjE2LDUuMTYsMCwwLDAsMjcsMTcuMjEsNS4xNiw1LjE2LDAsMCwwLDI4LDI3LjQ0Wk0zMC42NCwyNGEzLjE4LDMuMTgsMCwwLDEtNC40Mi44NCwzLjIsMy4yLDAsMCwxLS44Ni00LjQ0LDMuMTMsMy4xMywwLDAsMSwyLTEuMywyLjg2LDIuODYsMCwwLDEsLjU4LS4wNmgwYS4zLjMsMCwwLDAsLjE2LS4wNSwzLjMsMy4zLDAsMCwxLDEuNi41NUEzLjIzLDMuMjMsMCwwLDEsMzAuNjQsMjRaIi8+PC9zdmc+",
                "name": "Execute RocketBot",
                "description": "Execute robots saved on RocketboStudio data base.",
-               "title_options": "",
+               "title_options": "Assign result to variable:",
                "title_command": "Robot name on data base:",
                "father": "execRocketBotDBExpose",
                "options": "",
                "command_available": true,
                "group": "scripts",
-               "modal_size": "md"
+               "modal_size": "md",
+               "launch_debugger": true
             },
             {
                "title": "Return Data",
@@ -4651,7 +4668,7 @@
                      "title": "New Workbook",
                      "icon": "/images/icons/Excel.svg",
                      "name": "Nuevo Excel",
-                     "description": "Opens new an Excel workbook and provides a scope for Excel Activities. When the execution of this activity ends, the specified workbook and the Excel application can close. This activity can only be used if the Microsoft Excel application is installed on your machine.",
+                     "description": "Opens a new Excel workbook and provides a scope for Excel Activities. When the execution of this activity ends, the specified workbook and the Excel application can close. This activity can only be used if the Microsoft Excel application is installed on your machine.",
                      "title_options": "",
                      "title_command": "Identificador (vacio = default)",
                      "father": "newxlsx",
