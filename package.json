@@ -10,7 +10,7 @@
             "name": "rocketbot.exe",
             "path": "rocketbot.exe.zip",
             "destination": "/",
-            "version": "2023.03.05_a1",
+            "version": "2023.03.20_a1",
             "hash": "",
             "md5": "91a0a14cbb8713bebbdb460ea751c02f"
         },
@@ -18,7 +18,7 @@
             "name": "web/dev/",
             "path": "web/dev.zip",
             "destination": "/web/dev/",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "hash": "",
             "md5": "308c37445f02393e9915c27caa5c713b"
         },
@@ -249,7 +249,7 @@
             "name": "services/a_rocketbot__.roc",
             "path": "services/a_rocketbot__.roc",
             "destination": "/services/",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "md5": "540fe70eaaca62fcf86cc7ab31584e5e"
         },
         {
@@ -355,7 +355,7 @@
             "name": "services/rpasystem.roc",
             "path": "services/rpasystem.roc",
             "destination": "/services/",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "md5": "e6f5a9b679931a7af54f394466f5377f"
         },
         {

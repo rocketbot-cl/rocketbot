@@ -7,6 +7,7 @@
 - Clicking on the alerts/warnings of footer will open a window indicating the affected commands.
 - Styles
 - You can automatically add a variable to exposed via a button on the variables table.
+- Create project to create a folder structure
 
 
 ### Fix
