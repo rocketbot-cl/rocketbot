@@ -304,7 +304,6 @@
         "properties": "Propriedades",
         "create_new_project": "Criar um novo projecto",
         "create_new_project_info": "Crie um novo projecto para organizar os seus robots e variáveis.",
-        "create_new_project_help": "Selecione uma pasta onde você deseja criar seu projeto. Esta pasta conterá uma pasta com o nome do projeto e conterá todos os arquivos necessários para executar seu projeto.",
         "for_params_empty": "for comando sem parâmetros",
         "empty_if": "Comando if sem parâmetros",
         "if_params_empty": "Comando If sem parâmetros",
@@ -312,7 +311,12 @@
         "alert_commands": "Comandos do Alertas",
         "stop_robot": "Parar robô",
         "run_when": "Executar quando",
-        "warnings_and_errors": "Avisos e erros"
+        "warnings_and_errors": "Avisos e erros",
+        "error_in_exposed_code": "Erro no código exposto",
+        "advanced": "Avançado",
+        "hide": "Esconder",
+        "change_expose_title": "Alterar título exposto",
+        "change_expose_description": "Alterar descrição exposto"
     },
     "commands": [
         {

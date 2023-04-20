@@ -98,8 +98,8 @@
     "project_name": "Nombre del proyecto",
     "folder_description": "Puede crear un proyecto con su carpeta contenedora de el robot principal, robots hijos y archivos extras para pasarlos luego a producción o exportar el proyecto.",
     "seconds": "Segundos",
-    "folder": "Carpeta",
-    "add_folder": "Agregar Carpeta",
+    "folder": "Proyecto",
+    "add_folder": "Agregar proyecto",
     "search_ex": "Buscar por nombre, fecha, versión, etc...",
     "new": "Nuevo",
     "raw": "Contenido Plano",
@@ -305,7 +305,6 @@
     "new_project": "Nuevo proyecto",
     "create_new_project": "Crear nuevo proyecto",
     "create_new_project_info": "Crea un nuevo proyecto para organizar tus robots.",
-    "create_new_project_help": "Selecciona una carpeta donde quieras crear tu proyecto. Esta carpeta contendrá una carpeta con el nombre del proyecto y contendrá todos los archivos necesarios para ejecutar su proyecto.",
     "for_params_empty": "Comando for sin parámetros",
     "empty_if": "Empty if command",
     "if_params_empty": "Comando if sin parámetros",
@@ -313,7 +312,12 @@
     "alert_commands": "Comandos de Alerta",
     "stop_robot": "Detener robot",
     "run_when": "Ejecutar cuando",
-    "warnings_and_errors": "Advertencias y errores"
+    "warnings_and_errors": "Advertencias y errores",
+    "error_in_exposed_code": "Hay un error en el código de exposed",
+    "advanced": "Avanzado",
+    "hide": "Ocultar",
+    "change_expose_title": "Cambiar título de expose",
+    "change_expose_description": "Cambiar descripción de expose"
   },
   "commands": [
     {

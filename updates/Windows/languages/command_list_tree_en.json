@@ -98,8 +98,8 @@
       "project_name": "Project name",
       "folder_description": "You can create a project with its container folder of the main robot, children robots and extra files to later go to production or export the project.",
       "seconds": "Seconds",
-      "folder": "Folder",
-      "add_folder": "Add Folder",
+      "folder": "Project",
+      "add_folder": "Add Project",
       "search_ex": "Search by name, version, date, ...",
       "new": "New",
       "raw": "Plain Content",
@@ -178,7 +178,7 @@
       "variables": "Variables",
       "events": "Events",
       "search": "Search",
-      "live_mode": "Modo en vivo",
+      "live_mode": "Live mode",
       "live_mode_help": "With the 'Live' mode activated you can perform the events as you add commands",
       "robot_name": "Robot Name",
       "drag_drop_text": "Drag here a Rocketbot Studio (json) file to edit",
@@ -307,7 +307,6 @@
       "new_project": "New project",
       "create_new_project": "Create new project",
       "create_new_project_info": "Create a new project to start working with Rocketbot",
-      "create_new_project_help": "Select a folder where you want to create your project. This folder will contain a folder with the project name and contain all the files needed to run your project.",
       "for_params_empty": "For command without params",
       "empty_if": "Empty if command",
       "if_params_empty": "If command without params",
@@ -315,7 +314,12 @@
       "alert_commands": "Alert commands",
       "stop_robot": "Stop robot",
       "run_when": "Run when",
-      "warnings_and_errors": "Warnings and errors"
+      "warnings_and_errors": "Warnings and errors",
+      "error_in_exposed_code": "There is an error on the exposed code",
+      "advanced": "Advanced",
+      "hide": "Hide",
+      "change_expose_title": "Change expose title",
+      "change_expose_description": "Change expose description"
    },
    "commands": [
       {
