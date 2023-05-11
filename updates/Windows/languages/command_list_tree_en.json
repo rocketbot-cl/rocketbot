@@ -99,11 +99,13 @@
       "folder_description": "You can create a project with its container folder of the main robot, children robots and extra files to later go to production or export the project.",
       "seconds": "Seconds",
       "folder": "Folder",
-      "add_folder": "Add Folder",
+      "project_robot": "Project",
+      "add_folder": "Add Project",
       "search_ex": "Search by name, version, date, ...",
       "new": "New",
       "raw": "Plain Content",
       "copy": "Copy",
+      "error_copying": "Error copying command",
       "paste": "Paste",
       "clone": "Clone",
       "created_at": "Created At",
@@ -307,7 +309,6 @@
       "new_project": "New project",
       "create_new_project": "Create new project",
       "create_new_project_info": "Create a new project to start working with Rocketbot",
-      "create_new_project_help": "Select a folder where you want to create your project. This folder will contain a folder with the project name and contain all the files needed to run your project.",
       "for_params_empty": "For command without params",
       "empty_if": "Empty if command",
       "if_params_empty": "If command without params",
@@ -320,7 +321,12 @@
       "advanced": "Advanced",
       "hide": "Hide",
       "change_expose_title": "Change expose title",
-      "change_expose_description": "Change expose description"
+      "change_expose_description": "Change expose description",
+      "arrayVar": "Array",
+      "add_row": "Add row",
+      "cannot_be_array_variable": "This cannot be converted to an array variable",
+      "variable_unsaved_changes": "Unsaved changes",
+      "array_dimensions_not_same_length": "Array dimensions are not the same length"
    },
    "commands": [
       {
