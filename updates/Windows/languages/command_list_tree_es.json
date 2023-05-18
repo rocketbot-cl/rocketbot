@@ -4697,7 +4697,7 @@
               "icon": "/images/icons/Excel.svg",
               "visible": true,
               "name": "Save file xslx",
-              "description": "Guarda un archivo generado en Ms Excel en la ruta especificada",
+              "description": "Guarda un archivo generado en Ms Excel en la ruta especificada.",
               "title_options": "",
               "title_command": "Ruta al archivo Archivo .xlsx, .xls o .csv",
               "father": "savexlsx",
