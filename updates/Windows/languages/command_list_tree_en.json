@@ -326,7 +326,9 @@
       "add_row": "Add row",
       "cannot_be_array_variable": "This cannot be converted to an array variable",
       "variable_unsaved_changes": "Unsaved changes",
-      "array_dimensions_not_same_length": "Array dimensions are not the same length"
+      "array_dimensions_not_same_length": "Array dimensions are not the same length",
+      "cannot_create_var": "Var already exists or has not a valid name",
+      "view_array": "View array"
    },
    "commands": [
       {
@@ -406,6 +408,47 @@
                "command_available": true,
                "group": "web",
                "modal_size": "md"
+            },
+            {
+               "title": "Get current url",
+               "description": "Get the url of the currently loaded page",
+               "title_options": "Seleccione una opción",
+               "form": {
+                 "css": "modal-lg",
+                 "inputs": [
+                   {
+                     "type": "input",
+                     "placeholder": {
+                        "es": "variable",
+                        "en": "variable",
+                        "pr": "variável"
+                     },
+                     "title": {
+                       "es": "Asignar resultado a variable: ",
+                       "en": "Assign result to variable: ",
+                       "pr": "Atribuir resultado à variável"
+                     },
+                     "description":{
+                       "es": "Ponemos el atributo del elemento del cual queremos el valor",
+                       "en": "We put the attribute of the element from which we want the value",
+                       "pr": "Colocamos o atributo do elemento do qual queremos o valor"
+                     },
+                     "id": "var_",
+                     "css": "col-md-12"
+                   }
+                 ]
+               },
+               "video_youtube": "",
+               "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABCRJREFUeJztm01oVUcUgL8maWqiJir5qRWx+aMgKa39s5As2oKCC6E1lXZh3NlFoLgQgt00dBOySV2UlvQHmmIiBsHuSuk2G6m0gvYHbH5EW9EUg5KSl5bE52LO9E5uJrfz3s27c03vB5d598w5955z7tx582bmQUZGxv+ZRyLqqoE3geeBDcm4s+YsAD8A54BcIYZ7gRtAfp0c14GXbIHaWsCTwI/AVuAKMAb86ZK1FFIPvA20A7PAHlQyIvkClbVvgcpSepcQlahY8sCnLgY3RfnZEjqleRX4CvgG6EO1ujAtwCngO+AjYLdFZzNwUq4zChwI1e9BxXTDxaklUa5wUY7Be6x8V6eB7YbOK8B8SGce2GfoPA5ctVyrz9CpENmSi2P6AqWkFViU433gdeCi3PeM6JQBv4nsLHAQ1VrywB8ED+gzkV0CuoBeue4S8IxxT+e4kkjAMZYHC/CUyGblvIWVwZYD10T+nMim5Pxp41rDIus1ZNa4yooOIR66c100ZAtSaicflfK+HPrzP6vomc07Z+gXTBItoAUV8CIwALwFXJD7johOGfCryL4GDgNfEnRmulV8LLJfgG7UU/8blRCzVaTqFQB4l6DD1ccUsMPQeRm4G9LJAfsNnVrg55BOHvggdD9rXLaBUD6ibq3pAN4BtqA6wU8I+gDNTuAEquOcBIZQLcOkCjgOdKIGbWOo734Ta1xRCWhxDOJhYVJK5wSsV5bFHDXYmSqxI0nT7KqYVCeYNKkaB6SGLAG+HfBNlgDfDvgmS4BvB3yTJcC3A74pJAHlBeg+5igrxD7u/Z2xDRlbUb/LBx3sTwFzQJMhawb+Aj4s0r4VuBfDHmIOhetQEw+dDrodwCagwZA1ABulrhj7OqAmhv2quCbgtpSNDrpa57Yh821fELamUk0wHfVf5ES3OkX2sAZzgnMir5HzWtQ7OWjIakRnLoX2sRMwIfI2Oe83dPtF1ibnEym0jz0foN+pBrE7YtQdRX1N6ffvVgrtrRSy/jcjZSPwGmq2Vme6FbXQqZuibTndt72VYlpAIyrjoBYxRuVzN2qhEqKfoC97K8UkoAl4g2AVZ1g+dxFMpdu+gnzbO7NaJ9gj8hkpx4268VBdTwrtY3eC+h2sl/K0UTcSqrM9Ad/2zqzWAjqMuhxqOUuzhWAAksc+ZPVtH3scUEWwCDlgqR9ALUdfxr6tzrf9mqwOVwBPRNjWE/2z1ad96pbHkyZbGbKRJcC3A77JEuDbAd9kCfDtgG+yBFhkendlqTdLJ4mOZcXOUVsC9GRCe8ncSR69Y/Smi/LnqCHjevzDxFC40rZPcBfqLzPbgJ9Quy5nLHoPAw2ofcjtwB3Un0B+dzF8kWBb+no4poEXbIFG7QeuAg5JMqqi85VacsD3wHmC7fgZGRkZ//IAZe3vwqAGKj8AAAAASUVORK5CYII=",
+               "visible": true,
+               "options": false,
+               "father": "get_current_url",
+               "group": "web",
+               "linux": true,
+               "windows": true,
+               "mac": true,
+               "docker": true,
+               "modal_size": "lg"
             },
             {
                "visible": true,
@@ -642,11 +685,12 @@
                      },
                      {
                         "type": "input",
-                        "placeholder": "",
+                        "placeholder": "{variable}",
                         "visible": true,
                         "title": "Asign result to variable",
                         "id": "result",
-                        "css": "col-md-12"
+                        "css": "col-md-12",
+                        "remove_vars": true
                      }
                   ]
                },
@@ -711,6 +755,138 @@
                "group": "web",
                "extensions": "image",
                "default_extension":".png",
+               "modal_size": "lg"
+            },
+            {
+               "title": "Get attribute",
+               "description": "Get a specific attribute value from an element",
+               "title_options": "Seleccione una opción",
+               "form": {
+                 "css": "modal-lg",
+                 "inputs": [
+                   {
+                     "type": "input",
+                     "placeholder": "",
+                     "title": {
+                       "es": "Dato a buscar",
+                       "en": "Data to search",
+                       "pr": "Dado a buscar"
+                     },
+                     "description":{
+                       "es": "Ponemos el selector del elemento del que queremos sacar el valor del atributo",
+                       "en": "We put the selector of the element from which we want to get the attribute value",
+                       "pr": "Colocamos o seletor do elemento do qual queremos obter o valor do atributo"
+                     },
+                     "id": "data",
+                     "css": "col-md-12"
+                   },
+                   {
+                     "type": "select",
+                     "placeholder": {
+                       "es": "",
+                       "en": "",
+                       "pr": ""
+                     },
+                     "title": {
+                       "es": "Tipo de dato",
+                       "en": "Data type",
+                       "pr": "Tipo de dado"
+                     },
+                     "options": [
+                       {
+                         "title": "name",
+                         "value": "name"
+                       },
+                       {
+                         "title": "id",
+                         "value": "id"
+                       },
+                       {
+                         "title": "class",
+                         "value": "class name"
+                       },
+                       {
+                         "title": "xpath",
+                         "value": "xpath"
+                       },
+                       {
+                         "title": "tag",
+                         "value": "tag name"
+                       },
+                       {
+                           "title": "css selector",
+                           "value": "css selector"
+                       },
+                       {
+                           "title": "link text",
+                           "value": "link text"
+                       },
+                       {
+                           "title": "partial link text",
+                           "value": "partial link text"
+                       }
+                     ],
+                     "description": {
+                       "es": "Tipo de dato a buscar",
+                       "en": "Data type to search",
+                       "pr": "Tipo de dado a buscar"
+                     },
+                     "id": "data_type",
+                     "css": "col-md-12"
+                   },
+                   {
+                     "type": "input",
+                     "placeholder": "",
+                     "title": {
+                       "es": "Atributo a obtener",
+                       "en": "Attribute to get",
+                       "pr": "Atributo para obter"
+                     },
+                     "placeholder": {
+                        "es": "value, class, href...",
+                        "en": "value, class, href...",
+                        "pr": "value, class, href..."
+                     },
+                     "description":{
+                       "es": "Ponemos el atributo del elemento del cual queremos el valor",
+                       "en": "We put the attribute of the element from which we want the value",
+                       "pr": "Colocamos o atributo do elemento do qual queremos o valor"
+                     },
+                     "id": "attribute",
+                     "css": "col-md-12"
+                   },
+                   {
+                     "type": "input",
+                     "placeholder": {
+                        "es": "variable",
+                        "en": "variable",
+                        "pr": "variável"
+                     },
+                     "title": {
+                       "es": "Asignar resultado a variable: ",
+                       "en": "Assign result to variable: ",
+                       "pr": "Atribuir resultado à variável"
+                     },
+                     "description":{
+                       "es": "Ponemos el atributo del elemento del cual queremos el valor",
+                       "en": "We put the attribute of the element from which we want the value",
+                       "pr": "Colocamos o atributo do elemento do qual queremos o valor"
+                     },
+                     "id": "var_",
+                     "css": "col-md-12"
+                   }
+                 ]
+               },
+               "video_youtube": "",
+               "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAACIgAAAiIBk6gx/gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAR0SURBVHic7ZtfaB1FFMZ/5+Y2NyposWlroGheRLTRSkPqQ7GK+CRV/NOKFY0BhVL0TURBBf+jiA+KofqmiFqIoKUgiij6JLbY1NSqFUqraYtaqVaFJKbt+DCzuSfjvcnu3r076b37wcLd2XPOfOeb2Z3Zmb1ijKGdUQpNIDQKAUITCI22F6CsT0SkDFwBDAC9gATg1AwY4CCwC9hrjDlZvWIMbiRYC+x3xq187AfWzuTtkh8ETi0Acnkdp4BBYwwCXAjsBc6lis+BL2gtXAdcrc7/Ai4HGKaqzDiwMuoerXYAfS7HKN/hMvaBF2GrMWZf09siBUTkfuDGGpdeNMZ86myWAm/VsPnJGLPZGPOtiGwFnnXlAwCTVBXpCd1Kc7Tea9S+n4eUTW8dmx+UTY8qnywBFaXUH4mb5syDzrHS9hOhthegPL/JgsEosL1G+SH1+586NuP1ggr2YRDhLGPMZBp2ZwpEpAuYiM79HrBRRKbzpZQ7FukTvwe0HYqHoHe+AzgdgkiOKKFmlG3/EGz7W6AQIDSB0CgECE0gNAoBQhMIjaYIICI3iMirIrImod+dIvKCW9qKylaIyMsicp+IdGTPdvbSUVeDy1bdwLsq3uEEvjcrv9dV+TZV/hVwWYMcu3TOmfUAEdkA7APuUMWHYvpWgJdUkV62+ln9XgOMisijbhcrEzTUA4BlwAj/X4h8D1gaM8Yjyu8EsFxd6wSeA0568b8GVjXaAxoSANgEHPNi/AZsTBCjB/hb+T9Ux64fGPPq+hd4AliUqwDABcD7NVp9G9CdUMQ3lP+PQOcctp3Aky5xXe8Y0J+LAMDdwHHP7xfg1hTdcQD7+h3FWR/TbxWw2+Mw7W6VSlMEwN7rO2q0+tvAkhTJC/ClivNRQv8y8Bgw5fH5bq7e0IgA73i2R4Gbkiau4t3ltd6lKeOsBHZ63A7Wu5V8AZIMg8u983HsXntiiMg5wPOqaNgY832aWMARbKtrnAecHTdA3B5wCXac1/YTwMNAR8JWe0bFOAYsTtn6650AmtMJYEPmt4BzrmB3Vqc9v51AX0zSvU64yHdzisTPx+4C+8+jD4EV8/hmMgyuBr7xfKeAx4HyPL560rQHKCVM/hbsqKPrPg7cE9M/m4kQdoOh1pg8ClxZx+daz/aaBPV1M/u9IDo+IMG2fmYCqID1xuSnUU9i7JvnHmUzkqCO27EzTF3H78CmFHyzFcAFrTcmjyibe1X5BHBRzNgP1Gj1EWBZSq7ZC6CC92G/xYvi/amuvanKn0oQc7vy+xW4rUGOzRPAVdABPAh8pskCV2GHrFewGzBx460GPsF+IpN4xjmfAMXOUEAuCwKFAKEJhEYhAHbsjrA4FJEcoXOcKmGXkyIM5cslCIbU77ESduISYYuIXJwvn/zgctuiinbV+lzeAB/Tmp/LX0/1XzD2c3k3Oxpk9uJkqx+ncX+Y0FPEdcCBBUCu2ccBYF2Ut7jkgZktqn5a+09Tu40xMyPfLAHaEcVEKDSB0CgECE0gNP4Dte5Z8zt3QTgAAAAASUVORK5CYII=",
+               "visible": true,
+               "options": false,
+               "father": "get_attribute",
+               "group": "web",
+               "linux": true,
+               "windows": true,
+               "mac": true,
+               "docker": true,
                "modal_size": "lg"
             },
             {
@@ -1326,7 +1502,8 @@
                "command_available": true,
                "group": "system",
                "modal_size": "md",
-               "help": "Variable name without {}"
+               "help": "Variable name without {}",
+               "remove_vars": true
             }
             ,
             {
@@ -1369,7 +1546,8 @@
                "options": [ "SystemError", "RocketbotError", "BusinessError", "ValidationError"],
                "command_available": true,
                "group": "system",
-               "modal_size": "md"
+               "modal_size": "md",
+               "error_handling":false
             },
             {
                "visible": false,
@@ -2082,6 +2260,8 @@
                            {
                               "type": "input",
                               "title": "Asign result to variable",
+                              "placeholder": "{variable}",
+                              "remove_vars": true,
                               "id": "result",
                               "css": "col-md-6"
                            }
@@ -3310,7 +3490,8 @@
                "command_available": false,
                "logic": false,
                "group": "logic",
-               "modal_size": "md"
+               "modal_size": "md",
+               "error_handling":false
             },
             {
                "visible": true,
@@ -3340,7 +3521,8 @@
                "command_available": false,
                "logic": false,
                "group": "logic",
-               "modal_size": "md"
+               "modal_size": "md",
+               "error_handling": false
             },
             {
                "title": "Group",
@@ -3355,7 +3537,8 @@
                "command_available": false,
                "logic": true,
                "group": "logic",
-               "modal_size": "md"
+               "modal_size": "md",
+               "error_handling":false
             }
          ]
       },
@@ -4918,7 +5101,6 @@
                               "placeholder": "",
                               "title": "Variable where save the result",
                               "id": "result",
-                              "help": "Variable name without {}",
                               "css": "col-md-12",
                               "remove_vars": true
                            }
