@@ -18,7 +18,7 @@
             "name": "web/dev/",
             "path": "web/dev.zip",
             "destination": "/web/dev/",
-            "version": "1.10.1",
+            "version": "1.11.0",
             "hash": "",
             "md5": "56c857e5c7da65e56bf5758496988e68"
         },
