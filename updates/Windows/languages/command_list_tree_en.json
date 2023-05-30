@@ -429,12 +429,13 @@
                        "pr": "Atribuir resultado à variável"
                      },
                      "description":{
-                       "es": "Ponemos el atributo del elemento del cual queremos el valor",
-                       "en": "We put the attribute of the element from which we want the value",
-                       "pr": "Colocamos o atributo do elemento do qual queremos o valor"
+                        "es": "Variable donde se almacenara el resultado",
+                        "en": "Variable where the result will be stored",
+                        "pr": "Variável onde o resultado será armazenado"
                      },
                      "id": "var_",
-                     "css": "col-md-12"
+                     "css": "col-md-12",
+                     "remove_vars": true
                    }
                  ]
                },
@@ -868,12 +869,13 @@
                        "pr": "Atribuir resultado à variável"
                      },
                      "description":{
-                       "es": "Ponemos el atributo del elemento del cual queremos el valor",
-                       "en": "We put the attribute of the element from which we want the value",
-                       "pr": "Colocamos o atributo do elemento do qual queremos o valor"
+                        "es": "Variable donde se almacenara el resultado",
+                        "en": "Variable where the result will be stored",
+                        "pr": "Variável onde o resultado será armazenado"
                      },
                      "id": "var_",
-                     "css": "col-md-12"
+                     "css": "col-md-12",
+                     "remove_vars": true
                    }
                  ]
                },
@@ -990,6 +992,97 @@
                "command_available": true,
                "group": "web",
                "modal_size": "md"
+            },
+            {
+               "title": "Move to element",
+               "description": "Scroll to an specific element of a web page.",
+               "title_options": "Seleccione una opción",
+               "form": {
+                 "css": "modal-lg",
+                 "inputs": [
+                   {
+                     "type": "input",
+                     "placeholder": "",
+                     "title": {
+                       "es": "Dato a buscar",
+                       "en": "Data to search",
+                       "pr": "Dado a buscar"
+                     },
+                     "description":{
+                       "es": "Ponemos el selector del elemento que queremos visualizar",
+                       "en": "We put the selector of the element which we want to see",
+                       "pr": "Colocamos o seletor do elemento que queremos ver"
+                     },
+                     "id": "data",
+                     "css": "col-md-12"
+                   },
+                   {
+                     "type": "select",
+                     "placeholder": {
+                       "es": "",
+                       "en": "",
+                       "pr": ""
+                     },
+                     "title": {
+                       "es": "Tipo de dato",
+                       "en": "Data type",
+                       "pr": "Tipo de dado"
+                     },
+                     "options": [
+                       {
+                         "title": "name",
+                         "value": "name"
+                       },
+                       {
+                         "title": "id",
+                         "value": "id"
+                       },
+                       {
+                         "title": "class",
+                         "value": "class name"
+                       },
+                       {
+                         "title": "xpath",
+                         "value": "xpath"
+                       },
+                       {
+                         "title": "tag",
+                         "value": "tag name"
+                       },
+                       {
+                           "title": "css selector",
+                           "value": "css selector"
+                       },
+                       {
+                           "title": "link text",
+                           "value": "link text"
+                       },
+                       {
+                           "title": "partial link text",
+                           "value": "partial link text"
+                       }
+                     ],
+                     "description": {
+                       "es": "Tipo de dato a buscar",
+                       "en": "Data type to search",
+                       "pr": "Tipo de dado a buscar"
+                     },
+                     "id": "data_type",
+                     "css": "col-md-6"
+                   }
+                 ]
+               },
+               "video_youtube": "",
+               "icon": "data:image/png;base64,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",
+               "visible": true,
+               "options": false,
+               "father": "move_to_element",
+               "group": "web",
+               "linux": true,
+               "windows": true,
+               "mac": true,
+               "docker": true,
+               "modal_size": "lg"
             },
             {
                "title": "Upload file",
@@ -1546,8 +1639,7 @@
                "options": [ "SystemError", "RocketbotError", "BusinessError", "ValidationError"],
                "command_available": true,
                "group": "system",
-               "modal_size": "md",
-               "error_handling":false
+               "modal_size": "md"
             },
             {
                "visible": false,
@@ -2726,6 +2818,115 @@
                      "mac": true,
                      "docker": true,
                      "modal_size": "lg"
+                  },
+                  {
+                     "title": "JSON to Dictionary",
+                     "description": "Parse a JSON file or string into a Dictionary type of value",
+                     "title_options": null,
+                     "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                           {
+                              "type": "file_select",
+                              "placeholder": {
+                                 "es": "C:\\users\\/user\\documents\\file.json",
+                                 "en": "C:\\sers\\user\\documents\\file.json"
+                              },
+                              "title": {
+                                 "es": "Archivo JSON",
+                                 "en": "JSON file"
+                              },
+                              "id": "json_path",
+                              "css": "col-md-12"
+                           },
+                           {
+                              "type": "textarea",
+                              "placeholder": {
+                                 "es": "'{\"name\":\"John\", \"lastname\":\"Doe\", \"age\":30, \"car\":null}'",
+                                 "en": "'{\"name\":\"John\", \"lastname\":\"Doe\", \"age\":30, \"car\":null}'"
+                              },
+                              "title": {
+                                 "es": "JSON",
+                                 "en": "JSON"
+                              },
+                              "id": "json_str",
+                              "css": "col-md-12"
+                           },
+                           {
+                              "type": "input",
+                              "placeholder": {
+                                 "es": "result",
+                                 "en": "result"
+                              },
+                              "title": {
+                                 "es": "Resultado",
+                                 "en": "Result"
+                              },
+                              "id": "result",
+                              "css": "col-md-6",
+                              "remove_vars": true 
+                           }
+                        ]
+                     },
+                     "video_youtube": "",
+                     "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzQ0NDQ0NCIgZD0iTTIuMSAzLjFjMC4yIDEuMyAwLjQgMS42IDAuNCAyLjkgMCAwLjgtMS41IDEuNS0xLjUgMS41djFjMCAwIDEuNSAwLjcgMS41IDEuNSAwIDEuMy0wLjIgMS42LTAuNCAyLjktMC4zIDIuMSAwLjggMy4xIDEuOCAzLjFzMi4xIDAgMi4xIDB2LTJjMCAwLTEuOCAwLjItMS44LTEgMC0wLjkgMC4yLTAuOSAwLjQtMi45IDAuMS0wLjktMC41LTEuNi0xLjEtMi4xIDAuNi0wLjUgMS4yLTEuMSAxLjEtMi0wLjMtMi0wLjQtMi0wLjQtMi45IDAtMS4yIDEuOC0xLjEgMS44LTEuMXYtMmMwIDAtMSAwLTIuMSAwcy0yLjEgMS0xLjggMy4xeiI+PC9wYXRoPgo8cGF0aCBmaWxsPSIjNDQ0NDQ0IiBkPSJNMTMuOSAzLjFjLTAuMiAxLjMtMC40IDEuNi0wLjQgMi45IDAgMC44IDEuNSAxLjUgMS41IDEuNXYxYzAgMC0xLjUgMC43LTEuNSAxLjUgMCAxLjMgMC4yIDEuNiAwLjQgMi45IDAuMyAyLjEtMC44IDMuMS0xLjggMy4xcy0yLjEgMC0yLjEgMHYtMmMwIDAgMS44IDAuMiAxLjgtMSAwLTAuOS0wLjItMC45LTAuNC0yLjktMC4xLTAuOSAwLjUtMS42IDEuMS0yLjEtMC42LTAuNS0xLjItMS4xLTEuMS0yIDAuMi0yIDAuNC0yIDAuNC0yLjkgMC0xLjItMS44LTEuMS0xLjgtMS4xdi0yYzAgMCAxIDAgMi4xIDBzMi4xIDEgMS44IDMuMXoiPjwvcGF0aD4KPC9zdmc+Cg==",
+                     "visible": true,
+                     "options": false,
+                     "father": "json_to_dict",
+                     "group": "datatransform",
+                     "linux": true,
+                     "windows": true,
+                     "mac": true,
+                     "docker": true,
+                     "modal_size": "lg"
+                  },
+                  {
+                     "title": "Dictionary to JSON",
+                     "description": "Parse a Dictionary type of value into a JSON string",
+                     "title_options": null,
+                     "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                           {
+                              "type": "input",
+                              "placeholder": {
+                                 "es": "Diccionario",
+                                 "en": "Dictionary"
+                              },
+                              "title": {
+                                 "es": "Diccionario",
+                                 "en": "Dictionary"
+                              },
+                              "id": "dict",
+                              "css": "col-md-12"
+                           },
+                           {
+                              "type": "input",
+                              "placeholder": {
+                                 "es": "result",
+                                 "en": "result"
+                              },
+                              "title": {
+                                 "es": "Resultado",
+                                 "en": "Result"
+                              },
+                              "id": "result",
+                              "css": "col-md-6",
+                              "remove_vars": true 
+                           }
+                        ]
+                     },
+                     "video_youtube": "",
+                     "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KPHBhdGggZmlsbD0iIzQ0NDQ0NCIgZD0iTTIuMSAzLjFjMC4yIDEuMyAwLjQgMS42IDAuNCAyLjkgMCAwLjgtMS41IDEuNS0xLjUgMS41djFjMCAwIDEuNSAwLjcgMS41IDEuNSAwIDEuMy0wLjIgMS42LTAuNCAyLjktMC4zIDIuMSAwLjggMy4xIDEuOCAzLjFzMi4xIDAgMi4xIDB2LTJjMCAwLTEuOCAwLjItMS44LTEgMC0wLjkgMC4yLTAuOSAwLjQtMi45IDAuMS0wLjktMC41LTEuNi0xLjEtMi4xIDAuNi0wLjUgMS4yLTEuMSAxLjEtMi0wLjMtMi0wLjQtMi0wLjQtMi45IDAtMS4yIDEuOC0xLjEgMS44LTEuMXYtMmMwIDAtMSAwLTIuMSAwcy0yLjEgMS0xLjggMy4xeiI+PC9wYXRoPgo8cGF0aCBmaWxsPSIjNDQ0NDQ0IiBkPSJNMTMuOSAzLjFjLTAuMiAxLjMtMC40IDEuNi0wLjQgMi45IDAgMC44IDEuNSAxLjUgMS41IDEuNXYxYzAgMC0xLjUgMC43LTEuNSAxLjUgMCAxLjMgMC4yIDEuNiAwLjQgMi45IDAuMyAyLjEtMC44IDMuMS0xLjggMy4xcy0yLjEgMC0yLjEgMHYtMmMwIDAgMS44IDAuMiAxLjgtMSAwLTAuOS0wLjItMC45LTAuNC0yLjktMC4xLTAuOSAwLjUtMS42IDEuMS0yLjEtMC42LTAuNS0xLjItMS4xLTEuMS0yIDAuMi0yIDAuNC0yIDAuNC0yLjkgMC0xLjItMS44LTEuMS0xLjgtMS4xdi0yYzAgMCAxIDAgMi4xIDBzMi4xIDEgMS44IDMuMXoiPjwvcGF0aD4KPC9zdmc+Cg==",
+                     "visible": true,
+                     "options": false,
+                     "father": "dict_to_json",
+                     "group": "datatransform",
+                     "linux": true,
+                     "windows": true,
+                     "mac": true,
+                     "docker": true,
+                     "modal_size": "lg"
                   }
                ]
             }
@@ -3521,8 +3722,7 @@
                "command_available": false,
                "logic": false,
                "group": "logic",
-               "modal_size": "md",
-               "error_handling": false
+               "modal_size": "md"
             },
             {
                "title": "Group",
@@ -5101,6 +5301,7 @@
                               "placeholder": "",
                               "title": "Variable where save the result",
                               "id": "result",
+                              "help": "Variable name without {}",
                               "css": "col-md-12",
                               "remove_vars": true
                            }
