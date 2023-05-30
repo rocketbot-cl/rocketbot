@@ -26,7 +26,7 @@
             "name": "languages/command_list_tree_en.json",
             "path": "languages/command_list_tree_en.json",
             "destination": "/languages/",
-            "version": "1.6.1",
+            "version": "1.8.0",
             "hash": "",
             "md5": "56be91ffdc25622a2c9d82f3d6d7a668"
         },
@@ -34,7 +34,7 @@
             "name": "languages/command_list_tree_es.json",
             "path": "languages/command_list_tree_es.json",
             "destination": "/languages/",
-            "version": "1.6.1",
+            "version": "1.8.0",
             "hash": "",
             "md5": "ebadbf7882351ac4f9d09eb4d3454038"
         },
@@ -42,7 +42,7 @@
             "name": "languages/command_list_tree_pr.json",
             "path": "languages/command_list_tree_pr.json",
             "destination": "/languages/",
-            "version": "1.6.1",
+            "version": "1.8.0",
             "hash": "",
             "md5": "f1392c71cfe14bde2efd52bf52adcefd"
         },
