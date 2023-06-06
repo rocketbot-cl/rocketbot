@@ -221,8 +221,8 @@
             "name": "endpoints/z_dev.roc",
             "path": "endpoints/z_dev.roc",
             "destination": "/endpoints/",
-            "version": "1.6.0",
-            "md5": "928b7bd2e50012dbb2844f249e07683b"
+            "version": "1.7.0",
+            "md5": "89c305f7801b8d4be51177e8a4728ee0"
         },
         {
             "name": "endpoints/z_market.roc",
