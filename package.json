@@ -235,8 +235,8 @@
             "name": "services/a_args.roc",
             "path": "services/a_args.roc",
             "destination": "/services/",
-            "version": "1.3.0",
-            "md5": "93aca454a96ed6b3158790e3088f5ab6"
+            "version": "1.4.0",
+            "md5": "a6f990422d9963947016176a0bef569a"
         },
         {
             "name": "services/a_license.roc",
@@ -256,8 +256,8 @@
             "name": "services/auth.roc",
             "path": "services/auth.roc",
             "destination": "/services/",
-            "version": "2.4.0",
-            "md5": "11dd39aac1e3c3d3c44a7e5daac8d41e"
+            "version": "2.5.0",
+            "md5": "76741c8d2485ef242de55fdaa75cc277"
         },
         {
             "name": "services/dashboard.roc",
