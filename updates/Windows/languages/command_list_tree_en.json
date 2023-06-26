@@ -328,7 +328,8 @@
       "variable_unsaved_changes": "Unsaved changes",
       "array_dimensions_not_same_length": "Array dimensions are not the same length",
       "cannot_create_var": "Var already exists or has not a valid name",
-      "view_array": "View array"
+      "view_array": "View array",
+      "cut_commands_confirmation": "Are you sure you want to cut the selected command(s)?"
    },
    "commands": [
       {
@@ -1639,7 +1640,8 @@
                "options": [ "SystemError", "RocketbotError", "BusinessError", "ValidationError"],
                "command_available": true,
                "group": "system",
-               "modal_size": "md"
+               "modal_size": "md",
+               "error_handling":false
             },
             {
                "visible": false,
@@ -2966,7 +2968,7 @@
                "group": "scripts",
                "setVar": false,
                "getResult": false,
-               "modal_size": "lg"
+               "modal_size": "xl"
             },
             {
                "visible": false,
@@ -3722,7 +3724,8 @@
                "command_available": false,
                "logic": false,
                "group": "logic",
-               "modal_size": "md"
+               "modal_size": "md",
+               "error_handling": false
             },
             {
                "title": "Group",
@@ -5301,7 +5304,6 @@
                               "placeholder": "",
                               "title": "Variable where save the result",
                               "id": "result",
-                              "help": "Variable name without {}",
                               "css": "col-md-12",
                               "remove_vars": true
                            }

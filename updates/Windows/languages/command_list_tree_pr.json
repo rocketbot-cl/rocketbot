@@ -297,8 +297,8 @@
         "today": "Hoje",
         "delete_all": "Excluir tudo os comandos",
         "cut": "Cortar",
-        "paste_inside_if": "Pegar dentro do ",
-        "paste_inside_else": "Pegar dentro do ",
+        "paste_inside_if": "Colar dentro do ",
+        "paste_inside_else": "Colar dentro do ",
         "robot_version_tooltip": "Não confundir com a versão de robô interno, que lista as alterações feitas a um robô depois de guardado. Esta versão está ao critério do utilizador e não afecta de forma alguma o funcionamento do robô.",
         "option": "Opção",
         "example": "Exemplo",
@@ -326,7 +326,8 @@
         "variable_unsaved_changes": "Alterações não guardadas",
         "array_dimensions_not_same_length": "As dimensões da matriz não têm o mesmo comprimento",
         "cannot_create_var": "A variável já existe ou não tem um nome válido",
-        "view_array": "Ver array"
+        "view_array": "Ver array",
+        "cut_commands_confirmation": "Tem a certeza de que quer cortar os comandos seleccionados?"
     },
     "commands": [
         {
@@ -2948,7 +2949,7 @@
                             "mac": true,
                             "docker": true,
                             "modal_size": "lg"
-                         }
+                        }
                     ]
                 }
             ]
@@ -2989,7 +2990,7 @@
                     "group": "scripts",
                     "setVar": false,
                     "getResult": false,
-                    "modal_size": "lg"
+                    "modal_size": "xl"
                 },
                 {
                     "title": "Executa JSON RocketBot",
@@ -3731,7 +3732,8 @@
                     "command_available": false,
                     "logic": false,
                     "group": "logic",
-                    "modal_size": "md"
+                    "modal_size": "md",
+                    "error_handling": false
                 },
                 {
                     "title": "Grupo",

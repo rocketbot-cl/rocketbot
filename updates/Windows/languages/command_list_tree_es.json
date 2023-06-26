@@ -326,7 +326,8 @@
     "variable_unsaved_changes": "Cambios sin guardar",
     "array_dimensions_not_same_length": "Las dimensiones del array no son del mismo tamaño",
     "cannot_create_var": "Variable ya existe o no tiene un nombre válido",
-    "view_array": "Ver array"
+    "view_array": "Ver array",
+    "cut_commands_confirmation": "¿Está seguro que quiere cortar los comandos seleccionados?"
   },
   "commands": [
     {
@@ -2900,7 +2901,7 @@
               "mac": true,
               "docker": true,
               "modal_size": "lg"
-           }
+            }
           ]
         }
       ]
@@ -2941,7 +2942,7 @@
           "group": "scripts",
           "setVar": false,
           "getResult": false,
-          "modal_size": "lg"
+          "modal_size": "xl"
         },
         {
           "title": "Ejecuta JSON RocketBot",
@@ -3683,7 +3684,8 @@
           "command_available": false,
           "logic": false,
           "group": "logic",
-          "modal_size": "md"
+          "modal_size": "md",
+          "error_handling": false
         },
         {
           "title": "Grupo",
