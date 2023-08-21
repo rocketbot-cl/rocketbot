@@ -71,7 +71,7 @@
             "name": "endpoints/desktoprecorder/",
             "path": "endpoints/desktoprecorder.zip",
             "destination": "/endpoints/",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "md5": "fa4454bcaf60d5f1e0a0519edfe14988"
         },
         {
@@ -157,7 +157,7 @@
             "name": "endpoints/a_desktoprecorder.roc",
             "path": "endpoints/a_desktoprecorder.roc",
             "destination": "/endpoints/",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "hash": "",
             "md5": "f35eaa583d33161234f494c4567c4f8d"
         },
