@@ -890,7 +890,7 @@
                 {
                     "title": "Enviar texto da web",
                     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOCwzMy4zMkgxMGExLjU2LDEuNTYsMCwwLDEtMS41NS0xLjU1VjE2LjIzQTEuNTYsMS41NiwwLDAsMSwxMCwxNC42OEgzOGExLjU2LDEuNTYsMCwwLDEsMS41NSwxLjU1VjMxLjc3QTEuNTYsMS41NiwwLDAsMSwzOCwzMy4zMloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwyOC42NkgyOS40NCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI4LjY2aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNC44OCwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDQsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LDE5LjM0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40NCwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQsMjRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4LjU2LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMy4xMSwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMjguNjZoMCIvPjwvc3ZnPg==",
-                    "visible": true,
+                    "visible": false,
                     "name": "Send keys Web",
                     "description": "Escreve o texto no objeto selecionado",
                     "title_options": "Tecla especial",
@@ -967,9 +967,398 @@
                     "modal_size": "md"
                 },
                 {
+                    "visible": true,
+                    "title": "Enviar texto Web",
+                    "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOCwzMy4zMkgxMGExLjU2LDEuNTYsMCwwLDEtMS41NS0xLjU1VjE2LjIzQTEuNTYsMS41NiwwLDAsMSwxMCwxNC42OEgzOGExLjU2LDEuNTYsMCwwLDEsMS41NSwxLjU1VjMxLjc3QTEuNTYsMS41NiwwLDAsMSwzOCwzMy4zMloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwyOC42NkgyOS40NCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI4LjY2aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNC44OCwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDQsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LDE5LjM0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40NCwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQsMjRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4LjU2LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMy4xMSwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMjguNjZoMCIvPjwvc3ZnPg==",
+                    "name": "Send keys Web",
+                    "description": "Escribnir texto en el objeto seleccionado",
+                    "title_options": "",
+                    "title_command": "Text",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Dato a buscar",
+                                    "en": "Data to search",
+                                    "pr": "Dado a buscar"
+                                },
+                                "description": {
+                                    "es": "Ponemos el selector del elemento al que queremos enviar tecla",
+                                    "en": "We put the selector of the element to which we want to send the key",
+                                    "pr": "Colocamos o seletor do elemento para o qual queremos enviar a chave"
+                                },
+                                "id": "data",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": {
+                                    "es": "",
+                                    "en": "",
+                                    "pr": ""
+                                },
+                                "title": {
+                                    "es": "Tipo de dato",
+                                    "en": "Data type",
+                                    "pr": "Tipo de dado"
+                                },
+                                "options": [
+                                    {
+                                        "title": "name",
+                                        "value": "name"
+                                    },
+                                    {
+                                        "title": "id",
+                                        "value": "id"
+                                    },
+                                    {
+                                        "title": "class",
+                                        "value": "class name"
+                                    },
+                                    {
+                                        "title": "xpath",
+                                        "value": "xpath"
+                                    },
+                                    {
+                                        "title": "tag",
+                                        "value": "tag name"
+                                    },
+                                    {
+                                        "title": "css selector",
+                                        "value": "css selector"
+                                    },
+                                    {
+                                        "title": "link text",
+                                        "value": "link text"
+                                    },
+                                    {
+                                        "title": "partial link text",
+                                        "value": "partial link text"
+                                    }
+                                ],
+                                "description": {
+                                    "es": "Tipo de dato a buscar",
+                                    "en": "Data type to search",
+                                    "pr": "Tipo de dado a buscar"
+                                },
+                                "id": "data_type",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Tiempo m\u00e1ximo de espera",
+                                    "en": "Maximum waiting time",
+                                    "pr": "Tempo m\u00e1ximo de espera"
+                                },
+                                "description": {
+                                    "es": "Tiempo m\u00e1ximo de espera por el elemento previo a ser seleccionado",
+                                    "en": "Maximum waiting time for the element prior to being selected",
+                                    "pr": "Tempo m\u00e1ximo de espera do elemento antes de ser seleccionado"
+                                },
+                                "id": "wait_time",
+                                "css": "col-md-6",
+                                "var_type": "int",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Texto a enviar",
+                                    "en": "Text to send",
+                                    "pr": "Texto a enviar"
+                                },
+                                "description": {
+                                    "es": "Texto a enviar al elemento seleccionado",
+                                    "en": "Text to send to the selected element",
+                                    "pr": "Texto a enviar para o elemento selecionado"
+                                },
+                                "id": "text",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": {
+                                    "es": "SPACE",
+                                    "en": "SPACE",
+                                    "pr": "SPACE"
+                                },
+                                "title": {
+                                    "es": "Tecla especial",
+                                    "en": "Special Key",
+                                    "pr": "Tecla especial"
+                                },
+                                "options": [
+                                    {
+                                        "title": "ADD",
+                                        "value": "ADD"
+                                    },
+                                    {
+                                        "title": "ALT",
+                                        "value": "ALT"
+                                    },
+                                    {
+                                        "title": "BACKSPACE",
+                                        "value": "BACKSPACE"
+                                    },
+                                    {
+                                        "title": "CANCEL",
+                                        "value": "CANCEL"
+                                    },
+                                    {
+                                        "title": "CLEAR",
+                                        "value": "CLEAR"
+                                    },
+                                    {
+                                        "title": "CONTROL",
+                                        "value": "CONTROL"
+                                    },
+                                    {
+                                        "title": "DECIMAL",
+                                        "value": "DECIMAL"
+                                    },
+                                    {
+                                        "title": "DELETE",
+                                        "value": "DELETE"
+                                    },
+                                    {
+                                        "title": "DIVIDE",
+                                        "value": "DIVIDE"
+                                    },
+                                    {
+                                        "title": "DOWN",
+                                        "value": "DOWN"
+                                    },
+                                    {
+                                        "title": "END",
+                                        "value": "END"
+                                    },
+                                    {
+                                        "title": "ENTER",
+                                        "value": "ENTER"
+                                    },
+                                    {
+                                        "title": "ESCAPE",
+                                        "value": "ESCAPE"
+                                    },
+                                    {
+                                        "title": "F1",
+                                        "value": "F1"
+                                    },
+                                    {
+                                        "title": "F2",
+                                        "value": "F2"
+                                    },
+                                    {
+                                        "title": "F3",
+                                        "value": "F3"
+                                    },
+                                    {
+                                        "title": "F4",
+                                        "value": "F4"
+                                    },
+                                    {
+                                        "title": "F5",
+                                        "value": "F5"
+                                    },
+                                    {
+                                        "title": "F6",
+                                        "value": "F6"
+                                    },
+                                    {
+                                        "title": "F7",
+                                        "value": "F7"
+                                    },
+                                    {
+                                        "title": "F8",
+                                        "value": "F8"
+                                    },
+                                    {
+                                        "title": "F9",
+                                        "value": "F9"
+                                    },
+                                    {
+                                        "title": "HELP",
+                                        "value": "HELP"
+                                    },
+                                    {
+                                        "title": "HOME",
+                                        "value": "HOME"
+                                    },
+                                    {
+                                        "title": "INSERT",
+                                        "value": "INSERT"
+                                    },
+                                    {
+                                        "title": "LEFT",
+                                        "value": "LEFT"
+                                    },
+                                    {
+                                        "title": "LEFT_CONTROL",
+                                        "value": "LEFT_CONTROL"
+                                    },
+                                    {
+                                        "title": "LEFT_SHIFT",
+                                        "value": "LEFT_SHIFT"
+                                    },
+                                    {
+                                        "title": "NUMPAD0",
+                                        "value": "NUMPAD0"
+                                    },
+                                    {
+                                        "title": "NUMPAD1",
+                                        "value": "NUMPAD1"
+                                    },
+                                    {
+                                        "title": "NUMPAD2",
+                                        "value": "NUMPAD2"
+                                    },
+                                    {
+                                        "title": "NUMPAD3",
+                                        "value": "NUMPAD3"
+                                    },
+                                    {
+                                        "title": "NUMPAD4",
+                                        "value": "NUMPAD4"
+                                    },
+                                    {
+                                        "title": "NUMPAD5",
+                                        "value": "NUMPAD5"
+                                    },
+                                    {
+                                        "title": "NUMPAD6",
+                                        "value": "NUMPAD6"
+                                    },
+                                    {
+                                        "title": "NUMPAD7",
+                                        "value": "NUMPAD7"
+                                    },
+                                    {
+                                        "title": "NUMPAD8",
+                                        "value": "NUMPAD8"
+                                    },
+                                    {
+                                        "title": "NUMPAD9",
+                                        "value": "NUMPAD9"
+                                    },
+                                    {
+                                        "title": "PAUSE",
+                                        "value": "PAUSE"
+                                    },
+                                    {
+                                        "title": "RETURN",
+                                        "value": "RETURN"
+                                    },
+                                    {
+                                        "title": "RIGHT",
+                                        "value": "RIGHT"
+                                    },
+                                    {
+                                        "title": "SEPARATOR",
+                                        "value": "SEPARATOR"
+                                    },
+                                    {
+                                        "title": "SHIFT",
+                                        "value": "SHIFT"
+                                    },
+                                    {
+                                        "title": "SPACE",
+                                        "value": "SPACE"
+                                    },
+                                    {
+                                        "title": "SUBTRACT",
+                                        "value": "SUBTRACT"
+                                    },
+                                    {
+                                        "title": "TAB",
+                                        "value": "TAB"
+                                    },
+                                    {
+                                        "title": "UP",
+                                        "value": "UP"
+                                    }
+                                ],
+                                "description": {
+                                    "es": "Tecla especial a enviar",
+                                    "en": "Special key to send",
+                                    "pr": "Tecla especial a enviar"
+                                },
+                                "id": "special",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": false,
+                                "default": null
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "options": false,
+                    "father": "sendkey_web",
+                    "group": "web",
+                    "linux": true,
+                    "windows": true,
+                    "mac": true,
+                    "docker": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "data",
+                            "var_type": "str",
+                            "description": "We put the selector of the element to which we want to send the key",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "data_type",
+                            "var_type": "str",
+                            "description": "Data type to search",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "wait_time",
+                            "var_type": "int",
+                            "description": "Maximum waiting time for the element prior to being selected",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "text",
+                            "var_type": "str",
+                            "description": "Text to send to the selected element",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "special",
+                            "var_type": "str",
+                            "description": "Special key to send",
+                            "required": false,
+                            "default": null
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "{name: \"Send keys to web\", description: \"Write text on the selected element on a web page\", params: \n[\n  {name: \"selector\", var_type: \"str\", description: \"The selector of the element to which we want to send the keys\", required: false, default: null}, \n  {name: \"data_type\", var_type: \"str\", description: \"The type of data to search for the element\", required: false, default: null}, \n  {name: \"wait_time\", var_type: \"int\", description: \"The maximum waiting time for the element to be selected\", required: false, default: null}, \n  {name: \"text\", var_type: \"str\", description: \"The text to send to the selected element\", required: false, default: null}, \n  {name: \"special_key\", var_type: \"str\", description: \"A special key to send along with the text\", required: false, default: null}\n], return: [], category: \"Web\", options: false}"
+                },
+                {
                     "title": "Clique no objeto",
                     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTEsLmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzI2MzIzODtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O30uY2xzLTF7c3Ryb2tlLW1pdGVybGltaXQ6MjA7fS5jbHMtMntzdHJva2UtbGluZWpvaW46cm91bmQ7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM1LjcxLDI3LjA2LDE5LjE2LDEzLjkzbC0uNTcsMjEuMTJMMjQsMzAuOGwzLjczLDhhMS40MSwxLjQxLDAsMCwwLDEuODkuNjlMMzIsMzguMzZhMS40MiwxLjQyLDAsMCwwLC42OS0xLjlsLTMuNzItOFoiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yOC41OSwxMi4wN2wtMS40OS41OCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0LjMsOC4zN2wtLjU4LDEuMzEiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xNy44OCw4LjU1bC41MSwxLjMzIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTQuMzUsMTMuMjgsMTMsMTIuNyIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTEzLjc4LDE3Ljc3bC0xLjQ5LjU4Ii8+PC9zdmc+",
-                    "visible": true,
+                    "visible": false,
                     "name": "Click on object",
                     "description": "Clica no objeto selecionado",
                     "title_options": "Tipo de dado",
@@ -988,6 +1377,225 @@
                     "command_available": true,
                     "group": "web",
                     "modal_size": "md"
+                },
+                {
+                    "title": "Click no objeto",
+                    "description": "Clica no objeto selecionado",
+                    "title_options": "Seleccione una opci\u00f3n",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Dato a buscar",
+                                    "en": "Data to search",
+                                    "pr": "Dado a buscar"
+                                },
+                                "description": {
+                                    "es": "Ponemos el selector del elemento que queremos clickear",
+                                    "en": "We put the selector of the element which we want to click",
+                                    "pr": "Colocamos o seletor do elemento que queremos clicar"
+                                },
+                                "id": "data",
+                                "css": "col-md-9",
+                                "var_type": "str",
+                                "required": true,
+                                "default": null
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": {
+                                    "es": "",
+                                    "en": "",
+                                    "pr": ""
+                                },
+                                "title": {
+                                    "es": "Tipo de dato",
+                                    "en": "Data type",
+                                    "pr": "Tipo de dado"
+                                },
+                                "options": [
+                                    {
+                                        "title": "name",
+                                        "value": "name"
+                                    },
+                                    {
+                                        "title": "id",
+                                        "value": "id"
+                                    },
+                                    {
+                                        "title": "class",
+                                        "value": "class name"
+                                    },
+                                    {
+                                        "title": "xpath",
+                                        "value": "xpath"
+                                    },
+                                    {
+                                        "title": "tag",
+                                        "value": "tag name"
+                                    },
+                                    {
+                                        "title": "css selector",
+                                        "value": "css selector"
+                                    },
+                                    {
+                                        "title": "link text",
+                                        "value": "link text"
+                                    },
+                                    {
+                                        "title": "partial link text",
+                                        "value": "partial link text"
+                                    }
+                                ],
+                                "description": {
+                                    "es": "Tipo de dato a buscar",
+                                    "en": "Data type to search",
+                                    "pr": "Tipo de dado a buscar"
+                                },
+                                "id": "data_type",
+                                "css": "col-md-3",
+                                "var_type": "str",
+                                "required": true,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Esperar antes",
+                                    "en": "Wait before",
+                                    "pr": "Espere antes"
+                                },
+                                "description": {
+                                    "es": "Tiempo de espera antes de buscar el elemento",
+                                    "en": "Sleep time before searching the element",
+                                    "pr": "Tempo de espera antes de pesquisar o elemento"
+                                },
+                                "id": "before",
+                                "css": "col-md-3",
+                                "var_type": "int",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Tiempo m\u00e1ximo de espera",
+                                    "en": "Maximum waiting time",
+                                    "pr": "Tempo m\u00e1ximo de espera"
+                                },
+                                "description": {
+                                    "es": "Tiempo m\u00e1ximo de espera por el elemento previo a ser seleccionado",
+                                    "en": "Maximum waiting time for the element prior to being selected",
+                                    "pr": "Tempo m\u00e1ximo de espera do elemento antes de ser seleccionado"
+                                },
+                                "id": "wait_time",
+                                "css": "col-md-3",
+                                "var_type": "int",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Esperar despues",
+                                    "en": "Wait after",
+                                    "pr": "Espere depois"
+                                },
+                                "description": {
+                                    "es": "Tiempo de espera posterior a clickear el elemento",
+                                    "en": "Sleep time after clicking the element",
+                                    "pr": "Tempo de espera ap\u00f3s clicar o elemento"
+                                },
+                                "id": "after",
+                                "css": "col-md-3",
+                                "var_type": "int",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Mover a elemento",
+                                    "en": "Move to element",
+                                    "pr": "Mover para o elemento"
+                                },
+                                "description": {
+                                    "es": "Mover al elemento a clickear",
+                                    "en": "Move to the element to click",
+                                    "pr": "V\u00e1 at\u00e9 o elemento para clicar"
+                                },
+                                "id": "move",
+                                "css": "col-md-3",
+                                "var_type": "bool",
+                                "required": false,
+                                "default": null
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTEsLmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzI2MzIzODtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O30uY2xzLTF7c3Ryb2tlLW1pdGVybGltaXQ6MjA7fS5jbHMtMntzdHJva2UtbGluZWpvaW46cm91bmQ7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM1LjcxLDI3LjA2LDE5LjE2LDEzLjkzbC0uNTcsMjEuMTJMMjQsMzAuOGwzLjczLDhhMS40MSwxLjQxLDAsMCwwLDEuODkuNjlMMzIsMzguMzZhMS40MiwxLjQyLDAsMCwwLC42OS0xLjlsLTMuNzItOFoiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yOC41OSwxMi4wN2wtMS40OS41OCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0LjMsOC4zN2wtLjU4LDEuMzEiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xNy44OCw4LjU1bC41MSwxLjMzIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTQuMzUsMTMuMjgsMTMsMTIuNyIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTEzLjc4LDE3Ljc3bC0xLjQ5LjU4Ii8+PC9zdmc+",
+                    "visible": true,
+                    "options": false,
+                    "father": "click_web",
+                    "group": "web",
+                    "linux": true,
+                    "windows": true,
+                    "mac": true,
+                    "docker": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "data",
+                            "var_type": "str",
+                            "description": "We put the selector of the element which we want to click",
+                            "required": true,
+                            "default": null
+                        },
+                        {
+                            "name": "data_type",
+                            "var_type": "str",
+                            "description": "Data type to search",
+                            "required": true,
+                            "default": null
+                        },
+                        {
+                            "name": "before",
+                            "var_type": "int",
+                            "description": "Sleep time before searching the element",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "wait_time",
+                            "var_type": "int",
+                            "description": "Maximum waiting time for the element prior to being selected",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "after",
+                            "var_type": "int",
+                            "description": "Sleep time after clicking the element",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "move",
+                            "var_type": "bool",
+                            "description": "Move to the element to click",
+                            "required": false,
+                            "default": null
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "**Click on object**\n\nThis command allows you to automate clicking on a specific object on a web page. It is commonly used to interact with buttons, links, checkboxes, or any other clickable element.\n\nTo use this command, you need to provide the following information:\n\n- **data**: Specify the selector of the element you want to click. The selector can be an ID, class name, XPath, or any other valid selector.\n- **data_type**: Specify the type of data used to search for the element. For example, if you are using XPath, set the value as \"xpath\". This helps the command to identify the correct element on the page.\n- **before** (optional): Set the sleep time (in milliseconds) before searching for the element. It allows the page to load properly before interacting with the element.\n- **wait_time** (optional): Set the maximum waiting time (in milliseconds) for the element to appear on the page before being selected. Use this parameter if the element you want to click is loaded dynamically or takes some time to appear.\n- **after** (optional): Set the sleep time (in milliseconds) after clicking the element. It provides time for any subsequent actions to be performed after clicking.\n- **move** (optional): Set"
                 },
                 {
                     "title": "Mover hasta element",
