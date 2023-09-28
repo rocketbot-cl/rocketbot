@@ -18,7 +18,7 @@
             "name": "web/dev/",
             "path": "web/dev.zip",
             "destination": "/web/dev/",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "hash": "",
             "md5": "238cd6392f5684a0a22eaed1f5067e27"
         },
@@ -26,7 +26,7 @@
             "name": "languages/command_list_tree_en.json",
             "path": "languages/command_list_tree_en.json",
             "destination": "/languages/",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "hash": "",
             "md5": "bc535a8f32f578e34e941053432058a2"
         },
@@ -34,7 +34,7 @@
             "name": "languages/command_list_tree_es.json",
             "path": "languages/command_list_tree_es.json",
             "destination": "/languages/",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "hash": "",
             "md5": "ec0b1374cf38b94fff673b669f4fd29c"
         },
@@ -50,7 +50,7 @@
             "name": "debugger/",
             "path": "debugger.zip",
             "destination": "/",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "md5": "c5297f7574ea2fff7f3c7e565368e04c"
         },
         {
