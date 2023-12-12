@@ -335,7 +335,22 @@
         "default_value": "Valor por defeito",
         "required": "Obrigatório",
         "command_not_found": "Comando não encontrado",
-        "details": "Detalhes"
+        "details": "Detalhes",
+        "table_input_not_valid": "A entrada da input não é válida",
+        "invalid_header_found": "Cabeçalho inválido encontrado",
+        "encryptedVar": "Encriptado",
+        "error_encrypting_data": "Erro ao encriptar dados",
+        "refresh_encrypting_data": "Actualizar dados encriptados?",
+        "encrypted": "Encriptado",
+        "error_sending_var_data": "Erro ao enviar dados da variável",
+        "omit_logs": "Omitir logs",
+        "log_destination": "Destino do log",
+        "log_path": "Caminho do log",
+        "rocketbot_folder": "Pasta Rocketbot",
+        "db_folder": "Pasta DB",
+        "custom_path": "Caminho personalizado",
+        "new_version": "Nova versão",
+        "update_warning_info": "Não atualize apenas um arquivo se você não precisar de uma funcionalidade específica da nova versão. Se você atualizar apenas um arquivo, poderá ter problemas com alguns recursos."
     },
     "commands": [
         {
