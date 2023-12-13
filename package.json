@@ -1,7 +1,7 @@
 {
     "name": "rocketbot-studio",
     "version": "2023.11.10",
-    "build": "production",
+    "build": "main",
     "author": "Rocketbot",
     "id": "92225902",
     "sha": "20fe2a480ae52f849c67537d7c48acce4e4ce7ec",
