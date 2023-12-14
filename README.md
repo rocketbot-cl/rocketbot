@@ -1,26 +1,37 @@
-# Rocketbot v20230320
+# Rocketbot v20231230
 
-## Updates 2023-06-01
+## Updates 2023-12-15
 
 ### Added
-- Array type in vars: show a python list as a table
-- The unsaved changes alert has been extended to all types of robot modifications with the exception of version and robot type.
-- Variables can be added from Assign resulto to varible inputs.
-- Extended error handling options to all commands, except Group, Break, Trycatch, and Raise Error.
-- Commands to work with jsons
-- New Http command: Download File
-- New web commands: Move to element, get attribute and get current url
+
+- `rpaweb`: Add new functionallity to click command. Now you can scroll to the element before click it and wait for the element to be clickable.
+- `rpaweb`: Add new functionallity to send keys command. Now you can send keys to a specific element withouth the need to click it before.
+- `rpasystem`: New command to get command line arguments.
+- `rpasystem`: New command to set multiple variables from a list of values.
+- `rpavirtual`: Added the possibility to use the same screenshot for different resolutions.
+- `web`: Add long description to all commands.
+- `framework`: Add new export method to export projects that include framework, resouces and modules.
+- `core`: Add the possibility to disable logs for a specific robot.
+- `core`: Add new internal variables to get the robot name, project path and database path.
+- `core`: Add the possibility to choose the log path for a specific robot.
+- `rpascripts`: Now you can use separate modules for each robot.
+- `variables`: Add new variable type to encrypt the value.
+- `variables`: Add default value to variables.
+- `variables`: Added buttons to delete and clear all variables in category.
+- `updater`: Now the updater is included in the studio and don't need to download updates from external app.
+- `a_activatelicense`: New services to update online license automatically.
+- `a_args`: New argument to desactivate logs for the robot in execution. `--no-log`
+
 
 ### Fix
-- For loop: fix break command and iteration bugs
-- Change style in name robot input: When attempting to edit the robot name from the sidebar, user will be redirected to the robot info panel
-- Create automatic titles in exposed variable
-- When clicking outside a command modal, changes won`t be made or the command won`t be created.
-- Fixed a bug that occurred when editing a command and then cloning another one.
-- Fixed a bug that caused the site to crash when duplicate modules were in the modules folder and commands were being filtered.
-- Errror in Set sheet command
-- Acept data with quotes in expose command
-- Acept variables in wait for object command
+- `auth`: Fix bug in login view for orchestrator license on studio.
+- `auth`: Remove error message when user is not logged in with orchestrator license.
+- `driverupdater`: Increase timeout to 80 seconds.
+- `rpavirtual`: Fix bug when opening Rocketbot from a shortcut.
+- `rpavirtual` - mac: Fix double click bug.
+- `core`: Fix license bug when the computer is restarted.
+- `updater`: Create a backup folder before updating.
+
 
 ## How to install
 
