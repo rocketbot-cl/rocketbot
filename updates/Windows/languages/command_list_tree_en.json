@@ -433,7 +433,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The \"Open Browser\" command is used to automate the process of opening a web browser and navigating to a specific URL. This command is primarily used in web automation tasks.\n\nTo use the \"Open Browser\" command, you need to provide the following parameters:\n\n1. \"option\" - This parameter is used to specify the browser that you want to open. It can take one of the following options: \"chrome\", \"firefox\", \"ie\", or \"safari\". This parameter is required.\n\n2. \"url\" (optional) - This parameter is used to specify the URL that you want to open in the browser. If you provide a URL, the command will navigate to that URL after opening the browser. If you don't provide a URL, the browser will open without navigating to any specific page.\n\n3. \"id_driver\" (optional) - This parameter is used to specify an identifier for the browser instance. If you want to perform specific actions on a particular browser instance later in your automation workflow, you can provide an identifier for that instance using this parameter.\n\n4. \"profile\" (optional) - This parameter is used to specify the path to a profile folder for the browser. Profile folders store user-specific data such as cookies, preferences, and history. By"
+                    "long_description": "The \"Open Browser\" command is used to automate the process of opening a web browser and navigating to a specific URL. This command is primarily used in web automation tasks.\n\nTo use the \"Open Browser\" command, you need to provide the following parameters:\n\n1. \"option\" - This parameter is used to specify the browser that you want to open. It can take one of the following options: \"chrome\", \"firefox\", \"ie\", or \"safari\". This parameter is required.\n\n2. \"url\" (optional) - This parameter is used to specify the URL that you want to open in the browser. If you provide a URL, the command will navigate to that URL after opening the browser. If you don't provide a URL, the browser will open without navigating to any specific page.\n\n3. \"id_driver\" (optional) - This parameter is used to specify an identifier for the browser instance. If you want to perform specific actions on a particular browser instance later in your automation workflow, you can provide an identifier for that instance using this parameter.\n\n4. \"profile\" (optional) - This parameter is used to specify the path to a profile folder for the browser. Profile folders store user-specific data such as cookies, preferences, and history."
                 },
                 {
                     "visible": true,
@@ -476,10 +476,10 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "**Command Name:** Open URL\n**Category:** Web\n\n**Description:**\nThe Open URL command allows you to open a specified URL in the active browser. This command is useful for automating tasks that involve visiting websites or navigating to specific web pages.\n\n**Parameters:**\n- `URL` (required): This parameter specifies the URL to be opened. It must be a valid URL in the form of a string. Provide the complete URL including the protocol (e.g., http:// or https://).\n\n**Usage:**\n1. Drag and drop the Open URL command into your automation script.\n2. In the parameters section, enter the URL you want to open in the `URL` field.\n3. Run the automation script.\n4. The command will open the specified URL in the currently active browser window.\n\n**Example:**\nSuppose you want to automate the process of checking your email. You can use the Open URL command to open your email provider's login page. \n\n1. Add the Open URL command to your automation script.\n2. In the `URL` parameter, enter the login page URL of your email provider.\n3. Run the script, and it will automatically open the login page in your default browser.\n4. You can then proceed with automating"
+                    "long_description": "The Open URL command allows you to open a specified URL in the active browser. This command is useful for automating tasks that involve visiting websites or navigating to specific web pages.\n\n**Parameters:**\n- `URL` (required): This parameter specifies the URL to be opened. It must be a valid URL in the form of a string. Provide the complete URL including the protocol (e.g., http:// or https://).\n\n**Usage:**\n1. Drag and drop the Open URL command into your automation script.\n2. In the parameters section, enter the URL you want to open in the `URL` field.\n3. Run the automation script.\n4. The command will open the specified URL in the currently active browser window.\n\n**Example:**\nSuppose you want to automate the process of checking your email. You can use the Open URL command to open your email provider's login page. \n\n1. Add the Open URL command to your automation script.\n2. In the `URL` parameter, enter the login page URL of your email provider.\n3. Run the script, and it will automatically open the login page in your default browser.\n4. You can then proceed with automating"
                 },
                 {
-                    "title": "Get current url",
+                    "title": "Get current URL",
                     "description": "Get the url of the currently loaded page",
                     "title_options": "Seleccione una opci\u00f3n",
                     "form": {
@@ -543,7 +543,7 @@
                             "title": "Inject library Js",
                             "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMjYzMjM4O30uY2xzLTJ7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48ZyBpZD0iXzJYYUVtNC50aWYiIGRhdGEtbmFtZT0iMlhhRW00LnRpZiI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDAuODUsOC45MlYzOWEyLjQ5LDIuNDksMCwwLDEtMi43OCwxLjc3Yy05LjQ1LDAtMTguOSwwLTI4LjM1LDBhMi4yMSwyLjIxLDAsMCwxLTIuNDgtMi40OFYxNS41YzAtMiwwLTQsMC02LjA2YTIuMSwyLjEsMCwwLDEsLjg0LTEuODFBNSw1LDAsMCwxLDksNy4xNUgzOS4wOEEyLjQ4LDIuNDgsMCwwLDEsNDAuODUsOC45MlpNMzkuMjUsMjRWOS42M2MwLS43NC0uMTQtLjg4LS44OC0uODhIOS43NWMtLjc4LDAtLjkxLjEzLS45MS44OVYzOC4yNmMwLC43Ny4xMy45LjkuOUgzOC4zMmMuOCwwLC45My0uMTMuOTMtLjkyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTksNy4xNWE1LDUsMCwwLDAtLjkyLjQ4LDIuMSwyLjEsMCwwLDAtLjg0LDEuODFjMCwyLDAsNCwwLDYuMDZWMzguMjhhMi4yMSwyLjIxLDAsMCwwLDIuNDgsMi40OGM5LjQ1LDAsMTguOSwwLDI4LjM1LDBBMi40OSwyLjQ5LDAsMCwwLDQwLjg1LDM5djEuODVINy4xNVY3LjE1WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQwLjg1LDguOTJhMi40OCwyLjQ4LDAsMCwwLTEuNzctMS43N2gxLjc3WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM2LjcyLDI0LjgxbC0yLjMzLDEuNWMtLjE2LS4yMi0uMjktLjQxLS40NC0uNTlhMS44OCwxLjg4LDAsMCwwLTItLjY0LDEuMzEsMS4zMSwwLDAsMC0uNTUsMi4zLDExLDExLDAsMCwwLDEuNDYuODIsMzEuMTMsMzEuMTMsMCwwLDEsMi44MiwxLjQ0LDQuMTgsNC4xOCwwLDAsMSwxLjgsNC43OEEzLjgyLDMuODIsMCwwLDEsMzUsMzcuMTRhNi43MSw2LjcxLDAsMCwxLTQuNTksMCw1LjM5LDUuMzksMCwwLDEtMy4xMS0yLjg0bDIuMzYtMS41OGMuMy4zOS41NS43Ny44NCwxLjExYTIuNjUsMi42NSwwLDAsMCwyLjg0Ljg2LDEuMzYsMS4zNiwwLDAsMCwxLjExLTEuMDcsMS4zOCwxLjM4LDAsMCwwLS41Ny0xLjU2Yy0uNjctLjQtMS4zOS0uNzEtMi4wOC0xLjA3YTE2LjIsMTYuMiwwLDAsMS0yLTEuMDksNC4yLDQuMiwwLDAsMS0xLjYzLTQuNzZBNC4xMyw0LjEzLDAsMCwxLDMyLDIyLjM3YTQuNiw0LjYsMCwwLDEsNC42NCwyLjI3QS45My45MywwLDAsMSwzNi43MiwyNC44MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNi4wNiwzNC4zNWwyLjQ3LTEuNS4zNS40NmEyLjQxLDIuNDEsMCwwLDAsMi4zLDEsMS4yLDEuMiwwLDAsMCwxLjE3LTEsNS4yNiw1LjI2LDAsMCwwLC4wOS0xYzAtMy4xLDAtNi4xOSwwLTkuMjlWMjIuNGgzLjE3YzAsLjEyLDAsLjI3LDAsLjQxdjEwYTUuNyw1LjcsMCwwLDEtLjUxLDIuNTgsMy45LDMuOSwwLDAsMS0zLDIuMDksNS42NCw1LjY0LDAsMCwxLTYtMi44OFoiLz48L2c+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTYuMjksMjBWMTIiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMi44MiwxNi40NywxNi4yOSwyMGwzLjQ3LTMuNDgiLz48L3N2Zz4=",
                             "name": "Inject library Js",
-                            "description": "Inject library into browser from url (jQuery, moment, etc)",
+                            "description": "Inject library into browser from a URL (jQuery, moment, etc)",
                             "title_options": "",
                             "title_command": "URL with http:// to library",
                             "father": "injectjs",
@@ -636,7 +636,7 @@
                     "title": "Change to IFRAME",
                     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNCw0MS4wNkExNy4wNiwxNy4wNiwwLDEsMCw2Ljk0LDI0LDE3LjA2LDE3LjA2LDAsMCwwLDI0LDQxLjA2WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LDQxLjA2YzMuNzcsMCw2LjgyLTcuNjQsNi44Mi0xNy4wNlMyNy43Nyw2Ljk0LDI0LDYuOTQsMTcuMTgsMTQuNTgsMTcuMTgsMjQsMjAuMjMsNDEuMDYsMjQsNDEuMDZaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNy43MywyOS4xMmExNywxNywwLDAsMSwwLTEwLjI0SDQwLjI3YTE3LDE3LDAsMCwxLDAsMTAuMjRaIi8+PC9zdmc+",
                     "name": "Change to IFRAME",
-                    "description": "Change to IFRAME and set content by default",
+                    "description": "Change to IFRAME and set its content as default",
                     "title_options": "Data type",
                     "title_command": "Data to search",
                     "father": "swichtoframe",
@@ -828,7 +828,7 @@
                         {
                             "name": "data",
                             "var_type": "str",
-                            "description": "We put the selector of the element which we want to see",
+                            "description": "Selector of the element we want to select",
                             "required": true,
                             "default": null
                         },
@@ -897,7 +897,7 @@
                             "description": "Variable name where the output of the command will be stored"
                         }
                     ],
-                    "long_description": "**Command: Extract Text**\n\n**Description:** This command is used to extract text from an object on a webpage.\n\n**Parameters:**\n- **command** (required): This parameter indicates the data to search for. It can be a specific text, a regular expression, or any other valid search query.\n\n- **option** (required): This parameter specifies the type of data to be extracted. It allows you to select from various options such as name, id, class, xpath, tag, link text, partial link text, or css selector. \n\n**Return:**\n- **result**: The output of the command, i.e., the extracted text, will be stored in a variable specified by this parameter.\n\n**Category:** Web Automation\n\n**How to Use:**\n1. Begin by using the `Extract text` command in your automation workflow.\n2. Provide the necessary input values for the `command` and `option` parameters to define the search criteria for the text extraction.\n3. Specify the name of the variable where the extracted text will be stored using the `result` parameter.\n4. Execute the command, and it will search for the specified text based on the provided option on the webpage.\n5. The extracted text will be stored in the specified variable,"
+                    "long_description": "**Command: Extract Text**\n\n**Description:** This command is used to extract text from an object on a webpage.\n\n**Parameters:**\n- **command** (required): This parameter indicates the data to search for. It can be a specific text, a regular expression, or any other valid search query.\n\n- **option** (required): This parameter specifies the type of data to be extracted. It allows you to select from various options such as name, id, class, xpath, tag, link text, partial link text, or css selector. \n\n**Return:**\n- **result**: The output of the command, i.e., the extracted text, will be stored in a variable specified by this parameter.\n\n**Category:** Web Automation\n\n**How to Use:**\n1. Begin by using the `Extract text` command in your automation workflow.\n2. Provide the necessary input values for the `command` and `option` parameters to define the search criteria for the text extraction.\n3. Specify the name of the variable where the extracted text will be stored using the `result` parameter.\n4. Execute the command, and it will search for the specified text based on the provided option on the webpage.\n5. The extracted text will be stored in the specified variable."
                 },
                 {
                     "visible": false,
@@ -1076,7 +1076,7 @@
                             "default": null
                         }
                     ],
-                    "long_description": "The \"Extract table\" command is used to extract table data from a web page and save it in an array. This command is useful when you need to automate the extraction of tabular data such as product listings, financial information, or any other type of data presented in a table format.\n\nTo use this command, you need to provide the following parameters:\n\n1. \"identificator\" (required): This parameter specifies the data to search for in the webpage's table. You can provide a string value to search for specific data.\n\n2. \"option\" (required): This parameter specifies the type of identifier to use for locating the table on the webpage. You can choose from the available options such as \"name\", \"id\", \"class\", \"xpath\", or \"tag\". This will determine the method used to locate the table element.\n\n3. \"encode\" (optional): This parameter is a boolean value that determines whether the result of the command should be encoded. If set to true, the result will be encoded; otherwise, it will be returned as plain text. This can be useful when working with text that requires encoding.\n\n4. \"code\" (optional): This parameter allows you to specify the type of encoding to use if the \"encode\" parameter is set"
+                    "long_description": "The \"Extract table\" command is used to extract table data from a web page and save it in an array. This command is useful when you need to automate the extraction of tabular data such as product listings, financial information, or any other type of data presented in a table format.\n\nTo use this command, you need to provide the following parameters:\n\n1. \"identificator\" (required): This parameter specifies the data to search for in the webpage's table. You can provide a string value to search for specific data.\n\n2. \"option\" (required): This parameter specifies the type of identifier to use for locating the table on the webpage. You can choose from the available options such as \"name\", \"id\", \"class\", \"xpath\", or \"tag\". This will determine the method used to locate the table element.\n\n3. \"encode\" (optional): This parameter is a boolean value that determines whether the result of the command should be encoded. If set to true, the result will be encoded; otherwise, it will be returned as plain text. This can be useful when working with text that requires encoding.\n\n4. \"code\" (optional): This parameter allows you to specify the type of encoding to use if the \"encode\" parameter is set, the result will be decoded. \n5.  \"result\" This parameter specifies the name of the variable where the extracted text will be stored."
                 },
                 {
                     "visible": true,
@@ -1125,7 +1125,7 @@
                             "description": "Variable name where the output of the command will be stored"
                         }
                     ],
-                    "long_description": "**Command: Get the input value**\n\n**Description:**\n\nThe \"Get the input value\" command is used to retrieve the value of an input field on a web page. This command is commonly used in web automation tasks where you need to extract or verify the content of an input field.\n\n**Parameters:**\n\n- **command:** This parameter is used to specify the specific input field you want to retrieve the value from. You can provide different attributes such as the name, id, class, xpath, tag, link text, partial link text, or CSS selector of the input field.\n\n- **option:** This parameter is used to specify the data type of the input field value you want to retrieve. You can choose from options such as text, number, email, password, etc.\n\n**Return:**\n\n- **result:** This is a variable where the output of the command will be stored. The retrieved value of the input field will be stored in this variable for further use in your automation tasks.\n\n**Working with the \"Get the input value\" command:**\n\n1. Begin by adding the \"Get the input value\" command to your automation task.\n\n2. Specify the target input field from which you want to retrieve the value by providing the appropriate attribute in the \"command\""
+                    "long_description": "**Command: Get the input value**\n\n**Description:**\n\nThe \"Get the input value\" command is used to retrieve the value of an input field on a web page. This command is commonly used in web automation tasks where you need to extract or verify the content of an input field.\n\n**Parameters:**\n\n- **command:** This parameter is used to specify the specific input field you want to retrieve the value from. You can provide different attributes such as the name, id, class, xpath, tag, link text, partial link text, or CSS selector of the input field.\n\n- **option:** This parameter is used to specify the data type of the input field value you want to retrieve. You can choose from options such as text, number, email, password, etc.\n\n**Return:**\n\n- **result:** This is a variable where the output of the command will be stored. The retrieved value of the input field will be stored in this variable for further use in your automation tasks.\n\n**Working with the \"Get the input value\" command:**\n\n1. Begin by adding the \"Get the input value\" command to your automation task.\n\n2. Provide the necessary input values for the \"command\" and \"option\" parameters to define the search criteria for the text extraction.\n\n3. Specify the name of the variable where the extracted input will be stored using the \"result\" parameter.\n\n4. Execute the command, and it will search for the specified input based on the provided option on the webpage.\n\n5. The extracted input will be stored in the specified variable."
                 },
                 {
                     "visible": true,
@@ -1178,7 +1178,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The \"Get image from object\" command is used to download an image of an object from a web page while preserving the size of the object. In order to use this command, you need to ensure that the screen and browser size are set to 100%.\n\nTo use this command, you need to provide the following parameters:\n- \"search\" (string, required): The data you want to search for.\n- \"option\" (string, required): The data type you want to search for.\n- \"pathfile\" (string, required): The path where you want to save the downloaded image.\n\nAdditionally, you have the option to specify the object to search for using the following options:\n- \"name\"\n- \"id\"\n- \"class\"\n- \"xpath\"\n- \"tag\"\n- \"link text\"\n- \"partial link text\"\n- \"css selector\"\n\nBy specifying one of these options, you can narrow down the search for the object on the web page.\n\nOnce you have provided the required parameters and selected the appropriate search option, the command will download the image of the object and save it to the specified path. Make sure to set the screen and browser size to 100% to ensure accurate image preservation.\n\nPlease note that this command does not return any values"
+                    "long_description": "The \"Get image from object\" command is used to download an image of an object from a web page while preserving the size of the object. In order to use this command, you need to ensure that the screen and browser size are set to 100%.\n\nTo use this command, you need to provide the following parameters:\n- \"search\" (string, required): The data you want to search for.\n- \"option\" (string, required): The data type you want to search for.\n- \"pathfile\" (string, required): The path where you want to save the downloaded image.\n\nAdditionally, you have the option to specify the object to search for using the following options:\n- \"name\"\n- \"id\"\n- \"class\"\n- \"xpath\"\n- \"tag\"\n- \"link text\"\n- \"partial link text\"\n- \"css selector\"\n\nBy specifying one of these options, you can narrow down the search for the object on the web page.\n\nOnce you have provided the required parameters and selected the appropriate search option, the command will download the image of the object and save it to the specified path. Make sure to set the screen and browser size to 100% to ensure accurate image preservation.\n\nPlease note that this command does not return any values."
                 },
                 {
                     "title": "Get attribute",
@@ -1354,7 +1354,7 @@
                             "default": null
                         }
                     ],
-                    "long_description": "The \"Get attribute\" command allows you to retrieve a specific attribute value from an element on a webpage. This command is particularly helpful when you want to extract specific information from an element, such as the text inside a paragraph or the href attribute of a link.\n\nTo use the \"Get attribute\" command, you need to provide the following parameters:\n\n1. **data**: This parameter requires you to input the selector of the element from which you want to retrieve the attribute value. The selector should uniquely identify the element on the webpage.\n\n2. **data_type**: This parameter specifies the type of data you want to search for. You can choose from a range of data types, such as text, link, image, or any other attribute available in the element.\n\n3. **attribute**: Here, you need to specify the attribute of the element from which you want to retrieve the value. For example, if you want to extract the href attribute of a link, you would enter \"href\" as the attribute.\n\nThe \"Get attribute\" command will store the retrieved value in a variable that you need to specify using the **var_** return parameter.\n\nLet's say, for example, you want to extract the href attribute value from a link on a webpage. You would use the"
+                    "long_description": "The \"Get attribute\" command allows you to retrieve a specific attribute value from an element on a webpage. This command is particularly helpful when you want to extract specific information from an element, such as the text inside a paragraph or the href attribute of a link.\n\nTo use the \"Get attribute\" command, you need to provide the following parameters:\n\n1. **data**: This parameter requires you to input the selector of the element from which you want to retrieve the attribute value. The selector should uniquely identify the element on the webpage.\n\n2. **data_type**: This parameter specifies the type of data you want to search for. You can choose from a range of data types, such as text, link, image, or any other attribute available in the element.\n\n3. **attribute**: Here, you need to specify the attribute of the element from which you want to retrieve the value. For example, if you want to extract the href attribute of a link, you would enter \"href\" as the attribute.\n\nThe \"Get attribute\" command will store the retrieved value in a variable that you need to specify using the **var_** return parameter.\n\nLet's say, for example, you want to extract the href attribute value from a link on a webpage:\nYou would use the id, or may be the xpath of the element as \"data\"; would select the picked option into \"data_type\" input and would set 'href' as \"attribute\" in order to get the result into the variable setted into \"var_\"."
                 },
                 {
                     "visible": false,
@@ -1822,7 +1822,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "{name: \"Send keys to web\", description: \"Write text on the selected element on a web page\", params: \n[\n  {name: \"selector\", var_type: \"str\", description: \"The selector of the element to which we want to send the keys\", required: false, default: null}, \n  {name: \"data_type\", var_type: \"str\", description: \"The type of data to search for the element\", required: false, default: null}, \n  {name: \"wait_time\", var_type: \"int\", description: \"The maximum waiting time for the element to be selected\", required: false, default: null}, \n  {name: \"text\", var_type: \"str\", description: \"The text to send to the selected element\", required: false, default: null}, \n  {name: \"special_key\", var_type: \"str\", description: \"A special key to send along with the text\", required: false, default: null}\n], return: [], category: \"Web\", options: false}"
+                    "long_description": "The \"Send keys\" command allows you to send a sequence of keystrokes to a specific element on a webpage. This command is particularly helpful when you want to simulate the typing of a text string into an input field or any other element that accepts text.\n\nTo use the \"Send keys\" command, you need to provide the following parameters:\n\n1. **data**: This parameter requires you to input the selector of the element to which you want to send the keystrokes. The selector should uniquely identify the element on the webpage.\n\n2. **data_type**: This parameter specifies the type of data you want to search for. You can choose from a range of data types, such as text, link, image, or any other attribute available in the element.\n\n3. **wait_time**: Here, you need to specify the maximum waiting time for the element prior to being selected. The default value is 10 seconds.\n\n4. **text**: This parameter requires you to input the text string that you want to send to the selected element.\n\n5. **special**: Here, you need to specify the special key that you want to send to the selected element. For example, if you want to send the \"ENTER\" key, you would enter \"ENTER\" as the special key.\n\nLet's say, for example, you want to send the \"ENTER\" key to a text field on a webpage:\nYou would use the id, or may be the xpath of the element as \"data\"; would select the picked option into \"data_type\" input and would set 'ENTER' as \"special\" in order to send the key."
                 },
                 {
                     "visible": false,
@@ -2064,7 +2064,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "**Click on object**\n\nThis command allows you to automate clicking on a specific object on a web page. It is commonly used to interact with buttons, links, checkboxes, or any other clickable element.\n\nTo use this command, you need to provide the following information:\n\n- **data**: Specify the selector of the element you want to click. The selector can be an ID, class name, XPath, or any other valid selector.\n- **data_type**: Specify the type of data used to search for the element. For example, if you are using XPath, set the value as \"xpath\". This helps the command to identify the correct element on the page.\n- **before** (optional): Set the sleep time (in milliseconds) before searching for the element. It allows the page to load properly before interacting with the element.\n- **wait_time** (optional): Set the maximum waiting time (in milliseconds) for the element to appear on the page before being selected. Use this parameter if the element you want to click is loaded dynamically or takes some time to appear.\n- **after** (optional): Set the sleep time (in milliseconds) after clicking the element. It provides time for any subsequent actions to be performed after clicking.\n- **move** (optional): Set"
+                    "long_description": "**Click on object**\n\nThis command allows you to automate clicking on a specific object on a web page. It is commonly used to interact with buttons, links, checkboxes, or any other clickable element.\n\nTo use this command, you need to provide the following information:\n\n- **data**: Specify the selector of the element you want to click. The selector can be an ID, class name, XPath, or any other valid selector.\n- **data_type**: Specify the type of data used to search for the element. For example, if you are using XPath, set the value as \"xpath\". This helps the command to identify the correct element on the page.\n- **before** (optional): Set the sleep time (in milliseconds) before searching for the element. It allows the page to load properly before interacting with the element.\n- **wait_time** (optional): Set the maximum waiting time (in milliseconds) for the element to appear on the page before being selected. Use this parameter if the element you want to click is loaded dynamically or takes some time to appear.\n- **after** (optional): Set the sleep time (in milliseconds) after clicking the element. It provides time for any subsequent actions to be performed after clicking.\n- **move** (optional): Set if move to the element before clicking or not."
                 },
                 {
                     "title": "Move to element",
@@ -2179,7 +2179,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The Move to Element command allows you to scroll to a specific element on a web page. This is useful when you want to bring a particular element into view.\n\nTo use this command, you need to provide the selector of the element you want to see. The selector can be an ID, class, XPath, or any other valid selector that uniquely identifies the element. The data parameter is where you include the selector.\n\nAdditionally, you need to specify the data type to search for the element. This helps the command to locate the element accurately. The data_type parameter is where you provide the data type.\n\nOnce you provide the necessary parameters, the command will scroll the web page to bring the desired element into view. No return value is provided as this command only performs a visual action.\n\nThis command falls under the web category, as it specifically deals with automating tasks on web pages.\n\nPlease note that this command requires a connection to a web browser or a web automation tool in order to function properly."
+                    "long_description": "The Move to Element command allows you to scroll to a specific element on a web page. This is useful when you want to bring a particular element into view.\n\nTo use this command, you need to provide the selector of the element you want to see. The selector can be an ID, class, XPath, or any other valid selector that uniquely identifies the element. The \"**data**\" parameter is where you include the selector.\n\nAdditionally, you need to specify the data type to search for the element. This helps the command to locate the element accurately. The \"**data_type**\" parameter is where you provide the data type.\n\nOnce you provide the necessary parameters, the command will scroll the web page to bring the desired element into view. No return value is provided as this command only performs a visual action.\n\nThis command falls under the web category, as it specifically deals with automating tasks on web pages.\n\nPlease note that this command requires a connection to a web browser or a web automation tool in order to function properly."
                 },
                 {
                     "title": "Upload file",
@@ -2310,7 +2310,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The \"Upload file\" command is used to automate the task of uploading a file to a file type input on a web page. \n\nTo use this command, you need to provide the following parameters:\n\n1. **data** (required): This parameter specifies the selector of the element where the file will be uploaded. You need to provide a valid CSS selector or XPath expression to locate the file input element on the webpage.\n\n2. **data_type** (required): This parameter specifies the data type to search for. This can be used to filter the type of files that can be selected for uploading. For example, you can specify \"image/jpeg\" to only allow uploading JPEG image files.\n\n3. **file_path** (required): This parameter specifies the path of the file to upload. You should provide the full file path including the file name and extension.\n\nOnce you have configured the command with the appropriate parameters, it will automate the process of selecting the specified file and uploading it to the designated file input element on the web page.\n\nNote: Make sure that the file path is accessible and the file exists in order for the upload to be successful.\n\nCategory: Web"
+                    "long_description": "The \"Upload file\" command is used to automate the task of uploading a file to a file type input on a web page. \n\nTo use this command, you need to provide the following parameters:\n\n1. **data** (required): This parameter specifies the selector of the element where the file will be uploaded. You need to provide a valid CSS selector or XPath expression to locate the file input element on the webpage.\n\n2. **data_type** (required): This parameter specifies the data type to search for. This can be used to filter the type of files that can be selected for uploading. For example, you can specify \"image/jpeg\" to only allow uploading JPEG image files.\n\n3. **file_path** (required): This parameter specifies the path of the file to upload. You should provide the full file path including the file name and extension.\n\nOnce you have configured the command with the appropriate parameters, it will automate the process of selecting the specified file and uploading it to the designated file input element on the web page.\n\nNote: Make sure that the file path is accessible and the file exists in order for the upload to be successful."
                 },
                 {
                     "visible": true,
@@ -2398,7 +2398,7 @@
                                     "description": "Variable name where the output of the command will be stored"
                                 }
                             ],
-                            "long_description": "The \"Close Window\" command is used to close a window that has been opened by a web browser. This can be done by either specifying the title of the window or its position.\n\nTo use this command, you need to provide the necessary parameter:\n\n- \"command\" (required): This parameter specifies the data to search for. It can be either the title or position of the window you want to close.\n\nAdditionally, the command returns a result in the form of a variable name where the output of the command will be stored.\n\nThis command falls under the \"web\" category, indicating its relevance to web automation tasks.\n\nAn optional parameter, \"options\", allows you to specify additional settings for the command. For the \"Close Window\" command, the available option is \"last\". This option can be used to close the most recently opened window.\n\nHere's an example of how to use the \"Close Window\" command:\n\nClose Window (command: \"My Window Title\", result: \"Window Closed\")\n\nThis command will search for a window with the title \"My Window Title\" and close it. The status of the closure will be stored in the \"Window Closed\" variable.\n\nPlease note that if the window specified is not found, an appropriate error message will be returned."
+                            "long_description": "The \"Close Window\" command is used to close a window that has been opened by a web browser. This can be done by either specifying the title of the window or its position.\n\nTo use this command, you need to provide the necessary parameter:\n\n- \"command\" (required): This parameter specifies the data to search for. It can be either the title or position of the window you want to close.\n\nThis command falls under the \"web\" category, indicating its relevance to web automation tasks.\n\nAn optional parameter, \"options\", allows you to specify additional settings for the command. For the \"Close Window\" command, the available option is \"last\". This option can be used to close the most recently opened window.\n\nHere's an example of how to use the \"Close Window\" command:\n\nClose Window (command: \"My Window Title\")\n\nThis command will search for a window with the title \"My Window Title\" and close it.\n\nPlease note that if the window specified is not found, an appropriate error message will be returned."
                         },
                         {
                             "visible": true,
@@ -2475,6 +2475,13 @@
                                     "required": true,
                                     "description": "Data to search",
                                     "default": null
+                                },
+                                {
+                                    "name": "option",
+                                    "var_type": "str",
+                                    "required": true,
+                                    "description": "Index",
+                                    "default": null
                                 }
                             ],
                             "return": [
@@ -2484,7 +2491,7 @@
                                     "description": "Variable name where the output of the command will be stored"
                                 }
                             ],
-                            "long_description": "The \"Switch to Window\" command allows you to change and focus on a specific window or tab in your web browser. This is useful when you want to interact with different windows or tabs during your automation process.\n\nTo use the command, you need to provide the parameter \"command\", which is the data used to search for the window or tab. This can be the window handle or the index of the window. \n\nThere are several options you can use for the \"command\" parameter:\n- \"first\": This option selects the first window or tab.\n- \"last\": This option selects the last window or tab.\n- Window handle: You can provide the window handle as a string to switch to a specific window or tab.\n- Window index: You can provide the index of the window as an integer to switch to a specific window or tab. For example, if you want to switch to the second window, you would enter the value 2.\n\nAfter executing the command, the result will be stored in a variable that you can specify. The output of the command will be stored in the variable specified in the \"result\" parameter.\n\nPlease note that using the \"first\" and \"last\" options is strongly recommended for better reliability.\n\nThis command falls under the \"web\" category"
+                            "long_description": "The \"Switch to Window\" command allows you to change and focus on a specific window or tab in your web browser. This is useful when you want to interact with different windows or tabs during your automation process.\n\nTo use the command, you need to provide the parameter \"command\", which is the data used to search for the window or tab, this must be the window handler. Or you can select the index of the window on the \"option\" parameter. \n\nThere are several options you can use for the \"option\" parameter:\n- \"first\": This option selects the first window or tab.\n- \"last\": This option selects the last window or tab.\n- \"index\": This option selects the index of the window or tab. For example, if you want to switch to the second window, you would select the value 2.\n\nPlease note that using the \"first\" and \"last\" options is strongly recommended for better reliability."
                         },
                         {
                             "visible": true,
@@ -2509,16 +2516,17 @@
                                     "required": true,
                                     "description": "Data to search",
                                     "default": null
-                                }
-                            ],
-                            "return": [
+                                },
                                 {
-                                    "name": "result",
+                                    "name": "option",
                                     "var_type": "str",
-                                    "description": "Variable name where the output of the command will be stored"
+                                    "required": true,
+                                    "description": "Default",
+                                    "default": null
                                 }
                             ],
-                            "long_description": "The \"Switch to browser\" command allows you to change the active browser window to a specific one, based on its identifier. This command is commonly used when you have multiple browser windows open and need to automate tasks in a specific one.\n\nTo use this command, you need to provide the identifier of the browser window you want to switch to. The identifier can be obtained by using other commands like \"Get browser titles\" or \"Get browser URLs\". Once you have the identifier, you can pass it as a parameter to the \"Switch to browser\" command.\n\nFor example, let's say you want to automate a task that requires interacting with two different browser windows. You can first use the \"Get browser titles\" command to retrieve the titles of the open browser windows. Then, you can pass one of the titles as the parameter to the \"Switch to browser\" command to make it the active window.\n\nThe command will return the result indicating the success of the switch operation. You can specify a variable name where the output of the command will be stored for further use.\n\nOverall, the \"Switch to browser\" command simplifies the process of working with multiple browser windows by allowing you to easily switch between them based on their identifiers."
+                            "return": [],
+                            "long_description": "The \"Switch to browser\" command allows you to change the active browser window to a specific one, based on its identifier. This command is commonly used when you have multiple browser windows opened and need to automate tasks in a specific one.\n\nTo use this command, you need to provide the identifier of the browser window you want to switch to. The identifier can be obtained by using other commands like \"Get browser titles\". Once you have the identifier, you can pass it as a parameter to the \"Switch to browser\" command.\n\nFor example, let's say you want to automate a task that requires interacting with two different browser windows. You can first use the \"Get browser titles\" command to retrieve the titles of the open browser windows. Then, you can pass one of the titles as the parameter to the \"Switch to browser\" command to make it the active window.\n\nThe \"Switch to browser\" command simplifies the process of working with multiple browser windows by allowing you to easily switch between them based on their identifiers."
                         },
                         {
                             "visible": true,
@@ -2630,7 +2638,7 @@
                             "description": "Variable name where the output of the command will be stored"
                         }
                     ],
-                    "long_description": "The \"Wait for object\" command is used to wait for an object to become visible or invisible on a web page. This command is useful when you need to ensure that certain elements are loaded or available before proceeding with your automation.\n\nTo use this command, you need to provide the following parameters:\n\n1. `object` (required): The data to search for. This can be the name, ID, class, XPath, or tag of the object you want to wait for.\n\n2. `option` (required): The data type to search for. You can choose from the following options: name, id, class, xpath, or tag.\n\n3. `wait_time` (required): The maximum time (in seconds) to wait for the element to become visible or invisible.\n\n4. `wait_for` (required): The action of the element to wait for. You can choose from \"visible\" or \"invisible\". If you choose \"visible\", the command will wait until the object becomes visible. If you choose \"invisible\", the command will wait until the object becomes invisible.\n\n5. `before` (required): The sleep time (in seconds) before starting the actual waiting. This can be useful to account for any delay in the page loading process.\n\n6."
+                    "long_description": "The \"Wait for object\" command is used to wait for an object to become visible or invisible on a web page. This command is useful when you need to ensure that certain elements are loaded or available before proceeding with your automation.\n\nTo use this command, you need to provide the following parameters:\n\n1. `object` (required): The data to search for. This can be the name, ID, class, XPath, or tag of the object you want to wait for.\n\n2. `option` (required): The data type to search for. You can choose from the following options: name, id, class, xpath, or tag.\n\n3. `wait_time` (required): The maximum time (in seconds) to wait for the element to become visible or invisible.\n\n4. `wait_for` (required): The action of the element to wait for. You can choose from \"visible\" or \"invisible\". If you choose \"visible\", the command will wait until the object becomes visible. If you choose \"invisible\", the command will wait until the object becomes invisible.\n\n5. `before` (required): The sleep time (in seconds) before starting the actual waiting. This can be useful to account for any delay in the page loading process.\n\n6. The result of the command is a boolean that will be saved into the specified variable."
                 },
                 {
                     "visible": false,
@@ -2813,7 +2821,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The \"Wait\" command is used to make the system pause or wait for a specified number of seconds before proceeding with the execution of the next command. This can be useful when you want to introduce a delay in your automation process, allowing for certain tasks to be completed before continuing.\n\nTo use the \"Wait\" command, you need to provide the number of seconds as the input parameter. This parameter is called \"command\". For example, if you want the system to wait for 5 seconds, you would set the value of \"command\" to 5.\n\nIt is important to note that the \"Wait\" command is typically used in conjunction with other commands. For instance, you can use it before executing a command that interacts with a web page, allowing the page enough time to load completely before proceeding.\n\nOverall, the \"Wait\" command helps you control the timing of your automated tasks, ensuring that each step is executed at the appropriate time."
+                    "long_description": "The \"Wait\" command is used to make the system pause or wait for a specified number of seconds before proceeding with the execution of the next command. This can be useful when you want to introduce a delay in your automation process, allowing for certain tasks to be completed before continuing.\n\nTo use the \"Wait\" command, you need to provide the number of seconds as the input parameter. This parameter is called \"command\". For example, if you want the system to wait for 5 seconds, you would set the value of \"command\" to 5.\n\nIt is important to note that the \"Wait\" command is typically used in conjunction with other commands. For instance, you can use it before executing a command that interacts with a web page, giving to the beowser enough time to load completely before proceeding.\n\nOverall, the \"Wait\" command helps you control the timing of your automated tasks, ensuring that each step is executed at the appropriate time."
                 },
                 {
                     "visible": true,
@@ -2826,37 +2834,37 @@
                     "father": "setVar",
                     "options": [
                         {
-                            "visible": true,
+                            "visible": false,
                             "title": "Yesterday DD-MM-YYYY",
                             "option": "yesterdayDD-MM-YYYY"
                         },
                         {
-                            "visible": true,
+                            "visible": false,
                             "title": "Yesterday DD/MM/YYYY",
                             "option": "yesterdayDD/MM/YYYY"
                         },
                         {
-                            "visible": true,
+                            "visible": false,
                             "title": "Today DD-MM-YYYY",
                             "option": "todayDD-MM-YYYY"
                         },
                         {
-                            "visible": true,
+                            "visible": false,
                             "title": "Today DD/MM/YYYY",
                             "option": "todayDD/MM/YYYY"
                         },
                         {
-                            "visible": true,
+                            "visible": false,
                             "title": "Today YYYY-MM-DD",
                             "option": "todayYYYY-MM-DD"
                         },
                         {
-                            "visible": true,
+                            "visible": false,
                             "title": "Now hh:mm:ss",
                             "option": "NOWHH-MM-SS"
                         },
                         {
-                            "visible": true,
+                            "visible": false,
                             "title": "Today DD-MM-YYYY hh:mm:ss",
                             "option": "todayDD-MM-YYYY_HH-MM-SS"
                         }
@@ -2951,7 +2959,7 @@
                             "description": "Variable name where the output of the command will be stored"
                         }
                     ],
-                    "long_description": "The \"Get Last Status\" command is a system command that allows you to retrieve the status of the previous command execution. This can be useful for error handling or for obtaining feedback on the success or failure of a specific task.\n\nTo use the \"Get Last Status\" command, you don't need to provide any additional parameters. Upon execution, it will return a result that represents the status of the previous command execution. This result will be stored in a variable that you can specify.\n\nTo work with this command, follow these steps:\n\n1. Drag and drop the \"Get Last Status\" command onto the automation flow diagram.\n2. Connect it to the previous command for which you want to retrieve the status.\n3. In the command's configuration panel, provide the variable name where you want to store the result.\n4. Execute the automation.\n\nAfter the automation is run, the \"Get Last Status\" command will extract the status of the previous command execution and store it in the specified variable. You can then use this variable in subsequent commands to perform specific actions based on the success or failure of the previous task.\n\nNote: Keep in mind that the \"Get Last Status\" command will only provide the status of the immediately preceding command execution. If you need to retrieve the status of a"
+                    "long_description": "The \"Get Last Status\" command is a system command that allows you to retrieve the status of the previous command execution. This can be useful for error handling or for obtaining feedback on the success or failure of a specific task.\n\nTo use the \"Get Last Status\" command, you don't need to provide any additional parameters. Upon execution, it will return a result that represents the status of the previous command execution. This result will be stored in a variable that you can specify. You can then use this variable in subsequent commands to perform specific actions based on the success or failure of the previous task.\n\nNote: Keep in mind that the \"Get Last Status\" command will only provide the status of the immediately preceding command execution."
                 },
                 {
                     "title": "Get Process",
@@ -2976,7 +2984,7 @@
                             "description": "Variable name where the output of the command will be stored"
                         }
                     ],
-                    "long_description": "The \"Get Process\" command allows you to retrieve a list of all the currently running processes on your machine. This command is useful when you need to gather information about the processes running in the background.\n\nTo use the \"Get Process\" command, follow these steps:\n\n1. Drag and drop the \"Get Process\" command into your automation workflow.\n2. There are no parameters required for this command. It automatically collects the necessary information when executed.\n3. Specify a variable name where the output of this command will be stored. When the command finishes execution, the list of running processes will be saved in this variable. You can use this variable in subsequent steps of your automation workflow to perform further actions based on the process information.\n\nFor example, you can use the \"Get Process\" command to monitor any specific processes that may be consuming a lot of memory or CPU resources. Once you have obtained the list of processes, you can analyze and manipulate it to fit your needs."
+                    "long_description": "The \"Get Process\" command allows you to retrieve a list of all the currently running processes on your machine. This command is useful when you need to gather information about the processes running in the background.\n\n There are no parameters required for this command to use the \"Get Process\" command. It automatically collects the necessary information when executed. Specify a variable name where the output of this command will be stored. When the command finishes execution, the list of running processes will be saved in this variable. You can use this variable in subsequent steps of your automation workflow to perform further actions based on the process information.\n\nFor example, you can use the \"Get Process\" command to monitor any specific processes that may be consuming a lot of memory or CPU resources. Once you have obtained the list of processes, you can analyze and manipulate it to fit your needs."
                 },
                 {
                     "title": "Kill Process",
@@ -3012,7 +3020,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The Kill Process command is used to terminate a specified process. It can be very useful when you want to stop a program or application that is running on your computer.\n\nTo use the Kill Process command, you need to provide two parameters:\n\n1. **command**: This parameter is a string that contains the data of the process you want to kill. It could be the name of the process or the process ID (PID). The process name is the name of the program or application as it appears in the Task Manager. The PID is a unique identifier of the process. If you don't know the values for command, you can use the options available (auto, pid, name) to specify how you want to identify the process.\n\n2. **option**: This parameter is a string that specifies the data type of the command parameter. You can choose from three options:\n   - **auto**: The command parameter can accept either a process name or a PID. The platform will identify the type automatically based on the provided value.\n   - **pid**: The command parameter should be the process ID (PID) of the process you want to kill.\n   - **name**: The command parameter should be the name of the process you want to kill.\n\nPlease note that both parameters are required,"
+                    "long_description": "The Kill Process command is used to terminate a specified process. It can be very useful when you want to stop a program or application that is running on your computer.\n\nTo use the Kill Process command, you need to provide two parameters:\n\n1. **command**: This parameter is a string that contains the data of the process you want to kill. It could be the name of the process or the process ID (PID). The process name is the name of the program or application as it appears in the Task Manager. The PID is a unique identifier of the process. If you don't know the values for command, you can use the options available (auto, pid, name) to specify how you want to identify the process.\n\n2. **option**: This parameter is a string that specifies the data type of the command parameter. You can choose from three options:\n   - **auto**: The command parameter can accept either a process name or a PID. The platform will identify the type automatically based on the provided value.\n   - **pid**: The command parameter should be the process ID (PID) of the process you want to kill.\n   - **name**: The command parameter should be the name of the process you want to kill.\n\nPlease note that both parameters are required, in order for the command to be succesfull."
                 },
                 {
                     "title": "Log Message",
@@ -3050,7 +3058,105 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The \"Log Message\" command is used to write a diagnostic message at a specified log level. This command is particularly useful for debugging and monitoring purposes. \n\nTo use the \"Log Message\" command, you need to provide two parameters:\n\n1. **Message to log** (`command`): This parameter expects a string value representing the message you want to log. You can include any relevant information or details that you want to track or record.\n\n2. **Log level type** (`option`): This parameter requires a string value specifying the log level type. There are five available options to choose from:\n   - \"trace\": Used for detailed debugging information.\n   - \"info\": Used to provide general information about the program's execution.\n   - \"warn\": Used to highlight potential issues or warnings.\n   - \"error\": Used to log errors that occur during the program's execution.\n   - \"fatal\": Used to log critical errors that lead to program termination.\n\nSelect the appropriate log level type based on the severity of the message you want to log. \n\nBy utilizing the \"Log Message\" command with different log level types, you can effectively track the flow of your automation tasks, identify any errors or warnings, and gain insights into the program's execution. This command is an"
+                    "long_description": "The \"Log Message\" command is used to write a diagnostic message at a specified log level. This command is particularly useful for debugging and monitoring purposes. \n\nTo use the \"Log Message\" command, you need to provide two parameters:\n\n1. **Message to log** (`command`): This parameter expects a string value representing the message you want to log. You can include any relevant information or details that you want to track or record.\n\n2. **Log level type** (`option`): This parameter requires a string value specifying the log level type. There are five available options to choose from:\n   - \"trace\": Used for detailed debugging information.\n   - \"info\": Used to provide general information about the program's execution.\n   - \"warn\": Used to highlight potential issues or warnings.\n   - \"error\": Used to log errors that occur during the program's execution.\n   - \"fatal\": Used to log critical errors that lead to program termination.\n\nSelect the appropriate log level type based on the severity of the message you want to log. \n\nBy utilizing the \"Log Message\" command with different log level types, you can effectively track the flow of your automation tasks, identify any errors or warnings, and gain insights into the program's execution."
+                },
+                {
+                    "title": "Log Message to File",
+                    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAGeAAABngGFfqeAAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAdpQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL8PFBQAAAJ10Uk5TAAECBAUHCQoLDA0OEBESExQVFhgZGhscHR8gISIjJCUnKCosLS4vMDU2ODk8PUJDREVGSEpLTE1OT1JTWFlcXl9gZWpvcnh5fH5/gIKFi4yQkZOUmJqfoKGjpKWmqaqsr7Gytba3uLq8vr/AwcLDxMfIycrLzM/Q0drb3N3e3+Dh4uPk5ebn6Onq6+zt7/Dx8vP09fb3+Pn6+/z9/he2Q5YAAAKISURBVFjD7ddXV9RAAIbhN1hARSkrIhZUumBBxQZRQSwUC3XtHXtDAcHGig1sIK7Kwvr9Vy+yDV032c2dh+9qzmTmOTOZySSBcEouTitRgp0kTp/s0pywf5F0tjVBBiXVJwIqpR2Jrp+SFKh2CWiixCWg1ytcAhpa4hLQzfkuAXndAmpxC6jBLRDY5hLQRKlLQG/yXQIaNJIGTsx+MsuSBjzHuyK5JlUmDcRmxxwQDzBya6R9HofZJ9Xkxu6EjI5xJZ3xjowIcEEp5UK4f6FSTGEIqP1Xg4/v44x8JlquDQGmJOm0x+PpjmnprS2AvN1t0Q7BUw2VS0nzVB37bFWYs4AuoC3SeLQmPMHNI6GqO+WRNRuzBYZzANLnAyx7Jkk6Gl21UtkCdcC6ewH/1SygTpKuGcDazru+wetNbbbAbaDggyQNLQAeSu9ygEM/Z9/QfwO7gJNWsR6ol1qBqhk5BQqA0ehgNlrkLTkFJg1YFGr0FlgsLQc+SbpkmqZpHrYBBoD14cU3gK+jQLZkTQU22ADDQE4IGAOy5Tcgze8YCC4E/Fb5MbBJWgP0S3ri9WbZAyoDzlvFI8BBaQ9wwKpZ5QBoAcoDkvQlG+iRugGu2ALNPp/P5/NNfVsBbB+XRsqAvZJ+bQWMxmdBBVYmAEJ5pDMA8yqKDSDdJ0mvrG+b9Pw0nAA6F/kWKu63Wj+NOXMdAHqxMxNgddNUZONd3pJvAOSZ5+IB30cjCVjXX15+MPHH5vUP3n/+46+tXJ3qmVgdAjInU+s/mRme8/7pVPpP74/etYr2nl5p4IbDDEi9Pe0Vc6/3OeB/BRrLHaYxHlCU3KNY9Pe4+pLp3xdnYna//7EnwcXoL/Bv5uy/BUdAkjIAAAAASUVORK5CYII=",
+                    "visible": true,
+                    "name": "log_message_file",
+                    "description": "Create a custom log message and write it into a file.",
+                    "title_options": "",
+                    "father": "log_message_file",
+                    "options": "",
+                    "command_available": true,
+                    "group": "system",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "file_select",
+                                "placeholder": "",
+                                "title": "File to write",
+                                "help": "",
+                                "id": "log_file",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "Filepath of the file where the logs will be writen into.",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": "Log Message",
+                                "id": "log_message",
+                                "formatter": "json",
+                                "css": "col-md-8",
+                                "var_type": "str",
+                                "description": "Message to save into the log file.",
+                                "required": true
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": "",
+                                "id": "log_level",
+                                "title": "Level",
+                                "css": "col-md-4",
+                                "var_type": "str",
+                                "description": "Level to assign to the log message.",
+                                "options": [
+                                    {
+                                        "title": "TRACE",
+                                        "value": "TRACE"
+                                    },
+                                    {
+                                        "title": "INFO",
+                                        "value": "INFO"
+                                    },
+                                    {
+                                        "title": "WARN",
+                                        "value": "WARN"
+                                    },
+                                    {
+                                        "title": "ERROR",
+                                        "value": "ERROR"
+                                    },
+                                    {
+                                        "title": "FATAL",
+                                        "value": "FATAL"
+                                    }
+                                ],
+                                "required": false
+                            }
+                        ]
+                    },
+                    "docker": false,
+                    "linux": false,
+                    "mac": false,
+                    "windows": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "log_file",
+                            "var_type": "str",
+                            "description": "File path of the file where the logs will be written into.",
+                            "required": true
+                        },
+                        {
+                            "name": "log_message",
+                            "var_type": "str",
+                            "description": "Message to save into the log file.",
+                            "required": true
+                        },
+                        {
+                            "name": "log_level",
+                            "var_type": "str",
+                            "description": "Level to assign to the log message.",
+                            "required": false
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "The \"Log Message to File\" command is used to write a diagnostic message at a specified log level. This command is particularly useful for debugging and monitoring purposes. \n\nTo use the \"Log Message to File\" command, you need to provide three parameters:\n\n1. **File to write** (`command`): This parameter expects a string value that represents a path to the file where the log will be writen. 2.**Message to log** (`command`): This parameter expects a string value representing the message you want to log. You can include any relevant information or details that you want to track or record.\n\n3. **Log level type** (`option`): This parameter requires a string value specifying the log level type. There are five available options to choose from:\n   - \"trace\": Used for detailed debugging information.\n   - \"info\": Used to provide general information about the program's execution.\n   - \"warn\": Used to highlight potential issues or warnings.\n   - \"error\": Used to log errors that occur during the program's execution.\n   - \"fatal\": Used to log critical errors that lead to program termination.\n\nSelect the appropriate log level type based on the severity of the message you want to log. \n\nBy utilizing the \"Log Message to File\" command with different log level types, you can create your own customized log file and track the flow of your automation tasks, identify any errors or warnings, and gain insights into the program's execution."
                 },
                 {
                     "title": "Create Error",
@@ -3088,7 +3194,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "**Command Name:** Create Error\n\n**Description:** This command allows you to create a new exception with a custom error message. Exceptions are used to handle errors during the execution of a script or a robot. When an exception is raised, it interrupts the normal flow of the program and an error message is displayed.\n\n**Parameters:**\n- `error_message` (required): This parameter specifies the error message to be associated with the exception. You should provide a clear and concise description of the error that occurred.\n- `exception_type` (required): This parameter defines the type of exception to be raised. There are four available options: `SystemError`, `RocketbotError`, `BusinessError`, and `ValidationError`. Choose the appropriate exception type based on the nature of the error.\n\n**Usage Example:**\nTo create a new exception with the message \"Invalid input detected!\" and raise a `BusinessError` exception, you would use the following command:\n```\nCreate Error\n  error_message: \"Invalid input detected!\"\n  exception_type: \"BusinessError\"\n```\n\n**Note:** It is important to handle exceptions effectively in your automation scripts. You can use the \"Try Catch\" command to catch specific exceptions and handle them gracefully."
+                    "long_description": "**Command Name:** Create Error\n\n**Description:** This command allows you to create a new exception with a custom error message. Exceptions are used to handle errors during the execution of a script or a robot. When an exception is raised, it interrupts the normal flow of the program and an error message is displayed.\n\n**Parameters:**\n- `error_message` (required): This parameter specifies the error message to be associated with the exception. You should provide a clear and concise description of the error that occurred.\n- `exception_type` (required): This parameter defines the type of exception to be raised. There are four available options: `SystemError`, `RocketbotError`, `BusinessError`, and `ValidationError`. Choose the appropriate exception type based on the nature of the error.\n\n**Usage Example:**\nTo create a new exception with the message \"Invalid input detected!\" and raise a `BusinessError` exception.\n\n**Note:** It is important to handle exceptions effectively in your automation scripts. You can use the \"Try Catch\" command to catch specific exceptions and handle them correctly."
                 },
                 {
                     "visible": false,
@@ -3142,7 +3248,7 @@
                             "description": "Variable name where the output of the command will be stored"
                         }
                     ],
-                    "long_description": "The \"Run application\" command is used to automate the process of running an application from the terminal. It allows you to execute any application by specifying its path and the type of execution.\n\nTo use this command, you need to provide the following parameters:\n\n1. **path** (str, required): The path to the application that you want to execute. This can be either an absolute path or a relative path to the current working directory.\n\n2. **type** (str, required): The type of execution for the application. This parameter determines how the application will be executed. For example, you can specify whether the application should run in the foreground or background, or whether it should be launched with specific command-line arguments.\n\nOnce the command is executed, it will return the result of the execution, which will be stored in a variable that you can specify. The output will be a string that contains information about the execution status or any errors that may have occurred.\n\nTo summarize, the \"Run application\" command automates the process of running an application from the terminal. By providing the path and type of execution, you can easily launch applications as part of your automation tasks. The command returns the result of the execution, which can be stored in a variable for further processing or error"
+                    "long_description": "The \"Run application\" command is used to automate the process of running an application from the terminal. It allows you to execute any application by specifying its path and the type of execution.\n\nTo use this command, you need to provide the following parameters:\n\n1. **path** (str, required): The path to the application that you want to execute.\n\n2. **tipo** (str, required): The type of execution for the application. This parameter determines how the application will be executed. You can specify whether the application should run in a Synchronous or Asynchronous way.\n\nOnce the command is executed, it will return the result of the execution, which will be stored in a variable that you can specify. The output will depend on the executed app.\n\nTo summarize, the \"Run application\" command automates the process of running an application from the terminal. By providing the path and type of execution, you can easily launch applications as part of your automation tasks."
                 },
                 {
                     "title": "Open File",
@@ -3187,7 +3293,7 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The \"Open File\" command allows you to automate the process of opening a file on your computer using the default application associated with that file type.\n\nTo use the \"Open File\" command, you need to provide the path to the file you want to open as a parameter. The file path should be passed as a string. This parameter is required, so make sure to provide the correct file path when using this command.\n\nOnce the file path is provided, the command will trigger the default application associated with that file type, and the file will be opened in that application.\n\nThis command falls under the \"System\" category, which includes commands related to controlling system operations.\n\nNote that this command does not provide any output or return value. It is solely focused on automating the process of opening a file with the default application."
+                    "long_description": "The \"Open File\" command allows you to automate the process of opening a file on your computer using the default application associated with that file type.\n\nTo use the \"Open File\" command, you need to provide the path to the file you want to open as a parameter. The file path should be passed as a string. This parameter is required, so make sure to provide the correct file path when using this command.\n\nWhen executed, the command will trigger the default application associated with that file type, and the file will be opened in that application.\n\nNote that this command does not provide any output or return value."
                 },
                 {
                     "title": "Get password",
@@ -3267,7 +3373,7 @@
                             "default": ""
                         }
                     ],
-                    "long_description": "The \"Get password\" command is used to retrieve a password stored in the credential manager of different operating systems.\n\nTo use this command, you need to provide the following parameters:\n\n1. \"system\" (required): Specify the system where the password needs to be retrieved. On Windows, the password is obtained from the Generic Credentials in the Credential Manager. On Linux, it is obtained from the keyring. On Mac, it is obtained from the keychain.\n\n2. \"username\" (required): Enter the username for which the password needs to be retrieved.\n\nAdditionally, you need to provide a variable name to assign the retrieved password using the \"assign_to\" parameter.\n\nPlease note that the retrieved password will be stored in the variable specified by \"assign_to\" for further use in your automation process."
+                    "long_description": "The \"Get password\" command is used to retrieve a password stored in the credential manager of each operating systems.\n\nTo use this command, you need to provide the following parameters:\n\n1. \"system\" (required): Specify the service of which the password needs to be retrieved. \n\n2. \"username\" (required): Enter the username for which the password needs to be retrieved.\n\nAdditionally, you need to provide a variable name to assign the retrieved password using the \"assign_to\" parameter.\n\nNote: On Windows, the password is obtained from the Generic Credentials in the Credential Manager. On Linux, it is obtained from the keyring. On Mac, it is obtained from the keychain."
                 },
                 {
                     "title": "Set password",
@@ -3535,7 +3641,7 @@
                                     "default": ""
                                 }
                             ],
-                            "long_description": "The \"Delete element from array\" command is used to remove an element from a list (array). This command provides two options for deletion: by value or by position.\n\nTo use this command, you will need to provide the following parameters:\n\n1. **array_** (required): This parameter expects a list (array) as input. It specifies the list from which you want to delete an element.\n\n2. **option_** (required): This parameter accepts a string input to determine the deletion method. You can choose between \"value\" or \"position\". If you select \"value\", the command will delete the element by its value. If you choose \"position\", the command will delete the element at the specified position in the list.\n\n3. **value_** (required): This parameter expects a string input. If you selected the \"value\" option, you need to provide the value of the element you want to delete. If you selected the \"position\" option, you need to provide the position (index) of the element you want to delete.\n\nThe command will return a new list without the deleted element. The returned list will be assigned to the **var_** variable.\n\nExample usage:\n\n```\nDelete element from array\n   array_ = [1"
+                            "long_description": "The \"Delete element from array\" command is used to remove an element from a list (array). This command provides two options for deletion: by value or by position.\n\nTo use this command, you will need to provide the following parameters:\n\n1. **array_** (required): This parameter expects a list (array) as input. It specifies the list from which you want to delete an element.\n\n2. **option_** (required): This parameter accepts a string input to determine the deletion method. You can choose between \"value\" or \"position\". If you select \"value\", the command will delete the element by its value. If you choose \"position\", the command will delete the element at the specified position in the list.\n\n3. **value_** (required): If you selected the \"value\" option, you need to provide the value of the element you want to delete. If you selected the \"position\" option, you need to provide the position (index) of the element you want to delete.\n\nThe command will return a new list without the deleted element. The returned list will be assigned to the **var_** variable."
                         },
                         {
                             "title": "Add data to array",
@@ -3657,7 +3763,7 @@
                                     "default": ""
                                 }
                             ],
-                            "long_description": "The \"Add data to array\" command allows you to add a value to a list (array) at a specific position. This command is useful when you want to modify an existing list by inserting new elements at a desired location.\n\nTo use this command, you need to provide the following parameters:\n\n1. `array_` (list): The list where you want to add the item. This parameter is required and should be provided as an input.\n\n2. `position_` (int): The position at which you want to insert the new element. This parameter is required and should be specified as an integer value.\n\n3. `value_` (str): The value that you want to add to the list. This parameter is required and should be provided as a string.\n\nAdditionally, you need to specify a variable name in the `var_` parameter where the modified list will be stored. This parameter is required and should be provided as a string.\n\nHere's an example of how you can use this command:\n\n```\nCommand: Add data to array\nParameters:\n- array_ = [1, 2, 3, 4, 5]\n- position_ = 2\n- value_ = \"New Value\"\n- var_ = modified_list\n\n"
+                            "long_description": "The \"Add data to array\" command allows you to add a value to a list (array) at a specific position. This command is useful when you want to modify an existing list by inserting new elements at a desired location.\n\nTo use this command, you need to provide the following parameters:\n\n1. `array_` (list): The list where you want to add the item. This parameter is required and should be provided as an input.\n\n2. `position_` (int): The position at which you want to insert the new element. This parameter is required and should be specified as an integer value.\n\n3. `value_` (str): The value that you want to add to the list. This parameter is required and should be provided as a string.\n\nAdditionally, you need to specify a variable name in the `var_` parameter where the modified list will be stored."
                         },
                         {
                             "title": "Modify data in array",
@@ -3771,7 +3877,7 @@
                                     "default": ""
                                 }
                             ],
-                            "long_description": "**Command Name:** Modify data in array\n\n**Description:** This command allows you to modify a specific element in an array, based on its position.\n\n**Parameters:**\n\n1. **array_** (required, list): This parameter expects a list data type. It represents the array that you want to modify.\n\n2. **position_** (required, int): This parameter expects an integer value. It specifies the position of the element that you want to modify within the array. The position starts from 0, meaning the first element in the array has a position of 0.\n\n3. **value_** (required, str): This parameter expects a string value. It represents the new value that you want to assign to the element at the specified position.\n\n**Return:**\n\nThis command returns a new list (**var_**) with the modified element. The original array (**array_**) remains unchanged.\n\n**Category:** Data Transformation\n\n**Usage Example:**\n\nLet's assume we have the following array: [10, 20, 30, 40, 50].\n\nTo modify the element at position 2 (which is 30), we can use this command as follows:\n\n```\nModify data in array(array_=[10, 20, 30"
+                            "long_description": "**Command Name:** Modify data in array\n\n**Description:** This command allows you to modify a specific element in an array, based on its position.\n\n**Parameters:**\n\n1. **array_** (required, list): This parameter expects a list data type. It represents the array that you want to modify.\n\n2. **position_** (required, int): This parameter expects an integer value. It specifies the position of the element that you want to modify within the array. The position starts from 0, meaning the first element in the array has a position of 0.\n\n3. **value_** (required): This parameter represents the new value that you want to assign to the element at the specified position.\n\n**Return:**\n\nThis command returns a new list (**var_**) with the modified element. The original array (**array_**) remains unchanged."
                         },
                         {
                             "title": "Get data from array",
@@ -3804,7 +3910,7 @@
                                         "css": "col-md-6",
                                         "var_type": "int",
                                         "required": true,
-                                        "description": "Position of the element to GET",
+                                        "description": "Position of the element to get",
                                         "default": null
                                     },
                                     {
@@ -3847,7 +3953,7 @@
                                 {
                                     "name": "position_",
                                     "var_type": "int",
-                                    "description": "Position of the element to GET",
+                                    "description": "Position of the element to get",
                                     "required": true,
                                     "default": null
                                 }
@@ -3861,7 +3967,7 @@
                                     "default": ""
                                 }
                             ],
-                            "long_description": "The \"Get data from array\" command allows you to retrieve a specific element from a list or array. This command is useful when you want to extract a particular value from a list and store it in a variable to use it later in your automation.\n\nTo use the \"Get data from array\" command, you need to provide the following parameters:\n\n- `array_` (required): This parameter specifies the list or array from which you want to retrieve the data. You need to pass the name of the list or array you want to extract the element from.\n\n- `position_` (required): This parameter indicates the position of the element you want to get from the list. You need to provide the index (starting from 0) of the element you want to retrieve.\n\n- `var_` (required): This parameter is the name of the variable where the output of the command will be stored. You can specify any valid variable name to store the retrieved element.\n\nHere is an example of using the \"Get data from array\" command in Python:\n\n```python\nmy_list = [1, 2, 3]\nindex = 1\nelement = my_list[index]\n```\n\nIn this example, the command retrieves the element at position 1 from the `"
+                            "long_description": "The \"Get data from array\" command allows you to retrieve a specific element from a list or array. This command is useful when you want to extract a particular value from a list and store it in a variable to use it later in your automation.\n\nTo use the \"Get data from array\" command, you need to provide the following parameters:\n\n- `array_` (required): This parameter specifies the list or array from which you want to retrieve the data. You need to pass the name of the list or array you want to extract the element from.\n\n- `position_` (required): This parameter indicates the position of the element you want to get from the list. You need to provide the index (starting from 0) of the element you want to retrieve.\n\n- `var_` (required): This parameter is the name of the variable where the output of the command will be stored. You can specify any valid variable name to store the retrieved element."
                         },
                         {
                             "title": "Convert to string",
@@ -3951,7 +4057,7 @@
                                     "default": ""
                                 }
                             ],
-                            "long_description": "{\"name\": \"Convert to string\", \"description\": \"Converts an array into a formatted string by joining its elements using a specified delimiter.\", \"params\": [{\"name\": \"array_\", \"var_type\": \"list\", \"description\": \"The list of elements to be joined.\", \"required\": true, \"default\": null}, {\"name\": \"delimiter_\", \"var_type\": \"str\", \"description\": \"The delimiter used to separate the elements in the resulting string.\", \"required\": true, \"default\": null}], \"return\": [{\"name\": \"var_\", \"var_type\": \"str\", \"description\": \"The name of the variable where the formatted string will be stored.\", \"required\": true, \"default\": \"\"}], \"category\": \"Data Transformation\", \"options\": false}\n\n**Description**\n\nThe \"Convert to string\" command allows you to convert an array into a formatted string by joining its elements using a specified delimiter. This is useful when you want to represent an array as a single string.\n\n**Parameters**\n\n- `array_` (required): The list of elements to be joined. This should be a list or an array-like object.\n- `delimiter_` (required): The delimiter used to separate the elements in the resulting string. It"
+                            "long_description": "The \"Convert to string\" command allows you to convert an array into a formatted string by joining its elements using a specified delimiter. This is useful when you want to represent an array as a single string.\n\n**Parameters**\n\n- `array_` (required): The list of elements to be joined. This should be a list or an array-like object.\n- `delimiter_` (required): The delimiter used to separate the elements in the resulting string. `var_` (required): This parameter is the name of the variable where the output of the command will be stored. You can specify any valid variable name to store the retrieved element."
                         },
                         {
                             "title": "Filter",
@@ -4091,7 +4197,7 @@
                                     "default": ""
                                 }
                             ],
-                            "long_description": "The Filter command is used to extract specific elements from a list based on a filtering condition. It takes three parameters: \n\n1. **array_** (required): This parameter expects a list of elements from which the filtering will be performed.\n\n2. **condition** (required): This parameter defines the filtering condition. It could be a comparison operator, such as \"==\", \">\", or \"<\", or any other valid expression.\n\n3. **data** (required): This parameter represents the value to compare against the elements in the list.\n\nThe command will return a new list that contains only the elements from the original list that satisfy the provided filtering condition.\n\nTo use this command, you need to specify the variable name where the output should be stored using the **var_** parameter.\n\nHere's an example of how to use the Filter command:\n```\nFilter(array_=[1, 2, 3, 4, 5], condition=\">\", data=3, var_=\"filtered_list\")\n```\nIn this example, the command will evaluate each element in the list [1, 2, 3, 4, 5] and return a new list that only includes the elements greater than 3. The resulting list will be stored in the variable named"
+                            "long_description": "The Filter command is used to extract specific elements from a list based on a filtering condition. It takes three parameters: \n\n1. **array_** (required): This parameter expects a list of elements from which the filtering will be performed.\n\n2. **condition** (required): This parameter defines the filtering condition. It could be a comparison operator, such as \"==\", \">\", or \"<\", or any other valid expression.\n\n3. **data** (required): This parameter represents the value to compare against the elements in the list.\n\nThe command will return a new list that contains only the elements from the original list that satisfy the provided filtering condition.\n\nTo use this command, you need to specify the variable name where the output should be stored using the **var_** parameter."
                         },
                         {
                             "title": "Counting elements",
@@ -4161,7 +4267,7 @@
                                     "default": ""
                                 }
                             ],
-                            "long_description": "The \"Counting elements\" command is used to determine the number of elements in a given list. This command is part of the \"Data Transform\" category.\n\nTo use this command, you need to provide the list of elements as the input parameter named \"array_\". This parameter is required and should be of type list.\n\nAfter executing the command, the result will be stored in a variable of your choice. To store the output, you must supply the name of the variable as a required input parameter named \"var_\". The output will be a string that represents the count of elements in the list.\n\nHere is an example of how to use the \"Counting elements\" command:\n\n```\nCommand: Counting elements\nInput Parameters:\n   - array_: [1, 2, 3, 4, 5]\n   - var_: num_elements\n\nAfter executing this command, the variable \"num_elements\" will contain the string representation of the count of elements in the given list, which in this case is \"5\".\n```\n\nBy using the \"Counting elements\" command, you can easily retrieve the number of elements present in a list, providing you with valuable information for further processing or analysis."
+                            "long_description": "The \"Counting elements\" command is used to determine the number of elements in a given list. \n\nTo use this command, you need to provide the list of elements as the input parameter named \"array_\". This parameter is required and should be of type list.\n\nAfter executing the command, the result will be stored in a variable of your choice. To store the output, you must supply the name of the variable as a required input parameter named \"var_\". The output will be a int that represents the number of elements in the list."
                         }
                     ]
                 },
@@ -4197,7 +4303,7 @@
                                         "css": "col-md-8",
                                         "var_type": "str",
                                         "description": "Starts after the text",
-                                        "required": true
+                                        "required": false
                                     },
                                     {
                                         "type": "input",
@@ -4208,7 +4314,7 @@
                                         "help": "Inicia con 0",
                                         "var_type": "int",
                                         "description": "Index of the start of the text to extract",
-                                        "required": true
+                                        "required": false
                                     },
                                     {
                                         "type": "input",
@@ -4219,7 +4325,7 @@
                                         "css": "col-md-8",
                                         "var_type": "str",
                                         "description": "Ends before the text",
-                                        "required": true
+                                        "required": false
                                     },
                                     {
                                         "type": "input",
@@ -4230,7 +4336,7 @@
                                         "help": "Inicia con 0",
                                         "var_type": "int",
                                         "description": "Index of the end of the text to extract",
-                                        "required": true
+                                        "required": false
                                     },
                                     {
                                         "type": "checkbox",
@@ -4270,7 +4376,7 @@
                                         "id": "result",
                                         "css": "col-md-6",
                                         "var_type": "str",
-                                        "description": "String extracted",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -4297,25 +4403,25 @@
                                     "name": "start",
                                     "var_type": "str",
                                     "description": "Starts after the text",
-                                    "required": true
+                                    "required": false
                                 },
                                 {
                                     "name": "start_index",
                                     "var_type": "int",
                                     "description": "Index of the start of the text to extract",
-                                    "required": true
+                                    "required": false
                                 },
                                 {
                                     "name": "end",
                                     "var_type": "str",
                                     "description": "Ends before the text",
-                                    "required": true
+                                    "required": false
                                 },
                                 {
                                     "name": "end_index",
                                     "var_type": "int",
                                     "description": "Index of the end of the text to extract",
-                                    "required": true
+                                    "required": false
                                 },
                                 {
                                     "name": "strip",
@@ -4340,11 +4446,11 @@
                                 {
                                     "name": "result",
                                     "var_type": "str",
-                                    "description": "String extracted",
+                                    "description": "Variable name where the output of the command will be stored",
                                     "required": true
                                 }
                             ],
-                            "long_description": "**Command Name:** Extract text\n\n**Description:** This command is used to extract a substring of text from a given input string. It searches for a start word or index and an end word or index and extracts the text between them. It also provides options to manipulate the extracted text, such as stripping spaces, removing line breaks, and capitalizing the first letter of each word.\n\n**Parameters:**\n- **string** (required): The input text from which the substring will be extracted.\n- **start** (required): The word or substring after which the extraction will start.\n- **start_index** (required): The index of the start of the text to extract.\n- **end** (required): The word or substring before which the extraction will end.\n- **end_index** (required): The index of the end of the text to extract.\n- **strip** (optional): A boolean value indicating whether to remove spaces at the beginning and end of the extracted string. Default is false.\n- **line_break** (optional): A boolean value indicating whether to remove line breaks within the extracted string. Default is false.\n- **capitalize** (optional): A boolean value indicating whether to capitalize the first letter of each word in the extracted string. Default is false.\n\n"
+                            "long_description": "**Command Name:** Extract text\n\n**Description:** This command is used to extract a substring of text from a given input string. It searches for a start word or index and an end word or index and extracts the text between them. It also provides options to manipulate the extracted text, such as stripping spaces, removing line breaks, and capitalizing the first letter of each word.\n\n**Parameters:**\n- **string** (required): The input text from which the substring will be extracted.\n- **start** (optional): The word or substring after which the extraction will start.\n- **start_index** (optional): The index of the start of the text to extract.\n- **end** (optional): The word or substring before which the extraction will end.\n- **end_index** (optional): The index of the end of the text to extract.\n- **strip** (optional): A boolean value indicating whether to remove spaces at the beginning and end of the extracted string. Default is false.\n- **line_break** (optional): A boolean value indicating whether to remove line breaks within the extracted string. Default is false.\n- **capitalize** (optional): A boolean value indicating whether to capitalize the first letter of each word in the extracted string. Default is false.\n\n"
                         },
                         {
                             "title": "Obtain similarity",
@@ -4400,7 +4506,7 @@
                                         "css": "col-md-6",
                                         "remove_vars": true,
                                         "var_type": "str",
-                                        "description": "Result of the comparison",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -4434,11 +4540,11 @@
                                 {
                                     "name": "result",
                                     "var_type": "str",
-                                    "description": "Result of the comparison",
+                                    "description": "Variable name where the output of the command will be stored",
                                     "required": true
                                 }
                             ],
-                            "long_description": "{\"name\": \"Obtain similarity\", \"description\": \"Calculates the similarity percentage between two texts\", \"params\": [{\"name\": \"str1\", \"var_type\": \"str\", \"description\": \"The first text to compare\", \"required\": true}, {\"name\": \"str2\", \"var_type\": \"str\", \"description\": \"The second text to compare\", \"required\": true}], \"return\": [{\"name\": \"result\", \"var_type\": \"str\", \"description\": \"The similarity percentage between the two texts\", \"required\": true}], \"category\": \"datatransform\", \"options\": false}\n\nThis command allows you to calculate the similarity percentage between two texts. The \"str1\" parameter should contain the first text that you want to compare, and the \"str2\" parameter should contain the second text. Both parameters are required.\n\nThe command will return a string result that represents the similarity percentage between the two texts. The result is a value between 0 and 100, where 0 means no similarity and 100 means a complete match.\n\nTo use this command, make sure you provide the correct texts in the \"str1\" and \"str2\" parameters. Once the command is executed, the result will be stored"
+                            "long_description": "**Command Name:** Extract text\n\n**Description:** This command allows you to calculate the similarity percentage between two texts. The \"str1\" parameter should contain the first text that you want to compare, and the \"str2\" parameter should contain the second text. Both parameters are required.\n\nThe command will return a result that represents the similarity percentage between the two texts. The result is a value between 0 and 100, where 0 means no similarity and 100 means a complete match."
                         },
                         {
                             "title": "Replace characters",
@@ -4512,7 +4618,7 @@
                                         "css": "col-md-6",
                                         "remove_vars": true,
                                         "var_type": "str",
-                                        "description": "Text with replaced substring",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -4552,11 +4658,11 @@
                                 {
                                     "name": "result",
                                     "var_type": "str",
-                                    "description": "Text with replaced substring",
+                                    "description": "Variable name where the output of the command will be stored",
                                     "required": true
                                 }
                             ],
-                            "long_description": "Name: Replace characters\nCategory: Data Transformation\n\nDescription:\nThis command allows you to replace characters in a text string. It is especially useful when you need to modify or clean up text data. The command follows the same logic as the Python `replace()` function.\n\nParameters:\n- `var` (required): The input text where you want to replace a substring.\n- `old` (required): The substring you want to replace.\n- `new` (required): The new substring that will replace the old substring.\n\nExample:\nSuppose you have the following text stored in a variable called `text`: \"Hello, world!\". If you want to replace the comma with an exclamation mark, you can use the `Replace characters` command.\n\nCommand: `Replace characters`\n- Input: `var` = `text`\n- Input: `old` = `,`\n- Input: `new` = `!`\n- Output: The modified text will be \"Hello! world!\".\n\nReturn:\n- `result` (required): The modified text with the replaced substring.\n\nNote: This command can be helpful when you need to automate data cleaning tasks or make specific changes to text data."
+                            "long_description": "**Command Name:** Replace characters\n\n**Description:** This command allows you to replace characters in a text string. It is especially useful when you need to modify or clean up text data. The command follows the same logic as the Python `replace()` function.\n\nParameters:\n- `var` (required): The input text where you want to replace a substring.\n- `old` (required): The substring you want to replace.\n- `new` (required): The new substring that will replace the old substring.\n\nReturn:\n- `result` (required): The modified text with the replaced substring will be stored in given variable name."
                         },
                         {
                             "title": "Convert to List",
@@ -4580,7 +4686,7 @@
                                         "id": "var",
                                         "css": "col-md-12",
                                         "var_type": "str",
-                                        "description": "Variable to split",
+                                        "description": "String to split",
                                         "required": true
                                     },
                                     {
@@ -4616,7 +4722,7 @@
                                         "css": "col-md-6",
                                         "remove_vars": true,
                                         "var_type": "list",
-                                        "description": "List of strings",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -4650,11 +4756,11 @@
                                 {
                                     "name": "result",
                                     "var_type": "list",
-                                    "description": "List of strings",
+                                    "description": "Variable name where the output of the command will be stored",
                                     "required": true
                                 }
                             ],
-                            "long_description": "The \"Convert to List\" command is used to convert a string into a list of strings, based on a specified delimiter. \n\nTo use this command, you need to provide two parameters:\n- The \"var\" parameter: This is the variable that you want to split into a list. It should be a string.\n- The \"delimiter\" parameter: This is the character or sequence of characters that will be used to split the string into individual elements of the resulting list.\n\nHere's an example of how you can use this command in Python:\n\n```\nvar = \"str-list\"\nresult = var.split(\"-\")\nprint(result)  # Output: ['str', 'list']\n```\n\nIn this example, we have a string variable called \"var\" with the value \"str-list\". By using the \"split\" function with the delimiter set as \"-\", the string is divided into two separate elements, which are then stored in the \"result\" variable as a list of strings.\n\nThe command will return the resulting list of strings as the \"result\" variable."
+                            "long_description": "**Command Name:** \"Convert to List\" \n\n**Description:** The command is used to convert a string into a list of strings, based on a specified delimiter. \n\nTo use this command, you need to provide two parameters:\n- The \"var\" parameter: This is the variable that you want to split into a list. It should be a string.\n- The \"delimiter\" parameter: This is the character or sequence of characters that will be used to split the string into individual elements of the resulting list.\n\nThe command will return the resulting list of strings into the variable specified in \"result\" ."
                         },
                         {
                             "title": "Invert",
@@ -4692,7 +4798,7 @@
                                         "css": "col-md-12",
                                         "remove_vars": true,
                                         "var_type": "str",
-                                        "description": "String reversed",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -4720,11 +4826,11 @@
                                 {
                                     "name": "result",
                                     "var_type": "str",
-                                    "description": "String reversed",
+                                    "description": "Variable name where the output of the command will be stored",
                                     "required": true
                                 }
                             ],
-                            "long_description": "**Command Name:** Invert\n\n**Category:** Data Transformation\n\n**Description:** This command is used to reverse the order of characters in a specified string. It takes a string as input and returns the reversed string as output.\n\n**Parameters:**\n- **string** (required): This parameter specifies the string that needs to be reversed. Provide the string value you want to invert.\n\n**Return:**\n- **result** (required): The reversed string will be returned as the result.\n\n**Example:**\n```\nCommand: Invert\nCategory: Data Transformation\n\nDescription:\nThe Invert command is used to reverse the order of characters in a specified string. This functionality is often required when working with strings in automation tasks.\n\nTo use the Invert command, follow these instructions:\n1. Identify the string that needs to be reversed.\n2. Pass the identified string as the input to the Invert command's \"string\" parameter.\n3. The command will process the string and generate the reversed result.\n4. The reversed string will be returned as the output.\n\nPlease note that the Invert command only accepts a single string for reversal. If you need to reverse multiple strings, you will need to repeat the command for each individual string.\n\nUse Case:\nLet's consider a scenario"
+                            "long_description": "**Command Name:** Invert\n\n**Description:** This command is used to reverse the order of characters in a specified string. It takes a string as input and returns the reversed string as output.\n\n**Parameters:**\n- **string** (required): This parameter specifies the string that needs to be reversed. Provide the string value you want to invert.\n\n**Return:**\n- **result** (required): The reversed string will be returned as the result."
                         }
                     ]
                 },
@@ -4759,7 +4865,7 @@
                                     {
                                         "type": "input",
                                         "placeholder": {
-                                            "es": "Llave",
+                                            "es": "Clave",
                                             "en": "Key"
                                         },
                                         "title": {
@@ -4802,7 +4908,7 @@
                                         "css": "col-md-6",
                                         "remove_vars": true,
                                         "var_type": "dict",
-                                        "description": "Dictionary with the new element",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -4842,11 +4948,11 @@
                                 {
                                     "name": "result",
                                     "var_type": "dict",
-                                    "description": "Dictionary with the new element",
+                                    "description": "Variable name where the output of the command will be stored",
                                     "required": true
                                 }
                             ],
-                            "long_description": "{\"name\": \"Add element\", \"description\": \"Add element to dictionary\", \"params\": [{\"name\": \"dict\", \"var_type\": \"dict\", \"description\": \"Dictionary to add the element\", \"required\": true}, {\"name\": \"key\", \"var_type\": \"str\", \"description\": \"Key to add to the dictionary\", \"required\": true}, {\"name\": \"value\", \"var_type\": \"str\", \"description\": \"Value to add to the dictionary\", \"required\": true}], \"return\": [{\"name\": \"result\", \"var_type\": \"dict\", \"description\": \"Dictionary with the new element\", \"required\": true}], \"category\": \"datatransform\", \"options\": false}"
+                            "long_description": "**Command: Add element**\n\n**Description:** This command is used to add an element to a dictionary.\n\n**Parameters:**\n- **dict** (required): This parameter indicates the dictionary where to add the element.\n\n- **key** (required): This parameter specifies the key of the new element.\n\n- **value** (required): This parameter specifies the value associated to the key of the new element. \n\n**Return:**\n- **result**: The output of the command, will be stored in a variable specified by this parameter."
                         },
                         {
                             "title": "Delete element",
@@ -4901,7 +5007,7 @@
                                         "css": "col-md-12",
                                         "remove_vars": true,
                                         "var_type": "dict",
-                                        "description": "Dictionary without the element",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -4935,11 +5041,11 @@
                                 {
                                     "name": "result",
                                     "var_type": "dict",
-                                    "description": "Dictionary without the element",
+                                    "description": "Variable name where the output of the command will be stored",
                                     "required": true
                                 }
                             ],
-                            "long_description": "The \"Delete Element\" command is used to remove a specific key-value pair from a dictionary. This command is typically used during data transformation processes.\nTo use this command, you need to provide two parameters:\n- \"dict\": This parameter should be a string that represents the dictionary from which you want to remove an element.\n- \"key\": This parameter should be a string that represents the key of the element you want to delete from the dictionary.\n\nOnce the command is executed, it will return a modified dictionary that does not contain the specified key-value pair.\n\nPlease note that this command is only applicable to dictionaries and it cannot be used to delete elements from other data structures."
+                            "long_description": "**Command: Delete Element**\n\n**Description:** This command is used to remove a specific key-value pair from a dictionary.\n\n**Parameters:**\n- **dict** (required): This parameter should be a string that represents the dictionary from which you want to remove an element.\n\n- **key** (required): This parameter should be a string that represents the key of the element you want to delete from the dictionary.\n\n**Return:**\n- **result**: The output of the command, will be stored in a variable specified by this parameter.\n\n**Note:** This command is only applicable to dictionaries and it cannot be used to delete elements from other data structures."
                         },
                         {
                             "title": "Search element",
@@ -4977,7 +5083,7 @@
                                         "id": "path_selector",
                                         "css": "col-md-12",
                                         "var_type": "str",
-                                        "description": "Path selector to find the element. Example: 'path/to/value' for {'path': {'to': {'value': 'result'}}}",
+                                        "description": "Path to find the element. Example: 'path/to/value' for {'path': {'to': {'value': 'result'}}}",
                                         "required": true
                                     },
                                     {
@@ -4993,7 +5099,7 @@
                                         "id": "result",
                                         "css": "col-md-12",
                                         "var_type": "str",
-                                        "description": "Value of the element found",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -5031,7 +5137,7 @@
                                     "required": true
                                 }
                             ],
-                            "long_description": "The \"Search element\" command allows you to search for a specific element within a dictionary. This command is useful when you need to extract or manipulate a particular value from a complex data structure.\n\nTo use the \"Search element\" command, you need to provide two parameters:\n\n1. **dict**: This parameter is the dictionary from which you want to search for the element. Make sure to pass a valid dictionary as input.\n\n2. **path_selector**: This parameter is the path selector used to find the element within the dictionary. The path selector follows a specific format, where you specify the path to the desired value. For example, if you have the following dictionary: `{'path': {'to': {'value': 'result'}}}`, and you want to retrieve the value 'result', you should provide the path selector as `'path/to/value'`.\n\nAfter executing the \"Search element\" command, it will return the value of the element found as a string. The found result can be further manipulated or used in subsequent steps of your automation.\n\nPlease note that the \"Search element\" command belongs to the \"datatransform\" category and no additional options are available for this command.\n\nWith the \"Search element\" command, you can easily extract specific values from dictionaries, making it"
+                            "long_description": "**Command: Search element**\n\n**Description:** This command allows you to search for a specific element within a dictionary.\n\n**Parameters:**\n- **dict** (required):  This parameter is the dictionary from which you want to search for the element.\n\n- **path_selector** (required): This parameter is the path selector used to find the element within the dictionary. The path selector follows a specific format, where you specify the path to the desired value. For example, if you have the following dictionary: `{'path': {'to': {'value': 'result'}}}`, and you want to retrieve the value 'result', you should provide the path selector as `'path/to/value'`.\n\n**Return:**\n- **result**: The output of the command, will be stored in a variable specified by this parameter.\n\n**Note:** This command is only applicable to dictionaries and it cannot be used to delete elements from other data structures."
                         },
                         {
                             "title": "JSON to Dictionary",
@@ -5086,7 +5192,7 @@
                                         "css": "col-md-6",
                                         "remove_vars": true,
                                         "var_type": "dict",
-                                        "description": "Dictionary with the JSON data",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -5124,7 +5230,7 @@
                                     "required": true
                                 }
                             ],
-                            "long_description": "The JSON to Dictionary command is used to parse a JSON file or string and convert it into a Dictionary type of value. This command is useful when you need to extract information from a JSON source and use it for further automation tasks.\n\nTo use this command, you have two options:\n\n1. Using a JSON file: If you have a JSON file, you can provide the path to the file using the \"json_path\" parameter. This parameter is optional, so you can leave it blank if you're using a JSON string instead.\n\n2. Using a JSON string: If you have a JSON string, you can provide it using the \"json_str\" parameter. This parameter is also optional, so you can leave it blank if you're using a JSON file instead.\n\nAfter executing the command, it will return a Dictionary with the parsed JSON data. This Dictionary can be used to access the individual values or manipulate the data as per your automation requirements.\n\nNote that at least one of the \"json_path\" or \"json_str\" parameters must be provided for the command to work properly. If both parameters are provided, the command will prioritize the \"json_path\" parameter.\n\nCategory: Data Transform"
+                            "long_description": "**Command:  JSON to Dictionary**\n\n**Description:** This command is used to parse a JSON file or string and convert it into a Dictionary type of value. To use this command, you have two options: 1. JSON source file 2. JSON String.\n\n**Parameters:**\n- **json_path** (optional):  If you have a JSON file, you can provide the path to the filr using this parameter. This parameter is optional, so you can leave it blank if you're using a JSON string instead.\n\n- **json_str** (optional): If you have a JSON string, you can provide it using this parameter. This parameter is also optional, so you can leave it blank if you're using a JSON file instead.\n\n**Return:**\n- **result**: The output of the command, will be stored in a variable specified by this parameter.\n\n**Note:** At least one of the \"json_path\" or \"json_str\" parameters must be provided for the command to work properly. If both parameters are provided, the command will prioritize the \"json_path\" parameter."
                         },
                         {
                             "title": "Dictionary to JSON",
@@ -5163,7 +5269,7 @@
                                         "css": "col-md-6",
                                         "remove_vars": true,
                                         "var_type": "str",
-                                        "description": "JSON string",
+                                        "description": "Variable name where the output of the command will be stored",
                                         "required": true
                                     }
                                 ]
@@ -5191,11 +5297,11 @@
                                 {
                                     "name": "result",
                                     "var_type": "str",
-                                    "description": "JSON string",
+                                    "description": "Variable name where the output of the command will be stored",
                                     "required": true
                                 }
                             ],
-                            "long_description": "The \"Dictionary to JSON\" command is used to convert a dictionary into a JSON string. JSON (JavaScript Object Notation) is a lightweight data interchange format that is commonly used to transmit data between a server and a web application. \n\nTo use this command, you need to provide a dictionary as input. The dictionary should contain key-value pairs, where the keys are strings and the values can be of any data type, such as strings, numbers, booleans, or even nested dictionaries or lists.\n\nOnce you provide the dictionary as input, the command will convert it into a JSON string representation. The resulting JSON string can then be used for various purposes, such as transmitting the data over a network or storing it in a file.\n\nThe command has the following parameter:\n- \"dict\" (required): This is the dictionary that you want to convert to JSON.\n\nThe command returns a single output:\n- \"result\" (required): This is the resulting JSON string representation of the input dictionary.\n\nTo use the \"Dictionary to JSON\" command, you can follow these steps:\n1. Create or obtain a dictionary that you want to convert to JSON.\n2. Use the \"Dictionary to JSON\" command and provide the dictionary as the \"dict\" parameter.\n3. The command will return"
+                            "long_description": "**Command: Dictionary to JSON**\n\n**Description:** This command is used to convert a dictionary into a JSON string. JSON (JavaScript Object Notation) is a lightweight data interchange format that is commonly used to transmit data between a server and a web application. Once you provide the dictionary as input, the command will convert it into a JSON string representation. The resulting JSON string can then be used for various purposes, such as transmitting the data over a network or storing it in a file.\n\n**Parameters:**\n- **dict** (required):  This is the dictionary that you want to convert to JSON.\n\n**Return:**\n- **result**: The output of the command, will be stored in a variable specified by this parameter."
                         }
                     ]
                 }
@@ -5284,6 +5390,198 @@
                     "return": []
                 },
                 {
+                    "title": "Execute Visual Basic Script file",
+                    "description": "Open and execute '.vbs' file passing the needed arguments",
+                    "title_options": null,
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "file_select",
+                                "placeholder": {
+                                    "es": "C:\\users\\user\\documents\\file.vbs",
+                                    "en": "C:\\sers\\user\\documents\\file.vbs",
+                                    "pr": "C:\\sers\\user\\documents\\file.vbs"
+                                },
+                                "title": {
+                                    "es": "Archivo VBS",
+                                    "en": "VBS file",
+                                    "pr": "Arquivo VBS"
+                                },
+                                "id": "file",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "Path to the VBS file",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": {
+                                    "es": "arg1, arg2, arg3",
+                                    "en": "arg1, arg2, arg3",
+                                    "pr": "arg1, arg2, arg3"
+                                },
+                                "title": {
+                                    "es": "Argumentos",
+                                    "en": "Arguments",
+                                    "pr": "Argumentos"
+                                },
+                                "id": "args",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "List of arguments to pass to the script",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "Latin-1",
+                                "visible": true,
+                                "title": {
+                                    "es": "Tipo de codificación",
+                                    "en": "Encoding type",
+                                    "pr": "Tipo de codificação"
+                                },
+                                "id": "code",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": false,
+                                "description": "Type of encoding to decode the result",
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "variable",
+                                "visible": true,
+                                "title": {
+                                    "es": "Asiognar resultado a variable",
+                                    "en": "Assign result to a variable",
+                                    "pr": "Atribuir resultado a uma variável"
+                                },
+                                "id": "result",
+                                "css": "col-md-12",
+                                "remove_vars": true,
+                                "var_type": "str",
+                                "description": "Variable name where the output of the command will be stored",
+                                "default": null
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAB2AAAAdgB+lymcgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOiSURBVHic7dvLixxVFMfxzxhN0MHRCXHEEMEwaARdKEbB1YCoI4oTIepCohNQE8xCEVcu/AMEHxsXPkAUoiLiyhfGhRtdiEgcogsFzSgBiRlfmCjGTMbF6ca2p6aqxq7KbbrrCxe67r116txf1T33UdUMOSMV21uPcyu2uRrOxlzC65vHUuL0llXc2KqfgCN4CO9VbLcsP4k2PYcHhCC5nF6DE8fwSw12y7CE13G7aNsunMw7oQ4BUnMQN+CD1nGuCIMoAOxXUoRBFYCSIgyyAJQQYdAFoECEYRCAHBEGUYDr8NQKZR/hXlyAW+q4+BFsq8NwSX4Wd7YoLeFKOC2Jm/WxXrQpL0206v7B4AmwahoBUjuQmkaA1A6kphEgtQOpaQRI7UBqhl6ANhM4Kv2Obpm0v8e2bmjZ2cK/q8FxjOJ6/NqD8QksKNiI7IEpPFqlwe7l8JxoQL+yqWqDQx8DijZE1mBxFWXrcFbH8V9ay86SnIG/V1G/Z/KegEn8KPtd3wgO4Kau/ANiU6KdjoqgdU0JX9biO9xWom5l5AkwL+7enRllU7jY8og8jt1CvEmx6/IJ3sF5Bb7cKraq7ityukryBFjEq5jNKJvF2zicUXYY37bSHPYIIW8s8GUWn2NaCHFKKAqCL+JaXNqRN4rteLlCP84X3elBfIMdFdrOpUiAr/Ap7unIuwPH8W5G/RFcJrrIlNh5fQVn4v2c69yNQ2LXdi92FrteLVvE7GhDRtke4dya1vGHeHoFO8dlz96Oibu7EnN4rPV7E07g6ox628TOcy/8ZybYJk+Ac0QfnsZFIjZcsYLxBdyPza20UcwOd4ghcTrjnK1i5ri5I28fnsmoW7kAZV6M/Ca+upjF1/hSBKsslsTQebArf68Igtst7woPt855vCNvTHSDR4RwtVH2zdBLeFOov9LjX8SY5euMtSL4fSxGjTbf43LM4I3/eb1SlBVgn/jqYyNeK6g7ias6jteJYHizGFE6mREi3CUmTZ2MiaeuLwRYxLOi32SN/W0O4cmuvBP4QvTfz7rKLsHzljceXhBd55SQFwT7icqD4NCvBodegO4YMIPfe7B3IX4Q/b4OtlZtsC3Aghh6nujRXnvSVOeavtc9wVpJ/YFEGZog2EkjQGoHUtMIkNqB1DQCpHYgNY0AqR1ITSNAagdS0wiQ2oHUDL0AdfxhYlS8Je5Xav1r77z0H1GVSSe1Prep+q+z4/r77rf5U2zdNfwD0pUsQlnzR9AAAAAASUVORK5CYII=",
+                    "visible": true,
+                    "options": false,
+                    "father": "execvba",
+                    "group": "scripts",
+                    "linux": false,
+                    "windows": true,
+                    "mac": false,
+                    "docker": false,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "file",
+                            "var_type": "str",
+                            "description": "Path to the VBS file",
+                            "required": false
+                        },
+                        {
+                            "name": "args",
+                            "var_type": "list",
+                            "description": "List of arguments to pass to the script",
+                            "required": false
+                        },
+                        {
+                            "name": "code",
+                            "var_type": "str",
+                            "description": "Type of encoding to decode the result",
+                            "required": false
+                        }
+                    ],
+                    "return": [
+                        {
+                            "name": "result",
+                            "var_type": "str",
+                            "required": false,
+                            "description": "Variable name where the output of the command will be stored",
+                            "default": null
+                        }
+                    ],
+                    "long_description": "**Command:  Execute Visual Basic Script file**\n\n**Description:** This command is used to open, read and execute a '.vbs' file passing the needed arguments to do so. **Parameters:**\n- **file**:  Provide the path to the VBS file using this parameter. \n\n- **args** (optional): If you need to pass arguments to the script, you can provide them using this parameter. This parameter is optional, so you can leave it blank."
+                },
+                {
+                    "title": "Execute Powershell Script file",
+                    "description": "Open and execute '.ps1' file passing the needed arguments",
+                    "title_options": null,
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "file_select",
+                                "placeholder": {
+                                    "es": "C:\\users\\user\\documents\\file.ps1",
+                                    "en": "C:\\sers\\user\\documents\\file.ps1",
+                                    "pr": "C:\\sers\\user\\documents\\file.ps1"
+                                },
+                                "title": {
+                                    "es": "Archivo PS1",
+                                    "en": "PS1 file",
+                                    "pr": "Arquivo PS1"
+                                },
+                                "id": "file",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "Path to the PS1 file",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": {
+                                    "es": "arg1, arg2, arg3",
+                                    "en": "arg1, arg2, arg3",
+                                    "pr": "arg1, arg2, arg3"
+                                },
+                                "title": {
+                                    "es": "Argumentos",
+                                    "en": "Arguments",
+                                    "pr": "Argumentos"
+                                },
+                                "id": "args",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "List of arguments to pass to the script",
+                                "required": false
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "icon": "data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE4Ljc1NSAyMUgxLjI4NWMtLjQxMSAwLS43ODItLjE3MS0xLjAxOS0uNDdhMS4zMDggMS4zMDggMCAwIDEtLjIyOC0xLjExOEwzLjU0NiA0LjM2MUMzLjcyMiAzLjU5OSA0LjQ2OSAzIDUuMjQ1IDNoMTcuNDdjLjQxMSAwIC43ODIuMTcxIDEuMDE5LjQ3LjI0LjMwMy4zMjMuNzEuMjI4IDEuMTE4bC0zLjUwNyAxNS4wNTFjLS4xNzcuNzYyLS45MjQgMS4zNjEtMS43IDEuMzYxek01LjI0NSA0Yy0uMzE0IDAtLjY1My4yNzQtLjcyNS41ODdMMS4wMTMgMTkuNjM5Yy0uMDI2LjExMS0uMDEzLjIwNy4wMzcuMjY5LjA2LjA3Ni4xNjEuMDkyLjIzNS4wOTJoMTcuNDdjLjMxMyAwIC42NTItLjI3NC43MjUtLjU4N2wzLjUwNy0xNS4wNTJjLjAyNi0uMTExLjAxMy0uMjA3LS4wMzctLjI2OS0uMDYtLjA3Ni0uMTYxLS4wOTItLjIzNS0uMDkySDUuMjQ1eiIvPjxwYXRoIGQ9Ik0xNi42MTYgMTlIMTIuMzljLS43NjYgMC0xLjM5LS41NjEtMS4zOS0xLjI1LjAwNS0uNjkuNjI1LTEuMjUgMS4zODQtMS4yNWg0LjIzMmMuNzU4IDAgMS4zNzkuNTYgMS4zODQgMS4yNDYtLjAwNS42OTQtLjYyNSAxLjI1NC0xLjM4NCAxLjI1NHptLTQuMjI2LTEuNWMtLjIzMSAwLS4zODkuMTM0LS4zOS4yNTQgMCAuMTE0LjE2Ny4yNDYuMzkuMjQ2aDQuMjIxYy4yMzEgMCAuMzg5LS4xMzQuMzktLjI1NC0uMDAxLS4xMTItLjE1OS0uMjQ2LS4zODQtLjI0NkgxMi4zOXptLTYuODYxIDEuNDk5YTEuNTQgMS41NCAwIDAgMS0xLjIyOC0uNjE4IDEuNDcgMS40NyAwIDAgMS0uMjg0LTEuMTIxIDEuMzkgMS4zOSAwIDAgMSAuNTcyLS45MjVsLjAwMS0uMDAxIDYuNjA0LTQuNjUzLTQuMDY1LTQuMjFhMS4zNzYgMS4zNzYgMCAwIDEtLjM4Ni0xLjAwOGMuMDEyLS4zOTYuMTkyLS43NzkuNDkzLTEuMDU1LjYwMy0uNTUzIDEuNTM3LS41NDEgMi4wODQuMDI3bDUuMjk0IDUuNDgxYy40NTYuNDczLjUxNSAxLjE5OC4xNDQgMS43NjYtLjA4OS4xODQtLjI5Ni4zOTUtLjYyMi42MThsLTcuNzg0IDUuNDQxYTEuNDIyIDEuNDIyIDAgMCAxLS44MjMuMjU4em0tLjM2Mi0xLjg0OGEuMzk3LjM5NyAwIDAgMC0uMTYyLjI2NS40ODguNDg4IDAgMCAwIC4wOTcuMzY3Yy4xNjQuMjIuNDczLjI4My42NzMuMTRsNy43OS01LjQ0NWMuMjUyLS4xNzIuMzE0LS4yNy4zMjctLjI5NS4xNDMtLjIyNS4xMzMtLjQzNi4wMDEtLjU3MUw4LjYgNi4xMjljLS4xNy0uMTc4LS40ODYtLjE2OS0uNjkuMDE3YS40OTYuNDk2IDAgMCAwLS4xNjguMzQ4LjM3OS4zNzkgMCAwIDAgLjEwNy4yODFsNC40MTMgNC41NjljLjA5LjA5NC4xNC4yMTguMTQuMzQ4di4xMDJhLjUwMi41MDIgMCAwIDEtLjIxMi40MDlsLTcuMDIzIDQuOTQ4eiIvPjwvc3ZnPg==",
+                    "visible": true,
+                    "options": false,
+                    "father": "execps1",
+                    "group": "scripts",
+                    "linux": false,
+                    "windows": true,
+                    "mac": false,
+                    "docker": false,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "file",
+                            "var_type": "str",
+                            "description": "Path to the PS1 file",
+                            "required": false
+                        },
+                        {
+                            "name": "args",
+                            "var_type": "str",
+                            "description": "List of arguments to pass to the script",
+                            "required": false
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "**Command:  Execute Powershell Script file**\n\n**Description:** This command is used to open, read and execute a '.ps1' file passing the needed arguments to do so. **Parameters:**\n- **file**:  Provide the path to the PS1 file using this parameter. \n\n- **args** (optional): If you need to pass arguments to the script, you can provide them using this parameter. This parameter is optional, so you can leave it blank."
+                },
+                {
                     "visible": true,
                     "title": "Execute robot from DB",
                     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojYmMwMDE3O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOC44OSw2LjE5YTEuNzYsMS43NiwwLDAsMC0yLTEuMzNoLS4xNWwtLjEyLDBjLTYuODIsMi0xMy4zNyw3LjI0LTE3LjU2LDE0YTEzLjI5LDEzLjI5LDAsMCwwLTcsMy4xOCwxMSwxMSwwLDAsMC0zLjY2LDcuMTksMSwxLDAsMCwwLC40Ni45NSwxLDEsMCwwLDAsMS4wNywwLDExLDExLDAsMCwxLDUuMjQtMmMtLjEzLjU3LS4yNCwxLjExLS4zMiwxLjYxYTEuNzksMS43OSwwLDAsMCwuOTIsMkwyNi4zLDM4YS41NC41NCwwLDAsMCwuMjIuMDVoMGExLjcsMS43LDAsMCwwLDEuNzItLjQyLDEzLjI1LDEzLjI1LDAsMCwwLDEuMTMtMSwxMSwxMSwwLDAsMSwuODUsNS40OSwxLDEsMCwwLDAsLjQ4Ljk0LDEsMSwwLDAsMCwuNDguMTNoLjA5YS45MS45MSwwLDAsMCwuNDUtLjIzLDExLjcxLDExLjcxLDAsMCwwLDMuNjYtMTQuNUMzOS4yOCwyMS40OCw0MC41OCwxMy4xOSwzOC44OSw2LjE5Wk0xNi42OCwzMC4xM2ExNi44MiwxNi44MiwwLDAsMSwuNjQtMi43LDEuMTcsMS4xNywwLDAsMCwwLS4yNiwxLDEsMCwwLDAtMS4wNS0xaDBhMTMsMTMsMCwwLDAtNS41OCwxLjI2LDEwLjQzLDEwLjQzLDAsMCwxLDkuMDUtNi42NS45Mi45MiwwLDAsMCwuNzUtLjQ3QzI0LjM2LDEzLjgxLDMwLjUzLDguNzgsMzcsNi44NGMxLjU2LDYuNjUuMjMsMTQuNTMtMy41OCwyMS4xMWExLDEsMCwwLDAsMCwuODljMS45NCw0LDEuNDUsOC4yNC0xLjIyLDExLjE2YTEzLDEzLDAsMCwwLTEuNzgtNS41OC45NC45NCwwLDAsMC0uNzktLjQ5aDBhMSwxLDAsMCwwLS43Ny4zN0ExMCwxMCwwLDAsMSwyNywzNi4xWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4LDI3LjQzYTQuNTgsNC41OCwwLDAsMCwxLjExLS4xNkE1LjE2LDUuMTYsMCwwLDAsMjcsMTcuMjEsNS4xNiw1LjE2LDAsMCwwLDI4LDI3LjQ0Wk0zMC42NCwyNGEzLjE4LDMuMTgsMCwwLDEtNC40Mi44NCwzLjIsMy4yLDAsMCwxLS44Ni00LjQ0LDMuMTMsMy4xMywwLDAsMSwyLTEuMywyLjg2LDIuODYsMCwwLDEsLjU4LS4wNmgwYS4zLjMsMCwwLDAsLjE2LS4wNSwzLjMsMy4zLDAsMCwxLDEuNi41NUEzLjIzLDMuMjMsMCwwLDEsMzAuNjQsMjRaIi8+PC9zdmc+",
@@ -5348,7 +5646,7 @@
                             "default": null
                         }
                     ],
-                    "long_description": "The \"Execute robot from DB (expose)\" command allows you to execute robots that are stored in the database. This command is useful when you want to automate tasks using pre-built robots. \n\n**Parameters:**\n- **vars (optional)**: A dictionary of variables that you can pass to the robot being executed. These variables provide input to the robot and can be used to customize its behavior.\n- **robot (required)**: The name of the robot that you want to execute. Specify the name of the robot exactly as it appears in the database.\n\nUpon execution, this command returns a string variable named `result` (optional). You can use this variable to store the result of the robot execution, such as an output or a status message.The executed robot must use the 'return data' command found in the Script section if you want to return a message.\n\n"
+                    "long_description": "The \"Execute robot from DB (expose)\" command allows you to execute robots that are stored in the database. This command is useful when you want to automate tasks using pre-built robots. \n\n**Parameters:**\n- **vars (optional)**: A dictionary of variables that you can pass to the robot being executed. These variables provide input to the robot and can be used to customize its behavior.\n- **robot (required)**: The name of the robot that you want to execute. Specify the name of the robot exactly as it appears in the database.\n\nUpon execution, this command returns a string variable named `result` (optional). You can use this variable to store the result of the robot execution, such as an output or a status message.\n\n"
                 },
                 {
                     "title": "Return Data",
@@ -6226,7 +6524,7 @@
                     "error_handling": false,
                     "params": [],
                     "return": [],
-                    "long_description": "The \"Break\" command is used to interrupt the execution of a loop and exit the loop entirely. \n\nWhen a loop is executed, such as a \"For\" or \"While\" loop, it continues until a certain condition is met. However, there may be cases where you need to prematurely exit the loop based on a specific condition. This is where the \"Break\" command comes in handy.\n\nTo use the \"Break\" command, simply place it within the loop structure at the point where you want the loop to be interrupted. This command does not have parameters.\n\n**Notes:**\n- The \"Break\" command can only be used within a loop command, such as \"For\" or \"While\""
+                    "long_description": "The \"Break\" command is used to interrupt the execution of a loop and continue with the next iteration or exit the loop entirely. \n\nWhen a loop is executed, such as a \"For\" or \"While\" loop, it continues until a certain condition is met. However, there may be cases where you need to prematurely exit the loop based on a specific condition. This is where the \"Break\" command comes in handy.\n\nTo use the \"Break\" command, simply place it within the loop structure at the point where you want the loop to be interrupted. This command does not have parameters.\n\n**Notes:**\n- The \"Break\" command can only be used within a loop command, such as \"For\" or \"While\""
                 },
                 {
                     "visible": true,
@@ -8395,7 +8693,152 @@
                         }
                     ],
                     "return": [],
-                    "long_description": "The \"Click on Object\" command allows you to automate clicking on an object in a graphical user interface (GUI) based on its selector. This command is particularly useful when you want to interact with buttons, links, or other clickable elements within an application window.\n\nTo use the \"Click on Object\" command, you need to provide the following parameters:\n\n1. \"selector\" (required): This parameter expects a dictionary object that identifies the element you want to click on. The selector specifies attributes such as the element's ID, class, or name. It helps the automation software locate the object accurately.\n\n2. \"timeout\" (optional): This parameter sets the maximum amount of time the command will wait for the object to appear on the screen. If the object is not found within the specified timeout, the command will raise an error.\n\n3. \"click_type\" (optional): This parameter determines the type of click action to perform on the object. It can be set to \"single\" (default) for a standard left-click, or \"double\" for a double-click.\n\n4. \"button\" (optional): This parameter specifies the mouse button to use for the click action. It can be set to \"left\" (default), \"right\", or \"middle\".\n\n5"
+                    "long_description": "The \"Click on Object\" command allows you to automate clicking on an object in a graphical user interface (GUI) based on its selector. This command is particularly useful when you want to interact with buttons, links, or other clickable elements within an application window.\n\nTo use the \"Click on Object\" command, you need to provide the following parameters:\n\n1. \"selector\" (required): This parameter expects a dictionary object that identifies the element you want to click on. The selector specifies attributes such as the element's ID, class, or name. It helps the automation software locate the object accurately.\n\n2. \"timeout\" (optional): This parameter sets the maximum amount of time the command will wait for the object to appear on the screen. If the object is not found within the specified timeout, the command will raise an error.\n\n3. \"click_type\" (optional): This parameter determines the type of click action to perform on the object. It can be set to \"single\" (default) for a standard left-click, or \"double\" for a double-click.\n\n4. \"button\" (optional): This parameter specifies the mouse button to use for the click action. It can be set to \"left\" (default), \"right\", or \"middle\".\n\n"
+                },
+                {
+                    "title": "Relative click on Object",
+                    "icon": "/images/icons/windows.png",
+                    "visible": true,
+                    "name": "relative_click",
+                    "description": "Click on an object using its relative coordinates from its closest (identified) element",
+                    "title_options": "",
+                    "title_command": "",
+                    "father": "relative_click",
+                    "options": "",
+                    "command_available": true,
+                    "group": "windows",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "textarea",
+                                "placeholder": "<wnd app='calc.exe' class_name='CalcFrame' title='Calculadora' />",
+                                "title": "Selector",
+                                "help": "<a class='btn btn-sm btn-info button-in-title' loader='True' target='visor1' href='/desktoprecorder_visor?action=getobject&id=selector'>Editar Selector</a>Propiedad de texto utilizada para encontrar un elemento de IU particular cuando se ejecuta la actividad. En realidad, es un fragmento XML o JSON que especifica los atributos del elemento de GUI que est\u00e1 buscando y de algunos de sus padres.",
+                                "id": "selector",
+                                "formatter": "json",
+                                "css": "col-md-12",
+                                "var_type": "dict",
+                                "description": "Selector",
+                                "required": true
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "30",
+                                "title": "Maximum search time",
+                                "id": "timeout",
+                                "help": "Specifies the time to wait for the activity to run before an error is generated. The default value is 30 seconds.",
+                                "css": "col-md-6",
+                                "var_type": "int",
+                                "description": "Maximum search time",
+                                "required": false
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": "Click Simple",
+                                "title": "Click type",
+                                "options": [
+                                    {
+                                        "title": "Click Simple",
+                                        "value": "CLICK_SINGLE"
+                                    },
+                                    {
+                                        "title": "Click Doble",
+                                        "value": "CLICK_DOUBLE"
+                                    },
+                                    {
+                                        "title": "Hold Click",
+                                        "value": "CLICK_DOWN"
+                                    },
+                                    {
+                                        "title": "Release Click",
+                                        "value": "CLICK_UP"
+                                    }
+                                ],
+                                "help": "Specifies the type of mouse click (single, double, hold, release) used when simulating the click event. By default, a single click is selected.",
+                                "id": "click_type",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "description": "Click type",
+                                "required": false
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": "Right button",
+                                "title": "Mouse button",
+                                "options": [
+                                    {
+                                        "title": "Left button",
+                                        "value": "left"
+                                    },
+                                    {
+                                        "title": "Right button",
+                                        "value": "right"
+                                    },
+                                    {
+                                        "title": "Central button",
+                                        "value": "middle"
+                                    }
+                                ],
+                                "help": "The mouse button (left, right, middle) used for the click action. By default, the left mouse button is selected.",
+                                "id": "button",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "description": "Mouse button",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "DEFAULT",
+                                "title": "Window identifier",
+                                "help": "Write only if an identifier was entered in the connect window command.",
+                                "id": "session",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "description": "Window identifier",
+                                "required": false
+                            }
+                        ]
+                    },
+                    "docker": false,
+                    "linux": false,
+                    "mac": false,
+                    "windows": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "selector",
+                            "var_type": "dict",
+                            "description": "Selector",
+                            "required": true
+                        },
+                        {
+                            "name": "timeout",
+                            "var_type": "int",
+                            "description": "Maximum search time",
+                            "required": false
+                        },
+                        {
+                            "name": "click_type",
+                            "var_type": "str",
+                            "description": "Click type",
+                            "required": false
+                        },
+                        {
+                            "name": "button",
+                            "var_type": "str",
+                            "description": "Mouse button",
+                            "required": false
+                        },
+                        {
+                            "name": "session",
+                            "var_type": "str",
+                            "description": "Window identifier",
+                            "required": false
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "The \"Relative click on Object\" command allows you to automate clicking on an object in a graphical user interface (GUI) based on the position of the closest identified element. This command is particularly useful when you want to interact with buttons, links, or other clickable elements within an application window, but are not recognized as separate elements. Using the coordinates of its closest element, the recorder saves the position of the mouse when doing the click.\n\nTo use the \"Relative click on Object\" command, you need to provide the following parameters:\n\n1. \"selector\" (required): This parameter expects a dictionary object that identifies the element you want to click on. The selector specifies attributes such as the element's ID, class, name, or click coordinates. It helps the automation software locate the object accurately.\n\n2. \"timeout\" (optional): This parameter sets the maximum amount of time the command will wait for the (closest) object to appear on the screen. If the object is not found within the specified timeout, the command will raise an error.\n\n3. \"click_type\" (optional): This parameter determines the type of click action to perform on the object. It can be set to \"single\" (default) for a standard left-click, or \"double\" for a double-click.\n\n4. \"button\" (optional): This parameter specifies the mouse button to use for the click action. It can be set to \"left\" (default), \"right\", or \"middle\".\n\n"
                 },
                 {
                     "title": "Get text",
@@ -9336,52 +9779,52 @@
                             "params": [],
                             "return": [],
                             "long_description": "This command is used to close an opened Excel workbook. \n\n**Parameters:** \n\n No parameters required\n\n**Note:**This command will close the Excel workbook without saving any changes. If you want to save the changes before closing, consider using the \"Save Excel Workbook\" command before using this command."
+}
+                    ]
                         }
                     ]
                 }
+            ],
+            "command_lines": [
+                {
+                    "option": "-start",
+                    "description": "Name of the robot to execute",
+                    "example": "-start=robot"
+                },
+                {
+                    "option": "-db",
+                    "description": "Path of the database where your robot is stored",
+                    "example": "-start=robot -db=C:/Robots/robot.db"
+                },
+                {
+                    "option": "--token",
+                    "description": "Show the license token",
+                    "example": "--token"
+                },
+                {
+                    "option": "--port",
+                    "description": "Change the default port of the Rocketbot Studio",
+                    "example": "--port=5001"
+                },
+                {
+                    "option": "--update-drivers",
+                    "description": "Check and update the webdrivers every time the robot is executed",
+                    "example": "-start=robot  --update-drivers"
+                },
+                {
+                    "option": "--install-modules",
+                    "description": "Install missing modules that are required by the robot after the execution",
+                    "example": "-start=robot --install-modules"
+                },
+                {
+                    "option": "--no-debug",
+                    "description": "Disable the debug mode. This will disable the console logs",
+                    "example": "-start=robot --no-debug"
+                },
+                {
+                    "option": "-h [--help]",
+                    "description": "Show the help with all the options",
+                    "example": "-h"
+                }
             ]
         }
-    ],
-    "command_lines": [
-        {
-            "option": "-start",
-            "description": "Name of the robot to execute",
-            "example": "-start=robot"
-        },
-        {
-            "option": "-db",
-            "description": "Path of the database where your robot is stored",
-            "example": "-start=robot -db=C:/Robots/robot.db"
-        },
-        {
-            "option": "--token",
-            "description": "Show the license token",
-            "example": "--token"
-        },
-        {
-            "option": "--port",
-            "description": "Change the default port of the Rocketbot Studio",
-            "example": "--port=5001"
-        },
-        {
-            "option": "--update-drivers",
-            "description": "Check and update the webdrivers every time the robot is executed",
-            "example": "-start=robot  --update-drivers"
-        },
-        {
-            "option": "--install-modules",
-            "description": "Install missing modules that are required by the robot after the execution",
-            "example": "-start=robot --install-modules"
-        },
-        {
-            "option": "--no-debug",
-            "description": "Disable the debug mode. This will disable the console logs",
-            "example": "-start=robot --no-debug"
-        },
-        {
-            "option": "-h [--help]",
-            "description": "Show the help with all the options",
-            "example": "-h"
-        }
-    ]
-}

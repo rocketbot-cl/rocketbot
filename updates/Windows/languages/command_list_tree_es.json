@@ -691,7 +691,7 @@
         {
           "title": "Seleccionar un objeto",
           "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMjYzMjM4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMi43NCwxNS43OEgzMC42N2ExLDEsMCwwLDEsMC0yaDIuMDdhMSwxLDAsMCwxLDAsMloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOCwxMC42M2ExLDEsMCwwLDEtLjctMS43MWwxLjMtMS4zYTEsMSwwLDAsMSwxLjQxLDBBMSwxLDAsMCwxLDMwLDlsLTEuMywxLjMxQTEsMSwwLDAsMSwyOCwxMC42M1oiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMS40NSw4LjRhMSwxLDAsMCwxLTEtMVY1LjU2YTEsMSwwLDEsMSwyLDBWNy40QTEsMSwwLDAsMSwyMS40NSw4LjRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTUsMTAuNjNhMSwxLDAsMCwxLS43MS0uMjlMMTMsOUExLDEsMCwxLDEsMTQuNCw3LjYybDEuMzEsMS4zYTEsMSwwLDAsMSwwLDEuNDJBMSwxLDAsMCwxLDE1LDEwLjYzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyLjIzLDE1Ljc4SDEwLjE3YTEsMSwwLDAsMSwwLTJoMi4wNmExLDEsMCwwLDEsMCwyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI5LjQyLDQzLjQ0aC0yYTkuNzEsOS43MSwwLDAsMS01LjczLTEuODkuMzkuMzksMCwwLDEtLjEtLjA4TDEyLDMyLjM0YTMuMzQsMy4zNCwwLDAsMSwwLTQuOCwzLjMsMy4zLDAsMCwxLDQuNjYuMjFsMS40NCwxLjM0VjE1LjE5YTMuMzQsMy4zNCwwLDAsMSw2LjY4LDB2Mi45MmEzLjIxLDMuMjEsMCwwLDEsMS4zMi0uMjcsMy4zNCwzLjM0LDAsMCwxLDMuMzQsMy4yM0EzLjM1LDMuMzUsMCwwLDEsMzQuMTUsMjRhMy40OCwzLjQ4LDAsMCwxLDEuMzQtLjI3QTMuMywzLjMsMCwwLDEsMzguODMsMjd2Ny4zNEE5LjI4LDkuMjgsMCwwLDEsMjkuNDIsNDMuNDRaTTIyLjkzLDQwYTcuNzMsNy43MywwLDAsMCw0LjUsMS40N2gyYTcuMjcsNy4yNywwLDAsMCw3LjQxLTcuMTFWMjdhMS4zNCwxLjM0LDAsMCwwLTIuNjgsMHYyLjE3YTEsMSwwLDEsMS0yLDB2LTVhMS4zNSwxLjM1LDAsMCwwLTIuNjksMHY1YTEsMSwwLDEsMS0yLDB2LThBMS4zNCwxLjM0LDAsMCwwLDI0Ljc5LDIxdjguMTVhMSwxLDAsMCwxLTEsMWgwYTEsMSwwLDAsMS0xLTF2LThhMi40NCwyLjQ0LDAsMCwxLDAtLjI3VjE1LjE4YTEuMzQsMS4zNCwwLDAsMC0yLjY4LDB2MTYuMmExLDEsMCwwLDEtMS42OS43NEwxNS4zLDI5LjE5QTEuMzYsMS4zNiwwLDAsMCwxMy40MSwyOWExLjM1LDEuMzUsMCwwLDAsMCwxLjkyWiIvPjwvc3ZnPg==",
-          "visible": true,
+          "visible": false,
           "name": "Select object",
           "description": "Busca un objeto en la pagina abierta",
           "title_options": "Tipo de dato",
@@ -712,8 +712,8 @@
         "modal_size": "md"
     },
     {
-        "title": "Select object",
-        "description": "Search and select object on open page",
+        "title": "Seleccionar un objeto",
+        "description": "Buscar y seleccionar objeto en la página abierta",
         "title_options": "Seleccione una opci\u00f3n",
         "form": {
             "css": "modal-lg",
@@ -2979,6 +2979,104 @@
         "long_description": "El comando \"Mensaje de registro\" se utiliza para escribir un mensaje de diagnóstico en un nivel de registro específico. Este comando es particularmente útil para fines de depuración y monitoreo. \n\nPara utilizar el comando \"Registrar mensaje\", debe proporcionar dos parámetros:\n\n1. **Mensaje para registrar** (`command`): este parámetro espera un valor de cadena que represente el mensaje que desea registrar. Puede incluir cualquier información o detalles relevantes que desee rastrear o registrar.\n\n2. **Tipo de nivel de registro** (`option`): este parámetro requiere un valor de cadena que especifique el tipo de nivel de registro. Hay cinco opciones disponibles para elegir:\n - \"trace\": Se utiliza para obtener información detallada de depuración.\n - \"info\": Se utiliza para proporcionar información general sobre la ejecución del programa.\n - \"warn\": Se utiliza para resaltar posibles problemas o advertencias.\n - \"error\": se utiliza para registrar errores que ocurren durante la ejecución del programa.\n - \"fatal\": se utiliza para registrar errores críticos que conducen a la terminación del programa. \n\nSeleccione el tipo de nivel de registro apropiado según la gravedad del mensaje que desea registrar. \n\nAl utilizar el comando \"Registrar mensaje\" con diferentes tipos de niveles de registro, puede realizar un seguimiento eficaz del flujo de sus tareas de automatización, identificar cualquier error o advertencia y obtener información sobre la ejecución del programa."
         },
         {
+          "title": "Log Message to File",
+          "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAGeAAABngGFfqeAAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAdpQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL8PFBQAAAJ10Uk5TAAECBAUHCQoLDA0OEBESExQVFhgZGhscHR8gISIjJCUnKCosLS4vMDU2ODk8PUJDREVGSEpLTE1OT1JTWFlcXl9gZWpvcnh5fH5/gIKFi4yQkZOUmJqfoKGjpKWmqaqsr7Gytba3uLq8vr/AwcLDxMfIycrLzM/Q0drb3N3e3+Dh4uPk5ebn6Onq6+zt7/Dx8vP09fb3+Pn6+/z9/he2Q5YAAAKISURBVFjD7ddXV9RAAIbhN1hARSkrIhZUumBBxQZRQSwUC3XtHXtDAcHGig1sIK7Kwvr9Vy+yDV032c2dh+9qzmTmOTOZySSBcEouTitRgp0kTp/s0pywf5F0tjVBBiXVJwIqpR2Jrp+SFKh2CWiixCWg1ytcAhpa4hLQzfkuAXndAmpxC6jBLRDY5hLQRKlLQG/yXQIaNJIGTsx+MsuSBjzHuyK5JlUmDcRmxxwQDzBya6R9HofZJ9Xkxu6EjI5xJZ3xjowIcEEp5UK4f6FSTGEIqP1Xg4/v44x8JlquDQGmJOm0x+PpjmnprS2AvN1t0Q7BUw2VS0nzVB37bFWYs4AuoC3SeLQmPMHNI6GqO+WRNRuzBYZzANLnAyx7Jkk6Gl21UtkCdcC6ewH/1SygTpKuGcDazru+wetNbbbAbaDggyQNLQAeSu9ygEM/Z9/QfwO7gJNWsR6ol1qBqhk5BQqA0ehgNlrkLTkFJg1YFGr0FlgsLQc+SbpkmqZpHrYBBoD14cU3gK+jQLZkTQU22ADDQE4IGAOy5Tcgze8YCC4E/Fb5MbBJWgP0S3ri9WbZAyoDzlvFI8BBaQ9wwKpZ5QBoAcoDkvQlG+iRugGu2ALNPp/P5/NNfVsBbB+XRsqAvZJ+bQWMxmdBBVYmAEJ5pDMA8yqKDSDdJ0mvrG+b9Pw0nAA6F/kWKu63Wj+NOXMdAHqxMxNgddNUZONd3pJvAOSZ5+IB30cjCVjXX15+MPHH5vUP3n/+46+tXJ3qmVgdAjInU+s/mRme8/7pVPpP74/etYr2nl5p4IbDDEi9Pe0Vc6/3OeB/BRrLHaYxHlCU3KNY9Pe4+pLp3xdnYna//7EnwcXoL/Bv5uy/BUdAkjIAAAAASUVORK5CYII=",
+          "visible": true,
+          "name": "log_message_file",
+          "description": "Cree un mensaje de registro personalizado y escríbalo en un archivo.",
+          "title_options": "",
+          "father": "log_message_file",
+          "options": "",
+          "command_available": true,
+          "group": "system",
+          "form": {
+              "css": "modal-lg",
+              "inputs": [
+                  {
+                      "type": "file_select",
+                      "placeholder": "",
+                      "title": "File to write",
+                      "help": "",
+                      "id": "log_file",
+                      "css": "col-md-12",
+                      "var_type": "str",
+                      "description": "Ruta del archivo donde se escribirán los registros.",
+                      "required": false
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": "",
+                      "title": "Log Message",
+                      "id": "log_message",
+                      "formatter": "json",
+                      "css": "col-md-8",
+                      "var_type": "str",
+                      "description": "Mensaje para guardar en el archivo de registro.",
+                      "required": true
+                  },
+                  {
+                      "type": "select",
+                      "placeholder": "",
+                      "id": "log_level",
+                      "title": "Level",
+                      "css": "col-md-4",
+                      "var_type": "str",
+                      "description": "Nivel a asignar al mensaje de registro.",
+                      "options": [
+                            {
+                              "title": "TRACE",
+                              "value": "TRACE"
+                            },
+                            {
+                              "title": "INFO",
+                              "value": "INFO"
+                            },
+                            {
+                              "title": "WARN",
+                              "value": "WARN"
+                            },
+                            {
+                              "title": "ERROR",
+                              "value": "ERROR"
+                            },
+                            {
+                              "title": "FATAL",
+                              "value": "FATAL"
+                            }
+                      ],
+                      "required": false
+                  }
+              ]
+          },
+          "docker": false,
+          "linux": false,
+          "mac": false,
+          "windows": true,
+          "modal_size": "lg",
+          "params": [
+              {
+                  "name": "log_file",
+                  "var_type": "str",
+                  "description": "Ruta del archivo donde se escribirán los registros.",
+                  "required": true
+              },
+              {
+                  "name": "log_message",
+                  "var_type": "str",
+                  "description": "Mensaje para guardar en el archivo de registro.",
+                  "required": true
+              },
+              {
+                  "name": "log_level",
+                  "var_type": "str",
+                  "description": "Nivel a asignar al mensaje de registro.",
+                  "required": false
+              }
+          ],
+          "return": [],
+          "long_description": "El comando \"Registrar mensaje en archivo\" se utiliza para escribir un mensaje de diagnóstico en un nivel de registro específico. Este comando es particularmente útil para fines de depuración y monitoreo. \n\nPara utilizar el comando \"Registrar mensaje en archivo\", debe proporcionar tres parámetros:\n\n1. **Archivo para escribir** (`comando`): este parámetro espera un valor de cadena que representa una ruta al archivo donde se escribirá el registro. 2.**Mensaje para registrar** (`comando`): este parámetro espera un valor de cadena que represente el mensaje que desea registrar. Puede incluir cualquier información o detalles relevantes que desee rastrear o registrar.\n\n3. **Tipo de nivel de registro** (`opción`): este parámetro requiere un valor de cadena que especifique el tipo de nivel de registro. Hay cinco opciones disponibles para elegir:\n - \"trace\": Se utiliza para obtener información detallada de depuración.\n - \"info\": Se utiliza para proporcionar información general sobre la ejecución del programa.\n - \"warn\": Se utiliza para resaltar posibles problemas o advertencias.\n - \"error\": se utiliza para registrar errores que ocurren durante la ejecución del programa.\n - \"fatal\": se utiliza para registrar errores críticos que conducen a la terminación del programa. \n\nSeleccione el tipo de nivel de registro apropiado según la gravedad del mensaje que desea registrar. \n\nAl utilizar el comando \"Registrar mensaje en archivo\" con diferentes tipos de niveles de registro, puede crear su propio archivo de registro personalizado y realizar un seguimiento del flujo de sus tareas de automatización, identificar errores o advertencias y obtener información sobre las funciones del programa. ejecución."
+        },
+        {
           "title": "Crear Error",
           "icon": "data:image/png;base64,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",
           "visible": true,
@@ -3274,7 +3372,7 @@
         ],
         "return": [],
         "long_description": "El comando \"Establecer contraseña\" se utiliza para agregar o actualizar una contraseña en el administrador de credenciales del sistema operativo. Este comando le permite automatizar el proceso de configuración o actualización de contraseñas en diferentes plataformas como Windows, Linux o Mac.\n\nPara utilizar el comando \"Establecer contraseña\", debe proporcionar los siguientes parámetros:\n\n1. \"system\" (obligatorio): especifique el servicio de destino que desea establecer o actualice la contraseña. Este parámetro acepta un valor de cadena.\n\n2. \"username\" (obligatorio): proporcione el nombre de usuario al que desea agregar o actualizar la contraseña. Este parámetro acepta un valor de cadena.\n\n3. \"password\" (obligatorio): establezca la contraseña que desea asociar con el nombre de usuario proporcionado. Este parámetro acepta un valor de cadena.\n\nAsegúrese de proporcionar los detalles necesarios correctamente para garantizar que la contraseña se establezca o actualice según lo previsto.\n\nNota: El comando \"Establecer contraseña\" no tiene un valor de retorno."
-        },
+},
         {
           "title": "Parametros de linea de comandos",
           "description": "Retorna un diccionario con los parametros ingresados por linea de comandos en la ejecucion del robot",
@@ -3317,7 +3415,7 @@
               }
           ],
           "long_description": "El comando 'Parametros de línea de comandos' obtiene todos los argumentos pasados a Rocketbot en la línea de comandos. \n\nEl resultado es un diccionario con los argumentos como clave y el valor como valor. \n\nPor ejemplo, si se ejecuta Rocketbot con el comando: \n\n```\n# rocketbot.exe -start=main -db=\"db_path\" -arg1=\"value1\" arg2\n\n# Parametros de línea de comando\n\n# Output:\n{\n    \"-start\": \"main\",\n    \"-db\": \"db_path\",\n    \"-arg1\": \"value1\",\n    \"arg2\": True\n}\n```"
-      }
+        }
       ]
     },
     {
@@ -5139,18 +5237,7 @@
           "setVar": false,
           "getResult": false,
           "file": true,
-          "modal_size": "md",
-          "params": [
-            {
-              "name": "command",
-              "var_type": "str",
-              "required": true,
-              "description": "Ruta al archivo .py a ejecutar",
-              "default": null
-            }
-          ],
-          "return": [],
-          "long_description": "El comando \"Ejecutar archivo Python\" te permite abrir y ejecutar archivos Python (.py) dentro de la plataforma de RPA. Este comando es particularmente útil cuando quieres automatizar una tarea que involucra ejecutar código Python, además ejecuta el archivo usando el interprete de Python instalado en tu sistema, por lo que debes tenerlo instalado. Tiene las librerías más usadas para RPA ya disponibles, pero si necesitas instalar alguna en particular debes hacerlo de forma local en la siguiente ruta: Rocketbot/modules/libs\n\nEste comando no retorna ninguna salida o resultado. Si tu archivo Python produce alguna salida o resultado, quizás quieras usar la función de Rocketbot SetVar() (ver notas más abajo).\n\n**Parámetros:**\n- **command (requerido)**: Ruta al archivo .py que se desea ejecutar\n\n**Notas:**\n- Este comando usa un scope distinto al de Python tradicional, por lo que las variables y librerías que uses en funciones debes importarlas nuevamente dentro de la función.\n- Si necesitas retornar un valor a una variable de Rocketbot, puedes usar la función SetVar() que recibe dos parámetros, el primero es el nombre de la variable de Rocketbot donde obtendrás el resultado, y el segundo es el valor que deseas asignar a dicha variable. Por ejemplo: SetVar(\"variable_rocketbot\", variable_python)"
+          "modal_size": "md"
         },
         {
           "visible": true,
@@ -5193,6 +5280,198 @@
           "group": "scripts",
           "file": true,
           "modal_size": "md"
+        },
+        {
+          "title": "Ejecutar archivo de script de Visual Basic",
+          "description": "Abra y ejecute el archivo '.vbs' pasando los argumentos necesarios",
+          "title_options": null,
+          "form": {
+              "css": "modal-lg",
+              "inputs": [
+                  {
+                      "type": "file_select",
+                      "placeholder": {
+                          "es": "C:\\users\\user\\documents\\file.vbs",
+                          "en": "C:\\sers\\user\\documents\\file.vbs",
+                          "pr": "C:\\sers\\user\\documents\\file.vbs"
+                      },
+                      "title": {
+                          "es": "Archivo VBS",
+                          "en": "VBS file",
+                          "pr": "Arquivo VBS"
+                      },
+                      "id": "file",
+                      "css": "col-md-12",
+                      "var_type": "str",
+                      "description": "Ruta al archivo VBS",
+                      "required": false
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": {
+                          "es": "arg1, arg2, arg3",
+                          "en": "arg1, arg2, arg3",
+                          "pr": "arg1, arg2, arg3"
+                      },
+                      "title": {
+                          "es": "Argumentos",
+                          "en": "Arguments",
+                          "pr": "Argumentos"
+                      },
+                      "id": "args",
+                      "css": "col-md-12",
+                      "var_type": "str",
+                      "description": "Lista de argumentos para pasar al script",
+                      "required": false
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": "Latin-1",
+                      "visible": true,
+                      "title": {
+                          "es": "Tipo de codificación",
+                          "en": "Encoding type",
+                          "pr": "Tipo de codificação"
+                      },
+                      "id": "code",
+                      "css": "col-md-6",
+                      "var_type": "str",
+                      "required": false,
+                      "description": "Tipo de codificación para decodificar el resultado",
+                      "default": null
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": "variable",
+                      "visible": true,
+                      "title": {
+                          "es": "Asiognar resultado a variable",
+                          "en": "Assign result to a variable",
+                          "pr": "Atribuir resultado a uma variável"
+                      },
+                      "id": "result",
+                      "css": "col-md-12",
+                      "remove_vars": true,
+                      "var_type": "str",
+                      "description": "Nombre de la variable donde se almacenará la salida del comando",
+                      "default": null
+                  }
+              ]
+          },
+          "video_youtube": "",
+          "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAB2AAAAdgB+lymcgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOiSURBVHic7dvLixxVFMfxzxhN0MHRCXHEEMEwaARdKEbB1YCoI4oTIepCohNQE8xCEVcu/AMEHxsXPkAUoiLiyhfGhRtdiEgcogsFzSgBiRlfmCjGTMbF6ca2p6aqxq7KbbrrCxe67r116txf1T33UdUMOSMV21uPcyu2uRrOxlzC65vHUuL0llXc2KqfgCN4CO9VbLcsP4k2PYcHhCC5nF6DE8fwSw12y7CE13G7aNsunMw7oQ4BUnMQN+CD1nGuCIMoAOxXUoRBFYCSIgyyAJQQYdAFoECEYRCAHBEGUYDr8NQKZR/hXlyAW+q4+BFsq8NwSX4Wd7YoLeFKOC2Jm/WxXrQpL0206v7B4AmwahoBUjuQmkaA1A6kphEgtQOpaQRI7UBqhl6ANhM4Kv2Obpm0v8e2bmjZ2cK/q8FxjOJ6/NqD8QksKNiI7IEpPFqlwe7l8JxoQL+yqWqDQx8DijZE1mBxFWXrcFbH8V9ay86SnIG/V1G/Z/KegEn8KPtd3wgO4Kau/ANiU6KdjoqgdU0JX9biO9xWom5l5AkwL+7enRllU7jY8og8jt1CvEmx6/IJ3sF5Bb7cKraq7ityukryBFjEq5jNKJvF2zicUXYY37bSHPYIIW8s8GUWn2NaCHFKKAqCL+JaXNqRN4rteLlCP84X3elBfIMdFdrOpUiAr/Ap7unIuwPH8W5G/RFcJrrIlNh5fQVn4v2c69yNQ2LXdi92FrteLVvE7GhDRtke4dya1vGHeHoFO8dlz96Oibu7EnN4rPV7E07g6ox628TOcy/8ZybYJk+Ac0QfnsZFIjZcsYLxBdyPza20UcwOd4ghcTrjnK1i5ri5I28fnsmoW7kAZV6M/Ca+upjF1/hSBKsslsTQebArf68Igtst7woPt855vCNvTHSDR4RwtVH2zdBLeFOov9LjX8SY5euMtSL4fSxGjTbf43LM4I3/eb1SlBVgn/jqYyNeK6g7ias6jteJYHizGFE6mREi3CUmTZ2MiaeuLwRYxLOi32SN/W0O4cmuvBP4QvTfz7rKLsHzljceXhBd55SQFwT7icqD4NCvBodegO4YMIPfe7B3IX4Q/b4OtlZtsC3Aghh6nujRXnvSVOeavtc9wVpJ/YFEGZog2EkjQGoHUtMIkNqB1DQCpHYgNY0AqR1ITSNAagdS0wiQ2oHUDL0AdfxhYlS8Je5Xav1r77z0H1GVSSe1Prep+q+z4/r77rf5U2zdNfwD0pUsQlnzR9AAAAAASUVORK5CYII=",
+          "visible": true,
+          "options": false,
+          "father": "execvba",
+          "group": "scripts",
+          "linux": false,
+          "windows": true,
+          "mac": false,
+          "docker": false,
+          "modal_size": "lg",
+          "params": [
+              {
+                  "name": "file",
+                  "var_type": "str",
+                  "description": "Ruta al archivo VBS",
+                  "required": false
+              },
+              {
+                  "name": "args",
+                  "var_type": "list",
+                  "description": "Lista de argumentos para pasar al script",
+                  "required": false
+              },
+              {
+                  "name": "code",
+                  "var_type": "str",
+                  "description": "Tipo de codificación para decodificar el resultado",
+                  "required": false
+              }
+          ],
+          "return": [
+              {
+                  "name": "result",
+                  "var_type": "str",
+                  "required": false,
+                  "description": "Nombre de la variable donde se almacenará la salida del comando",
+                  "default": null
+              }
+          ],
+          "long_description": "**Comando: Ejecutar archivo de script de Visual Basic**\n\n**Descripción:** Este comando se utiliza para abrir, leer y ejecutar un archivo '.vbs' pasando los argumentos necesarios para hacerlo. **Parámetros:**\n- **archivo**: proporcione la ruta al archivo VBS usando este parámetro. \n\n- **args** (opcional): si necesita pasar argumentos al script, puede proporcionarlos usando este parámetro. Este parámetro es opcional, por lo que puedes dejarlo en blanco."
+        },
+        {
+          "title": "Ejecutar archivo Powershell",
+          "description": "Abra y ejecute el archivo '.ps1' pasando los argumentos necesarios",
+          "title_options": null,
+          "form": {
+              "css": "modal-lg",
+              "inputs": [
+                  {
+                      "type": "file_select",
+                      "placeholder": {
+                          "es": "C:\\users\\user\\documents\\file.ps1",
+                          "en": "C:\\sers\\user\\documents\\file.ps1",
+                          "pr": "C:\\sers\\user\\documents\\file.ps1"
+                      },
+                      "title": {
+                          "es": "Archivo PS1",
+                          "en": "PS1 file",
+                          "pr": "Arquivo PS1"
+                      },
+                      "id": "file",
+                      "css": "col-md-12",
+                      "var_type": "str",
+                      "description": "Ruta al archivo PS1",
+                      "required": false
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": {
+                          "es": "arg1, arg2, arg3",
+                          "en": "arg1, arg2, arg3",
+                          "pr": "arg1, arg2, arg3"
+                      },
+                      "title": {
+                          "es": "Argumentos",
+                          "en": "Arguments",
+                          "pr": "Argumentos"
+                      },
+                      "id": "args",
+                      "css": "col-md-12",
+                      "var_type": "str",
+                      "description": "Lista de argumentos para pasar al script.",
+                      "required": false
+                  }
+              ]
+          },
+          "video_youtube": "",
+          "icon": "data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE4Ljc1NSAyMUgxLjI4NWMtLjQxMSAwLS43ODItLjE3MS0xLjAxOS0uNDdhMS4zMDggMS4zMDggMCAwIDEtLjIyOC0xLjExOEwzLjU0NiA0LjM2MUMzLjcyMiAzLjU5OSA0LjQ2OSAzIDUuMjQ1IDNoMTcuNDdjLjQxMSAwIC43ODIuMTcxIDEuMDE5LjQ3LjI0LjMwMy4zMjMuNzEuMjI4IDEuMTE4bC0zLjUwNyAxNS4wNTFjLS4xNzcuNzYyLS45MjQgMS4zNjEtMS43IDEuMzYxek01LjI0NSA0Yy0uMzE0IDAtLjY1My4yNzQtLjcyNS41ODdMMS4wMTMgMTkuNjM5Yy0uMDI2LjExMS0uMDEzLjIwNy4wMzcuMjY5LjA2LjA3Ni4xNjEuMDkyLjIzNS4wOTJoMTcuNDdjLjMxMyAwIC42NTItLjI3NC43MjUtLjU4N2wzLjUwNy0xNS4wNTJjLjAyNi0uMTExLjAxMy0uMjA3LS4wMzctLjI2OS0uMDYtLjA3Ni0uMTYxLS4wOTItLjIzNS0uMDkySDUuMjQ1eiIvPjxwYXRoIGQ9Ik0xNi42MTYgMTlIMTIuMzljLS43NjYgMC0xLjM5LS41NjEtMS4zOS0xLjI1LjAwNS0uNjkuNjI1LTEuMjUgMS4zODQtMS4yNWg0LjIzMmMuNzU4IDAgMS4zNzkuNTYgMS4zODQgMS4yNDYtLjAwNS42OTQtLjYyNSAxLjI1NC0xLjM4NCAxLjI1NHptLTQuMjI2LTEuNWMtLjIzMSAwLS4zODkuMTM0LS4zOS4yNTQgMCAuMTE0LjE2Ny4yNDYuMzkuMjQ2aDQuMjIxYy4yMzEgMCAuMzg5LS4xMzQuMzktLjI1NC0uMDAxLS4xMTItLjE1OS0uMjQ2LS4zODQtLjI0NkgxMi4zOXptLTYuODYxIDEuNDk5YTEuNTQgMS41NCAwIDAgMS0xLjIyOC0uNjE4IDEuNDcgMS40NyAwIDAgMS0uMjg0LTEuMTIxIDEuMzkgMS4zOSAwIDAgMSAuNTcyLS45MjVsLjAwMS0uMDAxIDYuNjA0LTQuNjUzLTQuMDY1LTQuMjFhMS4zNzYgMS4zNzYgMCAwIDEtLjM4Ni0xLjAwOGMuMDEyLS4zOTYuMTkyLS43NzkuNDkzLTEuMDU1LjYwMy0uNTUzIDEuNTM3LS41NDEgMi4wODQuMDI3bDUuMjk0IDUuNDgxYy40NTYuNDczLjUxNSAxLjE5OC4xNDQgMS43NjYtLjA4OS4xODQtLjI5Ni4zOTUtLjYyMi42MThsLTcuNzg0IDUuNDQxYTEuNDIyIDEuNDIyIDAgMCAxLS44MjMuMjU4em0tLjM2Mi0xLjg0OGEuMzk3LjM5NyAwIDAgMC0uMTYyLjI2NS40ODguNDg4IDAgMCAwIC4wOTcuMzY3Yy4xNjQuMjIuNDczLjI4My42NzMuMTRsNy43OS01LjQ0NWMuMjUyLS4xNzIuMzE0LS4yNy4zMjctLjI5NS4xNDMtLjIyNS4xMzMtLjQzNi4wMDEtLjU3MUw4LjYgNi4xMjljLS4xNy0uMTc4LS40ODYtLjE2OS0uNjkuMDE3YS40OTYuNDk2IDAgMCAwLS4xNjguMzQ4LjM3OS4zNzkgMCAwIDAgLjEwNy4yODFsNC40MTMgNC41NjljLjA5LjA5NC4xNC4yMTguMTQuMzQ4di4xMDJhLjUwMi41MDIgMCAwIDEtLjIxMi40MDlsLTcuMDIzIDQuOTQ4eiIvPjwvc3ZnPg==",
+          "visible": true,
+          "options": false,
+          "father": "execps1",
+          "group": "scripts",
+          "linux": false,
+          "windows": true,
+          "mac": false,
+          "docker": false,
+          "modal_size": "lg",
+          "params": [
+              {
+                  "name": "file",
+                  "var_type": "str",
+                  "description": "Ruta al archivo PS1",
+                  "required": false
+              },
+              {
+                  "name": "args",
+                  "var_type": "str",
+                  "description": "Lista de argumentos para pasar al script.",
+                  "required": false
+              }
+          ],
+          "return": [],
+          "long_description": "**Comando: Ejecutar archivo de secuencia de comandos de Powershell**\n\n**Descripción:** Este comando se utiliza para abrir, leer y ejecutar un archivo '.ps1' pasando los argumentos necesarios para hacerlo. **Parámetros:**\n- **archivo**: proporcione la ruta al archivo PS1 usando este parámetro. \n\n- **args** (opcional): si necesita pasar argumentos al script, puede proporcionarlos usando este parámetro. Este parámetro es opcional, por lo que puedes dejarlo en blanco."
         },
         {
           "title": "Ejecuta otro script RocketBot",
@@ -6497,7 +6776,7 @@
                   {
                     "type": "folder_select",
                     "placeholder": "C:/folder",
-                    "title": "Ruta de la carpeta",
+                    "title": "Ruta de la carpeta con los archivos",
                     "id": "path",
                     "css": "col-md-12",
                     "var_type": "str",
@@ -7897,6 +8176,151 @@
           "mac": false,
           "windows": true,
           "modal_size": "lg"
+        },
+        {
+          "title": "Click relativo en objecto",
+          "icon": "/images/icons/windows.png",
+          "visible": true,
+          "name": "relative_click",
+          "description": "Haga clic en un objeto usando sus coordenadas relativas desde su elemento más cercano (identificado)s",
+          "title_options": "",
+          "title_command": "",
+          "father": "relative_click",
+          "options": "",
+          "command_available": true,
+          "group": "windows",
+          "form": {
+              "css": "modal-lg",
+              "inputs": [
+                  {
+                      "type": "textarea",
+                      "placeholder": "<wnd app='calc.exe' class_name='CalcFrame' title='Calculadora' />",
+                      "title": "Selector",
+                      "help": "<a class='btn btn-sm btn-info button-in-title' loader='True' target='visor1' href='/desktoprecorder_visor?action=getobject&id=selector'>Editar Selector</a>Propiedad de texto utilizada para encontrar un elemento de IU particular cuando se ejecuta la actividad. En realidad, es un fragmento XML o JSON que especifica los atributos del elemento de GUI que está buscando y de algunos de sus padres.",
+                      "id": "selector",
+                      "formatter": "json",
+                      "css": "col-md-12",
+                      "var_type": "dict",
+                      "description": "Selector",
+                      "required": true
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": "30",
+                      "title": "Tiempo máximo de busqueda",
+                      "id": "timeout",
+                      "help": "Especifica el tiempo de espera para que se ejecute la actividad antes de que se genere un error. El valor predeterminado es 30 segundos.",
+                      "css": "col-md-6",
+                      "var_type": "int",
+                      "description": "Tiempo máximo de busqueda",
+                      "required": false
+                  },
+                  {
+                      "type": "select",
+                      "placeholder": "Click Simple",
+                      "title": "Tipo de Click",
+                      "options": [
+                        {
+                          "title": "Click Simple",
+                          "value": "CLICK_SINGLE"
+                        },
+                        {
+                          "title": "Click Doble",
+                          "value": "CLICK_DOUBLE"
+                        },
+                        {
+                          "title": "Mantener Click",
+                          "value": "CLICK_DOWN"
+                        },
+                        {
+                          "title": "Soltar Click",
+                          "value": "CLICK_UP"
+                        }
+                      ],
+                      "help": "Especifica el tipo de clic del mouse (simple, doble, mantener, soltar) que se usa al simular el evento de clic. Por defecto, se selecciona un solo clic.",
+                      "id": "click_type",
+                      "css": "col-md-6",
+                      "var_type": "str",
+                      "description": "Tipo de Click",
+                      "required": false
+                  },
+                  {
+                      "type": "select",
+                      "placeholder": "Boton derecho",
+                      "title": "Botón de Mouse",
+                      "options": [
+                        {
+                          "title": "Botón izquierdo",
+                          "value": "left"
+                        },
+                        {
+                          "title": "Botón derecho",
+                          "value": "right"
+                        },
+                        {
+                          "title": "Botón central",
+                          "value": "middle"
+                        }
+                      ],
+                      "help": "El botón del mouse (izquierdo, derecho, medio) utilizado para la acción de clic. Por defecto, el botón izquierdo del ratón está seleccionado.",
+                      "id": "button",
+                      "css": "col-md-6",
+                      "var_type": "str",
+                      "description": "Botón de Mouse",
+                      "required": false
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": "DEFAULT",
+                      "title": "Identificador de la ventana",
+                      "help": "Escribir solo si se ingresó un identificador en el comando conectar ventana.",
+                      "id": "session",
+                      "css": "col-md-6",
+                      "var_type": "str",
+                      "description": "Identificador de la ventana",
+                      "required": false
+                  }
+              ]
+          },
+          "docker": false,
+          "linux": false,
+          "mac": false,
+          "windows": true,
+          "modal_size": "lg",
+          "params": [
+              {
+                  "name": "selector",
+                  "var_type": "dict",
+                  "description": "Selector",
+                  "required": true
+              },
+              {
+                  "name": "timeout",
+                  "var_type": "int",
+                  "description": "Tiempo máximo de busqueda",
+                  "required": false
+              },
+              {
+                  "name": "click_type",
+                  "var_type": "str",
+                  "description": "Tipo de Click",
+                  "required": false
+              },
+              {
+                  "name": "button",
+                  "var_type": "str",
+                  "description": "Botón de Mouse",
+                  "required": false
+              },
+              {
+                  "name": "session",
+                  "var_type": "str",
+                  "description": "Identificador de la ventana",
+                  "required": false
+              }
+          ],
+          "return": [],
+          "long_description": "El comando \"Clic relativo en objeto\" le permite automatizar el clic en un objeto en una interfaz gráfica de usuario (GUI) en función de la posición del elemento identificado más cercano. Este comando es particularmente útil cuando desea interactuar con botones, enlaces u otros elementos en los que se puede hacer clic dentro de la ventana de una aplicación, pero no se reconocen como elementos separados. Usando las coordenadas de su elemento más cercano, la grabadora guarda la posición del mouse al hacer clic.\n\nPara usar el \"Clic relativo en el comando Objeto\", debe proporcionar los siguientes parámetros:\n\n1. \"selector\" (obligatorio): este parámetro espera un objeto de diccionario que identifica el elemento en el que desea hacer clic. El selector especifica atributos como el ID del elemento, la clase, el nombre o las coordenadas de clic. Ayuda al software de automatización a localizar el objeto con precisión.\n\n2. \"timeout\" (opcional): este parámetro establece la cantidad máxima de tiempo que el comando esperará hasta que objeto (más cercano) que aparecerá en la pantalla. Si el objeto no se encuentra dentro del tiempo de espera especificado, el comando generará un error.\n\n3. \"click_type\" (opcional): este parámetro determina el tipo de acción de clic que se realizará en el objeto. Se puede configurar en \"simple\" (predeterminado) para un clic izquierdo estándar, o en \"doble\" para un doble clic.\n\n4. \"botón\" (opcional): este parámetro especifica el botón del mouse que se usará para la acción de hacer clic. Se puede configurar en \"izquierda\" (predeterminado), \"derecha\" o \"medio\".\n\n"
         },
         {
           "title": "Obtener texto",
