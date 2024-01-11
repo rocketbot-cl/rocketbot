@@ -310,11 +310,12 @@
         "properties": "Propriedades",
         "create_new_project": "Criar um novo projecto",
         "create_new_project_info": "Crie um novo projecto para organizar os seus robots e variáveis.",
-        "for_params_empty": "for comando sem parâmetros",
-        "empty_if": "Comando if sem parâmetros",
+        "for_params_empty": "Comando for sem parâmetros",
+        "empty_if": "Comando if vazio",
         "if_params_empty": "Comando If sem parâmetros",
         "while_params_empty": "Comando While sem parâmetros",
         "alert_commands": "Comandos do Alertas",
+        "wait_commands_larger_than_five": "Commando de espera superior a 5 segundos",
         "stop_robot": "Parar robô",
         "run_when": "Executar quando",
         "warnings_and_errors": "Avisos e erros",
@@ -350,7 +351,9 @@
         "db_folder": "Pasta DB",
         "custom_path": "Caminho personalizado",
         "new_version": "Nova versão",
-        "update_warning_info": "Não atualize apenas um arquivo se você não precisar de uma funcionalidade específica da nova versão. Se você atualizar apenas um arquivo, poderá ter problemas com alguns recursos."
+        "update_warning_info": "Não atualize apenas um arquivo se você não precisar de uma funcionalidade específica da nova versão. Se você atualizar apenas um arquivo, poderá ter problemas com alguns recursos.",
+        "variable_re_encripted": "A variável será encriptada novamente",
+        "table_input_format": "Formato válido: [{...}, ..., {...}] onde ... deve ter como chave todos os cabeçalhos válidos."
     },
     "commands": [
         {
