@@ -2908,6 +2908,93 @@
           "long_description": "El comando \"Obtener proceso\" le permite recuperar una lista de todos los procesos actualmente en ejecución en su máquina. Este comando es útil cuando necesita recopilar información sobre los procesos que se ejecutan en segundo plano.\n\n No se requieren parámetros para que este comando utilice el comando \"Obtener proceso\". Recopila automáticamente la información necesaria cuando se ejecuta. Especifique un nombre de variable donde se almacenará la salida de este comando. Cuando el comando finalice la ejecución, la lista de procesos en ejecución se guardará en esta variable. Puede usar esta variable en pasos posteriores de su flujo de trabajo de automatización para realizar acciones adicionales basadas en la información del proceso.\n\nPor ejemplo, puede usar el comando \"Obtener proceso\" para monitorear cualquier proceso específico que pueda estar consumiendo mucho de memoria o recursos de CPU. Una vez que haya obtenido la lista de procesos, podrá analizarla y manipularla para que se ajuste a sus necesidades."
         },
         {
+          "title": "Obtener Proceso",
+          "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAACJwAAAicBvhJUCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAVBSURBVHic7dtrrF1DFAfw3+2tXqqiqUf1ohJpKT5pSFAkDYKKR4OU0NBISjyqgvhEpBKvhBASfKhnEa9KCNEPxKPxgS/1qHeoR+pZRXE9eu/1YfZx9jn37LPPY/a+t/SfTM7sOWtmrZm9ZmatNbMpH4fiIXyOzfgeb+BO7D8K8pSGCbgLQxjOSJuxDD2jJGOhWGFkh7/Bxgbl14+SjIVhgdoOrsSM1P+HCNOg8v8gDi5DsNiqtjuOQ29d+VLsl+QfwjlCR9PYHq9idvL8Mh6to/kbz+PbOOLGx4ey5/cwBrBTk/pH5dQfxnsFyR4FmzQX/sGc+j34OKeNTTEFHh+zsTqswO+p5424OafOME7GBehLlU/E2VGlS9DOGjAR84TFaXIGzSJsk+T78XXnotVgGtYn+b9xXwbdRrwprBMDkXgjrOJfy5+f6TQtIv9pbfJej9NjMV/SJvOxMADDgsF1cV7DeVNgtqBS45LnH/GYYMY2wjLB4qO4KfAXrsmg20vQ1inJ8yAOwppOGa9UHdF3MTWHPr0LFKUBebvAVKxN0T/RjLiZBoxPmG2bPM/B6znMN2FSkl8gaEwMTBE0D37FDjn0c7A6yQ8k9IPtMp2uOoo/qU6DZsizA2KkVuyAcYnMlTrTmxFmYUIqPyAsKnmI9cab4bsWaIbUboMTsghjG0KLcHkzhl3iD9xQUNsjMENVhWKt5mUibbfMyCJqZV7/p7F1AEZbgNFGkd4gYTG8NPm9RVjExhSKHIDt8KTgQTJGY33dDsAUwcL6ua58Ep7B3FRZ1EBGGcjbBucIKr0Jx6bKJwsmc9p6u0f5601L22A3GnCYELXpw9OCqq/FKhyYorsVV6gNgl6CC8UxmD7CuQoIlOZpwG6CW5y20euDotc2qNcruLQx/YOrGvBpSQOaoRVLcC+sayDQkPDWs7CqQZ1O04CgjfUofAoQNOAYIYbfn5QNC1vfHU3qzRPOCfqa0LQjww8R2hmBdnyB/fEFfsOZRQjTAUrRgArew97C/P4zUpulIKYhtDlJWxT+975AGQNwtKo5vEWh24BID25KtbE4nmgtodRFsB7jhG3wwlRZzDB5KcjTgH0EM/RtzEqV9+J+tcbKK6rh8rJQuAbMx8wk/yKOxJfCqXD6XO4FnKr2pPgYwX7fRvf4BNeJfBhKvgYcIBxSVGjWCZ1Nv/mnjHR4evGLxmZtp2lJA/lK8QUOVzsI6fSwbA37IKNOp2l+Ax6lLIKrcQqeVT1Cg7txkezDlCNwfF2dTvE+XovQzgi0sw3OE+bgMG40Nu75lboNPi94dzvirUhtloKYdsC6iG2Vhq2+QAk8+rFnCXw6QtEDcDY+w6c4oWBeHaHIAViMBwRDaLxgKW5RyNsGdxLu3zyoeimpgsvUXov/FHsUJmljFL4NLsJpSX6WYN//jKuF22IVfCjEBL5Klc3ESV3yr2AdHhc6GhV5GjBXOBar0KwWDkDTJuoa7FpXr0dwmmKawgsbyFeKL3Ce7C9A3tT4Zvg44TOZmAPQKNhSiiW4XLhDfLta8/cVnKjxgeiQ8E3BQuEEuVusxb0R2hmBdnyBpSna58TpWLco1Re4TXBxpwpu8BYTHo/pC7wQsa3SsNUXGG0BRhvNBiAdZJxobAQ5WkWP8BVaBb9nETZDr2DZVVbSs7qXqzQsVJX7JyM/4/sXzRbBQeG7vfOT5+XYV7i2vj6r0iijH2fgylTZIzq4Kl/BLsK5f0yrrcz0OXbutPMVzMQ7Y6Az7aZ3VA9uukafMBVewoYx0LmstCGRcbEWb6D9A8v9ytJeE+SsAAAAAElFTkSuQmCC",
+          "visible": true,
+          "name": "Obtener Proceso por Condición",
+          "description": "Obtiene la lista de todos los procesos ejecutandose en esta instancia.",
+          "title_options": "",
+          "father": "get_process",
+          "options": "",
+          "command_available": true,
+          "group": "system",
+          "form": {
+              "css": "modal-lg",
+              "inputs": [
+                  {
+                      "type": "select",
+                      "placeholder": "",
+                      "title": "Condición",
+                      "options": [
+                          {
+                              "title": "PID",
+                              "value": "pid"
+                          },
+                          {
+                              "title": "Name",
+                              "value": "name"
+                          }
+                      ],
+                      "id": "condition",
+                      "css": "col-md-6",
+                      "var_type": "enum",
+                      "description": "Condición para filtrar los procesos. Puede ser PID o Name",
+                      "required": true
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": "",
+                      "title": "PID o Nombre",
+                      "id": "value",
+                      "css": "col-md-6",
+                      "var_type": "str",
+                      "description": "Valor para filtrar los procesos. Puede ser PID o Name",
+                      "required": true
+                  },
+                  {
+                      "type": "input",
+                      "placeholder": "",
+                      "title": "Guardar en variable",
+                      "id": "variable",
+                      "css": "col-md-12",
+                      "var_type": "str",
+                      "remove_vars": true,
+                      "description": "Variable donde se almacenará el resultado",
+                      "required": true
+                  }
+              ]
+          },
+          "docker": false,
+          "linux": false,
+          "mac": false,
+          "windows": true,
+          "modal_size": "lg",
+          "params": [
+              {
+                  "name": "condition",
+                  "var_type": "enum",
+                  "required": true,
+                  "description": "Condition to filter the processes. Can be PID or Name",
+                  "default": null
+              },
+              {
+                  "name": "value",
+                  "var_type": "str",
+                  "required": true,
+                  "description": "Value to filter the processes. Can be PID or Name",
+                  "default": null
+              }
+          ],
+          "return": [
+              {
+                  "name": "result",
+                  "var_type": "str",
+                  "description": "Variable name where the output of the command will be stored"
+              }
+          ],
+          "long_description": "El comando \"Obtener proceso\" le permite recuperar una lista de todos los procesos actualmente en ejecución en su máquina. Este comando es útil cuando necesita recopilar información sobre los procesos que se ejecutan en segundo plano.\n\n No se requieren parámetros para que este comando utilice el comando \"Obtener proceso\". Recopila automáticamente la información necesaria cuando se ejecuta. Especifique un nombre de variable donde se almacenará la salida de este comando. Cuando el comando finalice la ejecución, la lista de procesos en ejecución se guardará en esta variable. Puede usar esta variable en pasos posteriores de su flujo de trabajo de automatización para realizar acciones adicionales basadas en la información del proceso.\n\nPor ejemplo, puede usar el comando \"Obtener proceso\" para monitorear cualquier proceso específico que pueda estar consumiendo mucho de memoria o recursos de CPU. Una vez que haya obtenido la lista de procesos, podrá analizarla y manipularla para que se ajuste a sus necesidades."
+      },
+        {
           "title": "Detener Proceso",
           "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAACJwAAAicBvhJUCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAUeSURBVHic7dtpqFVVFAfw3/OZlo1oJSoVhNr0LYoKG4gGSmiiwqikJLJoooi+VR8MmiAoCupLk1rR5Ici8UuDJQVFUNlkhWnDa87qhVr6fH3Y53bPfe+ee+69Z59zn9kfNuxz7tp7rb3v2muvvdY+VI9jsATrsRU/4W08gEN7IE9lmIAHsQ3DGWUrFqGvRzKWiqVGD/h7bGjy/vYeyVga5mkc4DLMTP1+tLAMar8P4cgqBIutajNwGvpHvL8ehyT1JbhEGGgau+J1HJ48v4anRtBswXL8EEfc+Fgje30PYxOmtGh/Uk77YXxckuxRMKi18Itz2vfh85w+BmMKPD5mZyOwFBtTzxtwd06bYZyFKzEx9X4SLo4qXYJObMAkzBWM014ZNAuwU1Kfju+6F60B0zCQ1Lfg0Qy6DXhHsBObIvFGsOLfyV+f6TItIv9pHfIewPmxmF/XIfOxMAHDgsN1TV7HeUvgcEGlxiXPv+JpwY1thkWCx0d5S+Bv3JpBd4CgrZOT5yEcgfe6ZbxMfUY/xNQc+vQuUJYG5O0CU/FRiv7ZVsStNGB8wmzn5HkO3sxhPojdkvo8QWNiYLKgefAnds+hn4NVSX1TQj/UKdP91WfxN/Vl0Ap5fkCM0o4fMC6RudZm/1aEWZiQqm8SjEoeYv3jrfBjGzTbNG6DE7IIYztCC3BjK4YFsRl3lNT3KMxUV6FY1rxKpP2WmVlE7azr/zR2+AkoagP2xh45NNvwjRDu2q6QZwNu0jq+ly5r5E9UbJRuAy7U/mlyNo4qwKs0FFkC6baDmqv47im6MmMPXSOWETxVcFdHlrci9V8aevWvXIurxHGYPsOlugyU9mIC+nGPeuSoKA4UJuCubhr3wg8YwqsR+9uMN7pt3KslMFfIE0zMI2wD6/Fzt41jTcBz+KvJ++kZ9ENCgKXnKDIBw6n6jDboOw5IVIEiNuCFDmi/xbsFeJWGIhpws5DubmcdDwjGasyhqA34tg2ak3GwkKzYrlA0INIn7M21Pi6PJ1pbaOswVNY2OA73C95eDVk7wphFngbMFtzQDwQVr6Efj2k8Dq+UH8qOjdI14BzMSuov43h8LWSF03m5FThXY6b4FMF9jeEOf4HbRE6Gkq8BhwlJihrNOmGw6X/+eaMPPP34Q3uBlHbLdU3ka0sDWqEdI3isxklIlydka9inGW26Lec04VGJEVyFs/GiegoNHsLVspMpx+H0EW26xScKHIZaoZNtcK6wBodxp7Fxz6/SbXC5cLrbE+9H6rMSxPQD1kXsqzLs8ImRKiZgOvargE9XKHsCLsaXWCsYyjGHMidgIR4XHKHxOKFEXqUgbxucIty/Wax+KamGGzSmzdaqfhmUvg0uwHlJ/WDBv/8dtwi3xWpYI8QEvkm9m4UzC/KvYR2e0Riii4I8DThRiPPVaFYJ8f60i/oe9h3Rrk84NMV0hec3ka+Ss8BlsjPE72h+M3yc8JlMzAlY2IRPJZ7gw8Id4vs0ur8rcYbmN7q2Cd8UzMcuBfkT7gQ+EqGfUejkLHB9ivYlcQZWFJWeBe4VjrhThWPwdnMbJOZZYEXEvirD/2eBXgvQa7SagHSQcZKxEeRoF33CV2g1bMwibIV+wbOrWdKListVGeary/2b0Z/x/YtWRnBI+G7viuT5YRwkXFsfyGrUY0zHBcIVvhqeVCAzvQ++Etdrq7KsFy5zFsIsrB4Dg+m0rFZP3BTGRGEpvIJfxsDgssoviYwLtXkD7R+ZToc0Sd8eEwAAAABJRU5ErkJggg==",
           "visible": true,

@@ -2965,7 +2965,7 @@
                     "long_description": "The \"Get Last Status\" command is a system command that allows you to retrieve the status of the previous command execution. This can be useful for error handling or for obtaining feedback on the success or failure of a specific task.\n\nTo use the \"Get Last Status\" command, you don't need to provide any additional parameters. Upon execution, it will return a result that represents the status of the previous command execution. This result will be stored in a variable that you can specify. You can then use this variable in subsequent commands to perform specific actions based on the success or failure of the previous task.\n\nNote: Keep in mind that the \"Get Last Status\" command will only provide the status of the immediately preceding command execution."
                 },
                 {
-                    "title": "Get Process",
+                    "title": "List Processes",
                     "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAACJwAAAicBvhJUCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAVBSURBVHic7dtrrF1DFAfw3+2tXqqiqUf1ohJpKT5pSFAkDYKKR4OU0NBISjyqgvhEpBKvhBASfKhnEa9KCNEPxKPxgS/1qHeoR+pZRXE9eu/1YfZx9jn37LPPY/a+t/SfTM7sOWtmrZm9ZmatNbMpH4fiIXyOzfgeb+BO7D8K8pSGCbgLQxjOSJuxDD2jJGOhWGFkh7/Bxgbl14+SjIVhgdoOrsSM1P+HCNOg8v8gDi5DsNiqtjuOQ29d+VLsl+QfwjlCR9PYHq9idvL8Mh6to/kbz+PbOOLGx4ey5/cwBrBTk/pH5dQfxnsFyR4FmzQX/sGc+j34OKeNTTEFHh+zsTqswO+p5424OafOME7GBehLlU/E2VGlS9DOGjAR84TFaXIGzSJsk+T78XXnotVgGtYn+b9xXwbdRrwprBMDkXgjrOJfy5+f6TQtIv9pbfJej9NjMV/SJvOxMADDgsF1cV7DeVNgtqBS45LnH/GYYMY2wjLB4qO4KfAXrsmg20vQ1inJ8yAOwppOGa9UHdF3MTWHPr0LFKUBebvAVKxN0T/RjLiZBoxPmG2bPM/B6znMN2FSkl8gaEwMTBE0D37FDjn0c7A6yQ8k9IPtMp2uOoo/qU6DZsizA2KkVuyAcYnMlTrTmxFmYUIqPyAsKnmI9cab4bsWaIbUboMTsghjG0KLcHkzhl3iD9xQUNsjMENVhWKt5mUibbfMyCJqZV7/p7F1AEZbgNFGkd4gYTG8NPm9RVjExhSKHIDt8KTgQTJGY33dDsAUwcL6ua58Ep7B3FRZ1EBGGcjbBucIKr0Jx6bKJwsmc9p6u0f5601L22A3GnCYELXpw9OCqq/FKhyYorsVV6gNgl6CC8UxmD7CuQoIlOZpwG6CW5y20euDotc2qNcruLQx/YOrGvBpSQOaoRVLcC+sayDQkPDWs7CqQZ1O04CgjfUofAoQNOAYIYbfn5QNC1vfHU3qzRPOCfqa0LQjww8R2hmBdnyB/fEFfsOZRQjTAUrRgArew97C/P4zUpulIKYhtDlJWxT+975AGQNwtKo5vEWh24BID25KtbE4nmgtodRFsB7jhG3wwlRZzDB5KcjTgH0EM/RtzEqV9+J+tcbKK6rh8rJQuAbMx8wk/yKOxJfCqXD6XO4FnKr2pPgYwX7fRvf4BNeJfBhKvgYcIBxSVGjWCZ1Nv/mnjHR4evGLxmZtp2lJA/lK8QUOVzsI6fSwbA37IKNOp2l+Ax6lLIKrcQqeVT1Cg7txkezDlCNwfF2dTvE+XovQzgi0sw3OE+bgMG40Nu75lboNPi94dzvirUhtloKYdsC6iG2Vhq2+QAk8+rFnCXw6QtEDcDY+w6c4oWBeHaHIAViMBwRDaLxgKW5RyNsGdxLu3zyoeimpgsvUXov/FHsUJmljFL4NLsJpSX6WYN//jKuF22IVfCjEBL5Klc3ESV3yr2AdHhc6GhV5GjBXOBar0KwWDkDTJuoa7FpXr0dwmmKawgsbyFeKL3Ce7C9A3tT4Zvg44TOZmAPQKNhSiiW4XLhDfLta8/cVnKjxgeiQ8E3BQuEEuVusxb0R2hmBdnyBpSna58TpWLco1Re4TXBxpwpu8BYTHo/pC7wQsa3SsNUXGG0BRhvNBiAdZJxobAQ5WkWP8BVaBb9nETZDr2DZVVbSs7qXqzQsVJX7JyM/4/sXzRbBQeG7vfOT5+XYV7i2vj6r0iijH2fgylTZIzq4Kl/BLsK5f0yrrcz0OXbutPMVzMQ7Y6Az7aZ3VA9uukafMBVewoYx0LmstCGRcbEWb6D9A8v9ytJeE+SsAAAAAElFTkSuQmCC",
                     "visible": true,
                     "name": "Get Process",
@@ -2988,6 +2988,93 @@
                         }
                     ],
                     "long_description": "The \"Get Process\" command allows you to retrieve a list of all the currently running processes on your machine. This command is useful when you need to gather information about the processes running in the background.\n\n There are no parameters required for this command to use the \"Get Process\" command. It automatically collects the necessary information when executed. Specify a variable name where the output of this command will be stored. When the command finishes execution, the list of running processes will be saved in this variable. You can use this variable in subsequent steps of your automation workflow to perform further actions based on the process information.\n\nFor example, you can use the \"Get Process\" command to monitor any specific processes that may be consuming a lot of memory or CPU resources. Once you have obtained the list of processes, you can analyze and manipulate it to fit your needs."
+                },
+                {
+                    "title": "Get Process",
+                    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAACJwAAAicBvhJUCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAVBSURBVHic7dtrrF1DFAfw3+2tXqqiqUf1ohJpKT5pSFAkDYKKR4OU0NBISjyqgvhEpBKvhBASfKhnEa9KCNEPxKPxgS/1qHeoR+pZRXE9eu/1YfZx9jn37LPPY/a+t/SfTM7sOWtmrZm9ZmatNbMpH4fiIXyOzfgeb+BO7D8K8pSGCbgLQxjOSJuxDD2jJGOhWGFkh7/Bxgbl14+SjIVhgdoOrsSM1P+HCNOg8v8gDi5DsNiqtjuOQ29d+VLsl+QfwjlCR9PYHq9idvL8Mh6to/kbz+PbOOLGx4ey5/cwBrBTk/pH5dQfxnsFyR4FmzQX/sGc+j34OKeNTTEFHh+zsTqswO+p5424OafOME7GBehLlU/E2VGlS9DOGjAR84TFaXIGzSJsk+T78XXnotVgGtYn+b9xXwbdRrwprBMDkXgjrOJfy5+f6TQtIv9pbfJej9NjMV/SJvOxMADDgsF1cV7DeVNgtqBS45LnH/GYYMY2wjLB4qO4KfAXrsmg20vQ1inJ8yAOwppOGa9UHdF3MTWHPr0LFKUBebvAVKxN0T/RjLiZBoxPmG2bPM/B6znMN2FSkl8gaEwMTBE0D37FDjn0c7A6yQ8k9IPtMp2uOoo/qU6DZsizA2KkVuyAcYnMlTrTmxFmYUIqPyAsKnmI9cab4bsWaIbUboMTsghjG0KLcHkzhl3iD9xQUNsjMENVhWKt5mUibbfMyCJqZV7/p7F1AEZbgNFGkd4gYTG8NPm9RVjExhSKHIDt8KTgQTJGY33dDsAUwcL6ua58Ep7B3FRZ1EBGGcjbBucIKr0Jx6bKJwsmc9p6u0f5601L22A3GnCYELXpw9OCqq/FKhyYorsVV6gNgl6CC8UxmD7CuQoIlOZpwG6CW5y20euDotc2qNcruLQx/YOrGvBpSQOaoRVLcC+sayDQkPDWs7CqQZ1O04CgjfUofAoQNOAYIYbfn5QNC1vfHU3qzRPOCfqa0LQjww8R2hmBdnyB/fEFfsOZRQjTAUrRgArew97C/P4zUpulIKYhtDlJWxT+975AGQNwtKo5vEWh24BID25KtbE4nmgtodRFsB7jhG3wwlRZzDB5KcjTgH0EM/RtzEqV9+J+tcbKK6rh8rJQuAbMx8wk/yKOxJfCqXD6XO4FnKr2pPgYwX7fRvf4BNeJfBhKvgYcIBxSVGjWCZ1Nv/mnjHR4evGLxmZtp2lJA/lK8QUOVzsI6fSwbA37IKNOp2l+Ax6lLIKrcQqeVT1Cg7txkezDlCNwfF2dTvE+XovQzgi0sw3OE+bgMG40Nu75lboNPi94dzvirUhtloKYdsC6iG2Vhq2+QAk8+rFnCXw6QtEDcDY+w6c4oWBeHaHIAViMBwRDaLxgKW5RyNsGdxLu3zyoeimpgsvUXov/FHsUJmljFL4NLsJpSX6WYN//jKuF22IVfCjEBL5Klc3ESV3yr2AdHhc6GhV5GjBXOBar0KwWDkDTJuoa7FpXr0dwmmKawgsbyFeKL3Ce7C9A3tT4Zvg44TOZmAPQKNhSiiW4XLhDfLta8/cVnKjxgeiQ8E3BQuEEuVusxb0R2hmBdnyBpSna58TpWLco1Re4TXBxpwpu8BYTHo/pC7wQsa3SsNUXGG0BRhvNBiAdZJxobAQ5WkWP8BVaBb9nETZDr2DZVVbSs7qXqzQsVJX7JyM/4/sXzRbBQeG7vfOT5+XYV7i2vj6r0iijH2fgylTZIzq4Kl/BLsK5f0yrrcz0OXbutPMVzMQ7Y6Az7aZ3VA9uukafMBVewoYx0LmstCGRcbEWb6D9A8v9ytJeE+SsAAAAAElFTkSuQmCC",
+                    "visible": true,
+                    "name": "Get Process By Condition",
+                    "description": "Gets the list of all the running processes on the current machine that match the specified condition.",
+                    "title_options": "",
+                    "father": "get_process",
+                    "options": "",
+                    "command_available": true,
+                    "group": "system",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "select",
+                                "placeholder": "",
+                                "title": "Condition",
+                                "options": [
+                                    {
+                                        "title": "PID",
+                                        "value": "pid"
+                                    },
+                                    {
+                                        "title": "Name",
+                                        "value": "name"
+                                    }
+                                ],
+                                "id": "condition",
+                                "css": "col-md-6",
+                                "var_type": "enum",
+                                "description": "Condition to filter the processes. Can be PID or Name",
+                                "required": true
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": "PID or Name",
+                                "id": "value",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "description": "Value to filter the processes. Can be PID or Name",
+                                "required": true
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": "Save result in variable",
+                                "id": "variable",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "remove_vars": true,
+                                "description": "Variable name where the output of the command will be stored",
+                                "required": true
+                            }
+                        ]
+                    },
+                    "docker": false,
+                    "linux": false,
+                    "mac": false,
+                    "windows": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "condition",
+                            "var_type": "enum",
+                            "required": true,
+                            "description": "Condition to filter the processes. Can be PID or Name",
+                            "default": null
+                        },
+                        {
+                            "name": "value",
+                            "var_type": "str",
+                            "required": true,
+                            "description": "Value to filter the processes. Can be PID or Name",
+                            "default": null
+                        }
+                    ],
+                    "return": [
+                        {
+                            "name": "result",
+                            "var_type": "str",
+                            "description": "Variable name where the output of the command will be stored"
+                        }
+                    ],
+                    "long_description": "The \"Get Process By Condition\" command allows you to retrieve a list of all the currently running processes on your machine that match the specified condition. This command is useful when you need to gather information about the processes running in the background.\n\nTo use the \"Get Process By Condition\" command, you must provide the condition and value to filter the processes. The condition can be either PID or Name. The value can be the PID or Name of the process you want to filter. Specify a variable name where the output of this command will be stored. When the command finishes execution, the list of running processes will be saved in this variable. You can use this variable in subsequent steps of your automation workflow to perform further actions based on the process information.\n\nFor example, you can use the \"Get Process By Condition\" command to monitor any specific processes that may be consuming a lot of memory or CPU resources. Once you have obtained the list of processes, you can analyze and manipulate it to fit your needs."
                 },
                 {
                     "title": "Kill Process",
