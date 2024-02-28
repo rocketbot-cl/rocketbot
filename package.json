@@ -78,7 +78,7 @@
             "name": "endpoints/driverupdater/",
             "path": "endpoints/driverupdater.zip",
             "destination": "/endpoints/",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "md5": "77ee5d099a797edba2809180a5c37b99"
         },
         {
