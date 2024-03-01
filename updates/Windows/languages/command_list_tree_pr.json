@@ -7,6 +7,7 @@
         "delete_from_list": "Remove da lista",
         "open_drawflow": "Abrir no DrawFlow",
         "open_cascade": "Abrir no Cascade",
+        "open_new_robot_in": "Abrir novo robô em",
         "new_project_help": "Selecione um arquivo de projeto existente ou um novo arquivo será criado permitindo que vários robôs sejam armazenados no mesmo projeto",
         "new_blank_robot_help": "Criar um novo robô ou adicionar um a um projeto existente",
         "new_blank_robot": "novo robô em branco",
@@ -135,6 +136,9 @@
         "data_search": "Dado a buscar",
         "sure_delete": "¿Tem certeza de que deseja excluir ",
         "delete": "Excluir",
+        "erase": "Excluir",
+        "eraseVariablesGroups": "Excluir dados das variáveis do ",
+        "deleteAllVariablesGroups": "Excluir todas as variáveis do ",
         "left": "Esquerdo",
         "double_left": "Duplo Esquerdo",
         "right": "Direito",
@@ -297,8 +301,8 @@
         "today": "Hoje",
         "delete_all": "Excluir tudo os comandos",
         "cut": "Cortar",
-        "paste_inside_if": "Pegar dentro do ",
-        "paste_inside_else": "Pegar dentro do ",
+        "paste_inside_if": "Colar dentro do ",
+        "paste_inside_else": "Colar dentro do ",
         "robot_version_tooltip": "Não confundir com a versão de robô interno, que lista as alterações feitas a um robô depois de guardado. Esta versão está ao critério do utilizador e não afecta de forma alguma o funcionamento do robô.",
         "option": "Opção",
         "example": "Exemplo",
@@ -326,7 +330,27 @@
         "variable_unsaved_changes": "Alterações não guardadas",
         "array_dimensions_not_same_length": "As dimensões da matriz não têm o mesmo comprimento",
         "cannot_create_var": "A variável já existe ou não tem um nome válido",
-        "view_array": "Ver array"
+        "view_array": "Ver array",
+        "cut_commands_confirmation": "Tem a certeza de que quer cortar os comandos seleccionados?",
+        "default_value": "Valor por defeito",
+        "required": "Obrigatório",
+        "command_not_found": "Comando não encontrado",
+        "details": "Detalhes",
+        "table_input_not_valid": "A entrada da input não é válida",
+        "invalid_header_found": "Cabeçalho inválido encontrado",
+        "encryptedVar": "Encriptado",
+        "error_encrypting_data": "Erro ao encriptar dados",
+        "refresh_encrypting_data": "Actualizar dados encriptados?",
+        "encrypted": "Encriptado",
+        "error_sending_var_data": "Erro ao enviar dados da variável",
+        "omit_logs": "Omitir logs",
+        "log_destination": "Destino do log",
+        "log_path": "Caminho do log",
+        "rocketbot_folder": "Pasta Rocketbot",
+        "db_folder": "Pasta DB",
+        "custom_path": "Caminho personalizado",
+        "new_version": "Nova versão",
+        "update_warning_info": "Não atualize apenas um arquivo se você não precisar de uma funcionalidade específica da nova versão. Se você atualizar apenas um arquivo, poderá ter problemas com alguns recursos."
     },
     "commands": [
         {
@@ -539,7 +563,7 @@
                 {
                     "title": "Selecione um objeto",
                     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMjYzMjM4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMi43NCwxNS43OEgzMC42N2ExLDEsMCwwLDEsMC0yaDIuMDdhMSwxLDAsMCwxLDAsMloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOCwxMC42M2ExLDEsMCwwLDEtLjctMS43MWwxLjMtMS4zYTEsMSwwLDAsMSwxLjQxLDBBMSwxLDAsMCwxLDMwLDlsLTEuMywxLjMxQTEsMSwwLDAsMSwyOCwxMC42M1oiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMS40NSw4LjRhMSwxLDAsMCwxLTEtMVY1LjU2YTEsMSwwLDEsMSwyLDBWNy40QTEsMSwwLDAsMSwyMS40NSw4LjRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTUsMTAuNjNhMSwxLDAsMCwxLS43MS0uMjlMMTMsOUExLDEsMCwxLDEsMTQuNCw3LjYybDEuMzEsMS4zYTEsMSwwLDAsMSwwLDEuNDJBMSwxLDAsMCwxLDE1LDEwLjYzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyLjIzLDE1Ljc4SDEwLjE3YTEsMSwwLDAsMSwwLTJoMi4wNmExLDEsMCwwLDEsMCwyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI5LjQyLDQzLjQ0aC0yYTkuNzEsOS43MSwwLDAsMS01LjczLTEuODkuMzkuMzksMCwwLDEtLjEtLjA4TDEyLDMyLjM0YTMuMzQsMy4zNCwwLDAsMSwwLTQuOCwzLjMsMy4zLDAsMCwxLDQuNjYuMjFsMS40NCwxLjM0VjE1LjE5YTMuMzQsMy4zNCwwLDAsMSw2LjY4LDB2Mi45MmEzLjIxLDMuMjEsMCwwLDEsMS4zMi0uMjcsMy4zNCwzLjM0LDAsMCwxLDMuMzQsMy4yM0EzLjM1LDMuMzUsMCwwLDEsMzQuMTUsMjRhMy40OCwzLjQ4LDAsMCwxLDEuMzQtLjI3QTMuMywzLjMsMCwwLDEsMzguODMsMjd2Ny4zNEE5LjI4LDkuMjgsMCwwLDEsMjkuNDIsNDMuNDRaTTIyLjkzLDQwYTcuNzMsNy43MywwLDAsMCw0LjUsMS40N2gyYTcuMjcsNy4yNywwLDAsMCw3LjQxLTcuMTFWMjdhMS4zNCwxLjM0LDAsMCwwLTIuNjgsMHYyLjE3YTEsMSwwLDEsMS0yLDB2LTVhMS4zNSwxLjM1LDAsMCwwLTIuNjksMHY1YTEsMSwwLDEsMS0yLDB2LThBMS4zNCwxLjM0LDAsMCwwLDI0Ljc5LDIxdjguMTVhMSwxLDAsMCwxLTEsMWgwYTEsMSwwLDAsMS0xLTF2LThhMi40NCwyLjQ0LDAsMCwxLDAtLjI3VjE1LjE4YTEuMzQsMS4zNCwwLDAsMC0yLjY4LDB2MTYuMmExLDEsMCwwLDEtMS42OS43NEwxNS4zLDI5LjE5QTEuMzYsMS4zNiwwLDAsMCwxMy40MSwyOWExLjM1LDEuMzUsMCwwLDAsMCwxLjkyWiIvPjwvc3ZnPg==",
-                    "visible": true,
+                    "visible": false,
                     "name": "Select object",
                     "description": "Procure um objeto na página aberta",
                     "title_options": "Tipo de dado",
@@ -558,6 +582,147 @@
                     "command_available": true,
                     "group": "web",
                     "modal_size": "md"
+                },
+                {
+                    "title": "Selecione o objeto",
+                    "description": "Pesquise e selecione objeto na página aberta",
+                    "title_options": "Seleccione una opci\u00f3n",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Dato a buscar",
+                                    "en": "Data to search",
+                                    "pr": "Dado a buscar"
+                                },
+                                "description": {
+                                    "es": "Ponemos el selector del elemento que queremos visualizar",
+                                    "en": "We put the selector of the element which we want to see",
+                                    "pr": "Colocamos o seletor do elemento que queremos ver"
+                                },
+                                "id": "data",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "required": true,
+                                "default": null
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": {
+                                    "es": "",
+                                    "en": "",
+                                    "pr": ""
+                                },
+                                "title": {
+                                    "es": "Tipo de dato",
+                                    "en": "Data type",
+                                    "pr": "Tipo de dado"
+                                },
+                                "options": [
+                                    {
+                                        "title": "name",
+                                        "value": "name"
+                                    },
+                                    {
+                                        "title": "id",
+                                        "value": "id"
+                                    },
+                                    {
+                                        "title": "class",
+                                        "value": "class name"
+                                    },
+                                    {
+                                        "title": "xpath",
+                                        "value": "xpath"
+                                    },
+                                    {
+                                        "title": "tag",
+                                        "value": "tag name"
+                                    },
+                                    {
+                                        "title": "css selector",
+                                        "value": "css selector"
+                                    },
+                                    {
+                                        "title": "link text",
+                                        "value": "link text"
+                                    },
+                                    {
+                                        "title": "partial link text",
+                                        "value": "partial link text"
+                                    }
+                                ],
+                                "description": {
+                                    "es": "Tipo de dato a buscar",
+                                    "en": "Data type to search",
+                                    "pr": "Tipo de dado a buscar"
+                                },
+                                "id": "data_type",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": true,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Tiempo m\u00e1ximo de espera",
+                                    "en": "Maximum waiting time",
+                                    "pr": "Tempo m\u00e1ximo de espera"
+                                },
+                                "description": {
+                                    "es": "Tiempo m\u00e1ximo de espera por el elemento previo a ser seleccionado",
+                                    "en": "Maximum waiting time for the element prior to being selected",
+                                    "pr": "Tempo m\u00e1ximo de espera do elemento antes de ser seleccionado"
+                                },
+                                "id": "wait_time",
+                                "css": "col-md-6",
+                                "var_type": "int",
+                                "required": true,
+                                "default": null
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMjYzMjM4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMi43NCwxNS43OEgzMC42N2ExLDEsMCwwLDEsMC0yaDIuMDdhMSwxLDAsMCwxLDAsMloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOCwxMC42M2ExLDEsMCwwLDEtLjctMS43MWwxLjMtMS4zYTEsMSwwLDAsMSwxLjQxLDBBMSwxLDAsMCwxLDMwLDlsLTEuMywxLjMxQTEsMSwwLDAsMSwyOCwxMC42M1oiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMS40NSw4LjRhMSwxLDAsMCwxLTEtMVY1LjU2YTEsMSwwLDEsMSwyLDBWNy40QTEsMSwwLDAsMSwyMS40NSw4LjRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTUsMTAuNjNhMSwxLDAsMCwxLS43MS0uMjlMMTMsOUExLDEsMCwxLDEsMTQuNCw3LjYybDEuMzEsMS4zYTEsMSwwLDAsMSwwLDEuNDJBMSwxLDAsMCwxLDE1LDEwLjYzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyLjIzLDE1Ljc4SDEwLjE3YTEsMSwwLDAsMSwwLTJoMi4wNmExLDEsMCwwLDEsMCwyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI5LjQyLDQzLjQ0aC0yYTkuNzEsOS43MSwwLDAsMS01LjczLTEuODkuMzkuMzksMCwwLDEtLjEtLjA4TDEyLDMyLjM0YTMuMzQsMy4zNCwwLDAsMSwwLTQuOCwzLjMsMy4zLDAsMCwxLDQuNjYuMjFsMS40NCwxLjM0VjE1LjE5YTMuMzQsMy4zNCwwLDAsMSw2LjY4LDB2Mi45MmEzLjIxLDMuMjEsMCwwLDEsMS4zMi0uMjcsMy4zNCwzLjM0LDAsMCwxLDMuMzQsMy4yM0EzLjM1LDMuMzUsMCwwLDEsMzQuMTUsMjRhMy40OCwzLjQ4LDAsMCwxLDEuMzQtLjI3QTMuMywzLjMsMCwwLDEsMzguODMsMjd2Ny4zNEE5LjI4LDkuMjgsMCwwLDEsMjkuNDIsNDMuNDRaTTIyLjkzLDQwYTcuNzMsNy43MywwLDAsMCw0LjUsMS40N2gyYTcuMjcsNy4yNywwLDAsMCw3LjQxLTcuMTFWMjdhMS4zNCwxLjM0LDAsMCwwLTIuNjgsMHYyLjE3YTEsMSwwLDEsMS0yLDB2LTVhMS4zNSwxLjM1LDAsMCwwLTIuNjksMHY1YTEsMSwwLDEsMS0yLDB2LThBMS4zNCwxLjM0LDAsMCwwLDI0Ljc5LDIxdjguMTVhMSwxLDAsMCwxLTEsMWgwYTEsMSwwLDAsMS0xLTF2LThhMi40NCwyLjQ0LDAsMCwxLDAtLjI3VjE1LjE4YTEuMzQsMS4zNCwwLDAsMC0yLjY4LDB2MTYuMmExLDEsMCwwLDEtMS42OS43NEwxNS4zLDI5LjE5QTEuMzYsMS4zNiwwLDAsMCwxMy40MSwyOWExLjM1LDEuMzUsMCwwLDAsMCwxLjkyWiIvPjwvc3ZnPg==",
+                    "visible": true,
+                    "options": false,
+                    "father": "select_object",
+                    "group": "web",
+                    "linux": true,
+                    "windows": true,
+                    "mac": true,
+                    "docker": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "data",
+                            "var_type": "str",
+                            "description": "Seletor do elemento que queremos ver",
+                            "required": true,
+                            "default": null
+                        },
+                        {
+                            "name": "data_type",
+                            "var_type": "str",
+                            "description": "Tipo de dado a buscar",
+                            "required": true,
+                            "default": null
+                        },
+                        {
+                            "name": "wait_time",
+                            "var_type": "int",
+                            "description": "Tempo máximo de espera do elemento antes de ser seleccionado",
+                            "required": true,
+                            "default": null
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "O comando \"Selecionar objeto\" é usado para procurar e selecionar um objeto específico em uma página web aberta. É comumente usado em tarefas de automação web.\n\nPara usar este comando, você precisa fornecer o seletor do elemento que deseja selecionar usando o parâmetro \"data\". O seletor é usado para identificar exclusivamente o elemento na página da web. Você pode usar vários tipos de seletores, como seletores CSS ou expressões XPath.\n\nO parâmetro \"data_type\" especifica o tipo de dados usados para pesquisar o objeto desejado. Por exemplo, você pode pesquisar um objeto com base em seu conteúdo de texto, valor de atributo ou qualquer outro tipo de dados relevante.\n\nVocê também precisa especificar o parâmetro \"wait_time\", que indica o tempo máximo de espera para que o elemento fique disponível antes de tentar selecioná-lo. Isso é útil ao lidar com páginas da Web dinâmicas onde os elementos podem aparecer ou carregar de forma assíncrona.\n\nObserve que se o elemento especificado não puder ser encontrado dentro do tempo de espera determinado, o comando falhará.\n\nNo geral, o comando \"Select O comando object\" é uma ferramenta essencial para automatizar tarefas da web, permitindo que você pesquise e interaja com objetos específicos em uma página da web."
                 },
                 {
                     "title": "Extrair texto",
@@ -881,7 +1046,7 @@
                 {
                     "title": "Enviar texto da web",
                     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOCwzMy4zMkgxMGExLjU2LDEuNTYsMCwwLDEtMS41NS0xLjU1VjE2LjIzQTEuNTYsMS41NiwwLDAsMSwxMCwxNC42OEgzOGExLjU2LDEuNTYsMCwwLDEsMS41NSwxLjU1VjMxLjc3QTEuNTYsMS41NiwwLDAsMSwzOCwzMy4zMloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwyOC42NkgyOS40NCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI4LjY2aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNC44OCwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDQsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LDE5LjM0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40NCwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQsMjRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4LjU2LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMy4xMSwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMjguNjZoMCIvPjwvc3ZnPg==",
-                    "visible": true,
+                    "visible": false,
                     "name": "Send keys Web",
                     "description": "Escreve o texto no objeto selecionado",
                     "title_options": "Tecla especial",
@@ -958,9 +1123,398 @@
                     "modal_size": "md"
                 },
                 {
+                    "visible": true,
+                    "title": "Enviar texto Web",
+                    "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMjYzMjM4O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOCwzMy4zMkgxMGExLjU2LDEuNTYsMCwwLDEtMS41NS0xLjU1VjE2LjIzQTEuNTYsMS41NiwwLDAsMSwxMCwxNC42OEgzOGExLjU2LDEuNTYsMCwwLDEsMS41NSwxLjU1VjMxLjc3QTEuNTYsMS41NiwwLDAsMSwzOCwzMy4zMloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwyOC42NkgyOS40NCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI4LjY2aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNC44OCwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjkuNDQsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LDE5LjM0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOC41NiwxOS4zNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMTkuMzRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM0Ljg4LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOS40NCwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQsMjRoMCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4LjU2LDI0aDAiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMy4xMSwyNGgwIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTMuMTEsMjguNjZoMCIvPjwvc3ZnPg==",
+                    "name": "Send keys Web",
+                    "description": "Escribnir texto en el objeto seleccionado",
+                    "title_options": "",
+                    "title_command": "Text",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Dato a buscar",
+                                    "en": "Data to search",
+                                    "pr": "Dado a buscar"
+                                },
+                                "description": {
+                                    "es": "Ponemos el selector del elemento al que queremos enviar tecla",
+                                    "en": "We put the selector of the element to which we want to send the key",
+                                    "pr": "Colocamos o seletor do elemento para o qual queremos enviar a chave"
+                                },
+                                "id": "data",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": {
+                                    "es": "",
+                                    "en": "",
+                                    "pr": ""
+                                },
+                                "title": {
+                                    "es": "Tipo de dato",
+                                    "en": "Data type",
+                                    "pr": "Tipo de dado"
+                                },
+                                "options": [
+                                    {
+                                        "title": "name",
+                                        "value": "name"
+                                    },
+                                    {
+                                        "title": "id",
+                                        "value": "id"
+                                    },
+                                    {
+                                        "title": "class",
+                                        "value": "class name"
+                                    },
+                                    {
+                                        "title": "xpath",
+                                        "value": "xpath"
+                                    },
+                                    {
+                                        "title": "tag",
+                                        "value": "tag name"
+                                    },
+                                    {
+                                        "title": "css selector",
+                                        "value": "css selector"
+                                    },
+                                    {
+                                        "title": "link text",
+                                        "value": "link text"
+                                    },
+                                    {
+                                        "title": "partial link text",
+                                        "value": "partial link text"
+                                    }
+                                ],
+                                "description": {
+                                    "es": "Tipo de dato a buscar",
+                                    "en": "Data type to search",
+                                    "pr": "Tipo de dado a buscar"
+                                },
+                                "id": "data_type",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Tiempo m\u00e1ximo de espera",
+                                    "en": "Maximum waiting time",
+                                    "pr": "Tempo m\u00e1ximo de espera"
+                                },
+                                "description": {
+                                    "es": "Tiempo m\u00e1ximo de espera por el elemento previo a ser seleccionado",
+                                    "en": "Maximum waiting time for the element prior to being selected",
+                                    "pr": "Tempo m\u00e1ximo de espera do elemento antes de ser seleccionado"
+                                },
+                                "id": "wait_time",
+                                "css": "col-md-6",
+                                "var_type": "int",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Texto a enviar",
+                                    "en": "Text to send",
+                                    "pr": "Texto a enviar"
+                                },
+                                "description": {
+                                    "es": "Texto a enviar al elemento seleccionado",
+                                    "en": "Text to send to the selected element",
+                                    "pr": "Texto a enviar para o elemento selecionado"
+                                },
+                                "id": "text",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": {
+                                    "es": "SPACE",
+                                    "en": "SPACE",
+                                    "pr": "SPACE"
+                                },
+                                "title": {
+                                    "es": "Tecla especial",
+                                    "en": "Special Key",
+                                    "pr": "Tecla especial"
+                                },
+                                "options": [
+                                    {
+                                        "title": "ADD",
+                                        "value": "ADD"
+                                    },
+                                    {
+                                        "title": "ALT",
+                                        "value": "ALT"
+                                    },
+                                    {
+                                        "title": "BACKSPACE",
+                                        "value": "BACKSPACE"
+                                    },
+                                    {
+                                        "title": "CANCEL",
+                                        "value": "CANCEL"
+                                    },
+                                    {
+                                        "title": "CLEAR",
+                                        "value": "CLEAR"
+                                    },
+                                    {
+                                        "title": "CONTROL",
+                                        "value": "CONTROL"
+                                    },
+                                    {
+                                        "title": "DECIMAL",
+                                        "value": "DECIMAL"
+                                    },
+                                    {
+                                        "title": "DELETE",
+                                        "value": "DELETE"
+                                    },
+                                    {
+                                        "title": "DIVIDE",
+                                        "value": "DIVIDE"
+                                    },
+                                    {
+                                        "title": "DOWN",
+                                        "value": "DOWN"
+                                    },
+                                    {
+                                        "title": "END",
+                                        "value": "END"
+                                    },
+                                    {
+                                        "title": "ENTER",
+                                        "value": "ENTER"
+                                    },
+                                    {
+                                        "title": "ESCAPE",
+                                        "value": "ESCAPE"
+                                    },
+                                    {
+                                        "title": "F1",
+                                        "value": "F1"
+                                    },
+                                    {
+                                        "title": "F2",
+                                        "value": "F2"
+                                    },
+                                    {
+                                        "title": "F3",
+                                        "value": "F3"
+                                    },
+                                    {
+                                        "title": "F4",
+                                        "value": "F4"
+                                    },
+                                    {
+                                        "title": "F5",
+                                        "value": "F5"
+                                    },
+                                    {
+                                        "title": "F6",
+                                        "value": "F6"
+                                    },
+                                    {
+                                        "title": "F7",
+                                        "value": "F7"
+                                    },
+                                    {
+                                        "title": "F8",
+                                        "value": "F8"
+                                    },
+                                    {
+                                        "title": "F9",
+                                        "value": "F9"
+                                    },
+                                    {
+                                        "title": "HELP",
+                                        "value": "HELP"
+                                    },
+                                    {
+                                        "title": "HOME",
+                                        "value": "HOME"
+                                    },
+                                    {
+                                        "title": "INSERT",
+                                        "value": "INSERT"
+                                    },
+                                    {
+                                        "title": "LEFT",
+                                        "value": "LEFT"
+                                    },
+                                    {
+                                        "title": "LEFT_CONTROL",
+                                        "value": "LEFT_CONTROL"
+                                    },
+                                    {
+                                        "title": "LEFT_SHIFT",
+                                        "value": "LEFT_SHIFT"
+                                    },
+                                    {
+                                        "title": "NUMPAD0",
+                                        "value": "NUMPAD0"
+                                    },
+                                    {
+                                        "title": "NUMPAD1",
+                                        "value": "NUMPAD1"
+                                    },
+                                    {
+                                        "title": "NUMPAD2",
+                                        "value": "NUMPAD2"
+                                    },
+                                    {
+                                        "title": "NUMPAD3",
+                                        "value": "NUMPAD3"
+                                    },
+                                    {
+                                        "title": "NUMPAD4",
+                                        "value": "NUMPAD4"
+                                    },
+                                    {
+                                        "title": "NUMPAD5",
+                                        "value": "NUMPAD5"
+                                    },
+                                    {
+                                        "title": "NUMPAD6",
+                                        "value": "NUMPAD6"
+                                    },
+                                    {
+                                        "title": "NUMPAD7",
+                                        "value": "NUMPAD7"
+                                    },
+                                    {
+                                        "title": "NUMPAD8",
+                                        "value": "NUMPAD8"
+                                    },
+                                    {
+                                        "title": "NUMPAD9",
+                                        "value": "NUMPAD9"
+                                    },
+                                    {
+                                        "title": "PAUSE",
+                                        "value": "PAUSE"
+                                    },
+                                    {
+                                        "title": "RETURN",
+                                        "value": "RETURN"
+                                    },
+                                    {
+                                        "title": "RIGHT",
+                                        "value": "RIGHT"
+                                    },
+                                    {
+                                        "title": "SEPARATOR",
+                                        "value": "SEPARATOR"
+                                    },
+                                    {
+                                        "title": "SHIFT",
+                                        "value": "SHIFT"
+                                    },
+                                    {
+                                        "title": "SPACE",
+                                        "value": "SPACE"
+                                    },
+                                    {
+                                        "title": "SUBTRACT",
+                                        "value": "SUBTRACT"
+                                    },
+                                    {
+                                        "title": "TAB",
+                                        "value": "TAB"
+                                    },
+                                    {
+                                        "title": "UP",
+                                        "value": "UP"
+                                    }
+                                ],
+                                "description": {
+                                    "es": "Tecla especial a enviar",
+                                    "en": "Special key to send",
+                                    "pr": "Tecla especial a enviar"
+                                },
+                                "id": "special",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": false,
+                                "default": null
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "options": false,
+                    "father": "sendkey_web",
+                    "group": "web",
+                    "linux": true,
+                    "windows": true,
+                    "mac": true,
+                    "docker": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "data",
+                            "var_type": "str",
+                            "description": "We put the selector of the element to which we want to send the key",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "data_type",
+                            "var_type": "str",
+                            "description": "Data type to search",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "wait_time",
+                            "var_type": "int",
+                            "description": "Maximum waiting time for the element prior to being selected",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "text",
+                            "var_type": "str",
+                            "description": "Text to send to the selected element",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "special",
+                            "var_type": "str",
+                            "description": "Special key to send",
+                            "required": false,
+                            "default": null
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "{name: \"Send keys to web\", description: \"Write text on the selected element on a web page\", params: \n[\n  {name: \"selector\", var_type: \"str\", description: \"The selector of the element to which we want to send the keys\", required: false, default: null}, \n  {name: \"data_type\", var_type: \"str\", description: \"The type of data to search for the element\", required: false, default: null}, \n  {name: \"wait_time\", var_type: \"int\", description: \"The maximum waiting time for the element to be selected\", required: false, default: null}, \n  {name: \"text\", var_type: \"str\", description: \"The text to send to the selected element\", required: false, default: null}, \n  {name: \"special_key\", var_type: \"str\", description: \"A special key to send along with the text\", required: false, default: null}\n], return: [], category: \"Web\", options: false}"
+                },
+                {
                     "title": "Clique no objeto",
                     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTEsLmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzI2MzIzODtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O30uY2xzLTF7c3Ryb2tlLW1pdGVybGltaXQ6MjA7fS5jbHMtMntzdHJva2UtbGluZWpvaW46cm91bmQ7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM1LjcxLDI3LjA2LDE5LjE2LDEzLjkzbC0uNTcsMjEuMTJMMjQsMzAuOGwzLjczLDhhMS40MSwxLjQxLDAsMCwwLDEuODkuNjlMMzIsMzguMzZhMS40MiwxLjQyLDAsMCwwLC42OS0xLjlsLTMuNzItOFoiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yOC41OSwxMi4wN2wtMS40OS41OCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0LjMsOC4zN2wtLjU4LDEuMzEiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xNy44OCw4LjU1bC41MSwxLjMzIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTQuMzUsMTMuMjgsMTMsMTIuNyIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTEzLjc4LDE3Ljc3bC0xLjQ5LjU4Ii8+PC9zdmc+",
-                    "visible": true,
+                    "visible": false,
                     "name": "Click on object",
                     "description": "Clica no objeto selecionado",
                     "title_options": "Tipo de dado",
@@ -979,6 +1533,225 @@
                     "command_available": true,
                     "group": "web",
                     "modal_size": "md"
+                },
+                {
+                    "title": "Click no objeto",
+                    "description": "Clica no objeto selecionado",
+                    "title_options": "Seleccione una opci\u00f3n",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Dato a buscar",
+                                    "en": "Data to search",
+                                    "pr": "Dado a buscar"
+                                },
+                                "description": {
+                                    "es": "Ponemos el selector del elemento que queremos clickear",
+                                    "en": "We put the selector of the element which we want to click",
+                                    "pr": "Colocamos o seletor do elemento que queremos clicar"
+                                },
+                                "id": "data",
+                                "css": "col-md-9",
+                                "var_type": "str",
+                                "required": true,
+                                "default": null
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": {
+                                    "es": "",
+                                    "en": "",
+                                    "pr": ""
+                                },
+                                "title": {
+                                    "es": "Tipo de dato",
+                                    "en": "Data type",
+                                    "pr": "Tipo de dado"
+                                },
+                                "options": [
+                                    {
+                                        "title": "name",
+                                        "value": "name"
+                                    },
+                                    {
+                                        "title": "id",
+                                        "value": "id"
+                                    },
+                                    {
+                                        "title": "class",
+                                        "value": "class name"
+                                    },
+                                    {
+                                        "title": "xpath",
+                                        "value": "xpath"
+                                    },
+                                    {
+                                        "title": "tag",
+                                        "value": "tag name"
+                                    },
+                                    {
+                                        "title": "css selector",
+                                        "value": "css selector"
+                                    },
+                                    {
+                                        "title": "link text",
+                                        "value": "link text"
+                                    },
+                                    {
+                                        "title": "partial link text",
+                                        "value": "partial link text"
+                                    }
+                                ],
+                                "description": {
+                                    "es": "Tipo de dato a buscar",
+                                    "en": "Data type to search",
+                                    "pr": "Tipo de dado a buscar"
+                                },
+                                "id": "data_type",
+                                "css": "col-md-3",
+                                "var_type": "str",
+                                "required": true,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Esperar antes",
+                                    "en": "Wait before",
+                                    "pr": "Espere antes"
+                                },
+                                "description": {
+                                    "es": "Tiempo de espera antes de buscar el elemento",
+                                    "en": "Sleep time before searching the element",
+                                    "pr": "Tempo de espera antes de pesquisar o elemento"
+                                },
+                                "id": "before",
+                                "css": "col-md-3",
+                                "var_type": "int",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Tiempo m\u00e1ximo de espera",
+                                    "en": "Maximum waiting time",
+                                    "pr": "Tempo m\u00e1ximo de espera"
+                                },
+                                "description": {
+                                    "es": "Tiempo m\u00e1ximo de espera por el elemento previo a ser seleccionado",
+                                    "en": "Maximum waiting time for the element prior to being selected",
+                                    "pr": "Tempo m\u00e1ximo de espera do elemento antes de ser seleccionado"
+                                },
+                                "id": "wait_time",
+                                "css": "col-md-3",
+                                "var_type": "int",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Esperar despues",
+                                    "en": "Wait after",
+                                    "pr": "Espere depois"
+                                },
+                                "description": {
+                                    "es": "Tiempo de espera posterior a clickear el elemento",
+                                    "en": "Sleep time after clicking the element",
+                                    "pr": "Tempo de espera ap\u00f3s clicar o elemento"
+                                },
+                                "id": "after",
+                                "css": "col-md-3",
+                                "var_type": "int",
+                                "required": false,
+                                "default": null
+                            },
+                            {
+                                "type": "checkbox",
+                                "placeholder": "",
+                                "title": {
+                                    "es": "Mover a elemento",
+                                    "en": "Move to element",
+                                    "pr": "Mover para o elemento"
+                                },
+                                "description": {
+                                    "es": "Mover al elemento a clickear",
+                                    "en": "Move to the element to click",
+                                    "pr": "V\u00e1 at\u00e9 o elemento para clicar"
+                                },
+                                "id": "move",
+                                "css": "col-md-3",
+                                "var_type": "bool",
+                                "required": false,
+                                "default": null
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTEsLmNscy0ye2ZpbGw6bm9uZTtzdHJva2U6IzI2MzIzODtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O30uY2xzLTF7c3Ryb2tlLW1pdGVybGltaXQ6MjA7fS5jbHMtMntzdHJva2UtbGluZWpvaW46cm91bmQ7fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM1LjcxLDI3LjA2LDE5LjE2LDEzLjkzbC0uNTcsMjEuMTJMMjQsMzAuOGwzLjczLDhhMS40MSwxLjQxLDAsMCwwLDEuODkuNjlMMzIsMzguMzZhMS40MiwxLjQyLDAsMCwwLC42OS0xLjlsLTMuNzItOFoiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yOC41OSwxMi4wN2wtMS40OS41OCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0LjMsOC4zN2wtLjU4LDEuMzEiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xNy44OCw4LjU1bC41MSwxLjMzIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTQuMzUsMTMuMjgsMTMsMTIuNyIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTEzLjc4LDE3Ljc3bC0xLjQ5LjU4Ii8+PC9zdmc+",
+                    "visible": true,
+                    "options": false,
+                    "father": "click_web",
+                    "group": "web",
+                    "linux": true,
+                    "windows": true,
+                    "mac": true,
+                    "docker": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "data",
+                            "var_type": "str",
+                            "description": "We put the selector of the element which we want to click",
+                            "required": true,
+                            "default": null
+                        },
+                        {
+                            "name": "data_type",
+                            "var_type": "str",
+                            "description": "Data type to search",
+                            "required": true,
+                            "default": null
+                        },
+                        {
+                            "name": "before",
+                            "var_type": "int",
+                            "description": "Sleep time before searching the element",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "wait_time",
+                            "var_type": "int",
+                            "description": "Maximum waiting time for the element prior to being selected",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "after",
+                            "var_type": "int",
+                            "description": "Sleep time after clicking the element",
+                            "required": false,
+                            "default": null
+                        },
+                        {
+                            "name": "move",
+                            "var_type": "bool",
+                            "description": "Move to the element to click",
+                            "required": false,
+                            "default": null
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "**Click on object**\n\nThis command allows you to automate clicking on a specific object on a web page. It is commonly used to interact with buttons, links, checkboxes, or any other clickable element.\n\nTo use this command, you need to provide the following information:\n\n- **data**: Specify the selector of the element you want to click. The selector can be an ID, class name, XPath, or any other valid selector.\n- **data_type**: Specify the type of data used to search for the element. For example, if you are using XPath, set the value as \"xpath\". This helps the command to identify the correct element on the page.\n- **before** (optional): Set the sleep time (in milliseconds) before searching for the element. It allows the page to load properly before interacting with the element.\n- **wait_time** (optional): Set the maximum waiting time (in milliseconds) for the element to appear on the page before being selected. Use this parameter if the element you want to click is loaded dynamically or takes some time to appear.\n- **after** (optional): Set the sleep time (in milliseconds) after clicking the element. It provides time for any subsequent actions to be performed after clicking.\n- **move** (optional): Set"
                 },
                 {
                     "title": "Mover hasta element",
@@ -1602,6 +2375,104 @@
                     "command_available": true,
                     "group": "system",
                     "modal_size": "md"
+                },
+                {
+                    "title": "Log Message to File",
+                    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAGeAAABngGFfqeAAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAdpQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL8PFBQAAAJ10Uk5TAAECBAUHCQoLDA0OEBESExQVFhgZGhscHR8gISIjJCUnKCosLS4vMDU2ODk8PUJDREVGSEpLTE1OT1JTWFlcXl9gZWpvcnh5fH5/gIKFi4yQkZOUmJqfoKGjpKWmqaqsr7Gytba3uLq8vr/AwcLDxMfIycrLzM/Q0drb3N3e3+Dh4uPk5ebn6Onq6+zt7/Dx8vP09fb3+Pn6+/z9/he2Q5YAAAKISURBVFjD7ddXV9RAAIbhN1hARSkrIhZUumBBxQZRQSwUC3XtHXtDAcHGig1sIK7Kwvr9Vy+yDV032c2dh+9qzmTmOTOZySSBcEouTitRgp0kTp/s0pywf5F0tjVBBiXVJwIqpR2Jrp+SFKh2CWiixCWg1ytcAhpa4hLQzfkuAXndAmpxC6jBLRDY5hLQRKlLQG/yXQIaNJIGTsx+MsuSBjzHuyK5JlUmDcRmxxwQDzBya6R9HofZJ9Xkxu6EjI5xJZ3xjowIcEEp5UK4f6FSTGEIqP1Xg4/v44x8JlquDQGmJOm0x+PpjmnprS2AvN1t0Q7BUw2VS0nzVB37bFWYs4AuoC3SeLQmPMHNI6GqO+WRNRuzBYZzANLnAyx7Jkk6Gl21UtkCdcC6ewH/1SygTpKuGcDazru+wetNbbbAbaDggyQNLQAeSu9ygEM/Z9/QfwO7gJNWsR6ol1qBqhk5BQqA0ehgNlrkLTkFJg1YFGr0FlgsLQc+SbpkmqZpHrYBBoD14cU3gK+jQLZkTQU22ADDQE4IGAOy5Tcgze8YCC4E/Fb5MbBJWgP0S3ri9WbZAyoDzlvFI8BBaQ9wwKpZ5QBoAcoDkvQlG+iRugGu2ALNPp/P5/NNfVsBbB+XRsqAvZJ+bQWMxmdBBVYmAEJ5pDMA8yqKDSDdJ0mvrG+b9Pw0nAA6F/kWKu63Wj+NOXMdAHqxMxNgddNUZONd3pJvAOSZ5+IB30cjCVjXX15+MPHH5vUP3n/+46+tXJ3qmVgdAjInU+s/mRme8/7pVPpP74/etYr2nl5p4IbDDEi9Pe0Vc6/3OeB/BRrLHaYxHlCU3KNY9Pe4+pLp3xdnYna//7EnwcXoL/Bv5uy/BUdAkjIAAAAASUVORK5CYII=",
+                    "visible": true,
+                    "name": "log_message_file",
+                    "description": "Crie uma mensagem de log personalizada e grave-a em um arquivo.",
+                    "title_options": "",
+                    "father": "log_message_file",
+                    "options": "",
+                    "command_available": true,
+                    "group": "system",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "file_select",
+                                "placeholder": "",
+                                "title": "File to write",
+                                "help": "",
+                                "id": "log_file",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "Caminho do arquivo onde os logs serão gravados.",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "",
+                                "title": "Log Message",
+                                "id": "log_message",
+                                "formatter": "json",
+                                "css": "col-md-8",
+                                "var_type": "str",
+                                "description": "Mensagem para salvar no arquivo de log.",
+                                "required": true
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": "",
+                                "id": "log_level",
+                                "title": "Level",
+                                "css": "col-md-4",
+                                "var_type": "str",
+                                "description": "Nível a ser atribuído à mensagem de log.",
+                                "options": [
+                                      {
+                                        "title": "TRACE",
+                                        "value": "TRACE"
+                                      },
+                                      {
+                                        "title": "INFO",
+                                        "value": "INFO"
+                                      },
+                                      {
+                                        "title": "WARN",
+                                        "value": "WARN"
+                                      },
+                                      {
+                                        "title": "ERROR",
+                                        "value": "ERROR"
+                                      },
+                                      {
+                                        "title": "FATAL",
+                                        "value": "FATAL"
+                                      }
+                                ],
+                                "required": false
+                            }
+                        ]
+                    },
+                    "docker": false,
+                    "linux": false,
+                    "mac": false,
+                    "windows": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "log_file",
+                            "var_type": "str",
+                            "description": "Caminho do arquivo onde os logs serão gravados.",
+                            "required": true
+                        },
+                        {
+                            "name": "log_message",
+                            "var_type": "str",
+                            "description": "Mensagem para salvar no arquivo de log.",
+                            "required": true
+                        },
+                        {
+                            "name": "log_level",
+                            "var_type": "str",
+                            "description": "Nível a ser atribuído à mensagem de log.",
+                            "required": false
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "O comando \"Log Message to File\" é usado para gravar uma mensagem de diagnóstico em um nível de log especificado. Este comando é particularmente útil para fins de depuração e monitoramento. \n\nPara usar o comando \"Log Message to File\", você precisa fornecer três parâmetros:\n\n1. **Arquivo a ser gravado** (`command`): Este parâmetro espera um valor de string que representa um caminho para o arquivo onde o log será gravado. 2.**Mensagem para log** (`command`): Este parâmetro espera um valor de string representando a mensagem que você deseja registrar. Você pode incluir qualquer informação ou detalhe relevante que queira acompanhar ou registrar.\n\n3. **Tipo de nível de log** (`option`): Este parâmetro requer um valor de string especificando o tipo de nível de log. Existem cinco opções disponíveis para escolher:\n - \"trace\": Usado para informações detalhadas de depuração.\n - \"info\": Usado para fornecer informações gerais sobre a execução do programa.\n - \"warn\".: Usado para destacar possíveis problemas ou avisos.\n - \"error\": Usado para registrar erros que ocorrem durante a execução do programa.\n - \"fatal\": Usado para registrar erros críticos que levam ao encerramento do programa. \n\nSelecione o tipo de nível de log apropriado com base na gravidade da mensagem que você deseja registrar. \n\nAo utilizar o comando \"Log Message to File\" com diferentes tipos de nível de log, você pode criar seu próprio arquivo de log personalizado e acompanhar o fluxo de suas tarefas de automação, identificar quaisquer erros ou avisos e obter insights sobre o programa execução."
                 },
                 {
                     "title": "Lanzar Excepción",
@@ -2948,7 +3819,7 @@
                             "mac": true,
                             "docker": true,
                             "modal_size": "lg"
-                         }
+                        }
                     ]
                 }
             ]
@@ -2989,7 +3860,7 @@
                     "group": "scripts",
                     "setVar": false,
                     "getResult": false,
-                    "modal_size": "lg"
+                    "modal_size": "xl"
                 },
                 {
                     "title": "Executa JSON RocketBot",
@@ -3006,6 +3877,198 @@
                     "file": true,
                     "modal_size": "md"
                 },
+                {
+                    "title": "Executar arquivo de script do Visual Basic",
+                    "description": "Abra e execute o arquivo '.vbs' passando os argumentos necessários",
+                    "title_options": null,
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "file_select",
+                                "placeholder": {
+                                    "es": "C:\\users\\user\\documents\\file.vbs",
+                                    "en": "C:\\sers\\user\\documents\\file.vbs",
+                                    "pr": "C:\\sers\\user\\documents\\file.vbs"
+                                },
+                                "title": {
+                                    "es": "Archivo VBS",
+                                    "en": "VBS file",
+                                    "pr": "Arquivo VBS"
+                                },
+                                "id": "file",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "Caminho para o arquivo VBS",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": {
+                                    "es": "arg1, arg2, arg3",
+                                    "en": "arg1, arg2, arg3",
+                                    "pr": "arg1, arg2, arg3"
+                                },
+                                "title": {
+                                    "es": "Argumentos",
+                                    "en": "Arguments",
+                                    "pr": "Argumentos"
+                                },
+                                "id": "args",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "Lista de argumentos a serem passados para o script",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "Latin-1",
+                                "visible": true,
+                                "title": {
+                                    "es": "Tipo de codificación",
+                                    "en": "Encoding type",
+                                    "pr": "Tipo de codificação"
+                                },
+                                "id": "code",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "required": false,
+                                "description": "Tipo de codificação para decodificar o resultado",
+                                "default": null
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "variable",
+                                "visible": true,
+                                "title": {
+                                    "es": "Asiognar resultado a variable",
+                                    "en": "Assign result to a variable",
+                                    "pr": "Atribuir resultado a uma variável"
+                                },
+                                "id": "result",
+                                "css": "col-md-12",
+                                "remove_vars": true,
+                                "var_type": "str",
+                                "description": "Nome da variável onde a saída do comando será armazenada",
+                                "default": null
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAB2AAAAdgB+lymcgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOiSURBVHic7dvLixxVFMfxzxhN0MHRCXHEEMEwaARdKEbB1YCoI4oTIepCohNQE8xCEVcu/AMEHxsXPkAUoiLiyhfGhRtdiEgcogsFzSgBiRlfmCjGTMbF6ca2p6aqxq7KbbrrCxe67r116txf1T33UdUMOSMV21uPcyu2uRrOxlzC65vHUuL0llXc2KqfgCN4CO9VbLcsP4k2PYcHhCC5nF6DE8fwSw12y7CE13G7aNsunMw7oQ4BUnMQN+CD1nGuCIMoAOxXUoRBFYCSIgyyAJQQYdAFoECEYRCAHBEGUYDr8NQKZR/hXlyAW+q4+BFsq8NwSX4Wd7YoLeFKOC2Jm/WxXrQpL0206v7B4AmwahoBUjuQmkaA1A6kphEgtQOpaQRI7UBqhl6ANhM4Kv2Obpm0v8e2bmjZ2cK/q8FxjOJ6/NqD8QksKNiI7IEpPFqlwe7l8JxoQL+yqWqDQx8DijZE1mBxFWXrcFbH8V9ay86SnIG/V1G/Z/KegEn8KPtd3wgO4Kau/ANiU6KdjoqgdU0JX9biO9xWom5l5AkwL+7enRllU7jY8og8jt1CvEmx6/IJ3sF5Bb7cKraq7ityukryBFjEq5jNKJvF2zicUXYY37bSHPYIIW8s8GUWn2NaCHFKKAqCL+JaXNqRN4rteLlCP84X3elBfIMdFdrOpUiAr/Ap7unIuwPH8W5G/RFcJrrIlNh5fQVn4v2c69yNQ2LXdi92FrteLVvE7GhDRtke4dya1vGHeHoFO8dlz96Oibu7EnN4rPV7E07g6ox628TOcy/8ZybYJk+Ac0QfnsZFIjZcsYLxBdyPza20UcwOd4ghcTrjnK1i5ri5I28fnsmoW7kAZV6M/Ca+upjF1/hSBKsslsTQebArf68Igtst7woPt855vCNvTHSDR4RwtVH2zdBLeFOov9LjX8SY5euMtSL4fSxGjTbf43LM4I3/eb1SlBVgn/jqYyNeK6g7ias6jteJYHizGFE6mREi3CUmTZ2MiaeuLwRYxLOi32SN/W0O4cmuvBP4QvTfz7rKLsHzljceXhBd55SQFwT7icqD4NCvBodegO4YMIPfe7B3IX4Q/b4OtlZtsC3Aghh6nujRXnvSVOeavtc9wVpJ/YFEGZog2EkjQGoHUtMIkNqB1DQCpHYgNY0AqR1ITSNAagdS0wiQ2oHUDL0AdfxhYlS8Je5Xav1r77z0H1GVSSe1Prep+q+z4/r77rf5U2zdNfwD0pUsQlnzR9AAAAAASUVORK5CYII=",
+                    "visible": true,
+                    "options": false,
+                    "father": "execvba",
+                    "group": "scripts",
+                    "linux": false,
+                    "windows": true,
+                    "mac": false,
+                    "docker": false,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "file",
+                            "var_type": "str",
+                            "description": "Caminho para o arquivo VBS",
+                            "required": false
+                        },
+                        {
+                            "name": "args",
+                            "var_type": "list",
+                            "description": "Lista de argumentos a serem passados para o script",
+                            "required": false
+                        },
+                        {
+                            "name": "code",
+                            "var_type": "str",
+                            "description": "Tipo de codificação para decodificar o resultado",
+                            "required": false
+                        }
+                    ],
+                    "return": [
+                        {
+                            "name": "result",
+                            "var_type": "str",
+                            "required": false,
+                            "description": "Nome da variável onde a saída do comando será armazenada",
+                            "default": null
+                        }
+                    ],
+                    "long_description": "**Comando: Executar arquivo Visual Basic Script**\n\n**Descrição:** Este comando é usado para abrir, ler e executar um arquivo '.vbs' passando os argumentos necessários para isso. **Parâmetros:**\n- **arquivo**: Forneça o caminho para o arquivo VBS usando este parâmetro. \n\n- **args** (opcional): se precisar passar argumentos para o script, você pode fornecê-los usando este parâmetro. Este parâmetro é opcional, portanto você pode deixá-lo em branco."
+                  },
+                  {
+                    "title": "Execute o arquivo Powershell Script",
+                    "description": "Abra e execute o arquivo '.ps1' passando os argumentos necessários",
+                    "title_options": null,
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "file_select",
+                                "placeholder": {
+                                    "es": "C:\\users\\user\\documents\\file.ps1",
+                                    "en": "C:\\sers\\user\\documents\\file.ps1",
+                                    "pr": "C:\\sers\\user\\documents\\file.ps1"
+                                },
+                                "title": {
+                                    "es": "Archivo PS1",
+                                    "en": "PS1 file",
+                                    "pr": "Arquivo PS1"
+                                },
+                                "id": "file",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "Caminho para o arquivo PS1",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": {
+                                    "es": "arg1, arg2, arg3",
+                                    "en": "arg1, arg2, arg3",
+                                    "pr": "arg1, arg2, arg3"
+                                },
+                                "title": {
+                                    "es": "Argumentos",
+                                    "en": "Arguments",
+                                    "pr": "Argumentos"
+                                },
+                                "id": "args",
+                                "css": "col-md-12",
+                                "var_type": "str",
+                                "description": "Lista de argumentos a serem passados para o script",
+                                "required": false
+                            }
+                        ]
+                    },
+                    "video_youtube": "",
+                    "icon": "data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE4Ljc1NSAyMUgxLjI4NWMtLjQxMSAwLS43ODItLjE3MS0xLjAxOS0uNDdhMS4zMDggMS4zMDggMCAwIDEtLjIyOC0xLjExOEwzLjU0NiA0LjM2MUMzLjcyMiAzLjU5OSA0LjQ2OSAzIDUuMjQ1IDNoMTcuNDdjLjQxMSAwIC43ODIuMTcxIDEuMDE5LjQ3LjI0LjMwMy4zMjMuNzEuMjI4IDEuMTE4bC0zLjUwNyAxNS4wNTFjLS4xNzcuNzYyLS45MjQgMS4zNjEtMS43IDEuMzYxek01LjI0NSA0Yy0uMzE0IDAtLjY1My4yNzQtLjcyNS41ODdMMS4wMTMgMTkuNjM5Yy0uMDI2LjExMS0uMDEzLjIwNy4wMzcuMjY5LjA2LjA3Ni4xNjEuMDkyLjIzNS4wOTJoMTcuNDdjLjMxMyAwIC42NTItLjI3NC43MjUtLjU4N2wzLjUwNy0xNS4wNTJjLjAyNi0uMTExLjAxMy0uMjA3LS4wMzctLjI2OS0uMDYtLjA3Ni0uMTYxLS4wOTItLjIzNS0uMDkySDUuMjQ1eiIvPjxwYXRoIGQ9Ik0xNi42MTYgMTlIMTIuMzljLS43NjYgMC0xLjM5LS41NjEtMS4zOS0xLjI1LjAwNS0uNjkuNjI1LTEuMjUgMS4zODQtMS4yNWg0LjIzMmMuNzU4IDAgMS4zNzkuNTYgMS4zODQgMS4yNDYtLjAwNS42OTQtLjYyNSAxLjI1NC0xLjM4NCAxLjI1NHptLTQuMjI2LTEuNWMtLjIzMSAwLS4zODkuMTM0LS4zOS4yNTQgMCAuMTE0LjE2Ny4yNDYuMzkuMjQ2aDQuMjIxYy4yMzEgMCAuMzg5LS4xMzQuMzktLjI1NC0uMDAxLS4xMTItLjE1OS0uMjQ2LS4zODQtLjI0NkgxMi4zOXptLTYuODYxIDEuNDk5YTEuNTQgMS41NCAwIDAgMS0xLjIyOC0uNjE4IDEuNDcgMS40NyAwIDAgMS0uMjg0LTEuMTIxIDEuMzkgMS4zOSAwIDAgMSAuNTcyLS45MjVsLjAwMS0uMDAxIDYuNjA0LTQuNjUzLTQuMDY1LTQuMjFhMS4zNzYgMS4zNzYgMCAwIDEtLjM4Ni0xLjAwOGMuMDEyLS4zOTYuMTkyLS43NzkuNDkzLTEuMDU1LjYwMy0uNTUzIDEuNTM3LS41NDEgMi4wODQuMDI3bDUuMjk0IDUuNDgxYy40NTYuNDczLjUxNSAxLjE5OC4xNDQgMS43NjYtLjA4OS4xODQtLjI5Ni4zOTUtLjYyMi42MThsLTcuNzg0IDUuNDQxYTEuNDIyIDEuNDIyIDAgMCAxLS44MjMuMjU4em0tLjM2Mi0xLjg0OGEuMzk3LjM5NyAwIDAgMC0uMTYyLjI2NS40ODguNDg4IDAgMCAwIC4wOTcuMzY3Yy4xNjQuMjIuNDczLjI4My42NzMuMTRsNy43OS01LjQ0NWMuMjUyLS4xNzIuMzE0LS4yNy4zMjctLjI5NS4xNDMtLjIyNS4xMzMtLjQzNi4wMDEtLjU3MUw4LjYgNi4xMjljLS4xNy0uMTc4LS40ODYtLjE2OS0uNjkuMDE3YS40OTYuNDk2IDAgMCAwLS4xNjguMzQ4LjM3OS4zNzkgMCAwIDAgLjEwNy4yODFsNC40MTMgNC41NjljLjA5LjA5NC4xNC4yMTguMTQuMzQ4di4xMDJhLjUwMi41MDIgMCAwIDEtLjIxMi40MDlsLTcuMDIzIDQuOTQ4eiIvPjwvc3ZnPg==",
+                    "visible": true,
+                    "options": false,
+                    "father": "execps1",
+                    "group": "scripts",
+                    "linux": false,
+                    "windows": true,
+                    "mac": false,
+                    "docker": false,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "file",
+                            "var_type": "str",
+                            "description": "Caminho para o arquivo PS1",
+                            "required": false
+                        },
+                        {
+                            "name": "args",
+                            "var_type": "str",
+                            "description": "Lista de argumentos a serem passados para o script",
+                            "required": false
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "**Comando: Executar arquivo Powershell Script**\n\n**Descrição:** Este comando é usado para abrir, ler e executar um arquivo '.ps1' passando os argumentos necessários para isso. **Parâmetros:**\n- **arquivo**: Forneça o caminho para o arquivo PS1 usando este parâmetro. \n\n- **args** (opcional): se precisar passar argumentos para o script, você pode fornecê-los usando este parâmetro. Este parâmetro é opcional, portanto você pode deixá-lo em branco."
+                  },
                 {
                     "title": "Executa outro script RocketBot",
                     "icon": "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDggNDgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojYmMwMDE3O308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zOC44OSw2LjE5YTEuNzYsMS43NiwwLDAsMC0yLTEuMzNoLS4xNWwtLjEyLDBjLTYuODIsMi0xMy4zNyw3LjI0LTE3LjU2LDE0YTEzLjI5LDEzLjI5LDAsMCwwLTcsMy4xOCwxMSwxMSwwLDAsMC0zLjY2LDcuMTksMSwxLDAsMCwwLC40Ni45NSwxLDEsMCwwLDAsMS4wNywwLDExLDExLDAsMCwxLDUuMjQtMmMtLjEzLjU3LS4yNCwxLjExLS4zMiwxLjYxYTEuNzksMS43OSwwLDAsMCwuOTIsMkwyNi4zLDM4YS41NC41NCwwLDAsMCwuMjIuMDVoMGExLjcsMS43LDAsMCwwLDEuNzItLjQyLDEzLjI1LDEzLjI1LDAsMCwwLDEuMTMtMSwxMSwxMSwwLDAsMSwuODUsNS40OSwxLDEsMCwwLDAsLjQ4Ljk0LDEsMSwwLDAsMCwuNDguMTNoLjA5YS45MS45MSwwLDAsMCwuNDUtLjIzLDExLjcxLDExLjcxLDAsMCwwLDMuNjYtMTQuNUMzOS4yOCwyMS40OCw0MC41OCwxMy4xOSwzOC44OSw2LjE5Wk0xNi42OCwzMC4xM2ExNi44MiwxNi44MiwwLDAsMSwuNjQtMi43LDEuMTcsMS4xNywwLDAsMCwwLS4yNiwxLDEsMCwwLDAtMS4wNS0xaDBhMTMsMTMsMCwwLDAtNS41OCwxLjI2LDEwLjQzLDEwLjQzLDAsMCwxLDkuMDUtNi42NS45Mi45MiwwLDAsMCwuNzUtLjQ3QzI0LjM2LDEzLjgxLDMwLjUzLDguNzgsMzcsNi44NGMxLjU2LDYuNjUuMjMsMTQuNTMtMy41OCwyMS4xMWExLDEsMCwwLDAsMCwuODljMS45NCw0LDEuNDUsOC4yNC0xLjIyLDExLjE2YTEzLDEzLDAsMCwwLTEuNzgtNS41OC45NC45NCwwLDAsMC0uNzktLjQ5aDBhMSwxLDAsMCwwLS43Ny4zN0ExMCwxMCwwLDAsMSwyNywzNi4xWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4LDI3LjQzYTQuNTgsNC41OCwwLDAsMCwxLjExLS4xNkE1LjE2LDUuMTYsMCwwLDAsMjcsMTcuMjEsNS4xNiw1LjE2LDAsMCwwLDI4LDI3LjQ0Wk0zMC42NCwyNGEzLjE4LDMuMTgsMCwwLDEtNC40Mi44NCwzLjIsMy4yLDAsMCwxLS44Ni00LjQ0LDMuMTMsMy4xMywwLDAsMSwyLTEuMywyLjg2LDIuODYsMCwwLDEsLjU4LS4wNmgwYS4zLjMsMCwwLDAsLjE2LS4wNSwzLjMsMy4zLDAsMCwxLDEuNi41NUEzLjIzLDMuMjMsMCwwLDEsMzAuNjQsMjRaIi8+PC9zdmc+",
@@ -3731,7 +4794,8 @@
                     "command_available": false,
                     "logic": false,
                     "group": "logic",
-                    "modal_size": "md"
+                    "modal_size": "md",
+                    "error_handling": false
                 },
                 {
                     "title": "Grupo",
@@ -4779,6 +5843,151 @@
                     "mac": false,
                     "windows": true,
                     "modal_size": "lg"
+                },
+                {
+                    "title": "Clique relativo no objeto",
+                    "description": "Clique em um objeto usando suas coordenadas relativas do elemento mais próximo (identificado)",
+                    "icon": "/images/icons/windows.png",
+                    "visible": true,
+                    "name": "relative_click",
+                    "title_options": "",
+                    "title_command": "",
+                    "father": "relative_click",
+                    "options": "",
+                    "command_available": true,
+                    "group": "windows",
+                    "form": {
+                        "css": "modal-lg",
+                        "inputs": [
+                            {
+                                "type": "textarea",
+                                "placeholder": "<wnd app='calc.exe' class_name='CalcFrame' title='Calculadora' />",
+                                "title": "Selector",
+                                "help": "<a class='btn btn-sm btn-info button-in-title' loader='True' target='visor1' href='/desktoprecorder_visor?action=getobject&id=selector'>Editar Selector</a>Propriedade de texto usada para encontrar um elemento particular da IU quando a atividade é executada. Na verdade, é um fragmento XML ou JSON que especifica os atributos do elemento GUI que você está procurando e alguns de seus pais.",
+                                "id": "selector",
+                                "formatter": "json",
+                                "css": "col-md-12",
+                                "var_type": "dict",
+                                "description": "Selector",
+                                "required": true
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "30",
+                                "title": "Tempo máximo de pesquisa",
+                                "id": "timeout",
+                                "help": "Especifica o tempo de espera para que a atividade seja executada antes que um erro seja gerado. O valor padrão é de 30 segundos.",
+                                "css": "col-md-6",
+                                "var_type": "int",
+                                "description": "Tempo máximo de pesquisa",
+                                "required": false
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": "Click Simple",
+                                "title": "Tipo de Click",
+                                "options": [
+                                    {
+                                        "title": "Click Simple",
+                                        "value": "CLICK_SINGLE"
+                                    },
+                                    {
+                                        "title": "Click Doble",
+                                        "value": "CLICK_DOUBLE"
+                                    },
+                                    {
+                                        "title": "Manter Click",
+                                        "value": "CLICK_DOWN"
+                                    },
+                                    {
+                                        "title": "Soltar Click",
+                                        "value": "CLICK_UP"
+                                    }
+                                ],
+                                "help": "Especifica el tipo de clic del mouse (simple, doble, mantener, soltar) que se usa al simular el evento de clic. Por defecto, se selecciona un solo clic.",
+                                "id": "click_type",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "description": "Tipo de clique",
+                                "required": false
+                            },
+                            {
+                                "type": "select",
+                                "placeholder": "Botão direito",
+                                "title": "Botão do mouse",
+                                "options": [
+                                    {
+                                        "title": "Botão esquerdo",
+                                        "value": "left"
+                                    },
+                                    {
+                                        "title": "Botão direito",
+                                        "value": "right"
+                                    },
+                                    {
+                                        "title": "Botão do meio",
+                                        "value": "middle"
+                                    }
+                                ],
+                                "help": "O botão do mouse (esquerdo, direito, meio) usado para a ação de clique. Por padrão, o botão esquerdo do mouse está selecionado.",
+                                "id": "button",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "description": "Botão do mouse",
+                                "required": false
+                            },
+                            {
+                                "type": "input",
+                                "placeholder": "DEFAULT",
+                                "title": "Identificador da janela",
+                                "help": "Escreva apenas se um identificador foi inserido no comando Conectar com Aplicativo",
+                                "id": "session",
+                                "css": "col-md-6",
+                                "var_type": "str",
+                                "description": "Identificador da janela",
+                                "required": false
+                            }
+                        ]
+                    },
+                    "docker": false,
+                    "linux": false,
+                    "mac": false,
+                    "windows": true,
+                    "modal_size": "lg",
+                    "params": [
+                        {
+                            "name": "selector",
+                            "var_type": "dict",
+                            "description": "Selector",
+                            "required": true
+                        },
+                        {
+                            "name": "timeout",
+                            "var_type": "int",
+                            "description": "Tempo máximo de pesquisa",
+                            "required": false
+                        },
+                        {
+                            "name": "click_type",
+                            "var_type": "str",
+                            "description": "Tipo de clique",
+                            "required": false
+                        },
+                        {
+                            "name": "button",
+                            "var_type": "str",
+                            "description": "Botão do mouse",
+                            "required": false
+                        },
+                        {
+                            "name": "session",
+                            "var_type": "str",
+                            "description": "Identificador da janela",
+                            "required": false
+                        }
+                    ],
+                    "return": [],
+                    "long_description": "O comando \"Clique relativo no objeto\" permite automatizar o clique em um objeto em uma interface gráfica do usuário (GUI) com base na posição do elemento identificado mais próximo. Este comando é particularmente útil quando você deseja interagir com botões, links ou outros elementos clicáveis dentro de uma janela do aplicativo, mas não são reconhecidos como elementos separados. Usando as coordenadas do elemento mais próximo, o gravador salva a posição do mouse ao clicar.\n\nPara usar o \"Clique relativo on Object\", você precisa fornecer os seguintes parâmetros:\n\n1. \"selector\" (obrigatório): Este parâmetro espera um objeto de dicionário que identifique o elemento no qual você deseja clicar. O seletor especifica atributos como o ID, a classe, o nome ou as coordenadas de clique do elemento. Isso ajuda o software de automação a localizar o objeto com precisão.\n\n2. \"timeout\" (opcional): este parâmetro define o tempo máximo que o comando aguardará pelo objeto (mais próximo) para aparecer na tela. Se o objeto não for encontrado dentro do tempo limite especificado, o comando gerará um erro.\n\n3. \"click_type\" (opcional): Este parâmetro determina o tipo de ação de clique a ser executada no objeto. Ele pode ser definido como \"único\" (padrão) para um clique padrão com o botão esquerdo ou \"duplo\" para um clique duplo.\n\n4. \"button\" (opcional): Este parâmetro especifica o botão do mouse a ser usado para a ação de clique. Pode ser definido como \"esquerda\" (padrão), \"direita\" ou \"meio\".\n\n"
                 },
                 {
                     "title": "Obter texto",
