@@ -1,6 +1,21 @@
-# Rocketbot v20231230
+# Rocketbot v20231110 Fix
 
-## Updates 2023-12-15
+## Updates 2024-03-05
+
+### Fix
+- rpaweb: restore previous update to avoid boot error
+
+## Updates 2024-03-04
+
+### Fix
+- driverupdater: Change chromedriver URL to search dynamically due to google updates
+- rpaweb: Fix selenium library
+
+
+
+# Rocketbot v20240215 beta
+
+## Updates 2024-02-15
 
 ### Added
 
@@ -35,8 +50,6 @@
 
 ## How to install
 
-1. Download [RocketbotStudio.exe](https://rocketbot-bin.s3.amazonaws.com/Rocketbot_studio_installer.exe) 
-2. Run RocketbotStudio.exe
-3. Next and accept the license
-4. When finished, it will be downloaded to disk C:\Rocketbot
-5. Run Rocketbot.exe
+1. Download [Rocketbot Studio]([https://rocketbot-bin.s3.amazonaws.com/Rocketbot_studio_installer.exe](https://rocketbot-bin.s3.amazonaws.com/Rocketbot_2024.02.15_beta_preview.zip)) 
+2. Unzip Rocketbot_2024.02.15_beta_preview.zip
+3. Go to the folder an run Rocketbot.exe
