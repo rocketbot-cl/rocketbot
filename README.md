@@ -50,6 +50,6 @@
 
 ## How to install
 
-1. Download [Rocketbot Studio]([https://rocketbot-bin.s3.amazonaws.com/Rocketbot_studio_installer.exe](https://rocketbot-bin.s3.amazonaws.com/Rocketbot_2024.02.15_beta_preview.zip)) 
+1. Download [Rocketbot Studio](https://rocketbot-bin.s3.amazonaws.com/Rocketbot_2024.02.15_beta_preview.zip)
 2. Unzip Rocketbot_2024.02.15_beta_preview.zip
 3. Go to the folder an run Rocketbot.exe
