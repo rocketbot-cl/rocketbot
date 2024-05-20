@@ -351,14 +351,20 @@
     "db_folder": "Carpeta de BD",
     "custom_path": "Ruta personalizada",
     "variable_re_encripted": "La variable será encriptada nuevamente",
-    "table_input_format": "Formato válido: [{...}, ..., {...}] donde ... debe tener como key a todos los headers válidos.",
+    "table_input_format": "Formato válido: [{...}, ..., {...}] donde ... debe tener como key a todos los headers válidos. Doble click en celda para editarla",
     "new_version": "Nueva versión",
     "update_warning_info": "No actualices solo un archivo si no necesitas una funcionalidad especifica de la nueva versión. Si actualizas solo un archivo, puedes tener problemas con algunas funcionalidades.",
     "adjust_res": "Ajustar a resolución de ejecución",
     "include_project_files": "Incluir archivos y carpetas del projecto.",
     "include_framework": "Incluir framework",
     "excess_commands": "El robot excede el número de comandos recomendados",
-    "command_badly_parsed": "Comando mal parseado"
+    "python_over_50_warning": "Comandos de python exceden el 50% del total",
+    "command_badly_parsed": "Comando mal parseado",
+    "backslashes_warning": "Los datos de la variable contienen backslashes (\\)",
+    "replace_backslashes": "Reemplazar con",
+    "raw_mode": "Ver raw",
+    "json_mode": "Ver JSON",
+    "table_mode": "Ver tabla"
   },
   "commands": [
     {
@@ -2770,6 +2776,49 @@
             }
           ],
           "long_description": "El comando Establecer variable se utiliza para asignar datos a una variable. Esto le permite almacenar y manipular datos que puede usar más adelante en su proceso de automatización.\n\nPara usar el comando Establecer variable, debe proporcionar los datos que desea asignar a la variable. Estos datos pueden ser un valor estático o un valor dinámico generado durante la ejecución del bot. Este comando le permite usar código Python en la entrada \"commad\" para generar los datos que se almacenarán en la variable."
+        },
+        {
+          "visible": true,
+          "title": "Asignar Múltiples Variables",
+          "icon": "data:image/png;base64,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",
+          "name": "Asignar Múltiples Variables",
+          "description": "Permite asignar múltiples variables a la vez",
+          "title_options": "Predefinido",
+          "title_command": "Dato",
+          "father": "set_multiple_vars",
+          "options": [],
+          "form": {
+            "css": "modal-lg",
+            "inputs": [
+              {
+                "type": "input",
+                "formatter": "table",
+                "headers": ["variable", "valor"],
+                "title": "Variables",
+                "id": "vars",
+                "var_type": "list",
+                "required": true,
+                "description": "Listado con la data a asignar",
+                "default": null,
+                "css": "col-12"
+              }
+            ]
+          },
+          "setVar": false,
+          "command_available": true,
+          "group": "system",
+          "modal_size": "lg",
+          "params": [
+            {
+              "name": "command",
+              "var_type": "list",
+              "required": true,
+              "description": "Listado con la data a asignar",
+              "default": null
+            }
+          ],
+          "return": [],
+          "long_description": "El comando Asignar Múltiples Variables se utiliza para la asignación de datos. Esto le permite almacenar y manipular datos que puede usar más adelante en su proceso de automatización. Para usar el comando Asignar Múltiples Variables, debe proporcionar los datos que desea asignar a la variable en formato de lista de diccionarios. Estos datos pueden ser un valor estático o un valor dinámico generado durante la ejecución del bot. Este comando le permite usar código Python en la clave \"valor\" para generar los datos que se almacenarán en la variable."
         },
         {
           "title": "Último Estado",
@@ -9121,6 +9170,11 @@
       "option": "--token",
       "description": "Muestra el token de la licencia de Rocketbot",
       "example": "--token"
+    },
+    {
+      "option": "--log",
+      "description": "Cambia la ruta de los logs de Rocketbot",
+      "example": "--log=/path/to/logs/folder"
     },
     {
       "option": "--port",

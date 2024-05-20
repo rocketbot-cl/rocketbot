@@ -341,7 +341,7 @@
     "details": "Details",
     "table_input_not_valid": "Input format is not valid",
     "invalid_header_found": "Invalid header found",
-    "table_input_format": "Valid format: [{...}, ..., {...}] where ... should be each header as a key.",
+    "table_input_format": "Valid format: [{...}, ..., {...}] where ... should be each header as a key. Double click on cell to edit it.",
     "encryptedVar": "Encrypted",
     "error_encrypting_data": "Error encrypting data.",
     "refresh_encrypting_data": "Refresh encrypting data?",
@@ -359,7 +359,13 @@
     "include_project_files": "Include project files and folders",
     "include_framework": "Include framework",
     "excess_commands": "Robot exceeds the recommended number of commands",
-    "command_badly_parsed": "This command command is badly parsed"
+    "python_over_50_warning": "Python commands are more than 50 percent of total",
+    "command_badly_parsed": "This command command is badly parsed",
+    "backslashes_warning": "The variable data contains backslashes (\\)",
+    "replace_backslashes": "Replace with",
+    "raw_mode": "View raw",
+    "json_mode": "View JSON",
+    "table_mode": "View table"
   },
   "commands": [
     {
@@ -9782,7 +9788,7 @@
               ],
               "return": [
                 {
-                  "name": "getvar",
+                  "name": "result",
                   "var_type": "str|list",
                   "description": "Cell",
                   "required": true
@@ -9977,6 +9983,11 @@
       "option": "--token",
       "description": "Show the license token",
       "example": "--token"
+    },
+    {
+      "option": "--log",
+      "description": "Change the default log folder of the Rocketbot Studio",
+      "example": "--log=/path/to/folder"
     },
     {
       "option": "--port",
