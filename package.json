@@ -225,13 +225,6 @@
             "md5": "50c03433205d14f0209608d3539547a1"
         },
         {
-            "name": "endpoints/y_updates.roc",
-            "path": "endpoints/z_dev.roc",
-            "destination": "/endpoints/",
-            "version": "2.0.0",
-            "md5": "50c03433205d14f0209608d3539547a1"
-        },
-        {
             "name": "endpoints/z_dev.roc",
             "path": "endpoints/z_dev.roc",
             "destination": "/endpoints/",
