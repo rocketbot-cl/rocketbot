@@ -1,42 +1,59 @@
-# Rocketbot v20231230
+# Rocketbot Studio Updates Documentation
 
-## Updates 2023-12-15
+Welcome to the release notes for Rocketbot Studio 2024.05.28. Below you'll find a comprehensive set of updates that have been implemented recently. These modifications are geared to enhance functionality, address issues, and upgrade existing features within our software.
 
-### Added
+## Changes & Fixes
 
-- `rpaweb`: Add new functionallity to click command. Now you can scroll to the element before click it and wait for the element to be clickable.
-- `rpaweb`: Add new functionallity to send keys command. Now you can send keys to a specific element withouth the need to click it before.
-- `rpasystem`: New command to get command line arguments.
-- `rpasystem`: New command to set multiple variables from a list of values.
-- `rpavirtual`: Added the possibility to use the same screenshot for different resolutions.
-- `web`: Add long description to all commands.
-- `framework`: Add new export method to export projects that include framework, resouces and modules.
-- `core`: Add the possibility to disable logs for a specific robot.
-- `core`: Add new internal variables to get the robot name, project path and database path.
-- `core`: Add the possibility to choose the log path for a specific robot.
-- `rpascripts`: Now you can use separate modules for each robot.
-- `variables`: Add new variable type to encrypt the value.
-- `variables`: Add default value to variables.
-- `variables`: Added buttons to delete and clear all variables in category.
-- `updater`: Now the updater is included in the studio and don't need to download updates from external app.
-- `a_activatelicense`: New services to update online license automatically.
-- `a_args`: New argument to desactivate logs for the robot in execution. `--no-log`
+### Added Features:
 
+- **Treeview Enhancements**: The treeview now shows all commands in subrobots, improving navigation and interaction with project elements.
+- **Resolution Support**: The virtualization command now adjusts to the screen resolution, ensuring compatibility with the original screen size.
+- **Command Line Arguments**: New command lines to manage Rocketbot projects in every execution, allowing for more flexibility and automation.
+- **New Command Actions**: Adicional sections and command to automate processes and enhance security in projects.
+  - Added a framework to work with transactions.
+  - Commands to use Credentials Manager.
+  - Commands to work with processes.
+  - Code with PowerShell and VBA.
+  - Move and drag in Virtualization commands.
+- **Variables**: More options to manage variables in the project.
+  - Json Viewer to read json variables.
+  - Default values to reset variables quickly.
+  - Encrypt type to secure sensitive data.
+  - Delete or clean groups of variables.
+- **Code scanning**: Added a new feature to scan the code and find errors or warnings in the project.
+- **Logs**: New options to manage logs in the project.
+  - Omits logs: Disable logs in the project.
+  - Log destination: Save logs in a default, project, or custom folder.
+  - Clean logs in the project.
+- **Robots as a Service**: Run robots developed in other databases directly in your project.
+- **Export options**: Include project files and folders in the export process
 
-### Fix
-- `auth`: Fix bug in login view for orchestrator license on studio.
-- `auth`: Remove error message when user is not logged in with orchestrator license.
-- `driverupdater`: Increase timeout to 80 seconds.
-- `rpavirtual`: Fix bug when opening Rocketbot from a shortcut.
-- `rpavirtual` - mac: Fix double click bug.
-- `core`: Fix license bug when the computer is restarted.
-- `updater`: Create a backup folder before updating.
+### Modifications:
 
+- **License Activation and Management**: Enhanced automatic renewal of online licenses and improved online license validation methods.
+- **Driver Updates**: Periodic updates and fixes to driver management scripts to ensure compatibility with the latest devices and operating systems.
+- **Web Commands**: Capabilities to handle wait times and timeouts directly in the web commands, improving performance and reducing the need for additional commands.
+- **Module versions**: Use specific versions of modules in the project to avoid compatibility issues.
 
-## How to install
+### Fixes:
 
-1. Download [RocketbotStudio.exe](https://rocketbot-bin.s3.amazonaws.com/Rocketbot_studio_installer.exe) 
-2. Run RocketbotStudio.exe
-3. Next and accept the license
-4. When finished, it will be downloaded to disk C:\Rocketbot
-5. Run Rocketbot.exe
+- **Error Handling & Debugging**:
+  - Various bug fixes related to module updates and error handling to prevent crashes and improve stability.
+- **DesktopRecorder**: Fixed an issue where the DesktopRecorder command was not connecting to the correct application, causing errors in the recording process.
+- **Robots Search**: Fixed a bug that searched for robots in case-sensitive mode, now searching for robots regardless of case.
+- **Orchestrator license**: Fixed an issue where the orchestrator license was not being validated correctly, causing errors in the license management process.
+- **Environment Compatibility**:
+  - Modifications in `rpaweb.py` to enhance compatibility with Firefox on Linux OS.
+- **Logging and Outputs**: Standardization of logging and considerable removal of unnecessary debug logs to clean up output.
+
+### Removed:
+- **Obsolete Modules and Functions**:
+  - Removal of outdated or less used modules and debug logs to streamline the operation and reduce maintenance overhead.
+
+## Known Issues
+
+- **Dependency Conflicts**: Occasionally, updates to external libraries might cause temporary compatibility issues with existing projects until adjustments are made in the project configuration.
+
+---
+
+We advise all users to update to the latest version to take advantage of these improvements. Stay tuned for further enhancements as we strive to make Rocketbot Studio even more robust and user-friendly. Thank you for choosing Rocketbot for your automation needs.
