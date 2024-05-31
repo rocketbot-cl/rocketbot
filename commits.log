@@ -1,0 +1,134 @@
+Fri May 31 11:03:49 2024  (HEAD -> qa, origin/qa, 2024.03.15) new updates
+Wed May 22 13:05:42 2024  (origin/2024.03.15) Update package
+Wed May 22 12:52:26 2024  update readme
+Mon May 20 14:00:06 2024  update version
+Mon May 13 13:51:34 2024  New productive version
+Tue Apr 9 10:21:58 2024  (main) [new update]
+Mon Mar 4 13:46:21 2024  (origin/main) Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Mon Mar 4 13:29:28 2024  update
+Mon Mar 4 11:52:56 2024  Update package.json
+Fri Mar 1 18:13:02 2024  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Fri Mar 1 18:12:23 2024  [fix versions]
+Wed Feb 28 14:40:22 2024  updates
+Wed Feb 28 14:40:14 2024  updates
+Wed Feb 28 14:34:58 2024  merge
+Fri Jan 26 13:50:12 2024  (origin/2023.12.30, 2023.12.30) [fix] updater
+Fri Jan 26 11:14:06 2024  update 2024.01.30
+Thu Jan 11 14:29:39 2024  [updates]
+Mon Jan 8 10:47:01 2024  update files
+Fri Jan 5 11:05:51 2024  version 2024.01.05
+Mon Dec 18 17:29:05 2023  [hidden] update updater and package
+Thu Dec 14 11:53:34 2023  [new] update readme
+Wed Dec 13 12:33:27 2023  Update package.json
+Tue Dec 12 13:27:18 2023  [updates]
+Fri Dec 1 13:50:28 2023  Update package.json
+Thu Sep 28 15:45:02 2023  (origin/2023.09.28, 2023.09.28) [fix] readme
+Thu Sep 28 15:42:04 2023  [hidden]
+Wed Sep 6 15:05:55 2023  [fix] update version
+Wed Sep 6 15:04:14 2023  [new] update versions
+Mon Aug 21 12:31:30 2023  [v2023-08-21] update languages, for loop, flow and driverupdater
+Mon Aug 21 12:17:53 2023  [v2023-08-21] update languages, for loop, flow and driverupdater
+Mon Jul 24 14:43:16 2023  [hidden] new release
+Thu Jul 6 12:04:38 2023  [fix]waitforobject
+Wed Jul 5 15:04:53 2023  version 2023.06.29
+Thu Jun 29 13:28:50 2023  [hidden] update version
+Mon Jun 26 15:51:32 2023  [hidden] update version
+Mon Jun 12 10:19:18 2023  [fix] sign .exe
+Tue Jun 6 17:47:00 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Tue Jun 6 17:46:43 2023  [fix] user not in rocket
+Tue Jun 6 15:25:48 2023  Update package.json
+Tue Jun 6 15:24:26 2023  Update README.md
+Tue Jun 6 15:02:40 2023  [fix] update encrypt bots
+Tue May 30 16:53:23 2023  [hidden] update languages
+Tue May 30 10:46:40 2023  [hidden] update license connection
+Mon May 22 14:45:16 2023  [update] languages
+Mon May 22 13:59:05 2023  [update] languages
+Mon May 22 13:02:00 2023  [updater]
+Thu May 18 14:03:40 2023  [hidden]
+Thu May 11 10:19:28 2023  [new] update new versions
+Thu May 11 09:58:41 2023  [new] update new versions
+Mon Apr 24 18:23:36 2023  [new] new release
+Thu Apr 20 12:08:56 2023  [merge] resolve conflicts
+Thu Apr 20 12:07:15 2023  [fix] updates
+Mon Apr 17 18:15:19 2023  Update package.json
+Mon Apr 17 13:14:59 2023  [update]
+Mon Apr 17 10:38:50 2023  [fix] update services
+Thu Apr 13 09:36:48 2023  [hidden] update md5
+Wed Apr 12 14:44:16 2023  [new] update version
+Mon Apr 10 12:10:07 2023  [new] new version and release
+Mon Apr 10 12:07:49 2023  [new] update files
+Wed Mar 22 18:49:37 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Wed Mar 22 18:48:47 2023  [hidden] add gitignore
+Wed Mar 22 18:17:42 2023  Merge branch 'qa' of https://github.com/rocketbot-cl/rocketbot into qa
+Wed Mar 22 18:15:45 2023  [merge] resolve conflicts
+Tue Mar 21 10:51:19 2023  [hidden] update exe version
+Mon Mar 20 18:04:29 2023  update package
+Mon Mar 20 17:55:45 2023  Merge branch 'qa' of https://github.com/rocketbot-cl/rocketbot into qa
+Mon Mar 20 17:54:37 2023  release 2022.03.20
+Wed Mar 8 12:33:11 2023  Update README.md
+Wed Mar 8 12:25:34 2023  [fix] updater folders
+Wed Mar 8 12:23:34 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Wed Mar 8 12:23:09 2023  [fix] updater destination
+Wed Mar 8 12:21:06 2023  [new] update files release 20230305
+Tue Mar 7 10:22:44 2023  Update package.json
+Tue Mar 7 10:05:52 2023  Merge pull request #2 from rocketbot-cl/qa
+Mon Mar 6 14:44:40 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Mon Mar 6 14:44:24 2023  [hidden] update package
+Mon Mar 6 13:30:00 2023  Update package.json
+Tue Feb 28 17:18:34 2023  Update package.json
+Tue Feb 28 16:58:08 2023  [fix] update version
+Tue Feb 28 16:55:00 2023  [new] update package and files
+Thu Feb 16 10:25:58 2023  [fix] library: update browser library
+Tue Feb 14 10:16:25 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Tue Feb 14 10:16:09 2023  [fix] language: rollback openbrowser
+Mon Feb 13 12:14:43 2023  Update package.json
+Mon Feb 13 12:13:55 2023  Update package.json
+Mon Feb 13 12:03:23 2023  Update package.json
+Mon Feb 13 11:37:52 2023  Update package.json
+Mon Feb 13 11:16:21 2023  [new] 2023.02.10: new version
+Fri Feb 3 12:00:21 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Fri Feb 3 11:59:43 2023  [new] update: upload last version
+Thu Feb 2 18:38:56 2023  uodate build
+Thu Feb 2 18:36:19 2023  Update package.json
+Thu Feb 2 18:30:48 2023  Update package.json
+Thu Feb 2 14:22:57 2023  Update package.json
+Thu Feb 2 12:49:27 2023  Update package.json
+Wed Feb 1 14:02:17 2023  Update package.json
+Wed Feb 1 13:46:01 2023  [fix] upda hash and files
+Wed Feb 1 13:39:33 2023  [fix] upda hash and files
+Wed Feb 1 13:23:18 2023  [fix] upda hash and files
+Tue Jan 31 17:54:16 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Tue Jan 31 17:39:26 2023  [fix] move to update folder
+Fri Jan 27 12:22:54 2023  Update package.json
+Mon Jan 23 10:45:43 2023  [hidden] add update folder
+Mon Jan 23 10:45:17 2023  [hidden] delete bin and rename windows folder
+Fri Jan 20 14:18:27 2023  [fix] remove modules.zip
+Fri Jan 20 14:03:03 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Fri Jan 20 14:02:58 2023  [hidden] update package
+Fri Jan 20 14:01:38 2023  [new] updates for windows
+Fri Jan 20 13:50:20 2023  Update package.json
+Fri Jan 20 12:25:49 2023  Update to version 2022.12.30
+Fri Jan 20 11:54:32 2023  Update to version 2022.12.30
+Wed Jan 18 14:37:56 2023  Update to version 2022.12.30
+Wed Jan 18 14:26:29 2023  Update to version 2022.12.30
+Mon Jan 16 11:56:12 2023  Update to version 2022.12.30
+Mon Jan 16 00:36:38 2023  [new] package: update package style
+Mon Jan 16 00:35:42 2023  [new] package: update package style
+Tue Jan 3 17:30:07 2023  version of all files in rocket
+Tue Jan 3 17:20:20 2023  [hidden] move to bin folder
+Tue Jan 3 17:14:21 2023  Merge branch 'main' of https://github.com/rocketbot-cl/rocketbot
+Tue Jan 3 17:11:04 2023  [hidden] version 2022
+Mon Nov 7 17:39:45 2022  Update README.md
+Mon Nov 7 17:37:34 2022  Update README.md
+Mon Nov 7 17:34:48 2022  Update README.md
+Wed Sep 28 13:10:05 2022  Update README.md
+Thu Aug 4 15:27:40 2022  [hidden] Add ROC onpremise in the readme
+Mon Apr 25 09:24:06 2022  typo
+Fri Apr 8 18:10:39 2022  [hidden] Update addons readme
+Fri Apr 8 15:50:02 2022  [hidden] Update addons readme
+Fri Apr 8 15:37:46 2022  [fix] move addons to Addons folder
+Fri Apr 8 15:33:08 2022  [hidden] update README
+Fri Apr 8 15:31:51 2022  [hidden] update changes.txt
+Fri Apr 8 15:26:35 2022  [new] version 20220405
+Tue Jul 20 14:30:55 2021  Update README.md
+Thu Jan 14 17:21:31 2021  Initial commit
