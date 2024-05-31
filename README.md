@@ -2,6 +2,18 @@
 
 Welcome to the release notes for Rocketbot Studio 2024.05.28. Below you'll find a comprehensive set of updates that have been implemented recently. These modifications are geared to enhance functionality, address issues, and upgrade existing features within our software.
 
+## Update 2024.05.31 - Fixes
+- **Modules**: 2023 Compatibility
+- **Variables**: Fixed issue with encrypted variables and add %production% as global variable
+- **License**: Remove license modal
+- **Autocreator**: Rebranding
+- **Logs**: Remove invalid logs
+- **rpaweb**: Fixed issue with wait for element
+- **rpaframework**: Include new version of rpaframework
+- **Config**: Add option to use internal variables
+
+
+
 ## Changes & Fixes
 
 ### Added Features:
