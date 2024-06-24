@@ -18,9 +18,9 @@
             "name": "web/dev/",
             "path": "web/dev.zip",
             "destination": "/web/dev/",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "hash": "",
-            "md5": "1e49e8208b64b6c08379a72fba38cb20"
+            "md5": "4fa63b7de4a2d0170c5809fa5ce11f38"
         },
         {
             "name": "languages/command_list_tree_en.json",
